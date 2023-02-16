@@ -3,6 +3,6 @@
 from setuptools import setup
 
 setup(
-    name='arcube_tasks',
-    packages=['arcube_tasks'],
+    name='fw4dune-tasks',
+    packages=['fw4dune_tasks'],
 )

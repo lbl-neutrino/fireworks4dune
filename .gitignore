@@ -1,6 +1,6 @@
 /fw.venv
 my_launchpad.yaml
 *.egg-info
-config/FW_config.yaml
+fw_config/FW_config.yaml
 /dump
 *.pyc

@@ -30,4 +30,4 @@ confdir=$(realpath fw_config)
 sed "s%{CONFIG_FILE_DIR}%$confdir%" fw_config/templates/FW_config.template.yaml > fw_config/FW_config.yaml
 [[ ! -e fw_config/my_launchpad.yaml ]] && cp fw_config/templates/my_launchpad.template.yaml fw_config/my_launchpad.yaml
 
-echo "\nRemember to edit the password in fw_config/my_launchpad.yaml"
+printf "\nRemember to edit the password in fw_config/my_launchpad.yaml\n"
