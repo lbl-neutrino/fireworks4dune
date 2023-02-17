@@ -7,4 +7,4 @@
 #SBATCH --gpus-per-task=1
 #SBATCH --cpus-per-task=32
 
-srun rlaunch rapidfire -w fworker_larnd_sim.yaml
+srun rlaunch -w fworker_larnd_sim.yaml rapidfire

@@ -10,19 +10,19 @@ COLLECTIONS = ['repos', 'runners', 'base_envs']
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('infile')
-    ap.add_argument('--db', default='arcubeprod')
+    ap.add_argument('infiles', nargs='+')
     args = ap.parse_args()
 
-    data = yaml.safe_load(open(args.infile))
+    for infile in args.infiles:
+        data = yaml.safe_load(open(infile))
 
-    lpad = LaunchPad.auto_load()
-    db = lpad.connection[args.db]
+        lpad = LaunchPad.auto_load()
+        db = lpad.connection[lpad.name]
 
-    for collection, docs in data.items():
-        assert collection in COLLECTIONS
-        c = db[collection]      # auto creates
-        c.insert_many(docs)
+        for collection, docs in data.items():
+            assert collection in COLLECTIONS
+            c = db[collection]      # auto creates
+            c.insert_many(docs)
 
 
 if __name__ == '__main__':

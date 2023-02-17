@@ -7,4 +7,4 @@
 
 fw_confdir=$(dirname $FW_CONFIG_FILE)
 
-srun rlaunch rapidfire -w $fw_confdir/fworker_edep_sim.yaml
+srun rlaunch -w $fw_confdir/fworker_edep_sim.yaml rapidfire

@@ -1,10 +1,9 @@
 * Action items
 ** DONE Test backup/restore
-** TODO Write scripts to fill ~repos~, ~runners~, and ~base_envs~ collections
+** OKAY Write scripts to fill ~repos~, ~runners~, and ~base_envs~ collections
 - Include validators
 ** TODO Write RepoRunner task
-- Needs to know where to find the repo (i.e. here)
-- Specify REPO_RUNNER_PATH=~/dunescratch/2x2_sim
+- Needs to know where to find the repo: FW4DUNE_REPO_DIR
 - [ ] Check commit matches
 - [ ] Store log location?
 ** TODO Update submit_fw.py to fill FireWorks that use the RepoRunner task

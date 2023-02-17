@@ -4,3 +4,4 @@ my_launchpad.yaml
 fw_config/FW_config.yaml
 /dump
 *.pyc
+launcher_*
