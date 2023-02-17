@@ -11,13 +11,18 @@ COLLECTIONS = ['repos', 'runners', 'base_envs']
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('infiles', nargs='+')
+    ap.add_argument('--clear', action='store_true')
     args = ap.parse_args()
+
+    lpad = LaunchPad.auto_load()
+    db = lpad.connection[lpad.name]
+
+    if args.clear:
+        for collection in COLLECTIONS:
+            db[collection].drop()
 
     for infile in args.infiles:
         data = yaml.safe_load(open(infile))
-
-        lpad = LaunchPad.auto_load()
-        db = lpad.connection[lpad.name]
 
         for collection, docs in data.items():
             assert collection in COLLECTIONS

@@ -5,3 +5,4 @@ fw_config/FW_config.yaml
 /dump
 *.pyc
 launcher_*
+slurm-*.out
