@@ -1,7 +1,7 @@
 repos:
   - name: 'SimFor2x2_v1'
     url: 'https://github.com/mjkramer/2x2_sim.git'
-    commit: 'abcd1234'
+    commit: 'b49c30e1b'
 
 runners:
   - name: 'SimFor2x2_v1_GenieEdep'
@@ -14,41 +14,3 @@ runners:
     workdir: 'run-larnd-sim'
     cmd: './run_larnd_sim_fw.sh'
 
-base_envs:
-  - name: 'SimFor2x2_v1_MiniRun1_1E19_RHC_rock'
-    env:
-      ARCUBE_CHERRYPICK: '0'
-      ARCUBE_DET_LOCATION: 'ProtoDUNE-ND-Rock'
-      ARCUBE_DK2NU_DIR: '/global/cfs/cdirs/dune/users/2x2EventGeneration/NuMI_dk2nu/newtarget-200kA_20220409'
-      ARCUBE_EDEP_MAC: 'macros/2x2_beam.mac'
-      ARCUBE_EXPOSURE: '2E15'
-      ARCUBE_GEOM: 'geometry/Merged2x2MINERvA_v4_noSens_justRock.gdml'
-      ARCUBE_GEOM_EDEP: 'geometry/Merged2x2MINERvA_v4_minervaAndLArSens_withRock.gdml'
-      ARCUBE_TUNE: 'G18_10a_02_11a'
-      ARCUBE_XSEC_FILE: '/global/cfs/cdirs/dune/users/2x2EventGeneration/inputs/NuMI/G18_10a_02_11a_FNALsmall.xml'
-      ARCUBE_OUT_NAME: 'MiniRun1_1E19_RHC_rock'
-
-  - name: 'SimFor2x2_v1_MiniRun1_1E19_RHC_rock_tiny'
-    env:
-      ARCUBE_CHERRYPICK: '0'
-      ARCUBE_DET_LOCATION: 'ProtoDUNE-ND-Rock'
-      ARCUBE_DK2NU_DIR: '/global/cfs/cdirs/dune/users/2x2EventGeneration/NuMI_dk2nu/newtarget-200kA_20220409'
-      ARCUBE_EDEP_MAC: 'macros/2x2_beam.mac'
-      ARCUBE_EXPOSURE: '5E13'
-      ARCUBE_GEOM: 'geometry/Merged2x2MINERvA_v4_noSens_justRock.gdml'
-      ARCUBE_GEOM_EDEP: 'geometry/Merged2x2MINERvA_v4_minervaAndLArSens_withRock.gdml'
-      ARCUBE_TUNE: 'G18_10a_02_11a'
-      ARCUBE_XSEC_FILE: '/global/cfs/cdirs/dune/users/2x2EventGeneration/inputs/NuMI/G18_10a_02_11a_FNALsmall.xml'
-      ARCUBE_OUT_NAME: 'MiniRun1_1E19_RHC_rock_tiny'
-  - name: 'SimFor2x2_v1_MiniRun1_1E19_RHC_rock_nano'
-    env:
-      ARCUBE_CHERRYPICK: '0'
-      ARCUBE_DET_LOCATION: 'ProtoDUNE-ND-Rock'
-      ARCUBE_DK2NU_DIR: '/global/cfs/cdirs/dune/users/2x2EventGeneration/NuMI_dk2nu/newtarget-200kA_20220409'
-      ARCUBE_EDEP_MAC: 'macros/2x2_beam.mac'
-      ARCUBE_EXPOSURE: '1E13'
-      ARCUBE_GEOM: 'geometry/Merged2x2MINERvA_v4_noSens_justRock.gdml'
-      ARCUBE_GEOM_EDEP: 'geometry/Merged2x2MINERvA_v4_minervaAndLArSens_withRock.gdml'
-      ARCUBE_TUNE: 'G18_10a_02_11a'
-      ARCUBE_XSEC_FILE: '/global/cfs/cdirs/dune/users/2x2EventGeneration/inputs/NuMI/G18_10a_02_11a_FNALsmall.xml'
-      ARCUBE_OUT_NAME: 'MiniRun1_1E19_RHC_rock_nano'

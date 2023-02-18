@@ -1,0 +1,13 @@
+base_envs:
+  - name: 'MiniRun1_1E19_RHC_rock_split16'
+    env:
+      ARCUBE_CHERRYPICK: '0'
+      ARCUBE_DET_LOCATION: 'ProtoDUNE-ND-Rock'
+      ARCUBE_DK2NU_DIR: '/global/cfs/cdirs/dune/users/2x2EventGeneration/NuMI_dk2nu/newtarget-200kA_20220409'
+      ARCUBE_EDEP_MAC: 'macros/2x2_beam.mac'
+      ARCUBE_EXPOSURE: '1.25E14'
+      ARCUBE_GEOM: 'geometry/Merged2x2MINERvA_v4_noSens_justRock.gdml'
+      ARCUBE_GEOM_EDEP: 'geometry/Merged2x2MINERvA_v4_minervaAndLArSens_withRock.gdml'
+      ARCUBE_TUNE: 'G18_10a_02_11a'
+      ARCUBE_XSEC_FILE: '/global/cfs/cdirs/dune/users/2x2EventGeneration/inputs/NuMI/G18_10a_02_11a_FNALsmall.xml'
+      ARCUBE_OUT_NAME: 'MiniRun1_1E19_RHC_rock_split16'
