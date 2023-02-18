@@ -12,6 +12,7 @@ mkdir -p $fw_launchdir
 cd $fw_launchdir
 
 logdir=$SCRATCH/logs.edep_sim_job_fw/$SLURM_JOBID
+mkdir -p $logdir
 
 # srun rlaunch -w $fw_confdir/fworker_edep_sim.yaml rapidfire
 srun -o "$logdir"/output-%j.%t.txt rlaunch -w $fw_confdir/fworker_edep_sim.yaml singleshot
