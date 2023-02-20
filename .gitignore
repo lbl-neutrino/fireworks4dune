@@ -6,3 +6,4 @@ fw_config/FW_config.yaml
 *.pyc
 launcher_*
 slurm-*.out
+.ipynb_checkpoints
