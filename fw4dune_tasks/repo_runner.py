@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import os
-from subprocess import call
+from subprocess import check_call
 
 from fireworks.core.firework import FiretaskBase, FWAction
 from fireworks.core.launchpad import LaunchPad
@@ -41,9 +41,10 @@ class RepoRunner(FiretaskBase):
         assert os.path.exists(repodir)
 
         # here we go!
-        call(runner['cmd'],
-             shell=True,
-             cwd=os.path.join(repodir, runner['workdir']),
-             env=env)
+        check_call(runner['cmd'],
+                   shell=True,
+                   cwd=os.path.join(repodir, runner['workdir']),
+                   env=env)
 
+        # TODO record the slurm job / task ID
         return FWAction()
