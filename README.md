@@ -1,10 +1,10 @@
 # Initial setup (installing FireWorks client etc.)
 
 ``` bash
-source admin/install_fireworks.sh
+admin/install_fireworks.sh
 ```
 
-Edit `fw_config/my_launchpad.yaml` to specify the password for MongoDB.
+Then edit `fw_config/my_launchpad.yaml` to specify the password for MongoDB.
 
 # Loading the FireWorks environment
 
