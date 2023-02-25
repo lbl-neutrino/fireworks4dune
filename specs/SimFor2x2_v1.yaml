@@ -9,6 +9,11 @@ runners:
     workdir: 'run-edep-sim'
     cmd: './run_edep_sim_fw.sh'
 
+  - name: 'SimFor2x2_v1_SpillBuild'
+    repo: 'SimFor2x2_v1'
+    workdir: 'run-spill-build'
+    cmd: './run_spill_build_fw.sh'
+
   - name: 'SimFor2x2_v1_LArND'
     repo: 'SimFor2x2_v1'
     workdir: 'run-larnd-sim'

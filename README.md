@@ -34,7 +34,7 @@ Likewise for the rock sim (5E14 POT/file):
 scripts/load_yaml.py specs/MiniRun1_1E19_RHC_rock_split4.yaml
 ```
 
-# Loading FireWorks
+# Loading FireWorks for edep-sim
 
 Load 5,120 neutrino FireWorks, each 2E15 POT, total 1E19 POT:
 
@@ -115,3 +115,13 @@ but if the Mongo DB server crashes, stale locks are in fact a possibility.
 
 For a very basic example of using `pymongo` to examine a failed job, see
 `notebooks/crash_check.ipynb`.
+
+# Spill building
+
+``` bash
+scripts/load_yaml.py specs/MiniRun1_1E19_RHC_spills.yaml
+
+scripts/fwsub.py --runner SimFor2x2_v1_SpillBuild --base-env MiniRun1_1E19_RHC_spills --size 5
+```
+
+Slurm job to be written, but it works when running rlaunch interactively.

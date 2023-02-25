@@ -27,7 +27,7 @@ mongo mongodb://arcubeprod_admin@mongodb05.nersc.gov/arcubeprod
 
 * Backup
 #+begin_src bash
-mongodump --uri=mongodb://arcubeprod_admin@mongodb05.nersc.gov/arcubeprod
+mongodump --uri=mongodb://arcubeprod_admin@mongodb05.nersc.gov/arcubeprod -o dump/dump.$(date -I)
 #+end_src
 Files will end up in the ~dump~ directory
 
