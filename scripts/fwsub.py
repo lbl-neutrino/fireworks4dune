@@ -43,7 +43,7 @@ def main():
         }
 
         if args.name:
-            spec['env']['ARCUBE_OUT_NAME'] = name
+            spec['env']['ARCUBE_OUT_NAME'] = args.name
 
         elif 'ARCUBE_OUT_NAME' not in base_env_dict['env']:
             spec['env']['ARCUBE_OUT_NAME'] = args.base_env
