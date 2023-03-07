@@ -31,7 +31,7 @@ def main():
     assert base_env_dict, \
         f'Base-env "{args.base_env}" must exist'
 
-    for index in range(args.start, args.size):
+    for index in range(args.start, args.start + args.size):
         spec = {
             'runner': args.runner,
             'base_env': args.base_env,
