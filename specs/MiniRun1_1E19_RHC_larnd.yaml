@@ -2,4 +2,4 @@ base_envs:
   - name: 'MiniRun1_1E19_RHC_larnd'
     env:
       ARCUBE_DK2NU_DIR: '/global/cfs/cdirs/dune/users/2x2EventGeneration/NuMI_dk2nu/newtarget-200kA_20220409'
-      ARCUBE_OUT_NAME: 'MiniRun1_1E19_RHC_larnd'
+      ARCUBE_SPILL_NAME: 'MiniRun1_1E19_RHC_larnd'
