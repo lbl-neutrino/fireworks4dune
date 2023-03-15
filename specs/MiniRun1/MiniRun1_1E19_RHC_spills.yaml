@@ -6,4 +6,3 @@ base_envs:
       ARCUBE_NU_POT: '2E15'
       ARCUBE_ROCK_POT: '5E14'
       ARCUBE_ROCK_NAME: 'MiniRun1_1E19_RHC_rock'
-      ARCUBE_OUT_NAME: 'MiniRun1_1E19_RHC_spills'

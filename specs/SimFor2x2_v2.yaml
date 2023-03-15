@@ -1,0 +1,25 @@
+repos:
+  - name: 'SimFor2x2_v2'
+    url: 'https://github.com/mjkramer/2x2_sim.git'
+    commit: '6af40a5'
+
+runners:
+  - name: 'SimFor2x2_v2_GenieEdep'
+    repo: 'SimFor2x2_v2'
+    workdir: 'run-edep-sim'
+    cmd: './run_edep_sim.sh'
+
+  - name: 'SimFor2x2_v2_SpillBuild'
+    repo: 'SimFor2x2_v2'
+    workdir: 'run-spill-build'
+    cmd: './run_spill_build.sh'
+
+  - name: 'SimFor2x2_v2_Convert2H5'
+    repo: 'SimFor2x2_v2'
+    workdir: 'run-convert2h5'
+    cmd: './run_convert2h5.sh'
+
+  - name: 'SimFor2x2_v2_LArND'
+    repo: 'SimFor2x2_v2'
+    workdir: 'run-larnd-sim'
+    cmd: './run_larnd_sim.sh'

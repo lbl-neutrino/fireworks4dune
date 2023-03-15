@@ -1,0 +1,9 @@
+base_envs:
+  - name: 'MiniRun2_1E19_RHC_spill'
+    env:
+      ARCUBE_CONTAINER: 'mjkramer/sim2x2:genie_edep.LFG_testing.20230228'
+      ARCUBE_DK2NU_DIR: '/global/cfs/cdirs/dune/users/2x2EventGeneration/NuMI_dk2nu/newtarget-200kA_20220409'
+      ARCUBE_NU_NAME: 'MiniRun2_1E19_RHC_nu'
+      ARCUBE_NU_POT: '5E14'
+      ARCUBE_ROCK_POT: '5E14'
+      ARCUBE_ROCK_NAME: 'MiniRun2_1E19_RHC_rock'
