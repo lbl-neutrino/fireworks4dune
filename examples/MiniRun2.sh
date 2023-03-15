@@ -34,7 +34,7 @@ rlaunch_to MiniRun2_1E19_RHC_spill singleshot
 
 scripts/fwsub.py --runner SimFor2x2_v2_Convert2H5 --base-env MiniRun2_1E19_RHC_convert2h5 --size 1
 
-rlaunch_to MiniRun2_1E19_RHC_convert singleshot
+rlaunch_to MiniRun2_1E19_RHC_convert2h5 singleshot
 
 
 scripts/fwsub.py --runner SimFor2x2_v2_LArND --base-env MiniRun2_1E19_RHC_larnd --size 1
