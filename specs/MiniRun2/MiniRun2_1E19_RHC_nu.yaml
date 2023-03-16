@@ -6,7 +6,7 @@ base_envs:
       ARCUBE_DET_LOCATION: 'ProtoDUNE-ND'
       ARCUBE_DK2NU_DIR: '/global/cfs/cdirs/dune/users/2x2EventGeneration/NuMI_dk2nu/newtarget-200kA_20220409'
       ARCUBE_EDEP_MAC: 'macros/2x2_beam.mac'
-      ARCUBE_EXPOSURE: '5E14'
+      ARCUBE_EXPOSURE: '1E15'
       ARCUBE_GEOM: 'geometry/Merged2x2MINERvA_v2/Merged2x2MINERvA_v2_noRock.gdml'
       ARCUBE_GEOM_EDEP: 'geometry/Merged2x2MINERvA_v2/Merged2x2MINERvA_v2_withRock.gdml'
       ARCUBE_TUNE: 'D22_22a_02_11b'

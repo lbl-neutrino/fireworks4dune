@@ -2,7 +2,7 @@
 #SBATCH --account=dune
 #SBATCH --qos=regular
 #SBATCH --constraint=cpu
-#SBATCH --time=2:00:00
+#SBATCH --time=4:00:00
 #SBATCH --ntasks-per-node=256
 
 name=MiniRun2_1E19_RHC_rock
