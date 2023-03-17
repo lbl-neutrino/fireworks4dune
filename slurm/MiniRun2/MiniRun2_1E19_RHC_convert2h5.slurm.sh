@@ -2,10 +2,12 @@
 #SBATCH --account=dune
 #SBATCH --qos=regular
 #SBATCH --constraint=cpu
-#SBATCH --time=4:00:00
+#SBATCH --time=1:00:00
 #SBATCH --ntasks-per-node=256
 
-name=MiniRun2_1E19_RHC_rock
+name=MiniRun2_1E19_RHC_convert2h5
+
+basedir=$PWD
 
 logdir=${SCRATCH}/logs.${name}/${SLURM_JOBID}
 mkdir -p "$logdir"
@@ -16,4 +18,4 @@ mkdir -p "$launchdir"
 cd "$launchdir" || exit
 
 srun -o "$logdir"/output-%j.%t.txt \
-    "$basedir"/scripts/run_rlaunch.sh "$name" singleshot
+    "$basedir"/scripts/run_rlaunch.sh "$name" rapidfire

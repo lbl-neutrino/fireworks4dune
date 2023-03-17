@@ -27,6 +27,8 @@ category: '$fworker_name'
 query: '{}'
 EOF
 
+sleep $((RANDOM % 60))
+
 rlaunch -w "$fworker_yaml" "${rlaunch_args[@]}" "$rlaunch_mode"
 
 rm $fworker_yaml
