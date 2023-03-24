@@ -1,7 +1,7 @@
 repos:
   - name: 'SimFor2x2_v2'
     url: 'https://github.com/mjkramer/2x2_sim.git'
-    commit: '0736068'
+    commit: '2cd5da5'
 
 runners:
   - name: 'SimFor2x2_v2_GenieEdep'
