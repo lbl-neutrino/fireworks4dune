@@ -50,7 +50,7 @@ def main():
                 'ARCUBE_OUT_NAME': out_name,
                 'ARCUBE_INDEX': str(index),
             },
-            '_fworker': args.worker,
+            # '_fworker': args.worker,
             '_category': args.worker,
         }
 
