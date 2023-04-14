@@ -15,6 +15,7 @@ scripts/fwsub.py --runner SimFor2x2_v3_Hadd --base-env MiniRun3_1E19_RHC.rock.ha
 scripts/fwsub.py --runner SimFor2x2_v3_SpillBuild --base-env MiniRun3_1E19_RHC.spill --size $spill_size --start $start
 scripts/fwsub.py --runner SimFor2x2_v3_Convert2H5 --base-env MiniRun3_1E19_RHC.convert2h5 --size $spill_size --start $start
 scripts/fwsub.py --runner SimFor2x2_v3_LArND --base-env MiniRun3_1E19_RHC.larnd --size $spill_size --start $start
+scripts/fwsub.py --runner SimFor2x2_v3_Flow --base-env MiniRun3_1E19_RHC.flow --size $spill_size --start $start
 
 logdir=$SCRATCH/job_logs.MiniRun3_1E19_RHC
 mkdir -p $logdir
@@ -32,3 +33,5 @@ sbatch -o $logdir/slurm-%j.txt --array=1-1 -N 4 slurm/MiniRun3/MiniRun3_1E19_RHC
 sbatch -o $logdir/slurm-%j.txt --array=1-1 -N 1 slurm/MiniRun3/MiniRun3_1E19_RHC.convert2h5.slurm.sh
 
 sbatch -o $logdir/slurm-%j.txt --array=1-12 -N 4 slurm/MiniRun3/MiniRun3_1E19_RHC.larnd.slurm.sh
+
+sbatch -o $logdir/slurm-%j.txt --array=1-1 -N 1 slurm/MiniRun3/MiniRun3_1E19_RHC.flow.slurm.sh
