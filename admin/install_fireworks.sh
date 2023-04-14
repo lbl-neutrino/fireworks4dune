@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -o errexit
+
 module load python              # 3.9-anaconda-2021.11
 module load mongodb
 
@@ -10,7 +12,14 @@ source fw.venv/bin/activate
 
 pip install -U pip wheel setuptools
 
-pip install 'FireWorks[rtransfer,newt,daemon_mode,flask-plotting,workflow-checks,graph-plotting]'
+# pip install 'FireWorks[rtransfer,newt,daemon_mode,flask-plotting,workflow-checks,graph-plotting]'
+
+# rm -rf fireworks
+git clone https://github.com/lbl-neutrino/fireworks.git
+pushd fireworks
+# editable install doesn't work for fireworks atm
+pip install ".[rtransfer,newt,daemon_mode,flask-plotting,workflow-checks,graph-plotting]"
+popd
 
 # these should be automatically installed b/c of the [extras] above
 # pip install matplotlib  # (only needed for seeing visual report plots in web gui!)

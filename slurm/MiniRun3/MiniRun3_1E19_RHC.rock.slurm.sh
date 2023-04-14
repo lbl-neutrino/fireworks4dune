@@ -5,7 +5,7 @@
 #SBATCH --time=4:00:00
 #SBATCH --ntasks-per-node=256
 
-name=MiniRun2_1E19_RHC_rock
+name=MiniRun3_1E19_RHC.rock
 
 basedir=$PWD
 

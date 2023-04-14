@@ -1,7 +1,6 @@
 authsource: arcubeprod
 host: mongodb05.nersc.gov
 logdir: null
-mongoclient_kwargs: {}
 name: arcubeprod
 password: CHANGEME
 port: 27017
@@ -10,3 +9,8 @@ uri_mode: false
 user_indices: []
 username: arcubeprod_admin
 wf_user_indices: []
+mongoclient_kwargs:
+  timeoutMS: 0
+  socketTimeoutMS: 0
+  connectTimeoutMS: 0
+  serverSelectionTimeoutMS: 999999999
