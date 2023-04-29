@@ -18,6 +18,9 @@ scripts/fwsub.py --runner SimFor2x2_v3_LArND --base-env MiniRun3_1E19_RHC.larnd 
 scripts/fwsub.py --runner SimFor2x2_v3_Flow --base-env MiniRun3_1E19_RHC.flow --size $spill_size --start $start
 scripts/fwsub.py --runner SimFor2x2_v3_Plots --base-env MiniRun3_1E19_RHC.plots --size $spill_size --start $start
 
+scripts/fwsub.py --runner SimFor2x2_v3_Flow --base-env MiniRun3_1E19_RHC.flow_v2 --size $spill_size --start $start
+scripts/fwsub.py --runner SimFor2x2_v3_Flow --base-env MiniRun3_1E19_RHC.flow_v3 --size $spill_size --start $start
+
 logdir=$SCRATCH/job_logs.MiniRun3_1E19_RHC
 mkdir -p $logdir
 
@@ -37,4 +40,10 @@ sbatch -o $logdir/slurm-%j.txt --array=1-12 -N 4 slurm/MiniRun3/MiniRun3_1E19_RH
 
 sbatch -o $logdir/slurm-%j.txt --array=1-1 -N 1 slurm/MiniRun3/MiniRun3_1E19_RHC.flow.slurm.sh
 
-sbatch -o $logdir/slurm-%j.txt --array=1-1 -N 4 slurm/MiniRun3/MiniRun3_1E19_RHC.plots.slurm.sh
+sbatch -t 180 -o $logdir/slurm-%j.txt --array=1-1 -N 4 slurm/MiniRun3/MiniRun3_1E19_RHC.plots.slurm.sh
+
+sbatch -o $logdir/slurm-%j.txt --array=1-1 -N 1 slurm/MiniRun3/MiniRun3_1E19_RHC.flow_v2.slurm.sh
+
+sbatch -o $logdir/slurm-%j.txt --array=1-3 -N 4 slurm/MiniRun3/MiniRun3_1E19_RHC.flow_v3.slurm.sh
+
+# XXX remember lpad tuneup --full
