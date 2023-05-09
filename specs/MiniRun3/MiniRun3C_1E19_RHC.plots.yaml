@@ -1,0 +1,6 @@
+base_envs:
+  - name: 'MiniRun3C_1E19_RHC.plots'
+    env:
+      ARCUBE_EDEP_NAME: 'MiniRun3_1E19_RHC.convert2h5_v2'
+      ARCUBE_LARND_NAME: 'MiniRun3_1E19_RHC.larnd_v2'
+      ARCUBE_FLOW_NAME: 'MiniRun3_1E19_RHC.flow_v5'

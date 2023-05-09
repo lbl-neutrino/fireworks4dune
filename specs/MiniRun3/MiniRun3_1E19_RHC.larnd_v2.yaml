@@ -1,0 +1,4 @@
+base_envs:
+  - name: 'MiniRun3_1E19_RHC.larnd_v2'
+    env:
+      ARCUBE_CONVERT2H5_NAME: 'MiniRun3_1E19_RHC.convert2h5_v2'
