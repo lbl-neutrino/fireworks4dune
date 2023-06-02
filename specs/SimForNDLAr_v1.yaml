@@ -1,0 +1,32 @@
+repos:
+  - name: 'SimForNDLAr_v1'
+    url: 'https://github.com/mjkramer/2x2_sim.git'
+    # This will need to change if we make changes to 2x2_sim. 
+    commit: '5a6fc55af16ba3a1a597e0ad26ae5dec17e10169' # MiniRun3 tag
+
+runners:
+  - name: 'SimForNDLAr_v1_GenieEdep'
+    repo: 'SimForNDLAr_v1'
+    workdir: 'run-edep-sim'
+    cmd: './run_edep_sim.sh'
+
+  - name: 'SimForNDLAr_v1_Hadd'
+    repo: 'SimForNDLAr_v1'
+    workdir: 'run-hadd'
+    cmd: './run_hadd.sh'
+
+  - name: 'SimForNDLAr_v1_SpillBuild'
+    repo: 'SimForNDLAr_v1'
+    workdir: 'run-spill-build'
+    cmd: './run_spill_build.sh'
+
+  - name: 'SimForNDLAr_v1_Convert2H5'
+    repo: 'SimForNDLAr_v1'
+    workdir: 'run-convert2h5'
+    cmd: './run_convert2h5.sh'
+
+  - name: 'SimForNDLAr_v1_LArND'
+    repo: 'SimForNDLAr_v1'
+    workdir: 'run-larnd-sim'
+    cmd: './run_larnd_sim.sh'
+

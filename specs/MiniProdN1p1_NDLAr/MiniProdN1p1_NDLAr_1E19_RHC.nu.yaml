@@ -1,0 +1,17 @@
+base_envs:
+  - name: 'MiniProdN1p1_NDLAr_1E19_RHC.nu'
+    env:
+      # TODO Switch out the container if needs be.
+      ARCUBE_CONTAINER: 'mjkramer/sim2x2:genie_edep.LFG_testing.20230228.v2'
+      ARCUBE_CHERRYPICK: '0'
+      # TODO Is this distance from the beam? 
+      ARCUBE_DET_LOCATION: 'ProtoDUNE-ND'
+      ARCUBE_DK2NU_DIR: '/global/cfs/cdirs/dune/users/2x2EventGeneration/NuMI_dk2nu/newtarget-200kA_20220409'
+      ARCUBE_EDEP_MAC: 'macros/2x2_beam.mac'
+      ARCUBE_EXPOSURE: '1E15'
+      # TODO NDLAr on it's own. This is assuming top directory is 2x2_sim, do we actually want to put none 2x2 geometries in here? 
+      ARCUBE_GEOM: 'geometry/Merged2x2MINERvA_v2/Merged2x2MINERvA_v2_noRock.gdml'
+      # TODO NDLAr + rock. This is assuming top directory is 2x2_sim, do we actually want to put none 2x2 geometries in here? 
+      ARCUBE_GEOM_EDEP: 'geometry/Merged2x2MINERvA_v2/Merged2x2MINERvA_v2_withRock.gdml'
+      ARCUBE_TUNE: 'D22_22a_02_11b'
+      ARCUBE_XSEC_FILE: '/global/cfs/cdirs/dune/users/2x2EventGeneration/inputs/NuMI/D22_22a_02_11b.all.LFG_testing.20230228.spline.xml'
