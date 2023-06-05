@@ -1,7 +1,7 @@
 repos:
   - name: 'SimForNDLAr_v1'
     url: 'https://github.com/mjkramer/2x2_sim.git'
-    # This will need to change if we make changes to 2x2_sim. 
+    # TODO This will need to change if we make changes to 2x2_sim. 
     commit: '5a6fc55af16ba3a1a597e0ad26ae5dec17e10169' # MiniRun3 tag
 
 runners:
