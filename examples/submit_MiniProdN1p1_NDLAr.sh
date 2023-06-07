@@ -19,15 +19,15 @@ scripts/fwsub.py --runner SimForNDLAr_v1_SpillBuild --base-env MiniProdN1p1_NDLA
 scripts/fwsub.py --runner SimForNDLAr_v1_Convert2H5 --base-env MiniProdN1p1_NDLAr_1E19_RHC.convert2h5 --size $spill_size --start $start
 scripts/fwsub.py --runner SimForNDLAr_v1_LArND --base-env MiniProdN1p1_NDLAr_1E19_RHC.larnd --size $spill_size --start $start
 
-sbatch -o $logdir/slurm-%j.txt --array=1-10 -N 4 slurm/MiniProdN1p1_NDLAr/MiniProdN1p1_NDLAr_1E19_RHC.rock.slurm.sh
-sbatch -o $logdir/slurm-%j.txt --array=1-2 -N 1 slurm/MiniProdN1p1_NDLAr/MiniProdN1p1_NDLAr_1E19_RHC.nu.slurm.sh
+sbatch -o ${logdir:-.}/slurm-%j.txt --array=1-10 -N 4 slurm/fw_cpu.slurm.sh MiniProdN1p1_NDLAr_1E19_RHC.rock rapidfire
+sbatch -o ${logdir:-.}/slurm-%j.txt --array=1-2 -N 1 slurm/fw_cpu.slurm.sh MiniProdN1p1_NDLAr_1E19_RHC.nu rapidfire
 
-sbatch -o $logdir/slurm-%j.txt --array=1-1 -N 1 slurm/MiniProdN1p1_NDLAr/MiniProdN1p1_NDLAr_1E19_RHC.nu.hadd.slurm.sh
-sbatch -o $logdir/slurm-%j.txt --array=1-1 -N 1 slurm/MiniProdN1p1_NDLAr/MiniProdN1p1_NDLAr_1E19_RHC.rock.hadd.slurm.sh
+sbatch -o ${logdir:-.}/slurm-%j.txt --array=1-1 -N 1 slurm/fw_cpu.slurm.sh MiniProdN1p1_NDLAr_1E19_RHC.nu.hadd rapidfire
+sbatch -o ${logdir:-.}/slurm-%j.txt --array=1-1 -N 1 slurm/fw_cpu.slurm.sh MiniProdN1p1_NDLAr_1E19_RHC.rock.hadd rapidfire
 
-sbatch -o $logdir/slurm-%j.txt --array=1-1 -N 4 slurm/MiniProdN1p1_NDLAr/MiniProdN1p1_NDLAr_1E19_RHC.spill.slurm.sh
+sbatch -o ${logdir:-.}/slurm-%j.txt --array=1-1 -N 4 slurm/fw_cpu.slurm.sh MiniProdN1p1_NDLAr_1E19_RHC.spill rapidfire
 
-sbatch -o $logdir/slurm-%j.txt --array=1-1 -N 1 slurm/MiniProdN1p1_NDLAr/MiniProdN1p1_NDLAr_1E19_RHC.convert2h5.slurm.sh
+sbatch -o ${logdir:-.}/slurm-%j.txt --array=1-1 -N 1 slurm/fw_cpu.slurm.sh MiniProdN1p1_NDLAr_1E19_RHC.convert2h5 rapidfire
 
-sbatch -o $logdir/slurm-%j.txt --array=1-12 -N 4 slurm/MiniProdN1p1_NDLAr/MiniProdN1p1_NDLAr_1E19_RHC.larnd.slurm.sh
+sbatch -o ${logdir:-.}/slurm-%j.txt --array=1-12 -N 4 slurm/fw_gpu.slurm.sh MiniProdN1p1_NDLAr_1E19_RHC.larnd rapidfire --timeout $((60*40))
 
