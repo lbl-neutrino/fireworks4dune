@@ -1,11 +1,12 @@
 base_envs:
   - name: 'MiniProdN1p1_NDLAr_1E19_RHC.nu'
     env:
-      # TODO Switch out the container if needs be.
+      # TODO new DUNE base model (and a new GENIE build). ARCUBE_CONTAINER and ARCUBE_TUNE will change.
       ARCUBE_CONTAINER: 'mjkramer/sim2x2:genie_edep.LFG_testing.20230228.v2'
       ARCUBE_CHERRYPICK: '0'
       # TODO Is this distance from the beam? Will be DUNEND I think. 
       ARCUBE_DET_LOCATION: 'ProtoDUNE-ND'
+      # TODO Need the LBNF flux.
       ARCUBE_DK2NU_DIR: '/global/cfs/cdirs/dune/users/2x2EventGeneration/NuMI_dk2nu/newtarget-200kA_20220409'
       ARCUBE_EDEP_MAC: 'macros/2x2_beam.mac'
       ARCUBE_EXPOSURE: '1E15'
@@ -14,5 +15,6 @@ base_envs:
       # TODO Not set on this file path. 
       ARCUBE_GEOM_EDEP: 'geometry/ND_Production/nd_hall_with_lar_tms_sand.gdml'
       ARCUBE_TOP_VOLUME: 'volArgonCubeActive'
+      # TODO new DUNE base model (and a new GENIE build). ARCUBE_CONTAINER and ARCUBE_TUNE will change.
       ARCUBE_TUNE: 'D22_22a_02_11b'
       ARCUBE_XSEC_FILE: '/global/cfs/cdirs/dune/users/2x2EventGeneration/inputs/NuMI/D22_22a_02_11b.all.LFG_testing.20230228.spline.xml'
