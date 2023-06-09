@@ -18,3 +18,4 @@ base_envs:
       # TODO new DUNE base model (and a new GENIE build). ARCUBE_CONTAINER and ARCUBE_TUNE will change.
       ARCUBE_TUNE: 'D22_22a_02_11b'
       ARCUBE_XSEC_FILE: '/global/cfs/cdirs/dune/users/2x2EventGeneration/inputs/NuMI/D22_22a_02_11b.all.LFG_testing.20230228.spline.xml'
+      ARCUBE_ZMIN: '-500'
