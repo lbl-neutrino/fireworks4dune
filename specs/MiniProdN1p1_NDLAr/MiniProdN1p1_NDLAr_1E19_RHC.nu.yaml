@@ -4,8 +4,7 @@ base_envs:
       # TODO new DUNE base model (and a new GENIE build). ARCUBE_CONTAINER and ARCUBE_TUNE will change.
       ARCUBE_CONTAINER: 'mjkramer/sim2x2:genie_edep.LFG_testing.20230228.v2'
       ARCUBE_CHERRYPICK: '0'
-      # TODO Is this distance from the beam? Will be DUNEND I think. 
-      ARCUBE_DET_LOCATION: 'ProtoDUNE-ND'
+      ARCUBE_DET_LOCATION: 'DUNEND'
       # TODO Need the LBNF flux.
       ARCUBE_DK2NU_DIR: '/global/cfs/cdirs/dune/users/2x2EventGeneration/NuMI_dk2nu/newtarget-200kA_20220409'
       ARCUBE_EDEP_MAC: 'macros/2x2_beam.mac'
