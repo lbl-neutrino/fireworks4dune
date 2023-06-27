@@ -2,9 +2,21 @@
 
 import os
 from subprocess import check_call
+import traceback
 
 from fireworks.core.firework import FiretaskBase, FWAction
 from fireworks.core.launchpad import LaunchPad
+
+
+class RepoRunnerException(Exception):
+    def __init__(self, data):
+        self.tb = traceback.format_exc()
+        self.data = data
+
+    # called by rocket.run
+    def to_dict(self):
+        return {'stacktrace': self.tb,
+                'data': self.data}
 
 
 class RepoRunner(FiretaskBase):
@@ -40,11 +52,18 @@ class RepoRunner(FiretaskBase):
         repodir = os.path.join(os.environ['FW4DUNE_REPO_DIR'], reponame)
         assert os.path.exists(repodir)
 
-        # here we go!
-        check_call(runner['cmd'],
-                   shell=True,
-                   cwd=os.path.join(repodir, runner['workdir']),
-                   env=env)
+        # e.g. for ease of looking up log files
+        slurm_vars = ['SLURM_JOB_ID', 'SLURM_ARRAY_JOB_ID',
+                      'SLURM_ARRAY_TASK_ID', 'SLURM_NODEID', 'SLURM_LOCALID']
+        slurm_data = {v: os.getenv(v, default='') for v in slurm_vars}
 
-        # TODO record the slurm job / task ID
-        return FWAction()
+        # here we go!
+        try:
+            check_call(runner['cmd'],
+                       shell=True,
+                       cwd=os.path.join(repodir, runner['workdir']),
+                       env=env)
+        except:
+            raise RepoRunnerException(slurm_data)
+
+        return FWAction(stored_data=slurm_data)
