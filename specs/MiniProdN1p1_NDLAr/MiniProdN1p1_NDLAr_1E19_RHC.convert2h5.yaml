@@ -1,6 +1,5 @@
 base_envs:
   - name: 'MiniProdN1p1_NDLAr_1E19_RHC.convert2h5'
     env:
-      # TODO new DUNE base model (and a new GENIE build). ARCUBE_CONTAINER and ARCUBE_TUNE will change.
-      ARCUBE_CONTAINER: 'mjkramer/sim2x2:genie_edep.LFG_testing.20230228.v2'
+      ARCUBE_CONTAINER: 'mjkramer/sim2x2:genie_edep.3_04_00.20230620'
       ARCUBE_SPILL_NAME: 'MiniProdN1p1_NDLAr_1E19_RHC.spill'
