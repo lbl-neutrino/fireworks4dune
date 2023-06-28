@@ -59,13 +59,24 @@ sbatch -o ${logdir:-.}/slurm-%j.txt --array=1-1 -N 2 -t 60 slurm/fw_cpu.slurm.sh
 sbatch -o ${logdir:-.}/slurm-%j.txt --array=1-12 -N 4 slurm/fw_gpu.slurm.sh MiniRun3_1E19_RHC.larnd_v2 rapidfire --timeout $((60*40))
 
 scripts/load_yaml.py specs/MiniRun3/MiniRun3_1E19_RHC.flow_v5.yaml
-
 scripts/fwsub.py --runner SimFor2x2_v3_Flow --base-env MiniRun3_1E19_RHC.flow_v5 --size $spill_size --start $start
-
 sbatch -o ${logdir:-.}/slurm-%j.txt --array=1-1 -N 4 slurm/fw_cpu.slurm.sh MiniRun3_1E19_RHC.flow_v5 rapidfire
 
 scripts/load_yaml.py specs/MiniRun3/MiniRun3C_1E19_RHC.plots.yaml
 scripts/fwsub.py --runner SimFor2x2_v3_Plots --base-env MiniRun3C_1E19_RHC.plots --size $spill_size --start $start
 sbatch -o ${logdir:-.}/slurm-%j.txt --array=1-1 -N 4 -t 120 slurm/fw_cpu.slurm.sh MiniRun3C_1E19_RHC.plots rapidfire
+
+scripts/load_yaml.py specs/MiniRun3/MiniRun3_1E19_RHC.flow_v6.yaml
+scripts/fwsub.py --runner SimFor2x2_v3_Flow --base-env MiniRun3_1E19_RHC.flow_v6 --size $spill_size --start $start
+sbatch -o ${logdir:-.}/slurm-%j.txt --array=1-1 -N 4 slurm/fw_cpu.slurm.sh MiniRun3_1E19_RHC.flow_v6 rapidfire
+
+scripts/load_yaml.py specs/MiniRun3/MiniRun3D_1E19_RHC.plots.yaml
+scripts/fwsub.py --runner SimFor2x2_v3_Plots --base-env MiniRun3D_1E19_RHC.plots --size $spill_size --start $start
+sbatch -o ${logdir:-.}/slurm-%j.txt --array=1-1 -N 4 -t 60 slurm/fw_cpu.slurm.sh MiniRun3D_1E19_RHC.plots rapidfire
+
+scripts/load_yaml.py specs/MiniRun3/MiniRun3_1E19_RHC.convert2h5_v3.yaml
+scripts/fwsub.py --runner SimFor2x2_v3_Convert2H5 --base-env MiniRun3_1E19_RHC.convert2h5_v3 --size $spill_size --start $start
+sbatch -o ${logdir:-.}/slurm-%j.txt --array=1-1 -N 2 -t 60 slurm/fw_cpu.slurm.sh MiniRun3_1E19_RHC.convert2h5_v3 rapidfire
+
 
 # remember: lpad admin tuneup --full

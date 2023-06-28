@@ -48,6 +48,17 @@ Load 20,480 rock Fireworks, each 5E14 POT, total 1E19 POT:
 scripts/fwsub_edep.py --runner SimFor2x2_v1_GenieEdep --base-env MiniRun1_1E19_RHC_rock_split4 --size 20480
 ```
 
+To (hopefully) speed up the Mongo database in order to help jobs launch more
+smoothly, you can then do:
+
+``` bash
+lpad admin tuneup --full
+```
+
+The FireWorks docs say that the full tuneup should only be done when no jobs are
+running, but on any recent Mongo release it's "probably" fine to disregard that
+advice.
+
 # Submitting workers
 
 On Perlmutter:
@@ -68,6 +79,15 @@ sbatch --array=1-16 -C haswell -N 20 -t 3:00:00 --ntasks-per-node=64 wrappers/ed
 
 Nodes-per-job and job array size can be tuned according to the queue wait plot
 in MyNERSC (not available for Perlmutter yet).
+
+# Checking the status of your FireWorks
+
+To see how many are in each state (READY, RUNNING, FIZZLED, etc.):
+
+``` bash
+scripts/dump_status.py MiniRun1_1E19_RHC_nu
+```
+
 
 # Dealing with failures
 

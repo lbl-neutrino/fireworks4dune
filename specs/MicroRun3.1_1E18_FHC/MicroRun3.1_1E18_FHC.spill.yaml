@@ -1,0 +1,8 @@
+base_envs:
+  - name: 'MicroRun3.1_1E18_FHC.spill'
+    env:
+      ARCUBE_CONTAINER: 'mjkramer/sim2x2:genie_edep.3_04_00.20230620'
+      ARCUBE_NU_NAME: 'MicroRun3.1_1E18_FHC.nu.hadd'
+      ARCUBE_NU_POT: '4E15'
+      ARCUBE_ROCK_NAME: 'MicroRun3.1_1E18_FHC.rock.hadd'
+      ARCUBE_ROCK_POT: '4E15'

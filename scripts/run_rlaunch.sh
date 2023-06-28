@@ -27,7 +27,9 @@ category: '$fworker_name'
 query: '{}'
 EOF
 
-# sleep $((RANDOM % 60))
+if [[ -n "$FW4DUNE_SLEEP_SEC" ]]; then
+    sleep $((RANDOM % FW4DUNE_SLEEP_SEC))
+fi
 
 rlaunch -w "$fworker_yaml" "$rlaunch_mode" "${rlaunch_args[@]}"
 
