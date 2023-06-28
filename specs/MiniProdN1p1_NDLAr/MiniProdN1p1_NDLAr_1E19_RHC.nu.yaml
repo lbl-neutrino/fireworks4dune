@@ -12,4 +12,4 @@ base_envs:
       ARCUBE_GEOM_EDEP: '/cvmfs/dune.opensciencegrid.org/products/dune/ND_Production/v01_05_00/gdml/nd_hall_with_lar_tms_sand.gdml'
       ARCUBE_TOP_VOLUME: 'volArgonCubeActive'
       ARCUBE_TUNE: 'AR23_20i_00_000'
-      ARCUBE_XSEC_FILE: '/global/cfs/cdirs/dune/users/2x2EventGeneration/inputs/NuMI/D22_22a_02_11b.all.LFG_testing.20230228.spline.xml'
+      ARCUBE_XSEC_FILE: '/dvs_ro/cfs/cdirs/dune/users/2x2EventGeneration/inputs/NuMI/genie_xsec-3.04.00-noarch-AR2320i00000-k250-e1000/v3_04_00/NULL/AR2320i00000-k250-e1000/data/gxspl-NUsmall.xml'
