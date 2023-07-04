@@ -5,7 +5,7 @@ base_envs:
       ARCUBE_CHERRYPICK: '0'
       ARCUBE_DET_LOCATION: 'DUNEND'
       ARCUBE_DK2NU_DIR: '/dvs_ro/cfs/cdirs/dune/users/abooth/Flux/g4lbne/v3r5p4/QGSP_BERT/OptimizedEngineeredNov2017/antineutrino/flux'
-      ARCUBE_EDEP_MAC: 'macros/2x2_beam.mac'
+      ARCUBE_EDEP_MAC: 'macros/dune-nd.mac'
       ARCUBE_EXPOSURE: '1E15'
       ARCUBE_GEOM: '/dvs_ro/cfs/cdirs/dune/users/abooth/gdml/nd_hall_with_lar_tms_sand.gdml'
       ARCUBE_GEOM_EDEP: '/dvs_ro/cfs/cdirs/dune/users/abooth/gdml/nd_hall_with_lar_tms_sand.gdml'
