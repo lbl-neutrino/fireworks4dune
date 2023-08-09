@@ -1,7 +1,7 @@
 repos:
   - name: 'SimForNDLAr_v1'
     url: 'https://github.com/mjkramer/2x2_sim.git'
-    # TODO This will need to change if we make changes to 2x2_sim. 
+    # TODO This will need to be changes before we run in full. 
     commit: 'a53280ac333e40bcfac784efa54b1926a3e97356' # Most recent commit on feature/abooth_miniprodn1p1_ndlar_geom
 
 runners:
