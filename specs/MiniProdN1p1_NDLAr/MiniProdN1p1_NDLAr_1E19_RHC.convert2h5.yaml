@@ -3,4 +3,5 @@ base_envs:
     env:
       ARCUBE_CONTAINER: 'mjkramer/sim2x2:genie_edep.3_04_00.20230620'
       ARCUBE_CONTAINER_NAME: 'TPCActive_shape'
+      ARCUBE_KEEP_ALL_DETS: '0'
       ARCUBE_SPILL_NAME: 'MiniProdN1p1_NDLAr_1E19_RHC.spill'
