@@ -1,0 +1,9 @@
+base_envs:
+  - name: 'MiniProdN1p1_NDLAr_1E19_RHC.spill'
+    env:
+      ARCUBE_CONTAINER: 'mjkramer/sim2x2:genie_edep.3_04_00.20230620'
+      ARCUBE_NU_NAME: 'MiniProdN1p1_NDLAr_1E19_RHC.nu.hadd'
+      ARCUBE_NU_POT: '1E16'
+      ARCUBE_ROCK_NAME: 'MiniProdN1p1_NDLAr_1E19_RHC.rock.hadd'
+      ARCUBE_ROCK_POT: '1E16'
+      ARCUBE_SPILL_POT: '7.5E13'
