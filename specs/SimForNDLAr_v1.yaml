@@ -1,7 +1,7 @@
 repos:
   - name: 'SimForNDLAr_v1'
     url: 'https://github.com/mjkramer/2x2_sim.git'
-    commit: '7c89fd3bce437e5f5b2360910fb6808d7ff1c85d' # Commit corresponding to tag MiniProdN1p1-v1r2.
+    commit: 'c92d6662a3c5d69f985356b281552f6ed00fd3f1' # Commit corresponding to tag MiniProdN1p1-v1r3.
 
 runners:
   - name: 'SimForNDLAr_v1_GenieEdep'
