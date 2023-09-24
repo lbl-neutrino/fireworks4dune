@@ -15,10 +15,10 @@ def main():
     db = lpad.connection[lpad.name]
     fws = db['fireworks']
 
-    status = {s: fws.count_documents({'name': args.name, 'state': s})
-              for s in Firework.STATE_RANKS.keys()}
-
-    pprint.pp(status)
+    for s in Firework.STATE_RANKS.keys():
+        print(f'{s}: ', end='', flush=True)
+        n = fws.count_documents({'name': args.name, 'state': s})
+        print(n, flush=True)
 
 
 if __name__ == '__main__':
