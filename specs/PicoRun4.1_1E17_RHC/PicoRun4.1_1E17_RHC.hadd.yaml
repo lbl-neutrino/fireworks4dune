@@ -1,0 +1,11 @@
+base_envs:
+  - name: 'PicoRun4.1_1E17_RHC.nu.hadd'
+    env:
+      ARCUBE_CONTAINER: 'mjkramer/sim2x2:genie_edep.3_04_00.20230912'
+      ARCUBE_IN_NAME: 'PicoRun4.1_1E17_RHC.nu'
+      ARCUBE_HADD_FACTOR: '10'
+  - name: 'PicoRun4.1_1E17_RHC.rock.hadd'
+    env:
+      ARCUBE_CONTAINER: 'mjkramer/sim2x2:genie_edep.3_04_00.20230912'
+      ARCUBE_IN_NAME: 'PicoRun4.1_1E17_RHC.rock'
+      ARCUBE_HADD_FACTOR: '10'
