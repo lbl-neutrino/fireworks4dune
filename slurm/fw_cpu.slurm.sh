@@ -18,5 +18,5 @@ launchdir=${SCRATCH}/launchers.${name}
 mkdir -p "$launchdir"
 cd "$launchdir" || exit
 
-srun -o "$logdir"/output-%j.%t.txt \
+srun -o "$logdir"/output-%j.%t.txt --kill-on-bad-exit=0 \
     "$basedir"/scripts/run_rlaunch.sh "$name" "${rlaunch_args[@]}"
