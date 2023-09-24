@@ -20,27 +20,30 @@ scripts/fwsub.py --runner SimFor2x2_v3_Hadd --base-env "$name".nu.hadd --size $s
 scripts/fwsub.py --runner SimFor2x2_v3_Hadd --base-env "$name".rock.hadd --size $spill_size --start $start
 scripts/fwsub.py --runner SimFor2x2_v3_SpillBuild --base-env "$name".spill --size $spill_size --start $start
 scripts/fwsub.py --runner SimFor2x2_v3_Convert2H5 --base-env "$name".convert2h5 --size $spill_size --start $start
-scripts/fwsub.py --runner SimFor2x2_v3_LArND --base-env "$name".larnd --size $spill_size --start $start
+scripts/fwsub.py --runner SimFor2x2_v3_LArND --base-env "$name".larnd --name "$name".larnd --size $spill_size --start $start
 scripts/fwsub.py --runner SimFor2x2_v3_Flow --base-env "$name".flow --size $spill_size --start $start
 scripts/fwsub.py --runner SimFor2x2_v3_Plots --base-env "$name".plots --size $spill_size --start $start
+scripts/fwsub.py --runner SimFor2x2_v3_Plots --base-env "$name".plots --size 1 --start 0
 
 lpad admin tuneup --full
 
-sbatch -o "$logdir"/slurm-%j.txt --array=1-10 -N 4 -t 120 slurm/fw_cpu.slurm.sh "$name".rock singleshot
 sbatch -o "$logdir"/slurm-%j.txt --array=1-2 -N 1 slurm/fw_cpu.slurm.sh "$name".nu rapidfire
+# 45-150 minutes each:
+sbatch -o "$logdir"/slurm-%j.txt --array=1-10 -N 4 -t 180 slurm/fw_cpu.slurm.sh "$name".rock singleshot
 # bad: 22878
 
 sbatch -o "$logdir"/slurm-%j.txt --array=1-1 -N 1 slurm/fw_cpu.slurm.sh "$name".nu.hadd rapidfire
 sbatch -o "$logdir"/slurm-%j.txt --array=1-1 -N 1 slurm/fw_cpu.slurm.sh "$name".rock.hadd rapidfire
 
 # took an hour
-sbatch -o "$logdir"/slurm-%j.txt --array=1-1 -N 4 slurm/fw_cpu.slurm.sh "$name".spill rapidfire
+sbatch -o "$logdir"/slurm-%j.txt --array=1-1 -N 4 -t 90 slurm/fw_cpu.slurm.sh "$name".spill rapidfire
 
 # took 15 minutes
 sbatch -o "$logdir"/slurm-%j.txt --array=1-1 -N 1 slurm/fw_cpu.slurm.sh "$name".convert2h5 rapidfire
 
 sbatch -o "$logdir"/slurm-%j.txt --array=1-12 -N 4 slurm/fw_gpu.slurm.sh "$name".larnd rapidfire
 
-sbatch -o "$logdir"/slurm-%j.txt --array=1-1 -N 1 slurm/fw_cpu.slurm.sh "$name".flow rapidfire
+sbatch -o "$logdir"/slurm-%j.txt --ntasks-per-node=128 --array=1-8 -N 1 -t 120 --no-kill slurm/fw_cpu.slurm.sh "$name".flow rapidfire
 
 sbatch -t 180 -o "$logdir"/slurm-%j.txt --array=1-1 -N 4 slurm/fw_cpu.slurm.sh "$name".plots rapidfire
+sbatch -t 60 -o "$logdir"/slurm-%j.txt --array=1-1 -N 4 --ntasks-per-node=128 slurm/fw_cpu.slurm.sh "$name".plots rapidfire
