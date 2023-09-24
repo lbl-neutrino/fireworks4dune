@@ -53,7 +53,7 @@ class RepoRunner(FiretaskBase):
         assert os.path.exists(repodir)
 
         # e.g. for ease of looking up log files
-        slurm_vars = ['SLURM_JOB_ID', 'SLURM_ARRAY_JOB_ID',
+        slurm_vars = ['SLURM_JOB_ID', 'SLURM_ARRAY_JOB_ID', 'SLURM_NTASKS_PER_NODE',
                       'SLURM_ARRAY_TASK_ID', 'SLURM_NODEID', 'SLURM_LOCALID']
         slurm_data = {v: os.getenv(v, default='') for v in slurm_vars}
 
