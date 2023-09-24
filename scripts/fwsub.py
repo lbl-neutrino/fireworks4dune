@@ -13,7 +13,7 @@ def main():
     ap.add_argument('--runner', required=True)
     ap.add_argument('--base-env', required=True)
     ap.add_argument('--name', help='Output dir; defaults to base_env.ARCUBE_OUT_NAME if available; otherwise --base-env')
-    ap.add_argument('--worker', help='Controls which workers can produce these files; defaults to base_env.name if the two are distinct; otherwise base_env')
+    ap.add_argument('--worker', help='Controls which workers can produce these files; defaults to --name')
     ap.add_argument('--size', type=int, default=1, help='Number of files to produce')
     ap.add_argument('--start', type=int, default=0, help='Starting index of output files')
     args = ap.parse_args()
@@ -37,10 +37,9 @@ def main():
         out_name = args.base_env
 
     if args.worker is None:
-        if args.name is None or args.name == args.base_env:
+        args.worker = args.name
+        if args.worker is None:
             args.worker = args.base_env
-        else:
-            args.worker = f'{args.base_env}.{args.name}'
 
     for index in range(args.start, args.start + args.size):
         spec = {
