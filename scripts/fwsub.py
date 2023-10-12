@@ -41,13 +41,15 @@ def main():
         if args.worker is None:
             args.worker = args.base_env
 
+    var_prefix = "ARCUBE_"
+    if 'ND_Production' in args.runner: var_prefix = "ND_PRODUCTION_"
     for index in range(args.start, args.start + args.size):
         spec = {
             'runner': args.runner,
             'base_env': args.base_env,
             'env': {
-                'ARCUBE_OUT_NAME': out_name,
-                'ARCUBE_INDEX': str(index),
+                var_prefix+'OUT_NAME': out_name,
+                var_prefix+'INDEX': str(index),
             },
             # '_fworker': args.worker,
             '_category': args.worker,

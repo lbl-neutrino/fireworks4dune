@@ -9,6 +9,8 @@ base_envs:
       ARCUBE_EXPOSURE: '1E15'
       ARCUBE_GEOM: '/dvs_ro/cfs/cdirs/dune/users/abooth/gdml/nd_hall_with_lar_tms_sand.gdml'
       ARCUBE_GEOM_EDEP: '/dvs_ro/cfs/cdirs/dune/users/abooth/gdml/nd_hall_with_lar_tms_sand.gdml'
+      ARCUBE_OUTDIR_BASE: '/pscratch/sd/a/abooth/MiniProdN1p1-v1r1'
       ARCUBE_TOP_VOLUME: 'volArgonCubeDetector75'
       ARCUBE_TUNE: 'AR23_20i_00_000'
       ARCUBE_XSEC_FILE: '/dvs_ro/cfs/cdirs/dune/users/2x2EventGeneration/inputs/NuMI/genie_xsec-3.04.00-noarch-AR2320i00000-k250-e1000/v3_04_00/NULL/AR2320i00000-k250-e1000/data/gxspl-NUsmall.xml'
+      ARCUBE_ZMIN: '-3'

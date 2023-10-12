@@ -1,0 +1,11 @@
+repos:
+  - name: 'ND_Production_v1'
+    url: 'https://github.com/DUNE/ND_Production.git'
+    commit: '5c4f6c6df40339cee2975196f6a7dd2f061ef791'
+
+runners:
+  - name: 'ND_Production_v1_TMSReco'
+    repo: 'ND_Production_v1'
+    workdir: 'nersc/run-tms-reco'
+    cmd: './run_tms_reco.sh'
+
