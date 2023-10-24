@@ -33,11 +33,11 @@ sbatch -o "$logdir"/slurm-%j.txt -q shared --ntasks-per-node $single_size -t 180
 sbatch -o "$logdir"/slurm-%j.txt -q shared --ntasks-per-node $spill_size -t 10 slurm/fw_cpu.slurm.sh "$name".nu.hadd rapidfire
 sbatch -o "$logdir"/slurm-%j.txt -q shared --ntasks-per-node $spill_size -t 10 slurm/fw_cpu.slurm.sh "$name".rock.hadd rapidfire
 
-# took an hour
-sbatch -o "$logdir"/slurm-%j.txt -q shared --ntasks-per-node $spill_size -t 60 slurm/fw_cpu.slurm.sh "$name".spill rapidfire
+# took 3 minutes?
+sbatch -o "$logdir"/slurm-%j.txt -q shared --ntasks-per-node $spill_size -t 90 slurm/fw_cpu.slurm.sh "$name".spill rapidfire
 
 # took 15 minutes
-sbatch -o "$logdir"/slurm-%j.txt -q shared --ntasks-per-node $spill_size -t 15 slurm/fw_cpu.slurm.sh "$name".convert2h5 rapidfire
+sbatch -o "$logdir"/slurm-%j.txt -q shared --ntasks-per-node $spill_size -t 30 slurm/fw_cpu.slurm.sh "$name".convert2h5 rapidfire
 
 sbatch -o "$logdir"/slurm-%j.txt -q shared --ntasks-per-node 4 --gpus-per-task 1 --ntasks $spill_size slurm/fw_gpu.slurm.sh "$name".larnd rapidfire
 
