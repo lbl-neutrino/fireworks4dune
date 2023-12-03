@@ -1,0 +1,7 @@
+base_envs:
+  - name: 'PicoRun4.2_1E17_RHC_OldGeom.plots'
+    env:
+      ARCUBE_EDEP_NAME: 'PicoRun4.2_1E17_RHC_OldGeom.convert2h5'
+      ARCUBE_LARND_NAME: 'PicoRun4.2_1E17_RHC_OldGeom.larnd'
+      ARCUBE_FLOW_NAME: 'PicoRun4.2_1E17_RHC_OldGeom.flow'
+      ARCUBE_OUT_NAME: 'PicoRun4.2_1E17_RHC_OldGeom.plots'

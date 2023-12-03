@@ -1,0 +1,13 @@
+base_envs:
+  - name: 'PicoRun4.2_1E17_RHC_OldGeom.nu.hadd'
+    env:
+      ARCUBE_CONTAINER: 'mjkramer/2x2_sim:edepsim010'
+      ARCUBE_IN_NAME: 'PicoRun4.2_1E17_RHC_OldGeom.nu'
+      ARCUBE_HADD_FACTOR: '10'
+      ARCUBE_RUNTIME: 'PODMAN-HPC'
+  - name: 'PicoRun4.2_1E17_RHC_OldGeom.rock.hadd'
+    env:
+      ARCUBE_CONTAINER: 'mjkramer/2x2_sim:edepsim010'
+      ARCUBE_IN_NAME: 'PicoRun4.2_1E17_RHC_OldGeom.rock'
+      ARCUBE_HADD_FACTOR: '10'
+      ARCUBE_RUNTIME: 'PODMAN-HPC'

@@ -1,0 +1,4 @@
+base_envs:
+  - name: 'PicoRun4.2_1E17_RHC_OldGeom.larnd'
+    env:
+      ARCUBE_CONVERT2H5_NAME: 'PicoRun4.2_1E17_RHC_OldGeom.convert2h5'
