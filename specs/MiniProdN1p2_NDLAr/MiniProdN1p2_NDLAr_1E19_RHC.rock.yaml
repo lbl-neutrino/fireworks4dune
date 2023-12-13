@@ -1,0 +1,17 @@
+base_envs:
+  - name: 'MiniProdN1p2_NDLAr_1E19_RHC.rock'
+    env:
+      ARCUBE_CONTAINER: 'mjkramer/sim2x2:genie_edep.3_04_00.20230620'
+      ARCUBE_CHERRYPICK: '0'
+      ARCUBE_DET_LOCATION: 'DUNENDROCK'
+      ARCUBE_DK2NU_DIR: '/dvs_ro/cfs/cdirs/dune/users/abooth/Flux/g4lbne/v3r5p4/QGSP_BERT/OptimizedEngineeredNov2017/antineutrino/flux'
+      ARCUBE_EDEP_MAC: 'macros/dune-nd.mac'
+      ARCUBE_EXPOSURE: '1E15'
+      ARCUBE_FID_CUT_STRING: '"rockbox:(-621.1,-662.5,0)(621.1,402.5,1900),1,500,0.00425,1.05,1"'
+      ARCUBE_GEOM: '/dvs_ro/cfs/cdirs/dune/users/abooth/gdml/nd_hall_with_lar_tms_sand_TDR_Production_geometry_v_1.0.3.gdml'
+      ARCUBE_GEOM_EDEP: '/dvs_ro/cfs/cdirs/dune/users/abooth/gdml/nd_hall_with_lar_tms_sand_TDR_Production_geometry_v_1.0.3.gdml'
+      ARCUBE_OUTDIR_BASE: '/pscratch/sd/a/abooth/MiniProdN1p2-v1r1'
+      ARCUBE_TOP_VOLUME: 'volWorld'
+      ARCUBE_TUNE: 'AR23_20i_00_000'
+      ARCUBE_XSEC_FILE: '/dvs_ro/cfs/cdirs/dune/users/2x2EventGeneration/inputs/NuMI/genie_xsec-3.04.00-noarch-AR2320i00000-k250-e1000/v3_04_00/NULL/AR2320i00000-k250-e1000/data/gxspl-NUsmall.xml'
+      ARCUBE_ZMIN: '-500'
