@@ -1,9 +1,9 @@
 base_envs:
   - name: 'PicoRun4.2_1E17_RHC_OldGeom.spill'
     env:
-      ARCUBE_CONTAINER: 'mjkramer/2x2_sim:edepsim010'
+      ARCUBE_RUNTIME: 'PODMAN-HPC'
+      ARCUBE_CONTAINER: 'mjkramer/2x2_sim:ndlar011'
       ARCUBE_NU_NAME: 'PicoRun4.2_1E17_RHC_OldGeom.nu.hadd'
       ARCUBE_NU_POT: '1E16'
       ARCUBE_ROCK_NAME: 'PicoRun4.2_1E17_RHC_OldGeom.rock.hadd'
       ARCUBE_ROCK_POT: '1E16'
-      ARCUBE_RUNTIME: 'PODMAN-HPC'

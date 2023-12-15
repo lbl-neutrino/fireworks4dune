@@ -1,6 +1,8 @@
 base_envs:
   - name: 'PicoRun4.2_1E17_RHC_OldGeom.plots'
     env:
+      ARCUBE_RUNTIME: 'PODMAN-HPC'
+      ARCUBE_CONTAINER: 'mjkramer/2x2_sim:ndlar011'
       ARCUBE_EDEP_NAME: 'PicoRun4.2_1E17_RHC_OldGeom.convert2h5'
       ARCUBE_LARND_NAME: 'PicoRun4.2_1E17_RHC_OldGeom.larnd'
       ARCUBE_FLOW_NAME: 'PicoRun4.2_1E17_RHC_OldGeom.flow'

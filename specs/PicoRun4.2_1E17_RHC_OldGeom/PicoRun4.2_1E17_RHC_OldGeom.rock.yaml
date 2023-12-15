@@ -1,7 +1,8 @@
 base_envs:
   - name: 'PicoRun4.2_1E17_RHC_OldGeom.rock'
     env:
-      ARCUBE_CONTAINER: 'mjkramer/2x2_sim:edepsim010'
+      ARCUBE_RUNTIME: 'PODMAN-HPC'
+      ARCUBE_CONTAINER: 'mjkramer/2x2_sim:ndlar011'
       ARCUBE_CHERRYPICK: '0'
       ARCUBE_DET_LOCATION: 'MiniRun4-Rock'
       ARCUBE_DK2NU_DIR: '/dvs_ro/cfs/cdirs/dune/users/mkramer/2x2EventGeneration/NuMI_dk2nu/newtarget-200kA_20220409'
@@ -11,5 +12,4 @@ base_envs:
       ARCUBE_GEOM_EDEP: 'geometry/Merged2x2MINERvA_v3/Merged2x2MINERvA_v3_withRock.gdml'
       ARCUBE_TUNE: 'AR23_20i_00_000'
       ARCUBE_RUN_OFFSET: '1000000000'
-      ARCUBE_RUNTIME: 'PODMAN-HPC'
       ARCUBE_XSEC_FILE: '/dvs_ro/cfs/cdirs/dune/users/mkramer/2x2EventGeneration/inputs/NuMI/genie_xsec-3.04.00-noarch-AR2320i00000-k250-e1000/v3_04_00/NULL/AR2320i00000-k250-e1000/data/gxspl-NUsmall.xml'
