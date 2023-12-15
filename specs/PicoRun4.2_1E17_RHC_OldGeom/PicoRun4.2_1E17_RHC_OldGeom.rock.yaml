@@ -1,8 +1,8 @@
 base_envs:
   - name: 'PicoRun4.2_1E17_RHC_OldGeom.rock'
     env:
-      ARCUBE_RUNTIME: 'PODMAN-HPC'
-      ARCUBE_CONTAINER: 'mjkramer/2x2_sim:ndlar011'
+      ARCUBE_RUNTIME: 'SHIFTER'
+      ARCUBE_CONTAINER: 'mjkramer/sim2x2:ndlar011'
       ARCUBE_CHERRYPICK: '0'
       ARCUBE_DET_LOCATION: 'MiniRun4-Rock'
       ARCUBE_DK2NU_DIR: '/dvs_ro/cfs/cdirs/dune/users/mkramer/2x2EventGeneration/NuMI_dk2nu/newtarget-200kA_20220409'

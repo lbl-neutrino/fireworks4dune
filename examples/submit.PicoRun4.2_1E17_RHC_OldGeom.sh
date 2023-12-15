@@ -28,18 +28,29 @@ lpad admin tuneup --full
 
 sbatch -o "$logdir"/slurm-%j.txt -q shared --ntasks-per-node $single_size -t 20 slurm/fw_cpu.slurm.sh "$name".nu rapidfire
 # 45-150 minutes each:
-sbatch -o "$logdir"/slurm-%j.txt -q shared --ntasks-per-node $single_size -t 180 slurm/fw_cpu.slurm.sh "$name".rock singleshot
+# sbatch -o "$logdir"/slurm-%j.txt -q shared --ntasks-per-node $single_size -t 180 slurm/fw_cpu.slurm.sh "$name".rock singleshot
+# XXX memory leak in GENIE? should limit ntasks-per-node for MiniRun5?
+sbatch -o "$logdir"/slurm-%j.txt -q regular --ntasks-per-node $single_size -t 180 slurm/fw_cpu.slurm.sh "$name".rock singleshot
 
 sbatch -o "$logdir"/slurm-%j.txt -q shared --ntasks-per-node $spill_size -t 10 slurm/fw_cpu.slurm.sh "$name".nu.hadd rapidfire
 sbatch -o "$logdir"/slurm-%j.txt -q shared --ntasks-per-node $spill_size -t 10 slurm/fw_cpu.slurm.sh "$name".rock.hadd rapidfire
 
 # took 3 minutes?
-sbatch -o "$logdir"/slurm-%j.txt -q shared --ntasks-per-node $spill_size -t 90 slurm/fw_cpu.slurm.sh "$name".spill rapidfire
+sbatch -o "$logdir"/slurm-%j.txt -q shared --ntasks-per-node $spill_size -t 20 slurm/fw_cpu.slurm.sh "$name".spill rapidfire
 
 # took 15 minutes
 sbatch -o "$logdir"/slurm-%j.txt -q shared --ntasks-per-node $spill_size -t 30 slurm/fw_cpu.slurm.sh "$name".convert2h5 rapidfire
 
+# sbatch -o "$logdir"/slurm-%j.txt -q shared --ntasks-per-node 4 --gpus-per-task 1 --ntasks $spill_size slurm/fw_gpu.slurm.sh "$name".larnd rapidfire
+# need --ngpus or some shit?
 sbatch -o "$logdir"/slurm-%j.txt -q shared --ntasks-per-node 4 --gpus-per-task 1 --ntasks $spill_size slurm/fw_gpu.slurm.sh "$name".larnd rapidfire
+sbatch -o "$logdir"/slurm-%j.txt -q shared --ntasks-per-node 4 --gpus-per-task 1 --ntasks $spill_size slurm/fw_gpu.slurm.sh "$name".larnd rapidfire
+sbatch -o "$logdir"/slurm-%j.txt -q shared --cpus-per-task 32 --gpus-per-task 1 --ntasks 4 slurm/fw_gpu.slurm.sh "$name".larnd rapidfire
+sbatch -A dune -C gpu -q shared --gpus-per-task 1 --ntasks 1 --cpus-per-task 32 slurm/fw_gpu.slurm.sh "$name".larnd rapidfire
+# this finally works:
+sbatch --array=1-10 -A dune -C gpu -q shared --gpus-per-task 1 --ntasks 1 --ntasks-per-node 1 --cpus-per-task 32 -t 30 slurm/fw_gpu.slurm.sh "$name".larnd singleshot
+
+sbatch -o "$logdir"/slurm-%j.txt -q regular -N 3 --ntasks-per-node 4 --gpus-per-task 1 --ntasks 10 -t 30 slurm/fw_gpu.slurm.sh "$name".larnd rapidfire
 
 sbatch -o "$logdir"/slurm-%j.txt -q shared --mem-per-cpu 4GB --ntasks-per-node $spill_size -t 20 --no-kill slurm/fw_cpu.slurm.sh "$name".flow rapidfire
 
