@@ -1,11 +1,15 @@
 base_envs:
-  - name: 'MiniRun5_1E19_RHC.nu.hadd'
+  - name: 'MiniRun5_1E19_RHC.edep.nu.hadd'
     env:
-      ARCUBE_CONTAINER: 'mjkramer/sim2x2:genie_edep.3_04_00.20230912'
-      ARCUBE_IN_NAME: 'MiniRun5_1E19_RHC.nu'
+      ARCUBE_OUTDIR_BASE: '/pscratch/sd/m/mkramer/out.MiniRun5'
+      ARCUBE_RUNTIME: 'SHIFTER'
+      ARCUBE_CONTAINER: 'mjkramer/sim2x2:ndlar011'
+      ARCUBE_IN_NAME: 'MiniRun5_1E19_RHC.edep.nu'
       ARCUBE_HADD_FACTOR: '10'
-  - name: 'MiniRun5_1E19_RHC.rock.hadd'
+  - name: 'MiniRun5_1E19_RHC.edep.rock.hadd'
     env:
-      ARCUBE_CONTAINER: 'mjkramer/sim2x2:genie_edep.3_04_00.20230912'
-      ARCUBE_IN_NAME: 'MiniRun5_1E19_RHC.rock'
+      ARCUBE_OUTDIR_BASE: '/pscratch/sd/m/mkramer/out.MiniRun5'
+      ARCUBE_RUNTIME: 'SHIFTER'
+      ARCUBE_CONTAINER: 'mjkramer/sim2x2:ndlar011'
+      ARCUBE_IN_NAME: 'MiniRun5_1E19_RHC.edep.rock'
       ARCUBE_HADD_FACTOR: '10'

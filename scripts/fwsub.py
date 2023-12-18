@@ -51,8 +51,13 @@ def main():
                 var_prefix+'OUT_NAME': out_name,
                 var_prefix+'INDEX': str(index),
             },
-            # '_fworker': args.worker,
+            # NOTE: Setting the _category means "Workers CAN restrict themselves
+            # to me by setting their `category` to this _category". Whereas
+            # setting the _fworker means "Only workers whose `name` matches my
+            # `_fworker` can run me". We only need to use `_category` for our
+            # workflows.
             '_category': args.worker,
+            # '_fworker': args.worker,
         }
 
         fw = Firework(RepoRunner(), name=args.worker, spec=spec)

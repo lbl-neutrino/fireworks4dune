@@ -1,6 +1,9 @@
 base_envs:
   - name: 'MiniRun5_1E19_RHC.plots'
     env:
+      ARCUBE_OUTDIR_BASE: '/pscratch/sd/m/mkramer/out.MiniRun5'
+      ARCUBE_RUNTIME: 'SHIFTER'
+      ARCUBE_CONTAINER: 'mjkramer/sim2x2:ndlar011'
       ARCUBE_EDEP_NAME: 'MiniRun5_1E19_RHC.convert2h5'
       ARCUBE_LARND_NAME: 'MiniRun5_1E19_RHC.larnd'
       ARCUBE_FLOW_NAME: 'MiniRun5_1E19_RHC.flow'
