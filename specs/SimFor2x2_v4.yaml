@@ -42,3 +42,13 @@ runners:
     repo: 'SimFor2x2_v4'
     workdir: 'run-validation'
     cmd: './run_validation.sh'
+
+  - name: 'SimFor2x2_v4_Edep2Flat'
+    repo: 'SimFor2x2_v4'
+    workdir: 'run-edep2flat'
+    cmd: './run_edep2flat.sh'
+
+  - name: 'SimFor2x2_v4_Minerva'
+    repo: 'SimFor2x2_v4'
+    workdir: 'run-minerva'
+    cmd: './run_minerva.sh'
