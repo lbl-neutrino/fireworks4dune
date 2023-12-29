@@ -2,7 +2,7 @@
 
 set -o errexit
 
-module load python              # 3.9-anaconda-2021.11
+module load python/3.11
 module load mongodb
 
 rm -rf fw.venv

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # source me from root of fireworks4dune
 
-module load python
+module load python/3.11
 module load mongodb
 
 source fw.venv/bin/activate
