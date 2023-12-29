@@ -12,6 +12,9 @@ source fw.venv/bin/activate
 
 pip install -U pip wheel setuptools
 
+# FireWorks currently uses the deprecated safe_load function
+pip install "ruamel.yaml<0.18.0"
+
 # pip install 'FireWorks[rtransfer,newt,daemon_mode,flask-plotting,workflow-checks,graph-plotting]'
 
 # rm -rf fireworks
