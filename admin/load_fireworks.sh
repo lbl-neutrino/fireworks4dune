@@ -16,3 +16,5 @@ if [ -z "$FW4DUNE_REPO_DIR" ]; then
     FW4DUNE_REPO_DIR=$(realpath "$fw4dune_dir"/..)
     export FW4DUNE_REPO_DIR
 fi
+
+export PATH=$fw4dune_dir/scripts:$PATH
