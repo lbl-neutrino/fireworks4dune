@@ -5,6 +5,10 @@ set -o errexit
 module load python/3.11
 module load mongodb
 
+cd "$(dirname "${BASH_SOURCE[0]}")"/..
+
+# Require manual deletion of fireworks repo, in case of uncommitted changes. If
+# it exists, git clone (below) will fail. We can delete the venv though.
 rm -rf fw.venv
 
 python -m venv fw.venv

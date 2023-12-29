@@ -4,12 +4,15 @@
 module load python/3.11
 module load mongodb
 
-source fw.venv/bin/activate
+fw4dune_dir=$(realpath "$(dirname "${BASH_SOURCE[0]}")"/..)
 
-export FW_CONFIG_FILE=$(realpath fw_config/FW_config.yaml)
+source "$fw4dune_dir"/fw.venv/bin/activate
+
+export FW_CONFIG_FILE="$fw4dune_dir"/fw_config/FW_config.yaml
 
 # by default, production script repos go in the parent directory of
 # fireworks4dune
-if [ ! -n "$FW4DUNE_REPO_DIR" ]; then
-    export FW4DUNE_REPO_DIR=$(realpath ..)
+if [ -z "$FW4DUNE_REPO_DIR" ]; then
+    FW4DUNE_REPO_DIR=$(realpath "$fw4dune_dir"/..)
+    export FW4DUNE_REPO_DIR
 fi
