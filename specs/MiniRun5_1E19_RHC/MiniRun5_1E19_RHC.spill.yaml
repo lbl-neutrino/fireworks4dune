@@ -2,6 +2,7 @@ base_envs:
   - name: 'MiniRun5_1E19_RHC.spill'
     env:
       ARCUBE_OUTDIR_BASE: '/pscratch/sd/m/mkramer/out.MiniRun5'
+      ARCUBE_LOGDIR_BASE: '/pscratch/sd/m/mkramer/logs_cmd.MiniRun5'
       ARCUBE_RUNTIME: 'SHIFTER'
       ARCUBE_CONTAINER: 'mjkramer/sim2x2:ndlar011'
       ARCUBE_NU_NAME: 'MiniRun5_1E19_RHC.edep.nu.hadd'

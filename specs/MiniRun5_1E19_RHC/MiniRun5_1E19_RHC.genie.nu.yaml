@@ -2,6 +2,7 @@ base_envs:
   - name: 'MiniRun5_1E19_RHC.genie.nu'
     env:
       ARCUBE_OUTDIR_BASE: '/pscratch/sd/m/mkramer/out.MiniRun5'
+      ARCUBE_LOGDIR_BASE: '/pscratch/sd/m/mkramer/logs_cmd.MiniRun5'
       # The GENIE build in the new Podman container (mjkramer/sim2x2:ndlar011)
       # has a memory leak (maybe due to the newer ROOT version?) so let's use
       # the old Singularity container
