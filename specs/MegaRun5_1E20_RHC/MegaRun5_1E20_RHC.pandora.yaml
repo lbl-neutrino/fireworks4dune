@@ -1,8 +1,8 @@
 base_envs:
-  - name: 'MegaRun5_1E19_RHC.pandora'
+  - name: 'MegaRun5_1E20_RHC.pandora'
     env:
       ARCUBE_OUTDIR_BASE: '/pscratch/sd/m/mkramer/output/MegaRun5'
       ARCUBE_LOGDIR_BASE: '/pscratch/sd/m/mkramer/logs/MegaRun5'
       ARCUBE_RUNTIME: 'NONE'
-      ARCUBE_IN_NAME: 'MegaRun5_1E19_RHC.flow'
+      ARCUBE_IN_NAME: 'MegaRun5_1E20_RHC.flow'
       # TODO fill this in

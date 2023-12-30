@@ -1,11 +1,11 @@
 base_envs:
-  - name: 'MegaRun5_1E19_RHC.plots'
+  - name: 'MegaRun5_1E20_RHC.plots'
     env:
       ARCUBE_OUTDIR_BASE: '/pscratch/sd/m/mkramer/output/MegaRun5'
       ARCUBE_LOGDIR_BASE: '/pscratch/sd/m/mkramer/logs/MegaRun5'
       ARCUBE_RUNTIME: 'SHIFTER'
       ARCUBE_CONTAINER: 'mjkramer/sim2x2:ndlar011'
-      ARCUBE_EDEP_NAME: 'MegaRun5_1E19_RHC.convert2h5'
-      ARCUBE_LARND_NAME: 'MegaRun5_1E19_RHC.larnd'
-      ARCUBE_FLOW_NAME: 'MegaRun5_1E19_RHC.flow'
-      ARCUBE_OUT_NAME: 'MegaRun5_1E19_RHC.plots'
+      ARCUBE_EDEP_NAME: 'MegaRun5_1E20_RHC.convert2h5'
+      ARCUBE_LARND_NAME: 'MegaRun5_1E20_RHC.larnd'
+      ARCUBE_FLOW_NAME: 'MegaRun5_1E20_RHC.flow'
+      ARCUBE_OUT_NAME: 'MegaRun5_1E20_RHC.plots'

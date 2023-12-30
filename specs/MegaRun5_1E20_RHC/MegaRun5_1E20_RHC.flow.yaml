@@ -1,8 +1,8 @@
 base_envs:
-  - name: 'MegaRun5_1E19_RHC.flow'
+  - name: 'MegaRun5_1E20_RHC.flow'
     env:
       ARCUBE_RUNTIME: 'NONE'
-      ARCUBE_INSTALL_DIR: '/global/common/software/dune/mkramer/SimFlowMR5'
+      ARCUBE_INSTALL_DIR: '/global/common/software/dune/mkramer/MegaRun5/2x2_sim/run-ndlar-flow'
       ARCUBE_OUTDIR_BASE: '/pscratch/sd/m/mkramer/output/MegaRun5'
       ARCUBE_LOGDIR_BASE: '/pscratch/sd/m/mkramer/logs/MegaRun5'
-      ARCUBE_IN_NAME: 'MegaRun5_1E19_RHC.larnd'
+      ARCUBE_IN_NAME: 'MegaRun5_1E20_RHC.larnd'

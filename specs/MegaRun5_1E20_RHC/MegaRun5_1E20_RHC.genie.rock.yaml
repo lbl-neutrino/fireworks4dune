@@ -1,5 +1,5 @@
 base_envs:
-  - name: 'MegaRun5_1E19_RHC.genie.rock'
+  - name: 'MegaRun5_1E20_RHC.genie.rock'
     env:
       ARCUBE_OUTDIR_BASE: '/pscratch/sd/m/mkramer/output/MegaRun5'
       ARCUBE_LOGDIR_BASE: '/pscratch/sd/m/mkramer/logs/MegaRun5'
@@ -8,7 +8,7 @@ base_envs:
       # the old Singularity container
       ARCUBE_RUNTIME: 'SHIFTER'
       ARCUBE_CONTAINER: 'mjkramer/sim2x2:genie_edep.3_04_00.20230912'
-      ARCUBE_DET_LOCATION: 'MegaRun5-Rock'
+      ARCUBE_DET_LOCATION: 'MiniRun5-Rock'
       ARCUBE_DK2NU_DIR: '/dvs_ro/cfs/cdirs/dune/users/2x2EventGeneration/NuMI_dk2nu/newtarget-200kA_20220409'
       ARCUBE_EXPOSURE: '1E15'
       ARCUBE_GEOM: 'geometry/Merged2x2MINERvA_v4/Merged2x2MINERvA_v4_justRock.gdml'
