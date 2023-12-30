@@ -52,3 +52,18 @@ runners:
     repo: 'SimFor2x2_v4'
     workdir: 'run-minerva'
     cmd: './run_minerva.sh'
+
+  - name: 'SimFor2x2_v4_MLreco'
+    repo: 'SimFor2x2_v4'
+    workdir: 'run-mlreco'
+    cmd: './run_mlreco.sh'
+
+  - name: 'SimFor2x2_v4_Pandora'
+    repo: 'SimFor2x2_v4'
+    workdir: 'run-pandora'
+    cmd: './run_pandora.sh'
+
+  - name: 'SimFor2x2_v4_CAFmaker'
+    repo: 'SimFor2x2_v4'
+    workdir: 'run-cafmaker'
+    cmd: './run_cafmaker.sh'
