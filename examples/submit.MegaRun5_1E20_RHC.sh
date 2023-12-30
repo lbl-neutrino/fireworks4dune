@@ -4,7 +4,7 @@ source admin/load_fireworks.sh
 set +o posix                    # sneaky sneaky, NERSC
 
 name=MegaRun5_1E20_RHC
-logdir=$SCRATCH/slurm_logs.$name
+logdir=$SCRATCH/slurm_logs/$name
 export FW4DUNE_SLEEP_SEC=10
 
 load_yaml.py --replace specs/SimFor2x2_v4.yaml specs/$name/*.yaml
