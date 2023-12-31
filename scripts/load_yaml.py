@@ -34,8 +34,9 @@ def main():
                     if not args.replace:
                         print(f'PANIK: Duplicate doc {doc["name"]}; pass --replace to replace it')
                         sys.exit(1)
-                    c.delete_one({'name': doc['name']})
-                c.insert_one(doc)
+                    c.replace_one({'name': doc['name']}, doc)
+                else:
+                    c.insert_one(doc)
 
 
 if __name__ == '__main__':
