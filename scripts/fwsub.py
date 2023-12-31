@@ -60,7 +60,7 @@ def main():
             # '_fworker': args.worker,
         }
 
-        fw = Firework(RepoRunner(), name=args.worker, spec=spec)
+        fw = Firework(RepoRunner(), name=out_name, spec=spec)
         lpad.add_wf(fw)
 
 
