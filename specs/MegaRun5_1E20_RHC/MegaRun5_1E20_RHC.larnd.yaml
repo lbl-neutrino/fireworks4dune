@@ -4,6 +4,5 @@ base_envs:
       ARCUBE_OUTDIR_BASE: '/pscratch/sd/m/mkramer/output/MegaRun5'
       ARCUBE_LOGDIR_BASE: '/pscratch/sd/m/mkramer/logs/MegaRun5'
       ARCUBE_RUNTIME: 'NONE'
-      ARCUBE_INSTALL_DIR: '/global/common/software/dune/mkramer/MegaRun5/2x2_sim/run-larnd-sim'
       ARCUBE_CONVERT2H5_NAME: 'MegaRun5_1E20_RHC.convert2h5'
       ARCUBE_LARNDSIM_CONFIG: '2x2_mod2mod_variation'
