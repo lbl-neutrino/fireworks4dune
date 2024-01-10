@@ -14,7 +14,7 @@ scripts/load_yaml.py --replace specs/SimFor2x2_v4.yaml specs/$name/*.yaml
 
 mkdir -p "$logdir"
 
-workflows/submit.MiniRun5_1E19_RHC.py
+workflows/fwsub.MiniRun5_1E19_RHC.py
 
 # lpad admin tuneup --full
 
