@@ -64,7 +64,11 @@ def main():
         fw_flow = make_fw(i, 'Flow', 'flow', category='mega_cpu_minutes')
         fw_edep2flat = make_fw(i, 'Edep2Flat', 'edep2flat', category='mega_cpu_minutes')
         fw_minerva = make_fw(i, 'Minerva', 'minerva', category='mega_cpu_minutes')
-        fw_mlreco = make_fw(i, 'MLreco', 'mlreco', category='mega_gpu_minutes')
+        fw_flow2supera = make_fw(i, 'Flow2Supera', 'mlreco', category='mega_cpu_minutes')
+        fw_mlreco_inference = make_fw(i, 'MLreco_Inference', 'mlreco',
+                                      category='mega_gpu_minutes')
+        fw_mlreco_analysis = make_fw(i, 'MLreco_Analysis', 'mlreco',
+                                     category='mega_cpu_minutes')
         fw_pandora = make_fw(i, 'Pandora', 'pandora', category='mega_cpu_minutes')
         fw_cafmaker = make_fw(i, 'CAFmaker','caf', category='mega_cpu_minutes')
         ## Keep the plots outside the workflow
@@ -72,8 +76,9 @@ def main():
 
         fireworks = [*fws_genie_nu, *fws_genie_rock, *fws_edep_nu, *fws_edep_rock,
                      fw_hadd_nu, fw_hadd_rock, fw_spill, fw_convert2h5, fw_larnd,
-                     fw_flow, fw_edep2flat, fw_minerva, fw_mlreco, fw_pandora,
-                     fw_cafmaker]
+                     fw_flow, fw_edep2flat, fw_minerva,
+                     fw_flow2supera, fw_mlreco_inference, fw_mlreco_analysis,
+                     fw_pandora, fw_cafmaker]
 
         deps = {**{fw_genie_nu: [fw_edep_nu] for fw_genie_nu, fw_edep_nu
                    in zip(fws_genie_nu, fws_edep_nu)},
@@ -88,11 +93,13 @@ def main():
                 fw_minerva: [fw_cafmaker],
                 fw_convert2h5: [fw_larnd],
                 fw_larnd: [fw_flow],
-                fw_flow: [fw_mlreco, fw_pandora],
-                fw_mlreco: [fw_cafmaker],
+                fw_flow: [fw_flow2supera, fw_pandora],
+                fw_flow2supera: [fw_mlreco_inference],
+                fw_mlreco_inference: [fw_mlreco_analysis],
+                fw_mlreco_analysis: [fw_cafmaker],
                 fw_pandora: [fw_cafmaker]}
 
-        wf = Workflow(fireworks, deps)
+        wf = Workflow(fireworks, deps, name=args.name)
 
         lpad.add_wf(wf)
 

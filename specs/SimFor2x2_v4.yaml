@@ -53,10 +53,20 @@ runners:
     workdir: 'run-minerva'
     cmd: './run_minerva.sh'
 
-  - name: 'SimFor2x2_v4_MLreco'
+  - name: 'SimFor2x2_v4_Flow2Supera'
     repo: 'SimFor2x2_v4'
     workdir: 'run-mlreco'
-    cmd: './run_mlreco.sh'
+    cmd: './run_flow2supera.sh'
+
+  - name: 'SimFor2x2_v4_MLreco_Inference'
+    repo: 'SimFor2x2_v4'
+    workdir: 'run-mlreco'
+    cmd: './run_mlreco_inference.sh'
+
+  - name: 'SimFor2x2_v4_MLreco_Analysis'
+    repo: 'SimFor2x2_v4'
+    workdir: 'run-mlreco'
+    cmd: './run_mlreco_analysis.sh'
 
   - name: 'SimFor2x2_v4_Pandora'
     repo: 'SimFor2x2_v4'
