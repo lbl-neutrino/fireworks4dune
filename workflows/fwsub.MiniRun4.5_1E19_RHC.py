@@ -63,7 +63,6 @@ def main():
         fw_cafmaker = make_fw(i, 'CAFmaker','caf', category='mini45_cpu_minutes')
 
         fireworks = [fw_convert2h5, fw_validate_convert2h5,
-                     fw_edep2flat, fw_minerva,
                      fw_larnd, fw_validate_larnd_truth, fw_validate_larnd_sim,
                      fw_flow, fw_validate_flow,
                      fw_flow2supera, fw_mlreco_inference, fw_mlreco_analysis,
