@@ -1,7 +1,7 @@
 base_envs:
   - name: 'MiniRun4.5_1E19_RHC.plots.edepsim_dumptree'
     env:
-      ARCUBE_OUTDIR_BASE: '/pscratch/sd/d/dunepr/out/MiniRun4.5'
+      ARCUBE_OUTDIR_BASE: '/pscratch/sd/d/dunepr/output/MiniRun4.5'
       ARCUBE_LOGDIR_BASE: '/pscratch/sd/d/dunepr/logs/MiniRun4.5'
       ARCUBE_RUNTIME: 'SHIFTER'
       ARCUBE_CONTAINER: 'mjkramer/sim2x2:ndlar011'
@@ -10,7 +10,7 @@ base_envs:
       ARCUBE_OUT_NAME: 'MiniRun4.5_1E19_RHC.plots'
   - name: 'MiniRun4.5_1E19_RHC.plots.larndsim_edeptruth'
     env:
-      ARCUBE_OUTDIR_BASE: '/pscratch/sd/d/dunepr/out/MiniRun4.5'
+      ARCUBE_OUTDIR_BASE: '/pscratch/sd/d/dunepr/output/MiniRun4.5'
       ARCUBE_LOGDIR_BASE: '/pscratch/sd/d/dunepr/logs/MiniRun4.5'
       ARCUBE_RUNTIME: 'SHIFTER'
       ARCUBE_CONTAINER: 'mjkramer/sim2x2:ndlar011'
@@ -19,7 +19,7 @@ base_envs:
       ARCUBE_OUT_NAME: 'MiniRun4.5_1E19_RHC.plots'
   - name: 'MiniRun4.5_1E19_RHC.plots.larndsim'
     env:
-      ARCUBE_OUTDIR_BASE: '/pscratch/sd/d/dunepr/out/MiniRun4.5'
+      ARCUBE_OUTDIR_BASE: '/pscratch/sd/d/dunepr/output/MiniRun4.5'
       ARCUBE_LOGDIR_BASE: '/pscratch/sd/d/dunepr/logs/MiniRun4.5'
       ARCUBE_RUNTIME: 'SHIFTER'
       ARCUBE_CONTAINER: 'mjkramer/sim2x2:ndlar011'
@@ -28,7 +28,7 @@ base_envs:
       ARCUBE_OUT_NAME: 'MiniRun4.5_1E19_RHC.plots'
   - name: 'MiniRun4.5_1E19_RHC.plots.flow'
     env:
-      ARCUBE_OUTDIR_BASE: '/pscratch/sd/d/dunepr/out/MiniRun4.5'
+      ARCUBE_OUTDIR_BASE: '/pscratch/sd/d/dunepr/output/MiniRun4.5'
       ARCUBE_LOGDIR_BASE: '/pscratch/sd/d/dunepr/logs/MiniRun4.5'
       ARCUBE_RUNTIME: 'SHIFTER'
       ARCUBE_CONTAINER: 'mjkramer/sim2x2:ndlar011'
