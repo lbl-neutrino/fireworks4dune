@@ -1,0 +1,79 @@
+repos:
+  - name: 'SimFor2x2_v5'
+    url: 'https://github.com/DUNE/2x2_sim.git'
+
+runners:
+  - name: 'SimFor2x2_v5_Genie'
+    repo: 'SimFor2x2_v5'
+    workdir: 'run-genie'
+    cmd: './run_genie.sh'
+
+  - name: 'SimFor2x2_v5_Edep'
+    repo: 'SimFor2x2_v5'
+    workdir: 'run-edep-sim'
+    cmd: './run_edep_sim.sh'
+
+  - name: 'SimFor2x2_v5_Hadd'
+    repo: 'SimFor2x2_v5'
+    workdir: 'run-hadd'
+    cmd: './run_hadd.sh'
+
+  - name: 'SimFor2x2_v5_SpillBuild'
+    repo: 'SimFor2x2_v5'
+    workdir: 'run-spill-build'
+    cmd: './run_spill_build.sh'
+
+  - name: 'SimFor2x2_v5_Convert2H5'
+    repo: 'SimFor2x2_v5'
+    workdir: 'run-convert2h5'
+    cmd: './run_convert2h5.sh'
+
+  - name: 'SimFor2x2_v5_LArND'
+    repo: 'SimFor2x2_v5'
+    workdir: 'run-larnd-sim'
+    cmd: './run_larnd_sim.sh'
+
+  - name: 'SimFor2x2_v5_Flow'
+    repo: 'SimFor2x2_v5'
+    workdir: 'run-ndlar-flow'
+    cmd: './run_ndlar_flow.sh'
+
+  - name: 'SimFor2x2_v5_Edep2Flat'
+    repo: 'SimFor2x2_v5'
+    workdir: 'run-edep2flat'
+    cmd: './run_edep2flat.sh'
+
+  - name: 'SimFor2x2_v5_Minerva'
+    repo: 'SimFor2x2_v5'
+    workdir: 'run-minerva'
+    cmd: './run_minerva.sh'
+
+  - name: 'SimFor2x2_v5_Flow2Supera'
+    repo: 'SimFor2x2_v5'
+    workdir: 'run-mlreco'
+    cmd: './run_flow2supera.sh'
+
+  - name: 'SimFor2x2_v5_MLreco_Inference'
+    repo: 'SimFor2x2_v5'
+    workdir: 'run-mlreco'
+    cmd: './run_mlreco_inference.sh'
+
+  - name: 'SimFor2x2_v5_MLreco_Analysis'
+    repo: 'SimFor2x2_v5'
+    workdir: 'run-mlreco'
+    cmd: './run_mlreco_analysis.sh'
+
+  - name: 'SimFor2x2_v5_Pandora'
+    repo: 'SimFor2x2_v5'
+    workdir: 'run-pandora'
+    cmd: './run_pandora.sh'
+
+  - name: 'SimFor2x2_v5_CAFmaker'
+    repo: 'SimFor2x2_v5'
+    workdir: 'run-cafmaker'
+    cmd: './run_cafmaker.sh'
+
+  - name: 'SimFor2x2_v5_Plots'
+    repo: 'SimFor2x2_v5'
+    workdir: 'run-validation'
+    cmd: './run_validation.sh'

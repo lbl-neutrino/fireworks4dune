@@ -1,0 +1,11 @@
+base_envs:
+  - name: 'MiniRun4.5_1E19_RHC.caf'
+    env:
+      ARCUBE_OUTDIR_BASE: '/pscratch/sd/d/dunepr/out/MiniRun4.5'
+      ARCUBE_LOGDIR_BASE: '/pscratch/sd/d/dunepr/logs/MiniRun4.5'
+      ARCUBE_RUNTIME: 'SHIFTER'
+      ARCUBE_CONTAINER: 'fermilab/fnal-wn-sl7:latest'
+      ARCUBE_GHEP_NU_NAME: 'MiniRun5_1E19_RHC.genie.nu'
+      ARCUBE_GHEP_ROCK_NAME: 'MiniRun5_1E19_RHC.genie.rock'
+      ARCUBE_MINERVA_NAME: 'MiniRun5_1E19_RHC.minerva'
+      ARCUBE_MLRECO_NAME: 'MiniRun4.5_1E19_RHC.mlreco'
