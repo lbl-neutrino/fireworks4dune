@@ -8,4 +8,4 @@ base_envs:
       ARCUBE_GHEP_NU_NAME: 'MiniRun5_1E19_RHC.genie.nu'
       ARCUBE_GHEP_ROCK_NAME: 'MiniRun5_1E19_RHC.genie.rock'
       ARCUBE_MINERVA_NAME: 'MiniRun5_1E19_RHC.minerva'
-      ARCUBE_MLRECO_NAME: 'MiniRun4.5_1E19_RHC.mlreco'
+      ARCUBE_MLRECO_NAME: 'MiniRun4.5_1E19_RHC.mlreco_analysis'
