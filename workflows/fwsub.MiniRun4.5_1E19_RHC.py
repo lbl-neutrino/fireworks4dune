@@ -44,15 +44,15 @@ def main():
 
     for i in range(args.start, args.start + args.size):
         fw_convert2h5 = make_fw(i, 'Convert2H5', 'convert2h5', category='mini45_cpu_minutes')
-        fw_validate_convert2h5 = make_fw(i, 'Validate_Convert2H5', 'plots.edepsim_dumptree',
+        fw_validate_convert2h5 = make_fw(i, 'Plots', 'plots.edepsim_dumptree',
                                          category='mini45_plots')
         fw_larnd = make_fw(i, 'LArND', 'larnd', category='mini45_gpu_minutes')
-        fw_validate_larnd_truth = make_fw(i, 'Validate_LArND_Truth', 'plots.larndsim_edeptruth',
+        fw_validate_larnd_truth = make_fw(i, 'Plots', 'plots.larndsim_edeptruth',
                                           category='mini45_plots')
-        fw_validate_larnd_sim = make_fw(i, 'Validate_LArND_Sim', 'plots.larndsim',
+        fw_validate_larnd_sim = make_fw(i, 'Plots', 'plots.larndsim',
                                         category='mini45_plots')
         fw_flow = make_fw(i, 'Flow', 'flow', category='mini45_cpu_minutes')
-        fw_validate_flow = make_fw(i, 'Validate_Flow', 'plots.flow',
+        fw_validate_flow = make_fw(i, 'Plots', 'plots.flow',
                                    category='mini45_plots')
         fw_flow2supera = make_fw(i, 'Flow2Supera', 'flow2supera', category='mini45_cpu_minutes')
         fw_mlreco_inference = make_fw(i, 'MLreco_Inference', 'mlreco_inference',
