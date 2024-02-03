@@ -6,7 +6,7 @@ umask 002
 
 name=MiniRun4.5_1E19_RHC
 
-logdir=/pscratch/sd/d/dunepr/slurm_logs/SBATCH
+logdir=$SCRATCH/slurm_logs/SBATCH
 mkdir -p "$logdir"
 export FW4DUNE_SLEEP_SEC=60
 
