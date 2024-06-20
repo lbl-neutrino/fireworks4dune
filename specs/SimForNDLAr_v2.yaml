@@ -1,0 +1,11 @@
+repos:
+  - name: 'SimForNDLAr_v2'
+    url: 'https://github.com/mjkramer/2x2_sim.git'
+    commit: 'be3812f03e568ede5f6cd44782f45591ab24a727'
+
+runners:
+  - name: 'SimForNDLAr_v2_Flow'
+    repo: 'SimForNDLAr_v2'
+    workdir: 'run-ndlar-flow'
+    cmd: './run_ndlar_flow_ndlar.sh'
+
