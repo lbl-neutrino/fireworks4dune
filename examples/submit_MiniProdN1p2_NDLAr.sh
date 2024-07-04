@@ -11,6 +11,7 @@ set +o posix                    # sneaky sneaky, NERSC
 #scripts/load_yaml.py specs/SimForNDLAr_v1.yaml specs/MiniProdN1p2_NDLAr/*.larnd*.yaml --replace
 #scripts/load_yaml.py specs/ND_Production_v1.yaml specs/MiniProdN1p2_NDLAr/*.tmsreco.yaml --replace
 #scripts/load_yaml.py --replace specs/SimForNDLAr_v2.yaml specs/MiniProdN1p2_NDLAr/*.flow.yaml
+#scripts/load_yaml.py --replace specs/SimForNDLAr_v2.yaml specs/MiniProdN1p2_NDLAr/*.mlreco.yaml
 
 start=1
 # 11008 fiducial edep-sim files after one round of draining.
@@ -62,5 +63,20 @@ mkdir -p $logdir
 
 #scripts/fwsub.py --runner SimForNDLAr_v2_Flow --base-env MiniProdN1p2_NDLAr_1E19_RHC.flow --size $spill_size --start $start
 
-sbatch -o "$logdir"/slurm-%j.txt --array=1-69 -N 1 slurm/fw_cpu.slurm.sh MiniProdN1p2_NDLAr_1E19_RHC.flow rapidfire
+#sbatch -o "$logdir"/slurm-%j.txt --array=1-69 -N 1 slurm/fw_cpu.slurm.sh MiniProdN1p2_NDLAr_1E19_RHC.flow rapidfire
+
+
+#scripts/fwsub.py --runner SimForNDLAr_v2_Flow2Supera --base-env MiniProdN1p2_NDLAr_1E19_RHC.flow2supera --size $spill_size --start $start
+
+#sbatch -o "$logdir"/slurm-%j.txt --array=1-4 -N 1 slurm/fw_cpu.slurm.sh MiniProdN1p2_NDLAr_1E19_RHC.flow2supera rapidfire
+
+
+#scripts/fwsub.py --runner SimForNDLAr_v2_MLreco_Inference --base-env MiniProdN1p2_NDLAr_1E19_RHC.mlreco_inference --size $spill_size --start $start
+#
+#sbatch -o ${logdir:-.}/slurm-%j.txt --array=1-1 -N 1 slurm/fw_gpu.slurm.sh MiniProdN1p2_NDLAr_1E19_RHC.mlreco_inference rapidfire
+
+
+#scripts/fwsub.py --runner SimForNDLAr_v2_MLreco_Analysis --base-env MiniProdN1p2_NDLAr_1E19_RHC.mlreco_analysis --size $spill_size --start $start
+
+#sbatch -o "$logdir"/slurm-%j.txt --array=1-1 -N 1 slurm/fw_cpu.slurm.sh MiniProdN1p2_NDLAr_1E19_RHC.mlreco_analysis rapidfire
 
