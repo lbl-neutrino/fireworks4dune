@@ -5,6 +5,7 @@ repos:
 
 runners:
   - name: 'SimForNDLAr_v1_GenieEdep'
+    repo: 'SimForNDLAr_v1'
     workdir: 'run-edep-sim'
     cmd: './run_edep_sim.sh'
 
@@ -26,5 +27,5 @@ runners:
   - name: 'SimForNDLAr_v1_LArND'
     repo: 'SimForNDLAr_v1'
     workdir: 'run-larnd-sim'
-    cmd: './run_larnd_sim.sh
+    cmd: './run_larnd_sim.sh'
 

@@ -2,8 +2,8 @@
 #SBATCH --account=dune
 #SBATCH --qos=regular
 #SBATCH --constraint=cpu
-#SBATCH --time=23:59:59
-#SBATCH --ntasks-per-node=1
+#SBATCH --time=1:00:00
+#SBATCH --ntasks-per-node=256
 
 name=$1; shift
 rlaunch_args=("$@"); shift $#
