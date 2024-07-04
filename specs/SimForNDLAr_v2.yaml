@@ -9,3 +9,17 @@ runners:
     workdir: 'run-ndlar-flow'
     cmd: './run_ndlar_flow_ndlar.sh'
 
+  - name: 'SimForNDLAr_v2_Flow2Supera'
+    repo: 'SimForNDLAr_v2'
+    workdir: 'run-mlreco'
+    cmd: './run_flow2supera_ndlar.sh'
+
+  - name: 'SimForNDLAr_v2_MLreco_Inference'
+    repo: 'SimForNDLAr_v2'
+    workdir: 'run-mlreco'
+    cmd: './run_mlreco_inference.sh'
+
+  - name: 'SimForNDLAr_v2_MLreco_Analysis'
+    repo: 'SimForNDLAr_v2'
+    workdir: 'run-mlreco'
+    cmd: './run_mlreco_analysis_ndlar.sh'
