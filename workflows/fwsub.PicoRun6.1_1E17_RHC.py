@@ -38,9 +38,9 @@ def main():
             return Firework(RepoRunner(), name=f'{name}.{step_postfix}.{index:05}', spec=spec)
 
 
-        for i in range(args.start, args.start + args.size):
-            fw_larnd = make_fw(i, 'LArND', 'larnd', category='PR6.1_gpu')
-            fw_flow = make_fw(i, 'Flow', 'flow', category='PR6.1_cpu')
+        for index in range(args.start, args.start + args.size):
+            fw_larnd = make_fw(index, 'LArND', 'larnd', category='PR6.1_gpu')
+            fw_flow = make_fw(index, 'Flow', 'flow', category='PR6.1_cpu')
 
             fireworks = [fw_larnd, fw_flow]
 
