@@ -44,8 +44,8 @@ def main():
 
 
         for i in range(args.start, args.start + args.size):
-            fw_larnd = make_fw(i, 'LArND', 'larnd', category='gpu_minutes')
-            fw_flow = make_fw(i, 'Flow', 'flow', category='cpu_minutes')
+            fw_larnd = make_fw(i, 'LArND', 'larnd', category='PR6.1_gpu')
+            fw_flow = make_fw(i, 'Flow', 'flow', category='PR6.1_cpu')
 
             fireworks = [fw_larnd, fw_flow]
 
