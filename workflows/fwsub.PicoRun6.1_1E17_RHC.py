@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 
+## Fixup:
+# fwsub.py --runner SimFor2x2_v4_Plots --base-env PicoRun6.1a_1E17_RHC.plots --size 10
+# fwsub.py --runner SimFor2x2_v4_Plots --base-env PicoRun6.1b_1E17_RHC.plots --size 10
+
 import argparse
 
 from typing import Optional
