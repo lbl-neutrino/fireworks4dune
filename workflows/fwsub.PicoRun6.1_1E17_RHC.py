@@ -13,7 +13,7 @@ def main():
     # ap.add_argument('--base-env-prefix', default='PicoRun6.1a_1E17_RHC')
     ap.add_argument('--name', help='Defaults to --base-env-prefix')
     ap.add_argument('--repo', default='SimFor2x2_v4')
-    ap.add_argument('--size', type=int, default=1024, help='Number of final outputs (post-hadd etc.) to produce')
+    ap.add_argument('--size', type=int, default=10, help='Number of final outputs (post-hadd etc.) to produce')
     ap.add_argument('--start', type=int, default=0, help='Starting index of output files')
     args = ap.parse_args()
 
