@@ -1,0 +1,8 @@
+base_envs:
+  - name: 'PicoRun6.1b_1E17_RHC.larnd'
+    env:
+      ARCUBE_OUTDIR_BASE: '/pscratch/sd/d/dunepr/output/PicoRun6.1'
+      ARCUBE_LOGDIR_BASE: '/pscratch/sd/d/dunepr/logs/PicoRun6.1'
+      ARCUBE_RUNTIME: 'NONE'
+      ARCUBE_CONVERT2H5_NAME: 'MiniRun5_1E19_RHC.convert2h5'
+      ARCUBE_LARNDSIM_CONFIG: '2x2_old_response'
