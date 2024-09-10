@@ -17,16 +17,16 @@ def main():
     ap.add_argument('--start', type=int, default=0, help='Starting index of output files')
     args = ap.parse_args()
 
-    for args.base_env_prefix in ['PicoRun6.1a_1E17_RHC', 'PicoRun6.1b_1E17_RHC']:
+    for base_env_prefix in ['PicoRun6.1a_1E17_RHC', 'PicoRun6.1b_1E17_RHC']:
         if args.name is None:
-            args.name = args.base_env_prefix
+            args.name = base_env_prefix
 
         lpad = LaunchPad.auto_load()
 
         def make_fw(index: int, runner_postfix: str, step_postfix: str,
                     category: Optional[str]) -> Firework:
 
-            base_env = f'{args.base_env_prefix}.{step_postfix}'
+            base_env = f'{base_env_prefix}.{step_postfix}'
             if category is None:
                 category = base_env
 
