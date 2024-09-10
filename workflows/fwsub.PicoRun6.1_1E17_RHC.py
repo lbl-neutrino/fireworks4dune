@@ -35,7 +35,7 @@ def main():
                 '_category': category
             }
 
-            return Firework(RepoRunner(), name=f'{name}.{step_postfix}.{index:05}', spec=spec)
+            return Firework(RepoRunner(), name=f'{name}.{step_postfix}.{index:07}', spec=spec)
 
 
         for index in range(args.start, args.start + args.size):
@@ -46,7 +46,7 @@ def main():
 
             deps = {fw_larnd: [fw_flow]}
 
-            wf = Workflow(fireworks, deps, name=f'{name}.{index:05}')
+            wf = Workflow(fireworks, deps, name=f'{name}.{index:07}')
 
             lpad.add_wf(wf)
 
