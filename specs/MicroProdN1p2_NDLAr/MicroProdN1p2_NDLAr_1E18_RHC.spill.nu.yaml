@@ -1,0 +1,12 @@
+base_envs:
+  - name: 'MicroProdN1p2_NDLAr_1E18_RHC.spill.nu'
+    env:
+      ARCUBE_CONTAINER: 'mjkramer/sim2x2:ndlar011'
+      ARCUBE_LOGDIR_BASE: '/pscratch/sd/a/abooth/MicroProdN1p2/logs'
+      ARCUBE_NU_NAME: 'MicroProdN1p2_NDLAr_1E18_RHC.hadd.nu'
+      ARCUBE_NU_POT: '1E16'
+      ARCUBE_OUTDIR_BASE: '/pscratch/sd/a/abooth/MicroProdN1p2/output'
+      ARCUBE_ROCK_NAME: 'MicroProdN1p2_NDLAr_1E18_RHC.hadd.rock'
+      ARCUBE_ROCK_POT: '0'
+      ARCUBE_RUNTIME: 'SHIFTER'
+      ARCUBE_SPILL_POT: '7.5E13'

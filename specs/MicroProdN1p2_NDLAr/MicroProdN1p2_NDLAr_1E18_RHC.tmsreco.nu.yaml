@@ -1,0 +1,8 @@
+base_envs:
+  - name: 'MicroProdN1p2_NDLAr_1E18_RHC.tmsreco.nu'
+    env:
+      ND_PRODUCTION_CONTAINER: 'fermilab/fnal-wn-sl7:latest'
+      ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/a/abooth/MicroProdN1p2/logs'
+      ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/a/abooth/MicroProdN1p2/output'
+      ND_PRODUCTION_SPILL_NAME: 'MicroProdN1p2_NDLAr_1E18_RHC.spill.nu'
+      ND_PRODUCTION_RUNTIME: 'SHIFTER'

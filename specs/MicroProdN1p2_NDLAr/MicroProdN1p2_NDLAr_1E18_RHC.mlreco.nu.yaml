@@ -1,0 +1,24 @@
+base_envs:
+  - name: 'MicroProdN1p2_NDLAr_1E18_RHC.flow2supera.nu'
+    env:
+      ARCUBE_CONTAINER: 'deeplearnphysics/larcv2:ub20.04-cuda11.6-pytorch1.13-larndsim'
+      ARCUBE_FLOW2SUPERA_CONFIG: 'ndlar'
+      ARCUBE_IN_NAME: 'MicroProdN1p2_NDLAr_1E18_RHC.flow.nu'
+      ARCUBE_LOGDIR_BASE: '/pscratch/sd/a/abooth/MicroProdN1p2/logs'
+      ARCUBE_OUTDIR_BASE: '/pscratch/sd/a/abooth/MicroProdN1p2/output'
+      ARCUBE_RUNTIME: 'SHIFTER'
+  - name: 'MicroProdN1p2_NDLAr_1E18_RHC.mlreco_inference.nu'
+    env:
+      ARCUBE_CONTAINER: 'deeplearnphysics/larcv2:ub20.04-cuda11.6-pytorch1.13-larndsim'
+      ARCUBE_IN_NAME: 'MicroProdN1p2_NDLAr_1E18_RHC.flow2supera.nu'
+      ARCUBE_LOGDIR_BASE: '/pscratch/sd/a/abooth/MicroProdN1p2/logs'
+      ARCUBE_OUTDIR_BASE: '/pscratch/sd/a/abooth/MicroProdN1p2/output'
+      ARCUBE_RUNTIME: 'SHIFTER'
+  - name: 'MicroProdN1p2_NDLAr_1E18_RHC.mlreco_analysis.nu'
+    env:
+      ARCUBE_CONTAINER: 'deeplearnphysics/larcv2:ub20.04-cuda11.6-pytorch1.13-larndsim'
+      ARCUBE_IN_NAME: 'MicroProdN1p2_NDLAr_1E18_RHC.mlreco_inference.nu'
+      ARCUBE_LOGDIR_BASE: '/pscratch/sd/a/abooth/MicroProdN1p2/logs'
+      ARCUBE_MLRECO_ANALYSIS_CONFIG: 'ndlar_ana_240403.cfg'
+      ARCUBE_OUTDIR_BASE: '/pscratch/sd/a/abooth/MicroProdN1p2/output'
+      ARCUBE_RUNTIME: 'SHIFTER'
