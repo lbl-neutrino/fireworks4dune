@@ -1,0 +1,10 @@
+base_envs:
+  - name: 'MicroProdN1p1_NDLAr_1E18_RHC.convert2h5.nu'
+    env:
+      ARCUBE_CONTAINER: 'mjkramer/sim2x2:ndlar011'
+      ARCUBE_ACTIVE_VOLUME: 'TPCActive_shape'
+      ARCUBE_KEEP_ALL_DETS: '0'
+      ARCUBE_LOGDIR_BASE: '/pscratch/sd/a/abooth/MicroProdN1p1/logs'
+      ARCUBE_OUTDIR_BASE: '/pscratch/sd/a/abooth/MicroProdN1p1/output'
+      ARCUBE_RUNTIME: 'SHIFTER'
+      ARCUBE_SPILL_NAME: 'MicroProdN1p1_NDLAr_1E18_RHC.spill.nu'

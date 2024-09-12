@@ -1,0 +1,9 @@
+base_envs:
+  - name: 'MicroProdN1p1_NDLAr_1E18_RHC.caf.nu'
+    env:
+      ARCUBE_CONTAINER: 'fermilab/fnal-wn-sl7:latest'
+      ARCUBE_GHEP_NU_NAME: 'MicroProdN1p1_NDLAr_1E18_RHC.genie.nu'
+      ARCUBE_LOGDIR_BASE: '/pscratch/sd/a/abooth/MicroProdN1p1/logs'
+      ARCUBE_OUTDIR_BASE: '/pscratch/sd/a/abooth/MicroProdN1p1/output'
+      ARCUBE_RUNTIME: 'SHIFTER'
+      ARCUBE_SPINE_NAME: 'MicroProdN1p1_NDLAr_1E18_RHC.mlreco_spine.nu'

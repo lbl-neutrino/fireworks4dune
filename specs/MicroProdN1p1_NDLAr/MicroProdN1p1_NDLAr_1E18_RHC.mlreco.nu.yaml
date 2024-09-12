@@ -1,0 +1,21 @@
+# For flow2supera, the following arguments must be passed to srun.
+# --cpus-per-task=SOMENUMBER and --cpu-bind=cores
+base_envs:
+ - name: 'MicroProdN1p1_NDLAr_1E18_RHC.flow2supera.nu'
+   env:
+     ARCUBE_CONTAINER: 'deeplearnphysics/larcv2:ub20.04-cuda11.6-pytorch1.13-larndsim'
+     ARCUBE_IN_NAME: 'MicroProdN1p1_NDLAr_1E18_RHC.flow.nu'
+     ARCUBE_LOGDIR_BASE: '/pscratch/sd/a/abooth/MicroProdN1p1/logs'
+     ARCUBE_OUTDIR_BASE: '/pscratch/sd/a/abooth/MicroProdN1p1/output'
+     ARCUBE_RUNTIME: 'SHIFTER'
+     ARCUBE_FLOW2SUPERA_CONFIG: 'ndlar_beam'
+ - name: 'MicroProdN1p1_NDLAr_1E18_RHC.mlreco_spine.nu'
+   env:
+     ARCUBE_CONTAINER: 'deeplearnphysics/larcv2:ub20.04-cuda11.6-pytorch1.13-larndsim'
+     ARCUBE_IN_NAME: 'MicroProdN1p1_NDLAr_1E18_RHC.flow2supera.nu'
+     ARCUBE_LOGDIR_BASE: '/pscratch/sd/a/abooth/MicroProdN1p1/logs'
+     ARCUBE_OUTDIR_BASE: '/pscratch/sd/a/abooth/MicroProdN1p1/output'
+     ARCUBE_SPINE_CONFIG: 'ndlar_full_chain_flash_nersc_240819.cfg'
+     ARCUBE_SPINE_NUM_THREADS: '24'
+     ARCUBE_SPINE_OPENBLAS_NUM_THREADS: '24'
+     ARCUBE_RUNTIME: 'SHIFTER'
