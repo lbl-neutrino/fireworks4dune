@@ -1,0 +1,7 @@
+base_envs:
+  - name: 'MicroProdN1p1_NDLAr_1E18_RHC.flow.nu'
+    env:
+      ARCUBE_IN_NAME: 'MicroProdN1p1_NDLAr_1E18_RHC.larnd.nu'
+      ARCUBE_LOGDIR_BASE: '/pscratch/sd/a/abooth/MicroProdN1p1/logs'
+      ARCUBE_OUTDIR_BASE: '/pscratch/sd/a/abooth/MicroProdN1p1/output'
+      ARCUBE_RUNTIME: 'NONE'
