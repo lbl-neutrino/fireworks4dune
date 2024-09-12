@@ -1,0 +1,10 @@
+base_envs:
+  - name: 'MicroProdN1p2_NDLAr_1E18_RHC.hadd.nu'
+    env:
+      ARCUBE_CONTAINER: 'mjkramer/sim2x2:ndlar011'
+      ARCUBE_IN_NAME: 'MicroProdN1p2_NDLAr_1E18_RHC.edep.nu'
+      ARCUBE_HADD_FACTOR: '10'
+      ARCUBE_LOGDIR_BASE: '/pscratch/sd/a/abooth/MicroProdN1p2/logs'
+      ARCUBE_OUTDIR_BASE: '/pscratch/sd/a/abooth/MicroProdN1p2/output'
+      ARCUBE_RUNTIME: 'SHIFTER'
+      ARCUBE_USE_GHEP_POT: '1'
