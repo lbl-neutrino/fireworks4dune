@@ -19,7 +19,7 @@ set +o posix
 #scripts/load_yaml.py specs/SimForNDLAr_v4.yaml specs/MicroProdN1p1_NDLAr/*.convert*.nu.no_zero_threshold_set.yaml --replace
 #scripts/load_yaml.py specs/SimForNDLAr_v4.yaml specs/MicroProdN1p1_NDLAr/*.larnd.yaml --replace
 #scripts/load_yaml.py specs/SimForNDLAr_v4.yaml specs/MicroProdN1p1_NDLAr/*.larnd.nu.yaml --replace
-#scripts/load_yaml.py specs/ND_Production_v1.yaml specs/MicroProdN1p1_NDLAr/*.tmsreco.yaml --replace
+#scripts/load_yaml.py specs/ND_Production_v1.yaml specs/MicroProdN1p1_NDLAr/*.tmsreco.nu.yaml --replace
 #scripts/load_yaml.py specs/SimForNDLAr_v4.yaml specs/MicroProdN1p1_NDLAr/*.flow.yaml --replace
 #scripts/load_yaml.py  specs/SimForNDLAr_v4.yaml specs/MicroProdN1p1_NDLAr/*.flow.nu.yaml --replace
 #scripts/load_yaml.py specs/SimForNDLAr_v4.yaml specs/MicroProdN1p1_NDLAr/*.mlreco.yaml --replace
@@ -90,9 +90,9 @@ mkdir -p $logdir
 #sbatch -o ${logdir:-.}/slurm-%j.txt --array=1-32 -N 1 slurm/fw_gpu.slurm.sh MicroProdN1p1_NDLAr_1E18_RHC.larnd.nu rapidfire
 
 
-#scripts/fwsub.py --runner ND_Production_v1_TMSReco --base-env MicroProdN1p1_NDLAr_1E18_RHC.tmsreco --size $spill_size --start $start
+#scripts/fwsub.py --runner ND_Production_v1_TMSReco --base-env MicroProdN1p1_NDLAr_1E18_RHC.tmsreco.nu --size $spill_size --start $start
 #
-#sbatch -o ${logdir:-.}/slurm-%j.txt --array=1-1 -N 1 slurm/fw_cpu.slurm.sh MicroProdN1p1_NDLAr_1E18_RHC.tmsreco rapidfire
+#sbatch -o ${logdir:-.}/slurm-%j.txt --array=1-1 -N 1 slurm/fw_cpu.slurm.sh MicroProdN1p1_NDLAr_1E18_RHC.tmsreco.nu rapidfire
 
 
 #scripts/fwsub.py --runner SimForNDLAr_v4_Flow --base-env MicroProdN1p1_NDLAr_1E18_RHC.flow --size $spill_size --start $start
