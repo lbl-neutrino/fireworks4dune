@@ -92,7 +92,7 @@ mkdir -p $logdir
 
 #scripts/fwsub.py --runner ND_Production_v1_TMSReco --base-env MicroProdN1p1_NDLAr_1E18_RHC.tmsreco.nu --size $spill_size --start $start
 #
-sbatch -o ${logdir:-.}/slurm-%j.txt --array=1-1 -N 1 slurm/fw_cpu.slurm.sh MicroProdN1p1_NDLAr_1E18_RHC.tmsreco.nu rapidfire
+#sbatch -o ${logdir:-.}/slurm-%j.txt --array=1-1 -N 1 slurm/fw_cpu.slurm.sh MicroProdN1p1_NDLAr_1E18_RHC.tmsreco.nu rapidfire
 
 
 #scripts/fwsub.py --runner SimForNDLAr_v4_Flow --base-env MicroProdN1p1_NDLAr_1E18_RHC.flow --size $spill_size --start $start
