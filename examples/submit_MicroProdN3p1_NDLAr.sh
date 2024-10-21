@@ -26,11 +26,11 @@ mkdir -p $logdir
 
 
 #scripts/fwsub.py --runner SimForNDLAr_v4_Genie --base-env MicroProdN3p1_NDLAr_2E18_FHC.genie.nu --size $single_size --start $start
-#sbatch -o ${logdir:-.}/slurm-%j.txt --array=1-2 -N 1 slurm/fw_cpu.slurm.sh MicroProdN3p1_NDLAr_2E18_FHC.genie.nu rapidfire
+#sbatch -o ${logdir:-.}/slurm-%j.txt --array=1-5 -N 1 slurm/fw_cpu.slurm.sh MicroProdN3p1_NDLAr_2E18_FHC.genie.nu rapidfire
 
 
 #scripts/fwsub.py --runner SimForNDLAr_v4_Edep --base-env MicroProdN3p1_NDLAr_2E18_FHC.edep.nu --size $single_size --start $start
-#sbatch -o ${logdir:-.}/slurm-%j.txt --array=1-1 -N 1 slurm/fw_cpu.slurm.sh MicroProdN3p1_NDLAr_2E18_FHC.edep.nu rapidfire
+#sbatch -o ${logdir:-.}/slurm-%j.txt --array=1-2 -N 1 slurm/fw_cpu.slurm.sh MicroProdN3p1_NDLAr_2E18_FHC.edep.nu rapidfire
 
 
 #scripts/fwsub.py --runner SimForNDLAr_v4_Hadd --base-env MicroProdN3p1_NDLAr_2E18_FHC.nu.hadd --size $spill_size --start $start
@@ -50,22 +50,20 @@ mkdir -p $logdir
 
 
 #scripts/fwsub.py --runner SimForNDLAr_v4_LArND --base-env MicroProdN3p1_NDLAr_2E18_FHC.larnd.nu --size $spill_size --start $start
-#sbatch -o ${logdir:-.}/slurm-%j.txt --array=1-32 -N 1 slurm/fw_gpu.slurm.sh MicroProdN3p1_NDLAr_2E18_FHC.larnd.nu rapidfire
+#sbatch -o ${logdir:-.}/slurm-%j.txt --array=1-64 -N 1 slurm/fw_gpu.slurm.sh MicroProdN3p1_NDLAr_2E18_FHC.larnd.nu singleshot
 
 
 #scripts/fwsub.py --runner SimForNDLAr_v4_Flow --base-env MicroProdN3p1_NDLAr_2E18_FHC.flow.nu --size $spill_size --start $start
-#sbatch -o "$logdir"/slurm-%j.txt --array=1-16 -N 1 slurm/fw_cpu.slurm.sh MicroProdN3p1_NDLAr_2E18_FHC.flow.nu rapidfire
+#sbatch -o "$logdir"/slurm-%j.txt --array=1-9 -N 1 slurm/fw_cpu.slurm.sh MicroProdN3p1_NDLAr_2E18_FHC.flow.nu rapidfire
 
 
 #scripts/fwsub.py --runner SimForNDLAr_v4_Flow2Supera --base-env MicroProdN3p1_NDLAr_2E18_FHC.flow2supera.nu --size $spill_size --start $start
-#sbatch -o "$logdir"/slurm-%j.txt --array=1-8 -N 1 slurm/fw_cpu.slurm.sh MicroProdN3p1_NDLAr_2E18_FHC.flow2supera.nu rapidfire
+#sbatch -o "$logdir"/slurm-%j.txt --array=1-9 -N 1 slurm/fw_cpu.slurm.sh MicroProdN3p1_NDLAr_2E18_FHC.flow2supera.nu rapidfire
 
 
 #scripts/fwsub.py --runner SimForNDLAr_v4_MLreco_Spine --base-env MicroProdN3p1_NDLAr_2E18_FHC.mlreco_spine.nu --size $spill_size --start $start
-#sbatch -o "$logdir"/slurm-%j.txt --array=1-32 -N 1 slurm/fw_gpu.slurm.sh MicroProdN3p1_NDLAr_2E18_FHC.mlreco_spine.nu rapidfire
+#sbatch -o "$logdir"/slurm-%j.txt --array=1-4 -N 1 slurm/fw_gpu.slurm.sh MicroProdN3p1_NDLAr_2E18_FHC.mlreco_spine.nu rapidfire
 
 
 #scripts/fwsub.py --runner SimForNDLAr_v4_CAFMaker --base-env MicroProdN3p1_NDLAr_2E18_FHC.caf.nu --size $spill_size --start $start
-#sbatch -o "$logdir"/slurm-%j.txt --array=1-4 -N 1 slurm/fw_cpu.slurm.sh MicroProdN3p1_NDLAr_2E18_FHC.caf.nu rapidfire
-
-
+#sbatch -o "$logdir"/slurm-%j.txt --array=1-1 -N 1 slurm/fw_cpu.slurm.sh MicroProdN3p1_NDLAr_2E18_FHC.caf.nu rapidfire
