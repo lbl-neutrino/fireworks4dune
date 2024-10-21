@@ -1,5 +1,5 @@
 base_envs:
-  - name: 'MicroProdN1p1_NDLAr_1E18_RHC.caf.nu'
+  - name: 'MicroProdN1p1_NDLAr_1E18_RHC.caf.ndlaronly'
     env:
       ARCUBE_CONTAINER: 'fermilab/fnal-wn-sl7:latest'
       ARCUBE_GHEP_NU_NAME: 'MicroProdN1p1_NDLAr_1E18_RHC.genie.nu'
@@ -7,4 +7,3 @@ base_envs:
       ARCUBE_OUTDIR_BASE: '/pscratch/sd/a/abooth/MicroProdN1p1/output'
       ARCUBE_RUNTIME: 'SHIFTER'
       ARCUBE_SPINE_NAME: 'MicroProdN1p1_NDLAr_1E18_RHC.mlreco_spine.nu'
-      ARCUBE_TMSRECO_NAME: 'MicroProdN1p1_NDLAr_1E18_RHC.tmsreco.nu'
