@@ -7,3 +7,4 @@ base_envs:
       ARCUBE_OUTDIR_BASE: '/pscratch/sd/a/abooth/MicroProdN3p1/output'
       ARCUBE_RUNTIME: 'SHIFTER'
       ARCUBE_SPINE_NAME: 'MicroProdN3p1_NDLAr_2E18_FHC.mlreco_spine.nu'
+      ARCUBE_TMSRECO_NAME: 'MicroProdN3p1_NDLAr_2E18_FHC.tmsreco.nu'
