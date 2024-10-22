@@ -1,0 +1,10 @@
+base_envs:
+  - name: 'MicroProdN3p1_NDLAr_2E18_FHC.edep.nu'
+    env:
+      ARCUBE_CONTAINER: 'mjkramer/sim2x2:ndlar011'
+      ARCUBE_EDEP_MAC: 'macros/dune-nd.mac'
+      ARCUBE_GENIE_NAME: 'MicroProdN3p1_NDLAr_2E18_FHC.genie.nu'
+      ARCUBE_GEOM: 'geometry/nd_hall_with_lar_tms_sand_TDR_Production_geometry_v_1.0.3.gdml'
+      ARCUBE_LOGDIR_BASE: '/pscratch/sd/a/abooth/MicroProdN3p1/logs'
+      ARCUBE_OUTDIR_BASE: '/pscratch/sd/a/abooth/MicroProdN3p1/output'
+      ARCUBE_RUNTIME: 'SHIFTER'
