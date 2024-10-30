@@ -1,0 +1,7 @@
+base_envs:
+  - name: 'MiniRun6_Snowstorm_1E19_RHC.flow'
+    env:
+      ARCUBE_RUNTIME: 'NONE'
+      ARCUBE_OUTDIR_BASE: '/pscratch/sd/c/cuddandr/output/MiniRun6_Snowstorm_1E19'
+      ARCUBE_LOGDIR_BASE: '/pscratch/sd/c/cuddandr/logs/MiniRun6_Snowstorm_1E19'
+      ARCUBE_IN_NAME: 'MiniRun6_Snowstorm_1E19_RHC.larnd'

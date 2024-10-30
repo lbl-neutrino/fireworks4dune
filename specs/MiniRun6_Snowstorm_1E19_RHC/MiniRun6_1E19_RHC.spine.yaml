@@ -1,0 +1,18 @@
+base_envs:
+  - name: 'MiniRun6_Snowstorm_1E19_RHC.flow2supera'
+    env:
+      ARCUBE_OUTDIR_BASE: '/pscratch/sd/c/cuddandr/output/MiniRun6_Snowstorm_1E19'
+      ARCUBE_LOGDIR_BASE: '/pscratch/sd/c/cuddandr/logs/MiniRun6_Snowstorm_1E19'
+      ARCUBE_RUNTIME: 'SHIFTER'
+      ARCUBE_CONTAINER: 'deeplearnphysics/larcv2:ub20.04-cuda11.6-pytorch1.13-larndsim'
+      ARCUBE_IN_NAME: 'MiniRun6_Snowstorm_1E19_RHC.flow'
+      # NOTE: The ARCUBE_OUT_NAME is currently being overridden by the fwsub script :(
+      # ARCUBE_OUT_NAME: 'MiniRun6_Snowstorm_1E19_RHC.flow2supera'
+  - name: 'MiniRun6_Snowstorm_1E19_RHC.spine'
+    env:
+      ARCUBE_OUTDIR_BASE: '/pscratch/sd/c/cuddandr/output/MiniRun6_Snowstorm_1E19'
+      ARCUBE_LOGDIR_BASE: '/pscratch/sd/c/cuddandr/logs/MiniRun6_Snowstorm_1E19'
+      ARCUBE_RUNTIME: 'SHIFTER'
+      ARCUBE_CONTAINER: 'deeplearnphysics/larcv2:ub20.04-cuda11.6-pytorch1.13-larndsim'
+      # ARCUBE_OUT_NAME: 'MiniRun6_Snowstorm_1E19_RHC.spine'
+      ARCUBE_IN_NAME: 'MiniRun6_Snowstorm_1E19_RHC.flow2supera'
