@@ -1,0 +1,19 @@
+base_envs:
+ - name: 'Particle_Gun_mu-.flow2supera.nu'
+   env:
+     ARCUBE_CONTAINER: 'deeplearnphysics/larcv2:ub20.04-cuda11.6-pytorch1.13-larndsim'
+     ARCUBE_IN_NAME: 'Particle_Gun_mu-.flow.nu'
+     ARCUBE_LOGDIR_BASE: '/pscratch/sd/t/tta20/Particle_Gun_Production/logs'
+     ARCUBE_OUTDIR_BASE: '/pscratch/sd/t/tta20/Particle_Gun_Production/output'
+     ARCUBE_RUNTIME: 'SHIFTER'
+     ARCUBE_FLOW2SUPERA_CONFIG: 'ndlar_beam'
+ - name: 'Particle_Gun_mu-.mlreco_spine.nu'
+   env:
+     ARCUBE_CONTAINER: 'deeplearnphysics/larcv2:ub20.04-cuda11.6-pytorch1.13-larndsim'
+     ARCUBE_IN_NAME: 'Particle_Gun_mu-.flow2supera.nu'
+     ARCUBE_LOGDIR_BASE: '/pscratch/sd/t/tta20/Particle_Gun_Production/logs'
+     ARCUBE_OUTDIR_BASE: '/pscratch/sd/t/tta20/Particle_Gun_Production/output'
+     ARCUBE_SPINE_CONFIG: 'ndlar_full_chain_flash_nersc_240819.cfg'
+     ARCUBE_SPINE_NUM_THREADS: '24'
+     ARCUBE_SPINE_OPENBLAS_NUM_THREADS: '24'
+     ARCUBE_RUNTIME: 'SHIFTER'

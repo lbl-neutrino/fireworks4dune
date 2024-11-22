@@ -1,0 +1,8 @@
+base_envs:
+  - name: 'Particle_Gun_mu-.larnd.nu'
+    env:
+      ARCUBE_CONVERT2H5_NAME: 'Particle_Gun_mu-.convert2h5.nu'
+      ARCUBE_LARNDSIM_CONFIG: 'ndlar'
+      ARCUBE_LOGDIR_BASE: '/pscratch/sd/t/tta20/Particle_Gun_Production/logs'
+      ARCUBE_OUTDIR_BASE: '/pscratch/sd/t/tta20/Particle_Gun_Production/output'
+      ARCUBE_RUNTIME: 'NONE'

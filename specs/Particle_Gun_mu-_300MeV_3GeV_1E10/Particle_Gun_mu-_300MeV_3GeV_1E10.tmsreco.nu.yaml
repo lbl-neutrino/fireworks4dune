@@ -1,0 +1,8 @@
+base_envs:
+  - name: 'Particle_Gun_mu-.tmsreco.nu'
+    env:
+      ND_PRODUCTION_CONTAINER: 'fermilab/fnal-wn-sl7:latest'
+      ARCUBE_LOGDIR_BASE: '/pscratch/sd/t/tta20/Particle_Gun_Production/logs'
+      ARCUBE_OUTDIR_BASE: '/pscratch/sd/t/tta20/Particle_Gun_Production/output'
+      ND_PRODUCTION_SPILL_NAME: 'Particle_Gun_mu-.spill.nu'
+      ND_PRODUCTION_RUNTIME: 'SHIFTER'

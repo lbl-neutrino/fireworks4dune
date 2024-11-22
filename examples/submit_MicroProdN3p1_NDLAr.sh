@@ -4,7 +4,7 @@
 set +o posix
 
 
-#scripts/load_yaml.py specs/SimForNDLAr_v4.yaml specs/MicroProdN3p1_NDLAr/*.genie.nu.yaml --replace
+scripts/load_yaml.py specs/SimForNDLAr_v4.yaml specs/MicroProdN3p1_NDLAr/*.genie.nu.yaml --replace
 #scripts/load_yaml.py specs/SimForNDLAr_v4.yaml specs/MicroProdN3p1_NDLAr/*.edep.nu.yaml --replace
 #scripts/load_yaml.py specs/SimForNDLAr_v4.yaml specs/MicroProdN3p1_NDLAr/*.hadd.nu.yaml --replace
 #scripts/load_yaml.py specs/SimForNDLAr_v4.yaml specs/MicroProdN3p1_NDLAr/*.spill.nu.yaml --replace
@@ -25,8 +25,8 @@ logdir=/pscratch/sd/a/abooth/MicroProdN3p1/logs_sbatch
 mkdir -p $logdir
 
 
-#scripts/fwsub.py --runner SimForNDLAr_v4_Genie --base-env MicroProdN3p1_NDLAr_2E18_FHC.genie.nu --size $single_size --start $start
-#sbatch -o ${logdir:-.}/slurm-%j.txt --array=1-5 -N 1 slurm/fw_cpu.slurm.sh MicroProdN3p1_NDLAr_2E18_FHC.genie.nu rapidfire
+scripts/fwsub.py --runner SimForNDLAr_v4_Genie --base-env MicroProdN3p1_NDLAr_2E18_FHC.genie.nu --size $single_size --start $start
+sbatch -o ${logdir:-.}/slurm-%j.txt --array=1-5 -N 1 slurm/fw_cpu.slurm.sh MicroProdN3p1_NDLAr_2E18_FHC.genie.nu rapidfire
 
 
 #scripts/fwsub.py --runner SimForNDLAr_v4_Edep --base-env MicroProdN3p1_NDLAr_2E18_FHC.edep.nu --size $single_size --start $start

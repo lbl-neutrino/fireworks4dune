@@ -1,0 +1,7 @@
+base_envs:
+  - name: 'Particle_Gun_mu-_300MeV_3GeV_1E10.flow.nu'
+    env:
+      ARCUBE_IN_NAME: 'Particle_Gun_mu-_300MeV_3GeV_1E10.larnd.nu'
+      ARCUBE_LOGDIR_BASE: '/pscratch/sd/t/tta20/Particle_Gun_Production/logs'
+      ARCUBE_OUTDIR_BASE: '/pscratch/sd/t/tta20/Particle_Gun_Production/output'
+      ARCUBE_RUNTIME: 'NONE'

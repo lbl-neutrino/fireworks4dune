@@ -1,0 +1,14 @@
+base_envs:
+  - name: 'Particle_Gun_mu-.edep.nu'
+    env:
+      ARCUBE_CONTAINER: 'mjkramer/sim2x2:ndlar011'
+      ARCUBE_EDEP_MAC: 'macros/particle-gun.mac'
+      ARCUBE_GEOM: 'geometry/nd_hall_with_lar_tms_sand_TDR_Production_geometry_v_1.0.3.gdml'
+      ARCUBE_LOGDIR_BASE: '/pscratch/sd/t/tta20/Particle_Gun_Production/logs'
+      ARCUBE_OUTDIR_BASE: '/pscratch/sd/t/tta20/Particle_Gun_Production/output'
+      ARCUBE_RUNTIME: 'SHIFTER'
+      $ARCUBE_BEAM_TYPE: 'particle_gun'
+      $ARCUBE_EXPOSURE: '1E3'
+      $ARCUBE_PARTICLE_TYPE: 'mu-'
+      $ARCUBE_ENERGY_MINIMUM: '300 MeV'
+      $ARCUBE_ENERGY_MAXIMUM: '3 GeV'
