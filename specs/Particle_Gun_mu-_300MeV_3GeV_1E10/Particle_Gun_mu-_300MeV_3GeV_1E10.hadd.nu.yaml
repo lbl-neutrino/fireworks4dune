@@ -8,3 +8,4 @@ base_envs:
       ARCUBE_OUTDIR_BASE: '/pscratch/sd/t/tta20/Particle_Gun_Production/output'
       ARCUBE_RUNTIME: 'SHIFTER'
       ARCUBE_USE_GHEP_POT: '0'
+      ARCUBE_INDEX: '0'
