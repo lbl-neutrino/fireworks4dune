@@ -3,8 +3,9 @@ base_envs:
     env:
       ARCUBE_CONTAINER: 'mjkramer/sim2x2:ndlar011'
       ARCUBE_ACTIVE_VOLUME: 'TPCActive_shape'
-      ARCUBE_KEEP_ALL_DETS: '0'
       ARCUBE_LOGDIR_BASE: '/pscratch/sd/t/tta20/Particle_Gun_Production/logs'
       ARCUBE_OUTDIR_BASE: '/pscratch/sd/t/tta20/Particle_Gun_Production/output'
       ARCUBE_RUNTIME: 'SHIFTER'
-      ARCUBE_SPILL_NAME: 'Particle_Gun_mu-.spill.nu'
+      ARCUBE_SINGLE_NAME: 'Particle_Gun_mu-.edep.nu'
+      ARCUBE_INDEX: '0'
+      ARCUBE_KEEP_ALL_DETS: '1'
