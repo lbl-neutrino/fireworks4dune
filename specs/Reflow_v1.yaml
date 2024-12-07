@@ -1,0 +1,10 @@
+repos:
+  - name: 'ndlar_reflow'
+    url: 'https://github.com/lbl-neutrino/ndlar_reflow.git'
+    commit: ''
+
+runners:
+  - name: 'ndlar_reflow_RunFlow'
+    repo: 'ndlar_reflow'
+    workdir: '.'
+    cmd: 'scripts/wrap_run_flow.sh'
