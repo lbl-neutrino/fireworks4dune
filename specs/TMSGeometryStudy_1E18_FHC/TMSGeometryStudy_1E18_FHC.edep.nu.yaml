@@ -1,0 +1,10 @@
+base_envs:
+  - name: 'TMSGeometryStudy_1E18_FHC.edep.nu'
+    env:
+      ARCUBE_CONTAINER: 'mjkramer/sim2x2:ndlar011'
+      ARCUBE_EDEP_MAC: 'macros/dune-nd.mac'
+      ARCUBE_GENIE_NAME: 'TMSGeometryStudy_1E18_FHC.genie.nu'
+      ARCUBE_GEOM: 'geometry/TMSGeometryStudy/nd_hall_with_lar_tms-stereo_sand.gdml'
+      ARCUBE_LOGDIR_BASE: '/pscratch/sd/m/mdolce/TMSGeometryStudy_1E18_FHC-stereo/logs'
+      ARCUBE_OUTDIR_BASE: '/pscratch/sd/m/mdolce/TMSGeometryStudy_1E18_FHC-stereo/output'
+      ARCUBE_RUNTIME: 'SHIFTER'
