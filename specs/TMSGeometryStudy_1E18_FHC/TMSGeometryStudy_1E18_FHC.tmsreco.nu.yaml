@@ -1,0 +1,8 @@
+base_envs:
+  - name: 'TMSGeometryStudy_1E18_FHC.tmsreco.nu'
+    env:
+      ND_PRODUCTION_CONTAINER: 'fermilab/fnal-wn-sl7:latest'
+      ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/m/mdolce/TMSGeometryStudy_1E18_FHC-stereo/logs'
+      ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/m/mdolce/TMSGeometryStudy_1E18_FHC-stereo/output'
+      ND_PRODUCTION_SPILL_NAME: 'TMSGeometryStudy_1E18_FHC.spill.nu'
+      ND_PRODUCTION_RUNTIME: 'SHIFTER'

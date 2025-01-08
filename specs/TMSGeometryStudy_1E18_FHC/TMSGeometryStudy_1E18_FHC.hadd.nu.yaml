@@ -1,0 +1,10 @@
+base_envs:
+  - name: 'TMSGeometryStudy_1E18_FHC.nu.hadd'
+    env:
+      ARCUBE_CONTAINER: 'mjkramer/sim2x2:ndlar011'
+      ARCUBE_IN_NAME: 'TMSGeometryStudy_1E18_FHC.edep.nu'
+      ARCUBE_HADD_FACTOR: '10'
+      ARCUBE_LOGDIR_BASE: '/pscratch/sd/m/mdolce/TMSGeometryStudy_1E18_FHC-stereo/logs'
+      ARCUBE_OUTDIR_BASE: '/pscratch/sd/m/mdolce/TMSGeometryStudy_1E18_FHC-stereo/output'
+      ARCUBE_RUNTIME: 'SHIFTER'
+      ARCUBE_USE_GHEP_POT: '1'
