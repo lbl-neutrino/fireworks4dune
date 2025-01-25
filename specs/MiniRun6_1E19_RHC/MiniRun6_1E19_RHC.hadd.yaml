@@ -1,0 +1,17 @@
+base_envs:
+  - name: 'MiniRun6_1E19_RHC.edep.nu.hadd'
+    env:
+      ARCUBE_OUTDIR_BASE: '/pscratch/sd/d/dunepr/output/MiniRun6'
+      ARCUBE_LOGDIR_BASE: '/pscratch/sd/d/dunepr/logs/MiniRun6'
+      ARCUBE_RUNTIME: 'SHIFTER'
+      ARCUBE_CONTAINER: 'mjkramer/sim2x2:ndlar011'
+      ARCUBE_IN_NAME: 'MiniRun6_1E19_RHC.edep.nu'
+      ARCUBE_HADD_FACTOR: '10'
+  - name: 'MiniRun6_1E19_RHC.edep.rock.hadd'
+    env:
+      ARCUBE_OUTDIR_BASE: '/pscratch/sd/d/dunepr/output/MiniRun6'
+      ARCUBE_LOGDIR_BASE: '/pscratch/sd/d/dunepr/logs/MiniRun6'
+      ARCUBE_RUNTIME: 'SHIFTER'
+      ARCUBE_CONTAINER: 'mjkramer/sim2x2:ndlar011'
+      ARCUBE_IN_NAME: 'MiniRun6_1E19_RHC.edep.rock'
+      ARCUBE_HADD_FACTOR: '10'

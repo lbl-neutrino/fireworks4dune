@@ -1,0 +1,11 @@
+base_envs:
+  - name: 'MiniRun6_1E19_RHC.plots'
+    env:
+      ARCUBE_OUTDIR_BASE: '/pscratch/sd/d/dunepr/output/MiniRun6'
+      ARCUBE_LOGDIR_BASE: '/pscratch/sd/d/dunepr/logs/MiniRun6'
+      ARCUBE_RUNTIME: 'SHIFTER'
+      ARCUBE_CONTAINER: 'mjkramer/sim2x2:ndlar011'
+      ARCUBE_EDEP_NAME: 'MiniRun6_1E19_RHC.convert2h5'
+      ARCUBE_LARND_NAME: 'MiniRun6_1E19_RHC.larnd'
+      ARCUBE_FLOW_NAME: 'MiniRun6_1E19_RHC.flow'
+      ARCUBE_OUT_NAME: 'MiniRun6_1E19_RHC.plots'
