@@ -6,6 +6,8 @@ admin/install_fireworks.sh
 
 Then edit `fw_config/my_launchpad.yaml` to specify the password for MongoDB.
 
+If you are going to be using the fireworks web GUI, the default port number (5000) can be changed by specifying a new port number with `WEBSERVER_PORT` in `fw_config/FW_config.yaml`
+
 # Loading the FireWorks environment
 
 ``` bash
