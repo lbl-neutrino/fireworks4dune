@@ -20,7 +20,7 @@ logdir=/pscratch/sd/m/mdolce/MicroProdN3p1-merge-2x2-test/logs_sbatch
 mkdir -p $logdir
 
 
-#scripts/fwsub.py --runner ND_Production_v1_Genie --base-envMicroProdN3p1-merge2x2-test_NDLAr_2E18_FHC.genie.nu --size $single_size --start $start
+#scripts/fwsub.py --runner ND_Production_v1_Genie --base-env MicroProdN3p1-merge2x2-test_NDLAr_2E18_FHC.genie.nu --size $single_size --start $start
 #sbatch -o ${logdir:-.}/slurm-%j.txt --array=1-5 -N 1 slurm/fw_cpu.slurm.sh MicroProdN3p1-merge2x2-test_NDLAr_2E18_FHC.genie.nu rapidfire
 
 #scripts/fwsub.py --runner ND_Production_v1_Edep --base-env MicroProdN3p1-merge2x2-test_NDLAr_2E18_FHC.edep.nu --size $single_size --start $start
