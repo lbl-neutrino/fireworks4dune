@@ -4,23 +4,23 @@ repos:
     commit: '84563e969a69e4722177aaacb73a754c127922ef'
 
 runners:
-  - name: 'SimForNDLAr_v4_Genie'
-    repo: 'SimForNDLAr_v4'
+  - name: 'ND_Production_v1_Genie'
+    repo: 'ND_Production_v1'
     workdir: 'run-genie'
     cmd: './run_genie.sh'
 
-  - name: 'SimForNDLAr_v4_Edep'
-    repo: 'SimForNDLAr_v4'
+  - name: 'ND_Production_v1_Edep'
+    repo: 'ND_Production_v1'
     workdir: 'run-edep-sim'
     cmd: './run_edep_sim.sh'
 
-  - name: 'SimForNDLAr_v4_Hadd'
-    repo: 'SimForNDLAr_v4'
+  - name: 'ND_Production_v1_Hadd'
+    repo: 'ND_Production_v1'
     workdir: 'run-hadd'
     cmd: './run_hadd.sh'
 
-  - name: 'SimForNDLAr_v4_SpillBuild'
-    repo: 'SimForNDLAr_v4'
+  - name: 'ND_Production_v1_SpillBuild'
+    repo: 'ND_Production_v1'
     workdir: 'run-spill-build'
     cmd: './run_spill_build.sh'
 
