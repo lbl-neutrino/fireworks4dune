@@ -1,0 +1,15 @@
+base_envs:
+  - name: 'MicroProdN3p1-merge2x2-test_NDLAr_2E18_FHC.genie.nu'
+    env:
+      ARCUBE_CONTAINER: 'mjkramer/sim2x2:genie_edep.3_04_00.20230620'
+      ARCUBE_DET_LOCATION: 'DUNEND'
+      ARCUBE_DK2NU_DIR: '/dvs_ro/cfs/cdirs/dune/users/abooth/fluxfiles/DUNE_PRISM/OnAxis/neutrino/dk2nu'
+      ARCUBE_EXPOSURE: '1E15'
+      ARCUBE_GEOM: 'geometry/nd_hall_with_lar_tms_sand_TDR_Production_geometry_v_1.0.3.gdml'
+      ARCUBE_LOGDIR_BASE: '/pscratch/sd/m/mdolce/MicroProdN3p1-merge2x2-test/logs'
+      ARCUBE_OUTDIR_BASE: '/pscratch/sd/m/mdolce/MicroProdN3p1-merge2x2-test/output'
+      ARCUBE_RUNTIME: 'SHIFTER'
+      ARCUBE_TOP_VOLUME: 'volArgonCubeDetector75'
+      ARCUBE_TUNE: 'AR23_20i_00_000'
+      ARCUBE_XSEC_FILE: '/dvs_ro/cfs/cdirs/dune/users/2x2EventGeneration/inputs/NuMI/genie_xsec-3.04.00-noarch-AR2320i00000-k250-e1000/v3_04_00/NULL/AR2320i00000-k250-e1000/data/gxspl-NUsmall.xml'
+      ARCUBE_ZMIN: '-3'
