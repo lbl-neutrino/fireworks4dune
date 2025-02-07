@@ -5,7 +5,7 @@ base_envs:
       ARCUBE_DET_LOCATION: 'DUNEND'
       ARCUBE_DK2NU_DIR: '/dvs_ro/cfs/cdirs/dune/users/abooth/fluxfiles/DUNE_PRISM/OnAxis/neutrino/dk2nu'
       ARCUBE_EXPOSURE: '1E15'
-      ARCUBE_GEOM: 'geometry/nd_hall_with_lar_tms_sand_TDR_Production_geometry_v_1.0.3.gdml'
+      ARCUBE_GEOM: 'geometry/TMSGeometryStudy/nd_hall_with_lar_tms-stereo-UpDown_sand.gdml'
       ARCUBE_LOGDIR_BASE: '/pscratch/sd/m/mdolce/MicroProdN3p1-merge2x2-test/logs'
       ARCUBE_OUTDIR_BASE: '/pscratch/sd/m/mdolce/MicroProdN3p1-merge2x2-test/output'
       ARCUBE_RUNTIME: 'SHIFTER'
