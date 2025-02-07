@@ -42,7 +42,7 @@ def main():
             args.worker = args.base_env
 
     var_prefix = "ARCUBE_"
-    if 'ND_Production' in args.runner: var_prefix = "ND_PRODUCTION_"
+    if 'ND_Production' in args.runner and 'tmsreco' in args.runner.lower(): var_prefix = "ND_PRODUCTION_"
     for index in range(args.start, args.start + args.size):
         spec = {
             'runner': args.runner,
