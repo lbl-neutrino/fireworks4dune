@@ -16,7 +16,7 @@ single_size=2560
 spill_size=256
 
 
-logdir=/pscratch/sd/m/mdolce/MicroProdN3p1-merge-2x2-test/logs_sbatch
+logdir=/pscratch/sd/m/mdolce/MicroProdN3p1-merge2x2-test/logs_sbatch
 mkdir -p $logdir
 
 
