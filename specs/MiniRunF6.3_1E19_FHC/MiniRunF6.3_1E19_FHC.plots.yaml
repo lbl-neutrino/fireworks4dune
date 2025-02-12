@@ -1,0 +1,11 @@
+base_envs:
+  - name: 'MiniRunF6.3_1E19_FHC.plots'
+    env:
+      ARCUBE_OUTDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/MiniRunF6.3'
+      ARCUBE_LOGDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/logs/MiniRunF6.3'
+      ARCUBE_RUNTIME: 'SHIFTER'
+      ARCUBE_CONTAINER: 'mjkramer/sim2x2:ndlar011'
+      ARCUBE_EDEP_NAME: 'MiniRunF6.3_1E19_FHC.convert2h5'
+      ARCUBE_LARND_NAME: 'MiniRunF6.3_1E19_FHC.larnd'
+      ARCUBE_FLOW_NAME: 'MiniRunF6.3_1E19_FHC.flow'
+      ARCUBE_OUT_NAME: 'MiniRunF6.3_1E19_FHC.plots'

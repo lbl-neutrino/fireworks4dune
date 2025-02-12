@@ -1,0 +1,9 @@
+base_envs:
+  - name: 'MiniRunF6.3_1E19_FHC.convert2h5'
+    env:
+      ARCUBE_OUTDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/MiniRunF6.3'
+      ARCUBE_LOGDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/logs/MiniRunF6.3'
+      ARCUBE_RUNTIME: 'SHIFTER'
+      ARCUBE_CONTAINER: 'mjkramer/sim2x2:ndlar011'
+      ARCUBE_ACTIVE_VOLUME: 'volTPCActive'
+      ARCUBE_SPILL_NAME: 'MiniRunF6.3_1E19_FHC.spill'
