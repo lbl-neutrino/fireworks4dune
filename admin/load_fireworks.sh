@@ -18,3 +18,5 @@ if [ -z "$FW4DUNE_REPO_DIR" ]; then
 fi
 
 export PATH=$fw4dune_dir/scripts:$PATH
+
+set +o posix                    # sneaky sneaky, NERSC
