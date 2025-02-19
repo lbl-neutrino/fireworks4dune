@@ -39,6 +39,8 @@ def main():
         fw_hadd_nu = fwm.make(i, 'Hadd', 'edep.nu.hadd', category='cpu_seconds')
         fw_hadd_rock = fwm.make(i, 'Hadd', 'edep.rock.hadd', category='cpu_seconds')
         fw_spill = fwm.make(i, 'SpillBuild', 'spill', category='cpu_seconds')
+        fw_edep2flat = fwm.make(i, 'Edep2Flat', 'edep2flat', category='cpu_minutes')
+        fw_minerva = fwm.make(i, 'Minerva', 'minerva', category='cpu_minutes')
         fw_convert2h5 = fwm.make(i, 'Convert2H5', 'convert2h5', category='cpu_seconds')
         fw_larnd = fwm.make(i, 'LArND', 'larnd', category='gpu_minutes')
         fw_flow = fwm.make(i, 'Flow', 'flow', category='cpu_minutes')
@@ -50,13 +52,11 @@ def main():
         fw_pandora = fwm.make(i, 'Pandora', 'pandora', category='cpu_minutes')
         fw_cafmaker = fwm.make(i, 'CAFmaker','caf', category='cpu_minutes')
 
-        fireworks = [fw_larnd, fw_flow, fw_plots,
-                     fw_flow2supera, fw_spine, fw_cafmaker]
-
         fireworks = [*fws_genie_nu, *fws_genie_rock,
                      *fws_edep_nu, *fws_edep_rock,
-                     fw_hadd_nu, fw_hadd_rock, fw_spill, fw_convert2h5,
-                     fw_larnd, fw_flow, fw_plots,
+                     fw_hadd_nu, fw_hadd_rock, fw_spill,
+                     fw_edep2flat, fw_minerva,
+                     fw_convert2h5, fw_larnd, fw_flow, fw_plots,
                      fw_flow2supera, fw_spine,
                      fw_flow2root, fw_pandora,
                      fw_cafmaker]
@@ -69,7 +69,9 @@ def main():
                 **{fw_edep_rock: [fw_hadd_rock] for fw_edep_rock in fws_edep_rock},
                 fw_hadd_nu: [fw_spill],
                 fw_hadd_rock: [fw_spill],
-                fw_spill: [fw_convert2h5],
+                fw_spill: [fw_edep2flat, fw_convert2h5],
+                fw_edep2flat: [fw_minerva],
+                fw_minerva: [fw_cafmaker],
                 fw_convert2h5: [fw_larnd],
                 fw_larnd: [fw_flow],
                 fw_flow: [fw_flow2supera, fw_flow2root, fw_plots],
