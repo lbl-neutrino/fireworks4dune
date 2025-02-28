@@ -5,4 +5,4 @@ base_envs:
       ARCUBE_OUTDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_2x2_v8'
       ARCUBE_LOGDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/logs/Reflow_2x2_v8'
       ARCUBE_INDIR_BASE: '/global/cfs/cdirs/dune/www/data/2x2/nearline/packet'
-      ARCUBE_MODE: 'charge_only'
+      # ARCUBE_MODE: 'charge_only'
