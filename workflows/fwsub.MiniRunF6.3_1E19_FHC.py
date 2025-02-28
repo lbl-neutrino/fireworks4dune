@@ -72,6 +72,8 @@ def main():
                 fw_edep2flat: [fw_minerva],
                 fw_minerva: [fw_cafmaker],
                 fw_convert2h5: [fw_larnd],
+                fw_edep2flat: [fw_minerva],
+                fw_minerva: [fw_cafmaker],
                 fw_larnd: [fw_flow],
                 fw_flow: [fw_flow2supera, fw_flow2root, fw_plots],
                 fw_flow2supera: [fw_spine],
