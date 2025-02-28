@@ -7,18 +7,17 @@
 #SBATCH --gpus-per-task=1
 #SBATCH --cpus-per-task=32
 
-name=$1; shift
+category=$1; shift
 rlaunch_args=("$@"); shift $#
 
 basedir=$PWD
 
-logdir=${SCRATCH}/slurm_logs/${name}/${SLURM_JOBID}
+logdir=${SCRATCH}/slurm_logs/${category}/${SLURM_JOBID}
 mkdir -p "$logdir"
 
-launchdir=${SCRATCH}/launchers/${name}/${SLURM_JOBID}
-# launchdir=launchers.${name}
+launchdir=${SCRATCH}/launchers/${category}/${SLURM_JOBID}
 mkdir -p "$launchdir"
 cd "$launchdir" || exit
 
 srun -o "$logdir"/output-%j.%t.txt --kill-on-bad-exit=0 \
-    "$basedir"/scripts/run_rlaunch.sh "$name" "${rlaunch_args[@]}"
+    "$basedir"/scripts/run_rlaunch.sh "$category" "${rlaunch_args[@]}"
