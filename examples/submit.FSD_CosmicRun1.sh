@@ -3,7 +3,7 @@
 source admin/load_fireworks.sh
 set +o posix                    # sneaky sneaky, NERSC
 
-name=CosmicRun
+name=FSD_CosmicRun1
 logdir=$SCRATCH/logs.$name
 export FW4DUNE_SLEEP_SEC=30
 
@@ -21,7 +21,7 @@ sbatch --parsable -o "$logdir"/slurm-%j.txt -N 1 -t 30 slurm/fw_cpu.slurm.sh cpu
 
 # larnd-sim, spine
 GPU_MIN_JOBID=$(sbatch --parsable -C "gpu&hbm80g" \
-    -o "$logdir"/slurm-%j.txt -N 2 -t 120 slurm/fw_gpu.slurm.sh gpu_minutes rapidfire)
+    -o "$logdir"/slurm-%j.txt -N 4 -t 120 slurm/fw_gpu.slurm.sh gpu_minutes rapidfire)
     # -o "$logdir"/slurm-%j.txt --array=1-1  -N 4 -t 150 slurm/fw_gpu.slurm.sh gpu_minutes rapidfire)
 
 # nd-flow, flow2supera, cafs

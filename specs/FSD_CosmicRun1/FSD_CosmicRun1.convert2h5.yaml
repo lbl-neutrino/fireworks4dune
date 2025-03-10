@@ -8,3 +8,4 @@ base_envs:
       ARCUBE_ACTIVE_VOLUME: 'volTPCActive'
       ARCUBE_SINGLE_NAME: 'FSD_CosmicRun1.edep'
       ARCUBE_KEEP_ALL_DETS: '0'
+      ARCUBE_COSMIC_SIM: '1'
