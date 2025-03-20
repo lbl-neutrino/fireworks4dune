@@ -12,10 +12,10 @@ rlaunch_args=("$@"); shift $#
 
 basedir=$PWD
 
-logdir=${SCRATCH}/slurm_logs/${category}/${SLURM_JOBID}
+logdir=${FW4DUNE_SCRATCH:-$SCRATCH}/slurm_logs/${category}/${SLURM_JOBID}
 mkdir -p "$logdir"
 
-launchdir=${SCRATCH}/launchers/${category}/${SLURM_JOBID}
+launchdir=${FW4DUNE_SCRATCH:-$SCRATCH}/launchers/${category}/${SLURM_JOBID}
 mkdir -p "$launchdir"
 cd "$launchdir" || exit
 
