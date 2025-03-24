@@ -1,0 +1,11 @@
+base_envs:
+  - name: 'FSD_CosmicRun1.edep'
+    env:
+      ARCUBE_OUTDIR_BASE: '/pscratch/sd/c/cuddandr/output/FSD_CosmicRun1'
+      ARCUBE_LOGDIR_BASE: '/pscratch/sd/c/cuddandr/logs/FSD_CosmicRun1'
+      ARCUBE_SIM: 'CORSIKA'
+      ARCUBE_RUNTIME: 'SHIFTER'
+      ARCUBE_CONTAINER: 'mjkramer/sim2x2:ndlar011'
+      ARCUBE_CORSIKA_NAME: 'FSD_CosmicRun1.corsika'
+      ARCUBE_EDEP_MAC: 'macros/cosmics.mac'
+      ARCUBE_GEOM_EDEP: 'geometry/fsd_with_cryostat.gdml'

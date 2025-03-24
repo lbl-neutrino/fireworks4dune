@@ -1,0 +1,19 @@
+base_envs:
+  - name: 'MiniRunF6.3_1E19_FHC.flow2supera'
+    env:
+      ARCUBE_OUTDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/MiniRunF6.3'
+      ARCUBE_LOGDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/logs/MiniRunF6.3'
+      ARCUBE_RUNTIME: 'SHIFTER'
+      ARCUBE_CONTAINER: 'deeplearnphysics/larcv2:ub20.04-cuda11.6-pytorch1.13-larndsim'
+      ARCUBE_IN_NAME: 'MiniRunF6.3_1E19_FHC.flow'
+      # NOTE: The ARCUBE_OUT_NAME is currently being overridden by the fwsub script :(
+      # ARCUBE_OUT_NAME: 'MiniRunF6.3_1E19_FHC.mlreco'
+  - name: 'MiniRunF6.3_1E19_FHC.spine'
+    env:
+      ARCUBE_OUTDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/MiniRunF6.3'
+      ARCUBE_LOGDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/logs/MiniRunF6.3'
+      ARCUBE_RUNTIME: 'SHIFTER'
+      ARCUBE_CONTAINER: 'deeplearnphysics/larcv2:ub20.04-cuda11.6-pytorch1.13-larndsim'
+      # ARCUBE_IN_NAME: 'MiniRunF6.3_1E19_FHC.mlreco'
+      # ARCUBE_OUT_NAME: 'MiniRunF6.3_1E19_FHC.mlreco'
+      ARCUBE_IN_NAME: 'MiniRunF6.3_1E19_FHC.flow2supera'

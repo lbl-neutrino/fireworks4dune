@@ -8,6 +8,11 @@ runners:
     workdir: 'run-genie'
     cmd: './run_genie.sh'
 
+  - name: 'SimFor2x2_v6_Corsika'
+    repo: 'SimFor2x2_v6'
+    workdir: 'run-corsika'
+    cmd: './run_both_steps.sh'
+
   - name: 'SimFor2x2_v6_Edep'
     repo: 'SimFor2x2_v6'
     workdir: 'run-edep-sim'
@@ -57,6 +62,11 @@ runners:
     repo: 'SimFor2x2_v6'
     workdir: 'run-mlreco'
     cmd: './run_spine.sh'
+
+  - name: 'SimFor2x2_v6_Flow2root'
+    repo: 'SimFor2x2_v6'
+    workdir: 'run-pandora'
+    cmd: './run_flow2root.sh'
 
   - name: 'SimFor2x2_v6_Pandora'
     repo: 'SimFor2x2_v6'

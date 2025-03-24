@@ -13,7 +13,7 @@ HADD_FACTOR = 10
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('--base-env-prefix', default='MiniRun6_1E19_RHC')
+    ap.add_argument('--base-env-prefix', default='FSD_CosmicRun1')
     ap.add_argument('--name', help='Defaults to --base-env-prefix')
     ap.add_argument('--repo', default='SimFor2x2_v6')
     ap.add_argument('--size', type=int, default=1024, help='Number of final outputs (post-hadd etc.) to produce')
@@ -45,21 +45,19 @@ def main():
         return Firework(RepoRunner(), name=f'{args.name}.{step_postfix}', spec=spec)
 
     for i in range(args.start, args.start + args.size):
+        fw_corsika = make_fw(i, 'Corsika', 'corsika', category='cpu_seconds')
+        fw_edep = make_fw(i, 'Edep', 'edep', category='cpu_seconds')
+        fw_convert2h5 = make_fw(i, 'Convert2H5', 'convert2h5', category='cpu_seconds')
         fw_larnd = make_fw(i, 'LArND', 'larnd', category='gpu_minutes')
         fw_flow = make_fw(i, 'Flow', 'flow', category='cpu_minutes')
-        fw_plots = make_fw(i, 'Plots', 'plots', category='cpu_minutes')
 
-        fw_flow2supera = make_fw(i, 'Flow2Supera', 'flow2supera', category='cpu_minutes')
-        fw_spine = make_fw(i, 'Spine', 'spine', category='gpu_minutes')
-        fw_cafmaker = make_fw(i, 'CAFmaker','caf', category='cpu_minutes')
+        fireworks = [fw_corsika, fw_edep, fw_convert2h5,
+                     fw_larnd, fw_flow]
 
-        fireworks = [fw_larnd, fw_flow, fw_plots,
-                     fw_flow2supera, fw_spine, fw_cafmaker]
-
-        deps = {fw_larnd: [fw_flow],
-                fw_flow: [fw_flow2supera, fw_plots],
-                fw_flow2supera: [fw_spine],
-                fw_spine: [fw_cafmaker]}
+        deps = {fw_corsika: [fw_edep],
+                fw_edep: [fw_convert2h5],
+                fw_convert2h5: [fw_larnd],
+                fw_larnd: [fw_flow]}
 
         wf = Workflow(fireworks, deps, name=args.name)
 

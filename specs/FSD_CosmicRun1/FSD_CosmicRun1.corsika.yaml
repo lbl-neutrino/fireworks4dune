@@ -1,0 +1,9 @@
+base_envs:
+  - name: 'FSD_CosmicRun1.corsika'
+    env:
+      ARCUBE_OUTDIR_BASE: '/pscratch/sd/c/cuddandr/output/FSD_CosmicRun1'
+      ARCUBE_LOGDIR_BASE: '/pscratch/sd/c/cuddandr/logs/FSD_CosmicRun1'
+      ARCUBE_RUNTIME: 'SHIFTER'
+      ARCUBE_CONTAINER: 'mjkramer/sim2x2:ndlar011'
+      ARCUBE_LOC: 'BERN'
+      ARCUBE_NSHOW: '5000'
