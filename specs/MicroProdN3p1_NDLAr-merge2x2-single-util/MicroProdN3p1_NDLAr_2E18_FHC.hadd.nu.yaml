@@ -1,0 +1,10 @@
+base_envs:
+  - name: 'MicroProdN3p1-merge2x2-single-util_NDLAr_2E18_FHC.nu.hadd'
+    env:
+      ARCUBE_CONTAINER: 'mjkramer/sim2x2:ndlar011'
+      ARCUBE_IN_NAME: 'MicroProdN3p1-merge2x2-single-util_NDLAr_2E18_FHC.edep.nu'
+      ARCUBE_HADD_FACTOR: '10'
+      ARCUBE_LOGDIR_BASE: '/pscratch/sd/m/mdolce/MicroProdN3p1-merge2x2-single-util/logs'
+      ARCUBE_OUTDIR_BASE: '/pscratch/sd/m/mdolce/MicroProdN3p1-merge2x2-single-util/output'
+      ARCUBE_RUNTIME: 'SHIFTER'
+      ARCUBE_USE_GHEP_POT: '1'
