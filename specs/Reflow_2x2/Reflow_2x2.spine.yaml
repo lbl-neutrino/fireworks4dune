@@ -1,0 +1,11 @@
+base_envs:
+  - name: 'Reflow_2x2.spine'
+    env:
+      ARCUBE_INDIR_BASE: '/global/cfs/cdirs/dune/www/data/2x2/nearline/packet'
+      ARCUBE_OUTDIR_BASE: '/pscratch/sd/m/mkramer/test_out/respine_v8.spine'
+      ARCUBE_LOGDIR_BASE: '/pscratch/sd/m/mkramer/test_log/respine_v8.spine'
+      ARCUBE_RUNTIME: 'SHIFTER'
+      ARCUBE_CONTAINER: 'deeplearnphysics/larcv2:ub2204-cu124-torch251-larndsim'
+      ARCUBE_SUPERA_DIR_BASE: '/pscratch/sd/m/mkramer/test_out/respine_v8.flow2supera'
+      ARCUBE_SPINE_NUM_THREADS: '1'
+      ARCUBE_SPINE_OPENBLAS_NUM_THREADS: '1'
