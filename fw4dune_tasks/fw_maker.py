@@ -13,8 +13,18 @@ class FwMaker:
         self.repo = repo
         self.name = name
 
-    def make(self, index: int, runner_postfix: str, step_postfix: str,
-             category: Optional[str]) -> Firework:
+    def make_mc(self, index: int, runner_postfix: str, step_postfix: str,
+                category: Optional[str] = None) -> Firework:
+        env = {
+            'ARCUBE_OUT_NAME': f'{self.name}.{step_postfix}',
+            'ARCUBE_INDEX': str(index)
+        }
+
+        return self.make(env, runner_postfix, step_postfix, category)
+
+    def make(self, env: dict[str, str], runner_postfix: str,
+             step_postfix: str, category: Optional[str] = None) -> Firework:
+        assert isinstance(env, dict)
 
         base_env = f'{self.base_env_prefix}.{step_postfix}'
         if category is None:
@@ -23,11 +33,10 @@ class FwMaker:
         spec = {
             'runner': f'{self.repo}_{runner_postfix}',
             'base_env': base_env,
-            'env': {
-                'ARCUBE_OUT_NAME': f'{self.name}.{step_postfix}',
-                'ARCUBE_INDEX': str(index)
-            },
+            'env': env,
             '_category': category
         }
 
-        return Firework(RepoRunner(), name=f'{self.name}.{step_postfix}', spec=spec)
+        return Firework(RepoRunner(),
+                        name=f'{self.name}.{step_postfix}',
+                        spec=spec)

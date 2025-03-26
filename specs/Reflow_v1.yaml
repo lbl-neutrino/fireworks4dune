@@ -2,16 +2,38 @@ repos:
   - name: 'ndlar_reflow'
     url: 'https://github.com/lbl-neutrino/ndlar_reflow.git'
     commit: ''
+
   - name: '2x2_sim'
     url: 'https://github.com/DUNE/2x2_sim.git'
     commit: ''
 
 runners:
-  - name: 'ndlar_reflow_RunFlow'
+  - name: 'ndlar_reflow_Flow'
     repo: 'ndlar_reflow'
     workdir: '.'
     cmd: 'scripts/wrap_run_flow.sh'
-  - name: 'ndlar_reflow_RunSPINE'
+
+  - name: '2x2_sim_Flow2Supera'
+    repo: '2x2_sim'
+    workdir: 'run-mlreco'
+    cmd: './run_flow2supera.data.sh'
+
+  - name: '2x2_sim_SPINE'
     repo: '2x2_sim'
     workdir: 'run-mlreco'
     cmd: './run_spine.data.sh'
+
+  - name: '2x2_sim_Flow2root'
+    repo: '2x2_sim'
+    workdir: 'run-pandora'
+    cmd: './run_pandora.data.sh'
+
+  - name: '2x2_sim_Pandora'
+    repo: '2x2_sim'
+    workdir: 'run-pandora'
+    cmd: './run_pandora.data.sh'
+
+  - name: '2x2_sim_CAFmaker'
+    repo: '2x2_sim'
+    workdir: 'run-cafmaker'
+    cmd: './run_cafmaker.data.sh'

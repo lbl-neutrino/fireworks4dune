@@ -1,0 +1,11 @@
+base_envs:
+  - name: 'Reflow_2x2.caf'
+    env:
+      ARCUBE_RUNTIME: 'SHIFTER'
+      ARCUBE_CONTAINER: 'fermilab/fnal-wn-sl7:latest'
+      ARCUBE_LOGDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/logs/Reflow_2x2_v9/caf'
+      ARCUBE_OUTDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_2x2_v9/caf'
+      ARCUBE_INDIR_BASE: '/global/cfs/cdirs/dune/www/data/2x2/nearline/packet'
+      ARCUBE_FLOW_DIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_2x2_v9/flow'
+      ARCUBE_SPINE_DIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_2x2_v9/spine'
+      ARCUBE_PANDORA_DIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_2x2_v9/pandora'
