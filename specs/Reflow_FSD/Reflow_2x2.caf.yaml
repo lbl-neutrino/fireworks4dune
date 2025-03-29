@@ -1,0 +1,11 @@
+base_envs:
+  - name: 'Reflow_FSD.caf'
+    env:
+      ARCUBE_RUNTIME: 'SHIFTER'
+      ARCUBE_CONTAINER: 'fermilab/fnal-wn-sl7:latest'
+      ARCUBE_LOGDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/logs/Reflow_FSD_v2_charge_only/caf'
+      ARCUBE_OUTDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_FSD_v2_charge_only/caf'
+      ARCUBE_INDIR_BASE: '/global/cfs/cdirs/dune/www/data/FSD/nearline/packet/CRS'
+      ARCUBE_FLOW_DIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_FSD_v2_charge_only/flow'
+      ARCUBE_SPINE_DIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_FSD_v2_charge_only/spine'
+      ARCUBE_PANDORA_DIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_FSD_v2_charge_only/pandora'
