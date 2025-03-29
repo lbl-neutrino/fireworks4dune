@@ -14,6 +14,7 @@ def main():
     ap.add_argument('-b', '--base-env', default='Reflow_FSD.flow')
     ap.add_argument('-i', '--inputs-json', required=True,
                     help='JSON file from ndlar_reflow/gen_input_list.py')
+    ap.add_argument('--charge-only', action='store_true')
     args = ap.parse_args()
 
     lpad = LaunchPad.auto_load()
@@ -32,6 +33,9 @@ def main():
         envs: list[dict[str, str]] = json.load(f)
 
     for env in envs:
+        if args.charge_only:
+            env.pop('ARCUBE_LIGHT_FILES', None)
+
         spec = {
             'runner': args.runner,
             'base_env': args.base_env,
