@@ -1,0 +1,18 @@
+base_envs:
+  - name: 'Reflow_FSD.flow2root'
+    env:
+      ARCUBE_RUNTIME: 'SHIFTER'
+      ARCUBE_CONTAINER: 'fermilab/fnal-wn-sl7:latest'
+      ARCUBE_LOGDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/logs/Reflow_FSD_v2_charge_only/flow2root'
+      ARCUBE_OUTDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_FSD_v2_charge_only/flow2root'
+      ARCUBE_INDIR_BASE: '/global/cfs/cdirs/dune/www/data/FSD/nearline/packet/CRS'
+      ARCUBE_FLOW_DIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_FSD_v2_charge_only/flow'
+
+  - name: 'Reflow_FSD.pandora'
+    env:
+      ARCUBE_RUNTIME: 'SHIFTER'
+      ARCUBE_CONTAINER: 'fermilab/fnal-wn-sl7:latest'
+      ARCUBE_LOGDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/logs/Reflow_FSD_v2_charge_only/pandora'
+      ARCUBE_OUTDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_FSD_v2_charge_only/pandora'
+      ARCUBE_INDIR_BASE: '/global/cfs/cdirs/dune/www/data/FSD/nearline/packet/CRS'
+      ARCUBE_FLOW2ROOT_DIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_FSD_v2_charge_only/flow2root'
