@@ -1,0 +1,12 @@
+base_envs:
+  - name: 'MicroProdN3p1-merge2x2-single-util_NDLAr_2E18_FHC.spill.nu'
+    env:
+      ND_PRODUCTION_CONTAINER: 'mjkramer/sim2x2:ndlar011'
+      ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/m/mdolce/MicroProdN3p1-merge2x2-single-util/logs'
+      ND_PRODUCTION_NU_NAME: 'MicroProdN3p1-merge2x2-single-util_NDLAr_2E18_FHC.nu.hadd'
+      ND_PRODUCTION_NU_POT: '1E16'
+      ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/m/mdolce/MicroProdN3p1-merge2x2-single-util/output'
+      ND_PRODUCTION_ROCK_NAME: 'MicroProdN3p1-merge2x2-single-util_NDLAr_2E18_FHC.rock.hadd'
+      ND_PRODUCTION_ROCK_POT: '0'
+      ND_PRODUCTION_RUNTIME: 'SHIFTER'
+      ND_PRODUCTION_SPILL_POT: '7.5E13'

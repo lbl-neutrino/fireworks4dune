@@ -1,11 +1,31 @@
 repos:
   - name: 'ND_Production_v1'
     url: 'https://github.com/DUNE/ND_Production.git'
-    commit: '5c4f6c6df40339cee2975196f6a7dd2f061ef791'
+    commit: '84563e969a69e4722177aaacb73a754c127922ef'
 
 runners:
+  - name: 'ND_Production_v1_Genie'
+    repo: 'ND_Production_v1'
+    workdir: 'run-genie'
+    cmd: './run_genie.sh'
+
+  - name: 'ND_Production_v1_Edep'
+    repo: 'ND_Production_v1'
+    workdir: 'run-edep-sim'
+    cmd: './run_edep_sim.sh'
+
+  - name: 'ND_Production_v1_Hadd'
+    repo: 'ND_Production_v1'
+    workdir: 'run-hadd'
+    cmd: './run_hadd.sh'
+
+  - name: 'ND_Production_v1_SpillBuild'
+    repo: 'ND_Production_v1'
+    workdir: 'run-spill-build'
+    cmd: './run_spill_build.sh'
+
   - name: 'ND_Production_v1_TMSReco'
     repo: 'ND_Production_v1'
-    workdir: 'nersc/run-tms-reco'
+    workdir: 'run-tms-reco'
     cmd: './run_tms_reco.sh'
 
