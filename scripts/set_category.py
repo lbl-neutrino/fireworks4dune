@@ -34,9 +34,9 @@ from fireworks import LaunchPad
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('name', required=True,
+    ap.add_argument('name',
                     help='"Name" of the FireWorks to update (e.g. MiniRunF6.3_1E19_FHC.edep.rock)')
-    ap.add_argument('category', required=True,
+    ap.add_argument('category',
                     help='Category to set (e.g. cpu_hours)')
     args = ap.parse_args()
 
