@@ -10,7 +10,7 @@ from fw4dune_tasks import FwMaker
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('--name', default='Reflow_2x2')
+    ap.add_argument('-n', '--name', default='Reflow_2x2')
     ap.add_argument('-i', '--inputs-json', required=True,
                     help='JSON file from ndlar_reflow/gen_input_list.py')
     ap.add_argument('--charge-only', action='store_true')
@@ -18,6 +18,7 @@ def main():
 
     lpad = LaunchPad.auto_load()
 
+    # We won't need two FwMakers once ndlar_reflow and 2x2_sim are merged
     fwm1 = FwMaker(args.name, 'ndlar_reflow', args.name)
     fwm2 = FwMaker(args.name, '2x2_sim', args.name)
 
