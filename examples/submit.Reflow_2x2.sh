@@ -3,11 +3,11 @@
 source admin/load_fireworks.sh
 
 name=Reflow_2x2
-inputs=/pscratch/sd/d/dunepro/mkramer/install/Reflow_2x2/ndlar_reflow/inputs.2x2_beam.json
+inputs=/pscratch/sd/d/dunepro/mkramer/install/Reflow_2x2_v9/ndlar_reflow/inputs.2x2.v0p2.json
 
 scripts/load_yaml.py specs/Reflow_v1.yaml specs/$name/*.yaml
 
-workflows/fwsub.reflow_plus_downstream.py -i $inputs
+workflows/fwsub.reflow_plus_downstream.py -i $inputs -n $name
 
 logdir=${FW4DUNE_SCRATCH:-$SCRATCH}/slurm_logs/$name
 
