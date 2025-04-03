@@ -26,7 +26,7 @@ runners:
   - name: '2x2_sim_Flow2root'
     repo: '2x2_sim'
     workdir: 'run-pandora'
-    cmd: './run_pandora.data.sh'
+    cmd: './run_flow2root.data.sh'
 
   - name: '2x2_sim_Pandora'
     repo: '2x2_sim'
