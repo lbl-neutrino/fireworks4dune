@@ -1,0 +1,10 @@
+base_envs:
+  - name: 'MicroProdN3p1-merge2x2-single-util_NDLAr_2E18_FHC.nu.hadd'
+    env:
+      ND_PRODUCTION_CONTAINER: 'mjkramer/sim2x2:ndlar011'
+      ND_PRODUCTION_IN_NAME: 'MicroProdN3p1-merge2x2-single-util_NDLAr_2E18_FHC.edep.nu'
+      ND_PRODUCTION_HADD_FACTOR: '10'
+      ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/m/mdolce/MicroProdN3p1-merge2x2-single-util/logs'
+      ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/m/mdolce/MicroProdN3p1-merge2x2-single-util/output'
+      ND_PRODUCTION_RUNTIME: 'SHIFTER'
+      ND_PRODUCTION_USE_GHEP_POT: '1'

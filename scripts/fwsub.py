@@ -41,15 +41,13 @@ def main():
         if args.worker is None:
             args.worker = args.base_env
 
-    var_prefix = "ARCUBE_"
-    if 'ND_Production' in args.runner: var_prefix = "ND_PRODUCTION_"
     for index in range(args.start, args.start + args.size):
         spec = {
             'runner': args.runner,
             'base_env': args.base_env,
             'env': {
-                var_prefix+'OUT_NAME': out_name,
-                var_prefix+'INDEX': str(index),
+                'ND_PRODUCTION_OUT_NAME': out_name,
+                'ND_PRODUCTION_INDEX': str(index),
             },
             # NOTE: Setting the _category means "Workers CAN restrict themselves
             # to me by setting their `category` to this _category". Whereas

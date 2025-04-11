@@ -1,0 +1,10 @@
+base_envs:
+  - name: 'MicroProdN3p1-merge2x2-test_NDLAr_2E18_FHC.edep.nu'
+    env:
+      ARCUBE_CONTAINER: 'mjkramer/sim2x2:ndlar011'
+      ARCUBE_EDEP_MAC: 'macros/dune-nd.mac'
+      ARCUBE_GENIE_NAME: 'MicroProdN3p1-merge2x2-test_NDLAr_2E18_FHC.genie.nu'
+      ARCUBE_GEOM: 'geometry/TMSGeometryStudy/nd_hall_with_lar_tms-stereo-UpDown_sand.gdml'
+      ARCUBE_LOGDIR_BASE: '/pscratch/sd/m/mdolce/MicroProdN3p1-merge2x2-test/logs'
+      ARCUBE_OUTDIR_BASE: '/pscratch/sd/m/mdolce/MicroProdN3p1-merge2x2-test/output'
+      ARCUBE_RUNTIME: 'SHIFTER'
