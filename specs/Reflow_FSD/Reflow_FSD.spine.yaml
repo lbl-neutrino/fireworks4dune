@@ -7,6 +7,7 @@ base_envs:
       ARCUBE_OUTDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_FSD_v2/flow2supera'
       ARCUBE_INDIR_BASE: '/global/cfs/cdirs/dune/www/data/FSD/nearline/packet/CRS'
       ARCUBE_FLOW_DIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_FSD_v2/flow'
+      ARCUBE_FLOW2SUPERA_CONFIG: 'fsd_data'
 
   - name: 'Reflow_FSD.spine'
     env:
