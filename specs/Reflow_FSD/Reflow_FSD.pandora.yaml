@@ -16,5 +16,5 @@ base_envs:
       ARCUBE_OUTDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_FSD_v2/pandora'
       ARCUBE_INDIR_BASE: '/global/cfs/cdirs/dune/www/data/FSD/nearline/packet/CRS'
       ARCUBE_FLOW2ROOT_DIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_FSD_v2/flow2root'
-      ARCUBE_GEOM: 'geometry/fsd_with_cryostat.root'
+      ARCUBE_GEOM: 'geometry/fsd_with_cryostat'
       ARCUBE_USE_FINAL_HITS: '0'
