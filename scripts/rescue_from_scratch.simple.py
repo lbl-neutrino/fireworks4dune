@@ -36,28 +36,32 @@ def main():
     pool = Pool(args.nproc)
 
     while True:
-        transfers: list[tuple[Path, Path]] = []
+        try:
+            transfers: list[tuple[Path, Path]] = []
 
-        for src in args.srcdir.rglob('*'):
-            if 'tmp' in str(src):
-                continue
+            for src in args.srcdir.rglob('*'):
+                if 'tmp' in str(src):
+                    continue
 
-            if src.is_symlink() or (not src.is_file()):
-                continue
+                if src.is_symlink() or (not src.is_file()):
+                    continue
 
-            if time.time() - src.stat().st_mtime < args.mmin*60:
-                continue
+                if time.time() - src.stat().st_mtime < args.mmin*60:
+                    continue
 
-            if args.extra_subdir:
-                dest = args.destdir / args.extra_subdir \
-                    / src.relative_to(args.srcdir)
-            else:
-                dest = args.destdir / src.relative_to(args.srcdir)
+                if args.extra_subdir:
+                    dest = args.destdir / args.extra_subdir \
+                        / src.relative_to(args.srcdir)
+                else:
+                    dest = args.destdir / src.relative_to(args.srcdir)
 
-            transfers.append((src, dest))
+                transfers.append((src, dest))
 
-        random.shuffle(transfers)
-        pool.starmap(transfer, transfers)
+            random.shuffle(transfers)
+            pool.starmap(transfer, transfers)
+
+        except:
+            pass
 
         print()
         time.sleep(30)
