@@ -14,7 +14,7 @@ def transfer(src: Path, dest: Path):
     dest.parent.mkdir(parents=True, exist_ok=True)
     shutil.move(src, dest)
 
-    print('DONE {src} {dest}')
+    print(f'DONE {src} {dest}')
 
     dest_readonly = Path('/dvs_ro/cfs') \
         / dest.relative_to('/global/cfs')
