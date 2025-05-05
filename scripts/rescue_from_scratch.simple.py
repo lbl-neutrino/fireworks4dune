@@ -16,6 +16,9 @@ def main():
 
     while True:
         for src in args.srcdir.rglob('*'):
+            if src.name.endswith('tmp'):
+                continue
+
             print(f'CHECK {src}')
 
             if not src.is_file():
@@ -29,6 +32,7 @@ def main():
                     / src.relative_to(args.srcdir)
             else:
                 dest = args.destdir / src.relative_to(args.srcdir)
+
             print(f'MOVE {src} {dest}')
 
             dest.parent.mkdir(parents=True, exist_ok=True)
