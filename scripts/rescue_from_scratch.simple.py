@@ -22,7 +22,7 @@ def main():
 
             print(f'CHECK {src}')
 
-            if not src.is_file():
+            if src.is_symlink() or (not src.is_file()):
                 continue
 
             if time.time() - src.stat().st_mtime < args.mmin*60:
