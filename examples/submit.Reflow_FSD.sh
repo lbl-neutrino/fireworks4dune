@@ -14,7 +14,7 @@ logdir=${FW4DUNE_SCRATCH:-$SCRATCH}/slurm_logs/$name
 mkdir -p "$logdir"
 
 # TODO: Update job parameters
-sbatch --array=1-10 -o "$logdir"/slurm-%j.txt -N 4 -t 240 --ntasks-per-node 128 slurm/fw_cpu.slurm.sh Reflow_FSD.flow rapidfire
+sbatch --array=1-6 -o "$logdir"/slurm-%j.txt -N 4 -t 240 --ntasks-per-node 192 slurm/fw_cpu.slurm.sh Reflow_FSD.flow rapidfire
 sbatch -o "$logdir"/slurm-%j.txt -N 4 -t 240 --ntasks-per-node 128 slurm/fw_cpu.slurm.sh Reflow_FSD.flow2supera rapidfire
 sbatch -o "$logdir"/slurm-%j.txt -N 4 -t 240 --ntasks-per-node 4 slurm/fw_gpu.slurm.sh Reflow_FSD.spine rapidfire
 sbatch -o "$logdir"/slurm-%j.txt -N 4 -t 240 --ntasks-per-node 128 slurm/fw_cpu.slurm.sh Reflow_FSD.flow2root rapidfire
