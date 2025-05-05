@@ -42,7 +42,7 @@ def main():
             dest_readonly = Path('/dvs_ro/cfs') \
                 / dest.relative_to('/global/cfs')
 
-            dest_readonly.symlink_to(src)
+            src.symlink_to(dest_readonly)
 
         time.sleep(30)
 
