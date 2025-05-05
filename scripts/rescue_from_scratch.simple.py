@@ -39,7 +39,10 @@ def main():
             dest.parent.mkdir(parents=True, exist_ok=True)
             shutil.move(src, dest)
 
-            dest.symlink_to(src)
+            dest_readonly = Path('/dvs_ro/cfs') \
+                / dest.relative_to('/global/cfs')
+
+            dest_readonly.symlink_to(src)
 
         time.sleep(30)
 
