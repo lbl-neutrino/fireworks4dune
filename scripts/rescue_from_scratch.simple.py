@@ -2,6 +2,7 @@
 
 import argparse
 from pathlib import Path
+import shutil
 import time
 
 
@@ -36,7 +37,7 @@ def main():
             print(f'MOVE {src} {dest}')
 
             dest.parent.mkdir(parents=True, exist_ok=True)
-            src.rename(dest)
+            shutil.move(src, dest)
 
             dest.symlink_to(src)
 
