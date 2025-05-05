@@ -17,7 +17,7 @@ def main():
 
     while True:
         for src in args.srcdir.rglob('*'):
-            if src.name.endswith('tmp'):
+            if 'tmp' in src.name:
                 continue
 
             print(f'CHECK {src}')
