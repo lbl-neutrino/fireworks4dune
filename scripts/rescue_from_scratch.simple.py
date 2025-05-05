@@ -1,9 +1,26 @@
 #!/usr/bin/env python3
 
 import argparse
+from multiprocessing import Pool
 from pathlib import Path
+import random
 import shutil
 import time
+
+
+def transfer(src: Path, dest: Path):
+    print(f'MOVE {src} {dest}')
+
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    shutil.move(src, dest)
+
+    print('DONE {src} {dest}')
+
+    dest_readonly = Path('/dvs_ro/cfs') \
+        / dest.relative_to('/global/cfs')
+
+    src.symlink_to(dest_readonly)
+
 
 
 def main():
@@ -13,14 +30,17 @@ def main():
     ap.add_argument('--mmin', type=float, default=30,
                     help='minimum time since last change (minutes)')
     ap.add_argument('--extra-subdir')
+    ap.add_argument('--nproc', type=int, default=3)
     args = ap.parse_args()
 
+    pool = Pool(args.nproc)
+
     while True:
+        transfers: list[tuple[Path, Path]] = []
+
         for src in args.srcdir.rglob('*'):
             if 'tmp' in str(src):
                 continue
-
-            print(f'CHECK {src}')
 
             if src.is_symlink() or (not src.is_file()):
                 continue
@@ -34,16 +54,12 @@ def main():
             else:
                 dest = args.destdir / src.relative_to(args.srcdir)
 
-            print(f'MOVE {src} {dest}')
+            transfers.append((src, dest))
 
-            dest.parent.mkdir(parents=True, exist_ok=True)
-            shutil.move(src, dest)
+        random.shuffle(transfers)
+        pool.starmap(transfer, transfers)
 
-            dest_readonly = Path('/dvs_ro/cfs') \
-                / dest.relative_to('/global/cfs')
-
-            src.symlink_to(dest_readonly)
-
+        print()
         time.sleep(30)
 
 
