@@ -4,7 +4,7 @@ base_envs:
       ND_PRODUCTION_CONTAINER: 'mjkramer/sim2x2:genie_edep.3_04_00.20230912'
       ND_PRODUCTION_DET_LOCATION: 'DUNEND'
       ND_PRODUCTION_DK2NU_DIR: '/dvs_ro/cfs/cdirs/dune/users/abooth/fluxfiles/DUNE_PRISM/OnAxis/neutrino/dk2nu'
-      ND_PRODUCTION_EXPOSURE: '1E13'
+      ND_PRODUCTION_EXPOSURE: '1E14'
       ND_PRODUCTION_GEOM: 'geometry/nd_hall_with_lar_tms_sand_TDR_Production_geometry_v_1.1.0.gdml'
       ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepro/abooth/logs/MicroProdN4p1'
       ND_PRODUCTION_MAX_PATH_FILE: 'maxpath/nd_hall_with_lar_tms_sand_TDR_Production_geometry_v_1.1.0.volArgonCubeDetector75.AR23_20i_00_000.maxpath.xml'
