@@ -9,7 +9,7 @@ scripts/load_yaml.py specs/NDComplex_v1.yaml specs/MicroProdN4p1_NDComplex/Micro
 
 
 start=1
-single_size=256000
+single_size=25600
 spill_size=2560
 
 
@@ -23,5 +23,4 @@ sbatch -o ${logdir:-.}/slurm-%j.txt --array=1-10 -N 1 slurm/fw_cpu.slurm.sh Micr
 
 scripts/fwsub.py --runner NDComplex_v1_Genie --base-env MicroProdN4p1_NDComplex_FHC.genie.rockantindlarfid --size $single_size --start $start
 sbatch -o ${logdir:-.}/slurm-%j.txt --array=1-10 -N 1 slurm/fw_cpu.slurm.sh MicroProdN4p1_NDComplex_FHC.genie.rockantindlarfid rapidfire
-
 
