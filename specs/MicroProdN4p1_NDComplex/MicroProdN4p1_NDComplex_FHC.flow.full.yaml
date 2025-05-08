@@ -1,7 +1,8 @@
 base_envs:
   - name: 'MicroProdN4p1_NDComplex_FHC.flow.full'
     env:
-      ND_PRODUCTION_IN_NAME: 'MicroProdN4p1_NDComplex_FHC.flow.full'
+      ND_PRODUCTION_COMPRESS: 'gzip'
+      ND_PRODUCTION_IN_NAME: 'MicroProdN4p1_NDComplex_FHC.larnd.full'
       ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepro/abooth/logs/MicroProdN4p1'
       ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepro/abooth/output/MicroProdN4p1'
       ND_PRODUCTION_RUNTIME: 'NONE'
