@@ -5,7 +5,7 @@ base_envs:
       ARCUBE_CONTAINER: 'deeplearnphysics/larcv2:ub2204-cu124-torch251-larndsim'
       ARCUBE_LOGDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/logs/Reflow_FSD_v3/flow2supera'
       ARCUBE_OUTDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_FSD_v3/flow2supera'
-      ARCUBE_INDIR_BASE: '/global/cfs/cdirs/dune/www/data/FSD/nearline/packet/CRS'
+      ARCUBE_INDIR_BASE: '/dvs_ro/cfs/cdirs/dune/www/data/FSD/nearline/packet/CRS'
       ARCUBE_FLOW_DIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_FSD_v3/flow'
       ARCUBE_FLOW2SUPERA_CONFIG: 'fsd_data'
 
@@ -15,7 +15,7 @@ base_envs:
       ARCUBE_CONTAINER: 'deeplearnphysics/larcv2:ub2204-cu124-torch251-larndsim'
       ARCUBE_LOGDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/logs/Reflow_FSD_v3/spine'
       ARCUBE_OUTDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_FSD_v3/spine'
-      ARCUBE_INDIR_BASE: '/global/cfs/cdirs/dune/www/data/FSD/nearline/packet/CRS'
+      ARCUBE_INDIR_BASE: '/dvs_ro/cfs/cdirs/dune/www/data/FSD/nearline/packet/CRS'
       ARCUBE_SUPERA_DIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_FSD_v3/flow2supera'
       ARCUBE_SPINE_NUM_THREADS: '1'
       ARCUBE_SPINE_OPENBLAS_NUM_THREADS: '1'
