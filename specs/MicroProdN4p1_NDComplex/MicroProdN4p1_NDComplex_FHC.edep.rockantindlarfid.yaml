@@ -7,4 +7,5 @@ base_envs:
       ND_PRODUCTION_GEOM_EDEP: 'geometry/nd_hall_with_lar_tms_sand_TDR_Production_geometry_v_1.1.0.gdml'
       ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepro/abooth/logs/MicroProdN4p1'
       ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepro/abooth/output/MicroProdN4p1'
+      ND_PRODUCTION_RUN_OFFSET: '1000000000'
       ND_PRODUCTION_RUNTIME: 'SHIFTER'
