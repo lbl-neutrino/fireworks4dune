@@ -2,6 +2,7 @@ base_envs:
   - name: 'MicroProdN4p1_NDComplex_FHC.flow2supera.full'
     env:
       ND_PRODUCTION_CONTAINER: 'deeplearnphysics/larcv2:ub20.04-cuda11.6-pytorch1.13-larndsim'
+      ND_PRODUCTION_FLOW2SUPERA_CONFIG: 'ndlar_beam'
       ND_PRODUCTION_IN_NAME: 'MicroProdN4p1_NDComplex_FHC.flow.full'
       ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepro/abooth/logs/MicroProdN4p1'
       ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepro/abooth/output/MicroProdN4p1'
