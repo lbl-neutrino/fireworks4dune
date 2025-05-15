@@ -1,5 +1,5 @@
 base_envs:
-  - name: 'MicroProdN4p1_NDComplex_FHC.caf.full'
+  - name: 'MicroProdN4p1_NDComplex_FHC.caf.full.spineonly'
     env:
       ND_PRODUCTION_CONTAINER: 'fermilab/fnal-wn-sl7:latest'
       ND_PRODUCTION_GHEP_NU_NAME: 'MicroProdN4p1_NDComplex_FHC.genie.ndlarfid'
