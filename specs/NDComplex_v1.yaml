@@ -68,3 +68,8 @@ runners:
     repo: 'NDComplex_v1'
     workdir: 'run-cafmaker'
     cmd: './run_cafmaker.sh'
+
+  - name: 'NDComplex_v1_Plots'
+    repo: 'NDComplex_v1'
+    workdir: 'run-validation'
+    cmd: './run_validation.sh'
