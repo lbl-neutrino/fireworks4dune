@@ -32,5 +32,8 @@ if [[ -n "$FW4DUNE_SLEEP_SEC" ]]; then
 fi
 
 rlaunch -w "$fworker_yaml" "$rlaunch_mode" "${rlaunch_args[@]}"
+exitcode=$?
 
 rm $fworker_yaml
+
+exit $exitcode
