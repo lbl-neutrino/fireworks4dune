@@ -11,7 +11,6 @@ category=$1; shift
 rlaunch_args=("$@"); shift $#
 
 basedir=$PWD
-FW4DUNE_SCRATCH=/pscratch/sd/d/dunepro/abooth
 
 logdir=${FW4DUNE_SCRATCH:-$SCRATCH}/logs_slurm/${category}/${SLURM_JOBID}
 mkdir -p "$logdir"
