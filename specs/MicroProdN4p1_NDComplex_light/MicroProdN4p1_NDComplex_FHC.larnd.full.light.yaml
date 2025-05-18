@@ -1,0 +1,8 @@
+base_envs:
+  - name: 'MicroProdN4p1_NDComplex_FHC.larnd.full.light'
+    env:
+      ND_PRODUCTION_CONVERT2H5_NAME: 'MicroProdN4p1_NDComplex_FHC.convert2h5.full.light'
+      ND_PRODUCTION_LARNDSIM_CONFIG: 'ndlar'
+      ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/logs/MicroProdN4p1'
+      ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/MicroProdN4p1'
+      ND_PRODUCTION_RUNTIME: 'NONE'

@@ -1,0 +1,18 @@
+base_envs:
+  - name: 'MicroProdN4p1_NDComplex_FHC.flow2root.full.light'
+    env:
+      ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/logs/MicroProdN4p1'
+      ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/MicroProdN4p1'
+      ND_PRODUCTION_RUNTIME: 'SHIFTER'
+      ND_PRODUCTION_CONTAINER: 'fermilab/fnal-wn-sl7:latest'
+      ND_PRODUCTION_IN_NAME: 'MicroProdN4p1_NDComplex_FHC.flow.full.light'
+
+  - name: 'MicroProdN4p1_NDComplex_FHC.pandora.full.light'
+    env:
+      ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/logs/MicroProdN4p1'
+      ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/MicroProdN4p1'
+      ND_PRODUCTION_RUNTIME: 'SHIFTER'
+      ND_PRODUCTION_CONTAINER: 'fermilab/fnal-wn-sl7:latest'
+      ND_PRODUCTION_IN_NAME: 'MicroProdN4p1_NDComplex_FHC.flow2root.full.light'
+      ND_PRODUCTION_GEOM: 'FIXME'
+      ND_PRODUCTION_USE_FINAL_HITS: '0'
