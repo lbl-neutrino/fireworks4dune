@@ -1,7 +1,7 @@
 base_envs:
   - name: 'MicroProdN4p1_NDComplex_FHC.spine.full'
     env:
-      ND_PRODUCTION_CONTAINER: 'deeplearnphysics/larcv2:ub2204-cu121-torch251-larndsim'
+      ND_PRODUCTION_CONTAINER: 'deeplearnphysics/larcv2:ub2204-cu124-torch251-larndsim'
       ND_PRODUCTION_SPINE_CONFIG: 'spine_prod/config/ndlar/ndlar_full_chain_nersc_250505.cfg'
       ND_PRODUCTION_IN_NAME: 'MicroProdN4p1_NDComplex_FHC.flow2supera.full'
       ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepro/abooth/logs/MicroProdN4p1'
