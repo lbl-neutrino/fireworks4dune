@@ -2,7 +2,7 @@
 
 source admin/load_fireworks.sh
 
-name=Reflow_2x2_v10
+name=Reflow_2x2_v11
 inputs=/pscratch/sd/d/dunepro/mkramer/install/Reflow_2x2_v9/ndlar_reflow/inputs.2x2.v0p2.json
 
 scripts/load_yaml.py specs/Reflow_v1.yaml specs/Reflow_2x2/*.yaml

@@ -3,16 +3,16 @@ base_envs:
     env:
       ARCUBE_RUNTIME: 'SHIFTER'
       ARCUBE_CONTAINER: 'fermilab/fnal-wn-sl7:latest'
-      ARCUBE_LOGDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/logs/Reflow_2x2_v10/flow2root'
-      ARCUBE_OUTDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_2x2_v10/flow2root'
+      ARCUBE_LOGDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/logs/Reflow_2x2_v11/flow2root'
+      ARCUBE_OUTDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_2x2_v11/flow2root'
       ARCUBE_INDIR_BASE: '/global/cfs/cdirs/dune/www/data/2x2/nearline/packet'
-      ARCUBE_FLOW_DIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_2x2_v10/flow'
+      ARCUBE_FLOW_DIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_2x2_v11/flow'
 
   - name: 'Reflow_2x2.pandora'
     env:
       ARCUBE_RUNTIME: 'SHIFTER'
       ARCUBE_CONTAINER: 'fermilab/fnal-wn-sl7:latest'
-      ARCUBE_LOGDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/logs/Reflow_2x2_v10/pandora'
-      ARCUBE_OUTDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_2x2_v10/pandora'
+      ARCUBE_LOGDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/logs/Reflow_2x2_v11/pandora'
+      ARCUBE_OUTDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_2x2_v11/pandora'
       ARCUBE_INDIR_BASE: '/global/cfs/cdirs/dune/www/data/2x2/nearline/packet'
-      ARCUBE_FLOW2ROOT_DIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_2x2_v10/flow2root'
+      ARCUBE_FLOW2ROOT_DIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_2x2_v11/flow2root'
