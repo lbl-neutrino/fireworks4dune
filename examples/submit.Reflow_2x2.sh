@@ -3,7 +3,8 @@
 source admin/load_fireworks.sh
 
 name=Reflow_2x2_v11
-inputs=/pscratch/sd/d/dunepro/mkramer/install/Reflow_2x2_v9/ndlar_reflow/inputs.2x2.v0p2.json
+# inputs=/pscratch/sd/d/dunepro/mkramer/install/Reflow_2x2_v9/inputs.2x2.v0p3.json
+inputs=/pscratch/sd/d/dunepro/mkramer/install/Reflow_2x2_v11/inputs.2x2.sandbox.json
 
 scripts/load_yaml.py specs/Reflow_v1.yaml specs/Reflow_2x2/*.yaml
 
