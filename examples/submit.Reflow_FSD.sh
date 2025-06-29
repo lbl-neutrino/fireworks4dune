@@ -2,9 +2,11 @@
 
 source admin/load_fireworks.sh
 
-name=Reflow_FSD_v3
-inputs=/pscratch/sd/d/dunepro/mkramer/install/Reflow_FSD_v2/inputs.fsd.cosmics.json
+name=Reflow_FSD_v4
+# inputs=/pscratch/sd/d/dunepro/mkramer/install/Reflow_FSD_v2/inputs.fsd.cosmics.json
+inputs=/pscratch/sd/d/dunepro/mkramer/install/Reflow_FSD_v4/inputs.fsd.priority.json
 
+scripts/reset_db.py
 scripts/load_yaml.py specs/Reflow_v1.yaml specs/Reflow_FSD/*.yaml
 
 workflows/fwsub.reflow_plus_downstream.py --name Reflow_FSD -i $inputs
