@@ -19,4 +19,4 @@ base_envs:
       ARCUBE_SUPERA_DIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_FSD_v4/flow2supera'
       ARCUBE_SPINE_NUM_THREADS: '1'
       ARCUBE_SPINE_OPENBLAS_NUM_THREADS: '1'
-      ARCUBE_SPINE_CONFIG: 'ndlar_single_full_chain_data_250505.cfg'
+      ARCUBE_SPINE_CONFIG: 'ndlar_single_full_chain_data_250629.cfg'
