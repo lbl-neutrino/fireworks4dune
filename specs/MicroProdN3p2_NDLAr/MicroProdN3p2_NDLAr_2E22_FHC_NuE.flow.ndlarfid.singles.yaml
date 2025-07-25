@@ -1,0 +1,8 @@
+base_envs:
+  - name: 'MicroProdN3p2_NDLAr_2E22_FHC_NuE.flow.ndlarfid.singles'
+    env:
+      ND_PRODUCTION_COMPRESS: 'gzip'
+      ND_PRODUCTION_IN_NAME: 'MicroProdN3p2_NDLAr_2E22_FHC_NuE.larnd.ndlarfid.singles'
+      ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepro/abooth/logs/MicroProdN3p2'
+      ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepro/abooth/output/MicroProdN3p2'
+      ND_PRODUCTION_RUNTIME: 'NONE'
