@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#SBATCH --account=dune
+#SBATCH --account=m3249
 #SBATCH --qos=regular
 #SBATCH --constraint=gpu
 #SBATCH --time=1:00:00
@@ -11,8 +11,9 @@ category=$1; shift
 rlaunch_args=("$@"); shift $#
 
 basedir=$PWD
+FW4DUNE_SCRATCH=/pscratch/sd/d/dunepro/abooth
 
-logdir=${FW4DUNE_SCRATCH:-$SCRATCH}/slurm_logs/${category}/${SLURM_JOBID}
+logdir=${FW4DUNE_SCRATCH:-$SCRATCH}/logs_slurm/${category}/${SLURM_JOBID}
 mkdir -p "$logdir"
 
 launchdir=${FW4DUNE_SCRATCH:-$SCRATCH}/launchers/${category}/${SLURM_JOBID}
