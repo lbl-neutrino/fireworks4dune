@@ -1,10 +1,10 @@
 base_envs:
   - name: 'MicroProdN1p2_NDLAr_1E18_RHC.caf.nu'
     env:
-      ARCUBE_CONTAINER: 'fermilab/fnal-wn-sl7:latest'
-      ARCUBE_GHEP_NU_NAME: 'MicroProdN1p2_NDLAr_1E18_RHC.genie.nu'
-      ARCUBE_LOGDIR_BASE: '/pscratch/sd/a/abooth/MicroProdN1p2/logs'
-      ARCUBE_MLRECO_NAME: 'MicroProdN1p2_NDLAr_1E18_RHC.mlreco_analysis.nu'
-      ARCUBE_OUTDIR_BASE: '/pscratch/sd/a/abooth/MicroProdN1p2/output'
-      ARCUBE_TMSRECO_NAME: 'MicroProdN1p2_NDLAr_1E18_RHC.tmsreco.nu'
-      ARCUBE_RUNTIME: 'SHIFTER'
+      ND_PRODUCTION_CONTAINER: 'fermilab/fnal-wn-sl7:latest'
+      ND_PRODUCTION_GHEP_NU_NAME: 'MicroProdN1p2_NDLAr_1E18_RHC.genie.nu'
+      ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/a/abooth/MicroProdN1p2/logs'
+      ND_PRODUCTION_MLRECO_NAME: 'MicroProdN1p2_NDLAr_1E18_RHC.mlreco_analysis.nu'
+      ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/a/abooth/MicroProdN1p2/output'
+      ND_PRODUCTION_TMSRECO_NAME: 'MicroProdN1p2_NDLAr_1E18_RHC.tmsreco.nu'
+      ND_PRODUCTION_RUNTIME: 'SHIFTER'

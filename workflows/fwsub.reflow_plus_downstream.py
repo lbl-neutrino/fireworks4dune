@@ -27,7 +27,7 @@ def main():
 
     for env in envs:
         if args.charge_only:
-            env.pop('ARCUBE_LIGHT_FILES', None)
+            env.pop('ND_PRODUCTION_LIGHT_FILES', None)
 
         fw_flow = fwm1.make(env, 'Flow', 'flow')
         fw_flow2supera = fwm2.make(env, 'Flow2Supera', 'flow2supera')

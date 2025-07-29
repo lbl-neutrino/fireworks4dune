@@ -1,9 +1,9 @@
 base_envs:
   - name: 'MiniRun6_1E19_RHC.convert2h5'
     env:
-      ARCUBE_OUTDIR_BASE: '/pscratch/sd/d/dunepr/output/MiniRun6'
-      ARCUBE_LOGDIR_BASE: '/pscratch/sd/d/dunepr/logs/MiniRun6'
-      ARCUBE_RUNTIME: 'SHIFTER'
-      ARCUBE_CONTAINER: 'mjkramer/sim2x2:ndlar011'
-      ARCUBE_ACTIVE_VOLUME: 'volTPCActive'
-      ARCUBE_SPILL_NAME: 'MiniRun6_1E19_RHC.spill'
+      ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepr/output/MiniRun6'
+      ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepr/logs/MiniRun6'
+      ND_PRODUCTION_RUNTIME: 'SHIFTER'
+      ND_PRODUCTION_CONTAINER: 'mjkramer/sim2x2:ndlar011'
+      ND_PRODUCTION_ACTIVE_VOLUME: 'volTPCActive'
+      ND_PRODUCTION_SPILL_NAME: 'MiniRun6_1E19_RHC.spill'

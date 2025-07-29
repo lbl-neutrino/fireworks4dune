@@ -1,8 +1,8 @@
 base_envs:
   - name: 'MiniRun5_1E19_RHC.edep2flat'
     env:
-      ARCUBE_OUTDIR_BASE: '/pscratch/sd/m/mkramer/out.MiniRun5'
-      ARCUBE_LOGDIR_BASE: '/pscratch/sd/m/mkramer/logs_cmd.MiniRun5'
-      ARCUBE_RUNTIME: 'SHIFTER'
-      ARCUBE_CONTAINER: 'fermilab/fnal-wn-sl7:latest'
-      ARCUBE_IN_NAME: 'MiniRun5_1E19_RHC.spill'
+      ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/m/mkramer/out.MiniRun5'
+      ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/m/mkramer/logs_cmd.MiniRun5'
+      ND_PRODUCTION_RUNTIME: 'SHIFTER'
+      ND_PRODUCTION_CONTAINER: 'fermilab/fnal-wn-sl7:latest'
+      ND_PRODUCTION_IN_NAME: 'MiniRun5_1E19_RHC.spill'

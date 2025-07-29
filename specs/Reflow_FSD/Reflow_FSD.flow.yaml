@@ -1,7 +1,7 @@
 base_envs:
   - name: 'Reflow_FSD.flow'
     env:
-      ARCUBE_REFLOW_VARIANT: 'FSD'
-      ARCUBE_OUTDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_FSD_v4/flow'
-      ARCUBE_LOGDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/logs/Reflow_FSD_v4/flow'
-      ARCUBE_INDIR_BASE: '/dvs_ro/cfs/cdirs/dune/www/data/FSD/nearline/packet/CRS'
+      ND_PRODUCTION_REFLOW_VARIANT: 'FSD'
+      ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_FSD_v4/flow'
+      ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/logs/Reflow_FSD_v4/flow'
+      ND_PRODUCTION_INDIR_BASE: '/dvs_ro/cfs/cdirs/dune/www/data/FSD/nearline/packet/CRS'

@@ -1,10 +1,10 @@
 base_envs:
   - name: 'MicroProdN3p1_NDLAr_2E18_FHC.convert2h5.nu'
     env:
-      ARCUBE_CONTAINER: 'mjkramer/sim2x2:ndlar011'
-      ARCUBE_ACTIVE_VOLUME: 'TPCActive_shape'
-      ARCUBE_KEEP_ALL_DETS: '0'
-      ARCUBE_LOGDIR_BASE: '/pscratch/sd/a/abooth/MicroProdN3p1/logs'
-      ARCUBE_OUTDIR_BASE: '/pscratch/sd/a/abooth/MicroProdN3p1/output'
-      ARCUBE_RUNTIME: 'SHIFTER'
-      ARCUBE_SPILL_NAME: 'MicroProdN3p1_NDLAr_2E18_FHC.spill.nu'
+      ND_PRODUCTION_CONTAINER: 'mjkramer/sim2x2:ndlar011'
+      ND_PRODUCTION_ACTIVE_VOLUME: 'TPCActive_shape'
+      ND_PRODUCTION_KEEP_ALL_DETS: '0'
+      ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/a/abooth/MicroProdN3p1/logs'
+      ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/a/abooth/MicroProdN3p1/output'
+      ND_PRODUCTION_RUNTIME: 'SHIFTER'
+      ND_PRODUCTION_SPILL_NAME: 'MicroProdN3p1_NDLAr_2E18_FHC.spill.nu'

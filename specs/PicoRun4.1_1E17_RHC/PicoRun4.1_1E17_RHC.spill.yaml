@@ -1,8 +1,8 @@
 base_envs:
   - name: 'PicoRun4.1_1E17_RHC.spill'
     env:
-      ARCUBE_CONTAINER: 'mjkramer/sim2x2:genie_edep.3_04_00.20230912'
-      ARCUBE_NU_NAME: 'PicoRun4.1_1E17_RHC.nu.hadd'
-      ARCUBE_NU_POT: '1E16'
-      ARCUBE_ROCK_NAME: 'PicoRun4.1_1E17_RHC.rock.hadd'
-      ARCUBE_ROCK_POT: '1E16'
+      ND_PRODUCTION_CONTAINER: 'mjkramer/sim2x2:genie_edep.3_04_00.20230912'
+      ND_PRODUCTION_NU_NAME: 'PicoRun4.1_1E17_RHC.nu.hadd'
+      ND_PRODUCTION_NU_POT: '1E16'
+      ND_PRODUCTION_ROCK_NAME: 'PicoRun4.1_1E17_RHC.rock.hadd'
+      ND_PRODUCTION_ROCK_POT: '1E16'

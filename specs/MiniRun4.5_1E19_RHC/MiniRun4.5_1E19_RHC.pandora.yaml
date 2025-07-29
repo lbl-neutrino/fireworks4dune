@@ -1,8 +1,8 @@
 base_envs:
   - name: 'MiniRun4.5_1E19_RHC.pandora'
     env:
-      ARCUBE_OUTDIR_BASE: '/pscratch/sd/d/dunepr/output/MiniRun4.5'
-      ARCUBE_LOGDIR_BASE: '/pscratch/sd/d/dunepr/logs/MiniRun4.5'
-      ARCUBE_RUNTIME: 'SHIFTER'
-      ARCUBE_CONTAINER: 'fermilab/fnal-wn-sl7:latest'
-      ARCUBE_IN_NAME: 'MiniRun4.5_1E19_RHC.flow'
+      ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepr/output/MiniRun4.5'
+      ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepr/logs/MiniRun4.5'
+      ND_PRODUCTION_RUNTIME: 'SHIFTER'
+      ND_PRODUCTION_CONTAINER: 'fermilab/fnal-wn-sl7:latest'
+      ND_PRODUCTION_IN_NAME: 'MiniRun4.5_1E19_RHC.flow'
