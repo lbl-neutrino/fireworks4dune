@@ -1,0 +1,7 @@
+base_envs:
+  - name: 'MicroProdN3p4_NDLAr_2E18_FHC.flow.geomfix.singles.nu'
+    env:
+      ARCUBE_IN_NAME: 'MicroProdN3p4_NDLAr_2E18_FHC.larnd.geomfix.singles.nu'
+      ARCUBE_LOGDIR_BASE: '/pscratch/sd/a/abooth/MicroProdN3p4/logs'
+      ARCUBE_OUTDIR_BASE: '/pscratch/sd/a/abooth/MicroProdN3p4/output'
+      ARCUBE_RUNTIME: 'NONE'
