@@ -1,0 +1,8 @@
+base_envs:
+  - name: 'MicroProdN3p2_NDLAr_2E22_FHC_NuE.larnd.ndlarfid.singles'
+    env:
+      ND_PRODUCTION_CONVERT2H5_NAME: 'MicroProdN3p2_NDLAr_2E22_FHC_NuE.convert2h5.nu'
+      ND_PRODUCTION_LARNDSIM_CONFIG: 'ndlar'
+      ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepro/abooth/logs/MicroProdN3p2'
+      ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepro/abooth/output/MicroProdN3p2'
+      ND_PRODUCTION_RUNTIME: 'NONE'

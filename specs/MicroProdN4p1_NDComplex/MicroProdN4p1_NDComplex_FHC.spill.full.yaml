@@ -1,0 +1,11 @@
+base_envs:
+  - name: 'MicroProdN4p1_NDComplex_FHC.spill.full'
+    env:
+      ND_PRODUCTION_CONTAINER: 'mjkramer/sim2x2:ndlar011'
+      ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepro/abooth/logs/MicroProdN4p1'
+      ND_PRODUCTION_NU_NAME: 'MicroProdN4p1_NDComplex_FHC.hadd.ndlarfid'
+      ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepro/abooth/output/MicroProdN4p1'
+      ND_PRODUCTION_ROCK_NAME: 'MicroProdN4p1_NDComplex_FHC.hadd.rockantindlarfid'
+      ND_PRODUCTION_RUNTIME: 'SHIFTER'
+      ND_PRODUCTION_SPILL_POT: '7.5E13'
+      ND_PRODUCTION_USE_GHEP_POT: '1'
