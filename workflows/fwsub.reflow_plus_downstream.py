@@ -20,7 +20,7 @@ def main():
 
     # We won't need two FwMakers once ndlar_reflow and 2x2_sim are merged
     fwm1 = FwMaker(args.name, 'ndlar_reflow', args.name)
-    fwm2 = FwMaker(args.name, '2x2_sim', args.name)
+    fwm2 = FwMaker(args.name, 'ND_Production', args.name)
 
     with open(args.inputs_json) as f:
         envs: list[dict[str, str]] = json.load(f)
