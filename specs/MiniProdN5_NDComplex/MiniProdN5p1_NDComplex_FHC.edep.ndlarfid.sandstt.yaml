@@ -1,0 +1,10 @@
+base_envs:
+  - name: 'MiniProdN5p1_NDComplex_FHC.edep.ndlarfid.sandstt'
+    env:
+      ND_PRODUCTION_CONTAINER: 'mjkramer/sim2x2:ndlar011'
+      ND_PRODUCTION_EDEP_MAC: 'macros/dune-nd.mac'
+      ND_PRODUCTION_GENIE_NAME: 'MiniProdN5p1_NDComplex_FHC.genie.ndlarfid.sandstt'
+      ND_PRODUCTION_GEOM_EDEP: 'geometry/nd_hall_with_lar_tms_sand_stt1_v2025.08.11.gdml'
+      ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepro/abooth/logs/MiniProdN5'
+      ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepro/abooth/output/MiniProdN5'
+      ND_PRODUCTION_RUNTIME: 'SHIFTER'

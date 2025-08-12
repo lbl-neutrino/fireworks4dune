@@ -1,0 +1,10 @@
+base_envs:
+  - name: 'MiniProdN5p1_NDComplex_FHC.hadd.rockantindlarfid.sandstt'
+    env:
+      ND_PRODUCTION_CONTAINER: 'mjkramer/sim2x2:ndlar011'
+      ND_PRODUCTION_IN_NAME: 'MiniProdN5p1_NDComplex_FHC.edep.rockantindlarfid.sandstt'
+      ND_PRODUCTION_HADD_FACTOR: '10'
+      ND_PRODUCTION_RUNTIME: 'SHIFTER'
+      ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepro/abooth/logs/MiniProdN5'
+      ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepro/abooth/output/MiniProdN5'
+      ND_PRODUCTION_USE_GHEP_POT: '1'
