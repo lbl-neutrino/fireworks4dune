@@ -7,6 +7,7 @@ base_envs:
       ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_FSD_v5/flow2root'
       ND_PRODUCTION_INDIR_BASE: '/dvs_ro/cfs/cdirs/dune/www/data/FSD/nearline/packet/CRS'
       ND_PRODUCTION_FLOW_DIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_FSD_v5/flow'
+      ND_PRODUCTION_USE_FINAL_HITS: '0'
 
   - name: 'Reflow_FSD.pandora'
     env:
@@ -17,4 +18,3 @@ base_envs:
       ND_PRODUCTION_INDIR_BASE: '/dvs_ro/cfs/cdirs/dune/www/data/FSD/nearline/packet/CRS'
       ND_PRODUCTION_FLOW2ROOT_DIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_FSD_v5/flow2root'
       ND_PRODUCTION_GEOM: 'geometry/fsd_with_cryostat'
-      ND_PRODUCTION_USE_FINAL_HITS: '0'
