@@ -1,10 +1,10 @@
 base_envs:
   - name: 'MiniRun6_1E19_RHC.edep.nu'
     env:
-      ARCUBE_OUTDIR_BASE: '/pscratch/sd/d/dunepr/output/MiniRun6'
-      ARCUBE_LOGDIR_BASE: '/pscratch/sd/d/dunepr/logs/MiniRun6'
-      ARCUBE_RUNTIME: 'SHIFTER'
-      ARCUBE_CONTAINER: 'mjkramer/sim2x2:ndlar011'
-      ARCUBE_GENIE_NAME: 'MiniRun6_1E19_RHC.genie.nu'
-      ARCUBE_EDEP_MAC: 'macros/2x2_beam.mac'
-      ARCUBE_GEOM_EDEP: 'geometry/Merged2x2MINERvA_v4/Merged2x2MINERvA_v4_withRock.gdml'
+      ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepr/output/MiniRun6'
+      ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepr/logs/MiniRun6'
+      ND_PRODUCTION_RUNTIME: 'SHIFTER'
+      ND_PRODUCTION_CONTAINER: 'mjkramer/sim2x2:ndlar011'
+      ND_PRODUCTION_GENIE_NAME: 'MiniRun6_1E19_RHC.genie.nu'
+      ND_PRODUCTION_EDEP_MAC: 'macros/2x2_beam.mac'
+      ND_PRODUCTION_GEOM_EDEP: 'geometry/Merged2x2MINERvA_v4/Merged2x2MINERvA_v4_withRock.gdml'

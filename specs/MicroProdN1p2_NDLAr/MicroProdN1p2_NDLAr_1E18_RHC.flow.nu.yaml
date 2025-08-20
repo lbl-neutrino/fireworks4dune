@@ -1,7 +1,7 @@
 base_envs:
   - name: 'MicroProdN1p2_NDLAr_1E18_RHC.flow.nu'
     env:
-      ARCUBE_IN_NAME: 'MicroProdN1p2_NDLAr_1E18_RHC.larnd.nu'
-      ARCUBE_LOGDIR_BASE: '/pscratch/sd/a/abooth/MicroProdN1p2/logs'
-      ARCUBE_OUTDIR_BASE: '/pscratch/sd/a/abooth/MicroProdN1p2/output'
-      ARCUBE_RUNTIME: 'NONE'
+      ND_PRODUCTION_IN_NAME: 'MicroProdN1p2_NDLAr_1E18_RHC.larnd.nu'
+      ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/a/abooth/MicroProdN1p2/logs'
+      ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/a/abooth/MicroProdN1p2/output'
+      ND_PRODUCTION_RUNTIME: 'NONE'

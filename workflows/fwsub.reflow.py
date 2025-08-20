@@ -36,7 +36,7 @@ def main():
 
     for env in envs:
         if args.charge_only:
-            env.pop('ARCUBE_LIGHT_FILES', None)
+            env.pop('ND_PRODUCTION_LIGHT_FILES', None)
 
         spec = {
             'runner': args.runner,

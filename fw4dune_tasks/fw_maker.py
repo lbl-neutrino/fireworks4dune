@@ -16,8 +16,8 @@ class FwMaker:
     def make_mc(self, index: int, runner_postfix: str, step_postfix: str,
                 category: Optional[str] = None) -> Firework:
         env = {
-            'ARCUBE_OUT_NAME': f'{self.name}.{step_postfix}',
-            'ARCUBE_INDEX': str(index)
+            'ND_PRODUCTION_OUT_NAME': f'{self.name}.{step_postfix}',
+            'ND_PRODUCTION_INDEX': str(index)
         }
 
         return self.make(env, runner_postfix, step_postfix, category)

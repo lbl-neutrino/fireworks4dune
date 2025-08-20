@@ -16,14 +16,14 @@ DEFAULT_PROD_NAME = 'MegaRun5_1E20_RHC'
 DEFAULT_SRC_ROOT = '/pscratch/sd/m/mkramer/output/MegaRun5'
 DEFAULT_DEST_ROOT = '/global/cfs/cdirs/dune/www/data/2x2/simulation/productions/MegaRun5_1E20_RHC'
 
-# When these steps are all completed (for a given ARCUBE_INDEX), rescue any
-# desired files corresponding to the same ARCUBE_INDEX:
+# When these steps are all completed (for a given ND_PRODUCTION_INDEX), rescue any
+# desired files corresponding to the same ND_PRODUCTION_INDEX:
 TERMINAL_STEPS = ['convert2h5', 'minerva']
 # These are the steps from which we want to rescue files:
 RESCUE_STEPS = ['genie.rock', 'edep.nu.hadd', 'edep.rock.hadd']
 # And these are the ones we just want to delete:
 DELETE_STEPS = ['edep.nu', 'edep.rock', 'spill']
-# These steps run before hadd, so ARCUBE_INDEX must be scaled appropriately:
+# These steps run before hadd, so ND_PRODUCTION_INDEX must be scaled appropriately:
 PRE_HADD_STEPS = ['genie.rock', 'genie.nu', 'edep.rock', 'edep.nu']
 
 # Map from names of steps to the corresponding subdirectory of the root
@@ -72,7 +72,7 @@ class RescueFromScratch:
 
     @staticmethod
     def idx(fwk: dict) -> int:
-        return int(fwk['spec']['env']['ARCUBE_INDEX'])
+        return int(fwk['spec']['env']['ND_PRODUCTION_INDEX'])
 
     @staticmethod
     def has_cooled_down(fwk: dict) -> bool:
@@ -89,17 +89,17 @@ class RescueFromScratch:
 
     def completed(self, step: str) -> set[int]:
         """
-        Get the `ARCUBE_INDEX` values for which `step` has completed.
+        Get the `ND_PRODUCTION_INDEX` values for which `step` has completed.
         """
         query = {'name': f'{self.prod_name}.{step}',
                  'state': 'COMPLETED'}
-        cursor = self.fwks.find(query, ['spec.env.ARCUBE_INDEX', 'updated_on'])
+        cursor = self.fwks.find(query, ['spec.env.ND_PRODUCTION_INDEX', 'updated_on'])
         return {self.idx(fwk) for fwk in cursor
                 if (not self.skip(fwk)) and self.has_cooled_down(fwk)}
 
     def rescuable(self) -> set[int]:
         """
-        Get the `ARCUBE_INDEX` values for which all `TERMINAL_STEPS` have
+        Get the `ND_PRODUCTION_INDEX` values for which all `TERMINAL_STEPS` have
         completed.
         """
         sets = (self.completed(step) for step in TERMINAL_STEPS)
@@ -107,7 +107,7 @@ class RescueFromScratch:
 
     def rescue_single(self, terminal_num: int):
         """
-        Go through files where `ARCUBE_INDEX == terminal_num` and move them
+        Go through files where `ND_PRODUCTION_INDEX == terminal_num` and move them
         off SCRATCH if they aren't currently needed (i.e. if the corresponding
         `TERMINAL_STEPS` have completed)
         """
@@ -144,7 +144,7 @@ class RescueFromScratch:
 
     def rescue_batch(self):
         """
-        Call `rescue_singles` on every eligible `ARCUBE_INDEX`.
+        Call `rescue_singles` on every eligible `ND_PRODUCTION_INDEX`.
         """
         def save():
             if self.pickled_done:

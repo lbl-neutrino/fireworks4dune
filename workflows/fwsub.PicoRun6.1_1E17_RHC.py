@@ -33,8 +33,8 @@ def main():
                 'runner': f'{args.repo}_{runner_postfix}',
                 'base_env': base_env,
                 'env': {
-                    'ARCUBE_OUT_NAME': f'{name}.{step_postfix}',
-                    'ARCUBE_INDEX': str(index)
+                    'ND_PRODUCTION_OUT_NAME': f'{name}.{step_postfix}',
+                    'ND_PRODUCTION_INDEX': str(index)
                 },
                 '_category': category
             }

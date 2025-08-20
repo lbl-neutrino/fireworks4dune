@@ -1,6 +1,6 @@
 base_envs:
   - name: 'WindowStudy4_1E18_FHC.convert2h5'
     env:
-      ARCUBE_CONTAINER: 'mjkramer/sim2x2:genie_edep.3_04_00.20230620'
-      ARCUBE_SINGLE_NAME: 'WindowStudy4_1E18_FHC.rock.hadd'
-      ARCUBE_KEEP_ALL_DETS: '1'
+      ND_PRODUCTION_CONTAINER: 'mjkramer/sim2x2:genie_edep.3_04_00.20230620'
+      ND_PRODUCTION_SINGLE_NAME: 'WindowStudy4_1E18_FHC.rock.hadd'
+      ND_PRODUCTION_KEEP_ALL_DETS: '1'

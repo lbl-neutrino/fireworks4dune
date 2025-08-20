@@ -1,8 +1,8 @@
 base_envs:
   - name: 'MegaRun5_1E20_RHC.edep2flat'
     env:
-      ARCUBE_OUTDIR_BASE: '/pscratch/sd/m/mkramer/output/MegaRun5'
-      ARCUBE_LOGDIR_BASE: '/pscratch/sd/m/mkramer/logs/MegaRun5'
-      ARCUBE_RUNTIME: 'SHIFTER'
-      ARCUBE_CONTAINER: 'fermilab/fnal-wn-sl7:latest'
-      ARCUBE_IN_NAME: 'MegaRun5_1E20_RHC.spill'
+      ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/m/mkramer/output/MegaRun5'
+      ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/m/mkramer/logs/MegaRun5'
+      ND_PRODUCTION_RUNTIME: 'SHIFTER'
+      ND_PRODUCTION_CONTAINER: 'fermilab/fnal-wn-sl7:latest'
+      ND_PRODUCTION_IN_NAME: 'MegaRun5_1E20_RHC.spill'

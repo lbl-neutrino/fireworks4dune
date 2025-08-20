@@ -1,19 +1,19 @@
 base_envs:
   - name: 'MiniRun6_1E19_RHC.flow2supera'
     env:
-      ARCUBE_OUTDIR_BASE: '/pscratch/sd/d/dunepr/output/MiniRun6'
-      ARCUBE_LOGDIR_BASE: '/pscratch/sd/d/dunepr/logs/MiniRun6'
-      ARCUBE_RUNTIME: 'SHIFTER'
-      ARCUBE_CONTAINER: 'deeplearnphysics/larcv2:ub20.04-cuda11.6-pytorch1.13-larndsim'
-      ARCUBE_IN_NAME: 'MiniRun6_1E19_RHC.flow'
-      # NOTE: The ARCUBE_OUT_NAME is currently being overridden by the fwsub script :(
-      # ARCUBE_OUT_NAME: 'MiniRun6_1E19_RHC.mlreco'
+      ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepr/output/MiniRun6'
+      ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepr/logs/MiniRun6'
+      ND_PRODUCTION_RUNTIME: 'SHIFTER'
+      ND_PRODUCTION_CONTAINER: 'deeplearnphysics/larcv2:ub20.04-cuda11.6-pytorch1.13-larndsim'
+      ND_PRODUCTION_IN_NAME: 'MiniRun6_1E19_RHC.flow'
+      # NOTE: The ND_PRODUCTION_OUT_NAME is currently being overridden by the fwsub script :(
+      # ND_PRODUCTION_OUT_NAME: 'MiniRun6_1E19_RHC.mlreco'
   - name: 'MiniRun6_1E19_RHC.spine'
     env:
-      ARCUBE_OUTDIR_BASE: '/pscratch/sd/d/dunepr/output/MiniRun6'
-      ARCUBE_LOGDIR_BASE: '/pscratch/sd/d/dunepr/logs/MiniRun6'
-      ARCUBE_RUNTIME: 'SHIFTER'
-      ARCUBE_CONTAINER: 'deeplearnphysics/larcv2:ub20.04-cuda11.6-pytorch1.13-larndsim'
-      # ARCUBE_IN_NAME: 'MiniRun6_1E19_RHC.mlreco'
-      # ARCUBE_OUT_NAME: 'MiniRun6_1E19_RHC.mlreco'
-      ARCUBE_IN_NAME: 'MiniRun6_1E19_RHC.flow2supera'
+      ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepr/output/MiniRun6'
+      ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepr/logs/MiniRun6'
+      ND_PRODUCTION_RUNTIME: 'SHIFTER'
+      ND_PRODUCTION_CONTAINER: 'deeplearnphysics/larcv2:ub20.04-cuda11.6-pytorch1.13-larndsim'
+      # ND_PRODUCTION_IN_NAME: 'MiniRun6_1E19_RHC.mlreco'
+      # ND_PRODUCTION_OUT_NAME: 'MiniRun6_1E19_RHC.mlreco'
+      ND_PRODUCTION_IN_NAME: 'MiniRun6_1E19_RHC.flow2supera'

@@ -1,6 +1,6 @@
 base_envs:
   - name: 'MiniRun2_1E19_RHC_convert2h5'
     env:
-      ARCUBE_CONTAINER: 'mjkramer/sim2x2:genie_edep.LFG_testing.20230228'
-      ARCUBE_DK2NU_DIR: '/global/cfs/cdirs/dune/users/2x2EventGeneration/NuMI_dk2nu/newtarget-200kA_20220409'
-      ARCUBE_SPILL_NAME: 'MiniRun2_1E19_RHC_spill'
+      ND_PRODUCTION_CONTAINER: 'mjkramer/sim2x2:genie_edep.LFG_testing.20230228'
+      ND_PRODUCTION_DK2NU_DIR: '/global/cfs/cdirs/dune/users/2x2EventGeneration/NuMI_dk2nu/newtarget-200kA_20220409'
+      ND_PRODUCTION_SPILL_NAME: 'MiniRun2_1E19_RHC_spill'

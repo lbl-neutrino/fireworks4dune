@@ -1,8 +1,8 @@
 base_envs:
   - name: 'FSD_CosmicRun1.flow'
     env:
-      ARCUBE_RUNTIME: 'NONE'
-      ARCUBE_OUTDIR_BASE: '/pscratch/sd/c/cuddandr/output/FSD_CosmicRun1'
-      ARCUBE_LOGDIR_BASE: '/pscratch/sd/c/cuddandr/logs/FSD_CosmicRun1'
-      ARCUBE_IN_NAME: 'FSD_CosmicRun1.larnd'
-      ARCUBE_COMPRESS: 'lzf'
+      ND_PRODUCTION_RUNTIME: 'NONE'
+      ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/c/cuddandr/output/FSD_CosmicRun1'
+      ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/c/cuddandr/logs/FSD_CosmicRun1'
+      ND_PRODUCTION_IN_NAME: 'FSD_CosmicRun1.larnd'
+      ND_PRODUCTION_COMPRESS: 'lzf'

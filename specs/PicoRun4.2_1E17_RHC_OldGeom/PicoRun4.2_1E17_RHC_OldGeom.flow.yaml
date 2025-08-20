@@ -1,7 +1,7 @@
 base_envs:
   - name: 'PicoRun4.2_1E17_RHC_OldGeom.flow'
     env:
-      ARCUBE_RUNTIME: 'SHIFTER'
+      ND_PRODUCTION_RUNTIME: 'SHIFTER'
       ARCUNE_USE_LOCAL_PRODUCT: '1'
-      ARCUBE_CONTAINER: 'mjkramer/sim2x2:ndlar011'
-      ARCUBE_IN_NAME: 'PicoRun4.2_1E17_RHC_OldGeom.larnd'
+      ND_PRODUCTION_CONTAINER: 'mjkramer/sim2x2:ndlar011'
+      ND_PRODUCTION_IN_NAME: 'PicoRun4.2_1E17_RHC_OldGeom.larnd'

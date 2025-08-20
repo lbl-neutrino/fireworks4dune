@@ -1,7 +1,7 @@
 base_envs:
   - name: 'MiniRun6.4_1E19_RHC.flow'
     env:
-      ARCUBE_RUNTIME: 'NONE'
-      ARCUBE_OUTDIR_BASE: '/pscratch/sd/d/dunepr/output/MiniRun6.4'
-      ARCUBE_LOGDIR_BASE: '/pscratch/sd/d/dunepr/logs/MiniRun6.4'
-      ARCUBE_IN_NAME: 'MiniRun6.4_1E19_RHC.larnd'
+      ND_PRODUCTION_RUNTIME: 'NONE'
+      ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepr/output/MiniRun6.4'
+      ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepr/logs/MiniRun6.4'
+      ND_PRODUCTION_IN_NAME: 'MiniRun6.4_1E19_RHC.larnd'

@@ -12,7 +12,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--runner', required=True)
     ap.add_argument('--base-env', required=True)
-    ap.add_argument('--name', help='Output dir; defaults to base_env.ARCUBE_OUT_NAME if available; otherwise --base-env')
+    ap.add_argument('--name', help='Output dir; defaults to base_env.ND_PRODUCTION_OUT_NAME if available; otherwise --base-env')
     ap.add_argument('--worker', help='Controls which workers can produce these files; defaults to --name')
     ap.add_argument('--size', type=int, default=1, help='Number of files to produce')
     ap.add_argument('--start', type=int, default=0, help='Starting index of output files')
@@ -30,9 +30,9 @@ def main():
 
     if args.name:
         out_name = args.name
-    # NOTE: We should probably avoid putting ARCUBE_OUT_NAME in the base_env
-    elif 'ARCUBE_OUT_NAME' in base_env_dict['env']:
-        out_name = base_env_dict['env']['ARCUBE_OUT_NAME']
+    # NOTE: We should probably avoid putting ND_PRODUCTION_OUT_NAME in the base_env
+    elif 'ND_PRODUCTION_OUT_NAME' in base_env_dict['env']:
+        out_name = base_env_dict['env']['ND_PRODUCTION_OUT_NAME']
     else:
         out_name = args.base_env
 

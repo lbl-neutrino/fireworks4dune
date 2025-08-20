@@ -1,7 +1,7 @@
 base_envs:
   - name: 'PicoRun4_1E17_RHC.plots'
     env:
-      ARCUBE_EDEP_NAME: 'PicoRun4_1E17_RHC.convert2h5'
-      ARCUBE_LARND_NAME: 'PicoRun4_1E17_RHC.larnd'
-      ARCUBE_FLOW_NAME: 'PicoRun4_1E17_RHC.flow'
-      ARCUBE_OUT_NAME: 'PicoRun4_1E17_RHC.plots'
+      ND_PRODUCTION_EDEP_NAME: 'PicoRun4_1E17_RHC.convert2h5'
+      ND_PRODUCTION_LARND_NAME: 'PicoRun4_1E17_RHC.larnd'
+      ND_PRODUCTION_FLOW_NAME: 'PicoRun4_1E17_RHC.flow'
+      ND_PRODUCTION_OUT_NAME: 'PicoRun4_1E17_RHC.plots'

@@ -1,17 +1,17 @@
 base_envs:
   - name: 'MiniRunF6.3_1E19_FHC.genie.rock'
     env:
-      ARCUBE_OUTDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/MiniRunF6.3'
-      ARCUBE_LOGDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/logs/MiniRunF6.3'
+      ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/MiniRunF6.3'
+      ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/logs/MiniRunF6.3'
       # The GENIE build in the new Podman container (mjkramer/sim2x2:ndlar011)
       # has a memory leak (maybe due to the newer ROOT version?) so let's use
       # the old Singularity container
-      ARCUBE_RUNTIME: 'SHIFTER'
-      ARCUBE_CONTAINER: 'mjkramer/sim2x2:genie_edep.3_04_00.20230912'
-      ARCUBE_DET_LOCATION: 'MiniRun5-Rock'
-      ARCUBE_DK2NU_DIR: '/dvs_ro/cfs/cdirs/dune/users/2x2EventGeneration/NuMI_dk2nu/newtarget200kA_20210920'
-      ARCUBE_EXPOSURE: '1E15'
-      ARCUBE_GEOM: 'geometry/Merged2x2MINERvA_v4/Merged2x2MINERvA_v4_justRock.gdml'
-      ARCUBE_TUNE: 'AR23_20i_00_000'
-      ARCUBE_RUN_OFFSET: '1000000000'
-      ARCUBE_XSEC_FILE: '/dvs_ro/cfs/cdirs/dune/users/2x2EventGeneration/inputs/NuMI/genie_xsec-3.04.00-noarch-AR2320i00000-k250-e1000/v3_04_00/NULL/AR2320i00000-k250-e1000/data/gxspl-NUsmall.xml'
+      ND_PRODUCTION_RUNTIME: 'SHIFTER'
+      ND_PRODUCTION_CONTAINER: 'mjkramer/sim2x2:genie_edep.3_04_00.20230912'
+      ND_PRODUCTION_DET_LOCATION: 'MiniRun5-Rock'
+      ND_PRODUCTION_DK2NU_DIR: '/dvs_ro/cfs/cdirs/dune/users/2x2EventGeneration/NuMI_dk2nu/newtarget200kA_20210920'
+      ND_PRODUCTION_EXPOSURE: '1E15'
+      ND_PRODUCTION_GEOM: 'geometry/Merged2x2MINERvA_v4/Merged2x2MINERvA_v4_justRock.gdml'
+      ND_PRODUCTION_TUNE: 'AR23_20i_00_000'
+      ND_PRODUCTION_RUN_OFFSET: '1000000000'
+      ND_PRODUCTION_XSEC_FILE: '/dvs_ro/cfs/cdirs/dune/users/2x2EventGeneration/inputs/NuMI/genie_xsec-3.04.00-noarch-AR2320i00000-k250-e1000/v3_04_00/NULL/AR2320i00000-k250-e1000/data/gxspl-NUsmall.xml'

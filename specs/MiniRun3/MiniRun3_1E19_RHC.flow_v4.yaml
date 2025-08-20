@@ -1,4 +1,4 @@
 base_envs:
   - name: 'MiniRun3_1E19_RHC.flow_v4'
     env:
-      ARCUBE_IN_NAME: 'MiniRun3_1E19_RHC.larnd'
+      ND_PRODUCTION_IN_NAME: 'MiniRun3_1E19_RHC.larnd'

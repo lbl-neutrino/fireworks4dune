@@ -1,9 +1,9 @@
 base_envs:
   - name: 'MegaRun5_1E20_RHC.convert2h5'
     env:
-      ARCUBE_OUTDIR_BASE: '/pscratch/sd/m/mkramer/output/MegaRun5'
-      ARCUBE_LOGDIR_BASE: '/pscratch/sd/m/mkramer/logs/MegaRun5'
-      ARCUBE_RUNTIME: 'SHIFTER'
-      ARCUBE_CONTAINER: 'mjkramer/sim2x2:ndlar011'
-      ARCUBE_ACTIVE_VOLUME: 'volTPCActive'
-      ARCUBE_SPILL_NAME: 'MegaRun5_1E20_RHC.spill'
+      ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/m/mkramer/output/MegaRun5'
+      ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/m/mkramer/logs/MegaRun5'
+      ND_PRODUCTION_RUNTIME: 'SHIFTER'
+      ND_PRODUCTION_CONTAINER: 'mjkramer/sim2x2:ndlar011'
+      ND_PRODUCTION_ACTIVE_VOLUME: 'volTPCActive'
+      ND_PRODUCTION_SPILL_NAME: 'MegaRun5_1E20_RHC.spill'

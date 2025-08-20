@@ -1,8 +1,8 @@
 base_envs:
   - name: 'MicroProdN1p1_NDLAr_1E18_RHC.larnd'
     env:
-      ARCUBE_CONVERT2H5_NAME: 'MicroProdN1p1_NDLAr_1E18_RHC.convert2h5'
-      ARCUBE_LARNDSIM_CONFIG: 'ndlar'
-      ARCUBE_LOGDIR_BASE: '/pscratch/sd/a/abooth/MicroProdN1p1/logs'
-      ARCUBE_OUTDIR_BASE: '/pscratch/sd/a/abooth/MicroProdN1p1/output'
-      ARCUBE_RUNTIME: 'NONE'
+      ND_PRODUCTION_CONVERT2H5_NAME: 'MicroProdN1p1_NDLAr_1E18_RHC.convert2h5'
+      ND_PRODUCTION_LARNDSIM_CONFIG: 'ndlar'
+      ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/a/abooth/MicroProdN1p1/logs'
+      ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/a/abooth/MicroProdN1p1/output'
+      ND_PRODUCTION_RUNTIME: 'NONE'

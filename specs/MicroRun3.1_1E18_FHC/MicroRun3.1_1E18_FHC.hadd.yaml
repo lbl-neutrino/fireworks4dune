@@ -1,11 +1,11 @@
 base_envs:
   - name: 'MicroRun3.1_1E18_FHC.nu.hadd'
     env:
-      ARCUBE_CONTAINER: 'mjkramer/sim2x2:genie_edep.3_04_00.20230620'
-      ARCUBE_IN_NAME: 'MicroRun3.1_1E18_FHC.nu'
-      ARCUBE_HADD_FACTOR: '40'
+      ND_PRODUCTION_CONTAINER: 'mjkramer/sim2x2:genie_edep.3_04_00.20230620'
+      ND_PRODUCTION_IN_NAME: 'MicroRun3.1_1E18_FHC.nu'
+      ND_PRODUCTION_HADD_FACTOR: '40'
   - name: 'MicroRun3.1_1E18_FHC.rock.hadd'
     env:
-      ARCUBE_CONTAINER: 'mjkramer/sim2x2:genie_edep.3_04_00.20230620'
-      ARCUBE_IN_NAME: 'MicroRun3.1_1E18_FHC.rock'
-      ARCUBE_HADD_FACTOR: '40'
+      ND_PRODUCTION_CONTAINER: 'mjkramer/sim2x2:genie_edep.3_04_00.20230620'
+      ND_PRODUCTION_IN_NAME: 'MicroRun3.1_1E18_FHC.rock'
+      ND_PRODUCTION_HADD_FACTOR: '40'
