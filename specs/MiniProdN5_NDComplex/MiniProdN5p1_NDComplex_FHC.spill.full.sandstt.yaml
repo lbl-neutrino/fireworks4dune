@@ -1,0 +1,13 @@
+base_envs:
+  - name: 'MiniProdN5p1_NDComplex_FHC.spill.full.sandstt'
+    env:
+      ND_PRODUCTION_CONTAINER: 'mjkramer/sim2x2:ndlar011'
+      ND_PRODUCTION_INDEX_OFFSET: '1600'
+      ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepro/abooth/logs/MiniProdN5'
+      ND_PRODUCTION_NU_NAME: 'MiniProdN5p1_NDComplex_FHC.hadd.ndlarfid.sandstt'
+      ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepro/abooth/output/MiniProdN5'
+      ND_PRODUCTION_ROCK_NAME: 'MiniProdN5p1_NDComplex_FHC.hadd.rockantindlarfid.sandstt'
+      ND_PRODUCTION_REUSE_ROCK: '1'
+      ND_PRODUCTION_RUNTIME: 'SHIFTER'
+      ND_PRODUCTION_SPILL_POT: '7.5E13'
+      ND_PRODUCTION_USE_GHEP_POT: '1'
