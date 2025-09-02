@@ -1,5 +1,5 @@
 base_envs:
   - name: 'PicoRun4.1_1E17_RHC.convert2h5'
     env:
-      ARCUBE_CONTAINER: 'mjkramer/sim2x2:genie_edep.3_04_00.20230912'
-      ARCUBE_SPILL_NAME: 'PicoRun4.1_1E17_RHC.spill'
+      ND_PRODUCTION_CONTAINER: 'mjkramer/sim2x2:genie_edep.3_04_00.20230912'
+      ND_PRODUCTION_SPILL_NAME: 'PicoRun4.1_1E17_RHC.spill'
