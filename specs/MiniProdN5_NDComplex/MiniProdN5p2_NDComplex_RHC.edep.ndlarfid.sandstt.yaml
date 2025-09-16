@@ -8,6 +8,8 @@ base_envs:
       #ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepro/abooth/logs/MiniProdN5'
       #ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepro/abooth/output/MiniProdN5'
       #ND_PRODUCTION_RUNTIME: 'SHIFTER'
+      ND_PRODUCTION_APPTAINER_CACHEDIR: '/tmp/apptainer.abooth'
+      ND_PRODUCTION_APPTAINER_TMPDIR: '/tmp/apptainer.abooth'
       ND_PRODUCTION_CONTAINER: 'sim2x2_ndlar011.sif'
       ND_PRODUCTION_CONTAINER_DIR: '/pscratch/sd/d/dunepro/abooth/containers'
       ND_PRODUCTION_EDEP_MAC: 'macros/dune-nd.mac'
