@@ -2,12 +2,11 @@
 
 source admin/load_fireworks.sh
 
-name=Reflow_FSD_v4
-# inputs=/pscratch/sd/d/dunepro/mkramer/install/Reflow_FSD_v2/inputs.fsd.cosmics.json
-inputs=/pscratch/sd/d/dunepro/mkramer/install/Reflow_FSD_v4/inputs.fsd.priority.json
+name=Reflow_FSD_v6
+inputs=/pscratch/sd/d/dunepro/mkramer/install/Reflow_FSD_v6/inputs.fsd.priority.json
 
 scripts/reset_db.py
-scripts/load_yaml.py specs/Reflow_v1.yaml specs/Reflow_FSD/*.yaml
+scripts/load_yaml.py specs/Reflow.yaml specs/Reflow_FSD/*.yaml
 
 workflows/fwsub.reflow_plus_downstream.py --name Reflow_FSD -i $inputs
 
@@ -23,4 +22,4 @@ sbatch -o "$logdir"/slurm-%j.txt -N 4 -t 240 --ntasks-per-node 128 slurm/fw_cpu.
 sbatch -o "$logdir"/slurm-%j.txt -N 4 -t 240 --ntasks-per-node 128 slurm/fw_cpu.slurm.sh Reflow_FSD.pandora rapidfire
 sbatch -o "$logdir"/slurm-%j.txt -N 4 -t 240 --ntasks-per-node 128 slurm/fw_cpu.slurm.sh Reflow_FSD.caf rapidfire
 
-scripts/rescue_from_scratch.simple.py --srcdir /pscratch/sd/d/dunepro/mkramer/output/Reflow_FSD_v4/flow --destdir /global/cfs/cdirs/dune/www/data/FSD/reflows/v4/flow
+scripts/rescue_from_scratch.simple.py --srcdir /pscratch/sd/d/dunepro/mkramer/output/Reflow_FSD_v6/flow --destdir /global/cfs/cdirs/dune/www/data/FSD/reflows/v6/flow
