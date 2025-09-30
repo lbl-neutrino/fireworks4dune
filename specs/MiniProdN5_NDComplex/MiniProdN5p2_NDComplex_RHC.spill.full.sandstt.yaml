@@ -2,6 +2,7 @@ base_envs:
   - name: 'MiniProdN5p2_NDComplex_RHC.spill.full.sandstt'
     env:
       ND_PRODUCTION_CONTAINER: 'mjkramer/sim2x2:ndlar011'
+      ND_PRODUCTION_INDEX_OFFSET: '1600'
       ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepro/abooth/logs/MiniProdN5'
       ND_PRODUCTION_NU_NAME: 'MiniProdN5p2_NDComplex_RHC.hadd.ndlarfid.sandstt'
       ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepro/abooth/output/MiniProdN5'
