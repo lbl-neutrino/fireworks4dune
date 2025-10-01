@@ -1,0 +1,10 @@
+base_envs:
+  - name: 'MiniProdN5p2_NDComplex_RHC.spill.full.sanddrift.nueelastic.overlay'
+    env:
+      ND_PRODUCTION_CONTAINER: 'mjkramer/sim2x2:ndlar011'
+      ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepro/abooth/logs/MiniProdN5'
+      ND_PRODUCTION_N_SINGLES_OVERLAID_PER_SPILL: '1'
+      ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepro/abooth/output/MiniProdN5'
+      ND_PRODUCTION_RUNTIME: 'SHIFTER'
+      ND_PRODUCTION_SINGLES_NAME: "MiniProdN5p2_NDComplex_RHC.hadd.ndlarfid.sanddrift.nueelastic"
+      ND_PRODUCTION_SPILL_NAME: "MiniProdN5p2_NDComplex_RHC.spill.full.sanddrift"
