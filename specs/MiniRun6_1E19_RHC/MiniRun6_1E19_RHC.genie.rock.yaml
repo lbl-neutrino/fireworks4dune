@@ -9,7 +9,7 @@ base_envs:
       # ND_PRODUCTION_RUNTIME: 'SHIFTER'
       ND_PRODUCTION_RUNTIME: 'PODMAN-HPC'
       ND_PRODUCTION_CONTAINER: 'mjkramer/sim2x2:genie_edep.3_04_00.20230912'
-      ND_PRODUCTION_DET_LOCATION: 'MiniRun6-Rock'
+      ND_PRODUCTION_DET_LOCATION: 'MiniRun5-Rock'
       ND_PRODUCTION_DK2NU_DIR: '/dvs_ro/cfs/cdirs/dune/users/2x2EventGeneration/NuMI_dk2nu/newtarget-200kA_20220409'
       ND_PRODUCTION_EXPOSURE: '1E15'
       ND_PRODUCTION_GEOM: 'geometry/Merged2x2MINERvA_v4/Merged2x2MINERvA_v4_justRock.gdml'
