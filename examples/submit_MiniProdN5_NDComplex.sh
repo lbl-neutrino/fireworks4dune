@@ -48,7 +48,6 @@ set +o posix
 
 #scripts/load_yaml.py specs/MiniProdN5_NDComplex/MiniProdN5p1_NDComplex_FHC.genie.ndlarfid.sanddrift.nueelastic.yaml --replace
 #scripts/load_yaml.py specs/MiniProdN5_NDComplex/MiniProdN5p1_NDComplex_FHC.edep.ndlarfid.sanddrift.nueelastic.yaml --replace
-#scripts/load_yaml.py specs/MiniProdN5_NDComplex/MiniProdN5p1_NDComplex_FHC.hadd.ndlarfid.sanddrift.nueelastic.yaml --replace
 #scripts/load_yaml.py specs/MiniProdN5_NDComplex/MiniProdN5p1_NDComplex_FHC.spill.ndlarfid.sanddrift.nueelastic.singles.yaml --replace
 #scripts/load_yaml.py specs/MiniProdN5_NDComplex/MiniProdN5p1_NDComplex_FHC.spill.full.sanddrift.nueelastic.overlay.yaml --replace
 #scripts/load_yaml.py specs/MiniProdN5_NDComplex/MiniProdN5p1_NDComplex_FHC.convert2h5.ndlarfid.sanddrift.nueelastic.singles.yaml --replace
@@ -97,7 +96,6 @@ set +o posix
 
 #scripts/load_yaml.py specs/MiniProdN5_NDComplex/MiniProdN5p2_NDComplex_RHC.genie.ndlarfid.sanddrift.nueelastic.yaml --replace
 #scripts/load_yaml.py specs/MiniProdN5_NDComplex/MiniProdN5p2_NDComplex_RHC.edep.ndlarfid.sanddrift.nueelastic.yaml --replace
-#scripts/load_yaml.py specs/MiniProdN5_NDComplex/MiniProdN5p2_NDComplex_RHC.hadd.ndlarfid.sanddrift.nueelastic.yaml --replace
 #scripts/load_yaml.py specs/MiniProdN5_NDComplex/MiniProdN5p2_NDComplex_RHC.spill.ndlarfid.sanddrift.nueelastic.singles.yaml --replace
 #scripts/load_yaml.py specs/MiniProdN5_NDComplex/MiniProdN5p2_NDComplex_RHC.spill.full.sanddrift.nueelastic.overlay.yaml --replace
 #scripts/load_yaml.py specs/MiniProdN5_NDComplex/MiniProdN5p2_NDComplex_RHC.convert2h5.ndlarfid.sanddrift.nueelastic.singles.yaml --replace
@@ -248,9 +246,6 @@ mkdir -p $logdir
 #scripts/fwsub.py --runner NDComplex_v1_Edep --base-env MiniProdN5p1_NDComplex_FHC.edep.ndlarfid.sanddrift.nueelastic --size $spill_size --start $start_sanddrift
 #sbatch -o ${logdir:-.}/slurm-%j.txt --array=1-5 -N 1 slurm/fw_cpu.slurm.sh MiniProdN5p1_NDComplex_FHC.edep.ndlarfid.sanddrift.nueelastic rapidfire
 
-#scripts/fwsub.py --runner NDComplex_v1_Hadd --base-env MiniProdN5p1_NDComplex_FHC.hadd.ndlarfid.sanddrift.nueelastic --size $spill_size --start $start_sanddrift
-#sbatch -o ${logdir:-.}/slurm-%j.txt --array=1-2 -N 1 slurm/fw_cpu.slurm.sh MiniProdN5p1_NDComplex_FHC.hadd.ndlarfid.sanddrift.nueelastic rapidfire
-
 #scripts/fwsub.py --runner NDComplex_v1_SpillBuild --base-env MiniProdN5p1_NDComplex_FHC.spill.ndlarfid.sanddrift.nueelastic.singles --size $spill_size --start $start_sanddrift
 #sbatch -o ${logdir:-.}/slurm-%j.txt --array=1-2 -N 1 slurm/fw_cpu.slurm.sh MiniProdN5p1_NDComplex_FHC.spill.ndlarfid.sanddrift.nueelastic.singles rapidfire
 
@@ -391,9 +386,6 @@ mkdir -p $logdir
 
 #scripts/fwsub.py --runner NDComplex_v1_Edep --base-env MiniProdN5p2_NDComplex_RHC.edep.ndlarfid.sanddrift.nueelastic --size $spill_size --start $start_sanddrift
 #sbatch -o ${logdir:-.}/slurm-%j.txt --array=1-5 -N 1 slurm/fw_cpu.slurm.sh MiniProdN5p2_NDComplex_RHC.edep.ndlarfid.sanddrift.nueelastic rapidfire
-
-#scripts/fwsub.py --runner NDComplex_v1_Hadd --base-env MiniProdN5p2_NDComplex_RHC.hadd.ndlarfid.sanddrift.nueelastic --size $spill_size --start $start_sanddrift
-#sbatch -o ${logdir:-.}/slurm-%j.txt --array=1-2 -N 1 slurm/fw_cpu.slurm.sh MiniProdN5p2_NDComplex_RHC.hadd.ndlarfid.sanddrift.nueelastic rapidfire
 
 #scripts/fwsub.py --runner NDComplex_v1_SpillBuild --base-env MiniProdN5p2_NDComplex_RHC.spill.ndlarfid.sanddrift.nueelastic.singles --size $spill_size --start $start_sanddrift
 #sbatch -o ${logdir:-.}/slurm-%j.txt --array=1-2 -N 1 slurm/fw_cpu.slurm.sh MiniProdN5p2_NDComplex_RHC.spill.ndlarfid.sanddrift.nueelastic.singles rapidfire
