@@ -249,7 +249,7 @@ mkdir -p $logdir
 #scripts/fwsub.py --runner NDComplex_v1_SpillBuild --base-env MiniProdN5p1_NDComplex_FHC.spill.ndlarfid.sanddrift.nueelastic.singles --size $spill_size --start $start_sanddrift
 #sbatch -o ${logdir:-.}/slurm-%j.txt --array=1-2 -N 1 slurm/fw_cpu.slurm.sh MiniProdN5p1_NDComplex_FHC.spill.ndlarfid.sanddrift.nueelastic.singles rapidfire
 
-#scripts/fwsub.py --runner NDComplex_v1_NDComplex_v1_SpillBuildSinglesIntoNominal --base-env MiniProdN5p1_NDComplex_FHC.spill.full.sanddrift.nueelastic.overlay --size $spill_size --start $start_sanddrift
+#scripts/fwsub.py --runner NDComplex_v1_SpillBuildSinglesIntoNominal --base-env MiniProdN5p1_NDComplex_FHC.spill.full.sanddrift.nueelastic.overlay --size $spill_size --start $start_sanddrift
 #sbatch -o ${logdir:-.}/slurm-%j.txt --array=1-2 -N 1 slurm/fw_cpu.slurm.sh MiniProdN5p1_NDComplex_FHC.spill.full.sanddrift.nueelastic.overlay rapidfire
 
 #scripts/fwsub.py --runner NDComplex_v1_Convert2H5 --base-env MiniProdN5p1_NDComplex_FHC.convert2h5.ndlarfid.sanddrift.nueelastic.singles --size $spill_size --start $start_sanddrift
@@ -390,7 +390,7 @@ mkdir -p $logdir
 #scripts/fwsub.py --runner NDComplex_v1_SpillBuild --base-env MiniProdN5p2_NDComplex_RHC.spill.ndlarfid.sanddrift.nueelastic.singles --size $spill_size --start $start_sanddrift
 #sbatch -o ${logdir:-.}/slurm-%j.txt --array=1-2 -N 1 slurm/fw_cpu.slurm.sh MiniProdN5p2_NDComplex_RHC.spill.ndlarfid.sanddrift.nueelastic.singles rapidfire
 
-#scripts/fwsub.py --runner NDComplex_v1_NDComplex_v1_SpillBuildSinglesIntoNominal --base-env MiniProdN5p2_NDComplex_RHC.spill.full.sanddrift.nueelastic.overlay --size $spill_size --start $start_sanddrift
+#scripts/fwsub.py --runner NDComplex_v1_SpillBuildSinglesIntoNominal --base-env MiniProdN5p2_NDComplex_RHC.spill.full.sanddrift.nueelastic.overlay --size $spill_size --start $start_sanddrift
 #sbatch -o ${logdir:-.}/slurm-%j.txt --array=1-2 -N 1 slurm/fw_cpu.slurm.sh MiniProdN5p2_NDComplex_RHC.spill.full.sanddrift.nueelastic.overlay rapidfire
 
 #scripts/fwsub.py --runner NDComplex_v1_Convert2H5 --base-env MiniProdN5p2_NDComplex_RHC.convert2h5.ndlarfid.sanddrift.nueelastic.singles --size $spill_size --start $start_sanddrift
