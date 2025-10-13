@@ -1,8 +1,8 @@
 base_envs:
   - name: 'FSD_CosmicRun1.larnd'
     env:
-      ARCUBE_OUTDIR_BASE: '/pscratch/sd/c/cuddandr/output/FSD_CosmicRun1'
-      ARCUBE_LOGDIR_BASE: '/pscratch/sd/c/cuddandr/logs/FSD_CosmicRun1'
+      ARCUBE_OUTDIR_BASE: '/pscratch/sd/d/dunepro/cuddandr/output/FSD_CosmicRun1'
+      ARCUBE_LOGDIR_BASE: '/pscratch/sd/d/dunepro/cuddandr/logs/FSD_CosmicRun1'
       ARCUBE_RUNTIME: 'NONE'
       ARCUBE_CONVERT2H5_NAME: 'FSD_CosmicRun1.convert2h5'
       ARCUBE_LARNDSIM_CONFIG: 'fsd'

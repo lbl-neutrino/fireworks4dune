@@ -1,0 +1,9 @@
+base_envs:
+  - name: 'FSD_CosmicRun3.corsika'
+    env:
+      ARCUBE_OUTDIR_BASE: '/pscratch/sd/d/dunepro/cuddandr/output/FSD_CosmicRun3'
+      ARCUBE_LOGDIR_BASE: '/pscratch/sd/d/dunepro/cuddandr/logs/FSD_CosmicRun3'
+      ARCUBE_RUNTIME: 'SHIFTER'
+      ARCUBE_CONTAINER: 'mjkramer/sim2x2:ndlar011'
+      ARCUBE_LOC: 'BERN'
+      ARCUBE_NSHOW: '5000'

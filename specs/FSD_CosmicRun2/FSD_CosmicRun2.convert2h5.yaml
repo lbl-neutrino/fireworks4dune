@@ -1,0 +1,11 @@
+base_envs:
+  - name: 'FSD_CosmicRun2.convert2h5'
+    env:
+      ARCUBE_OUTDIR_BASE: '/pscratch/sd/d/dunepro/cuddandr/output/FSD_CosmicRun2'
+      ARCUBE_LOGDIR_BASE: '/pscratch/sd/d/dunepro/cuddandr/logs/FSD_CosmicRun2'
+      ARCUBE_RUNTIME: 'SHIFTER'
+      ARCUBE_CONTAINER: 'mjkramer/sim2x2:ndlar011'
+      ARCUBE_ACTIVE_VOLUME: 'volTPCActive'
+      ARCUBE_SINGLE_NAME: 'FSD_CosmicRun2.edep'
+      ARCUBE_KEEP_ALL_DETS: '0'
+      ARCUBE_COSMIC_SIM: '1'

@@ -1,0 +1,20 @@
+base_envs:
+  - name: 'FSD_CosmicRun3.flow2supera'
+    env:
+      ARCUBE_RUNTIME: 'SHIFTER'
+      ARCUBE_CONTAINER: 'deeplearnphysics/larcv2:ub2204-cu124-torch251-larndsim'
+      ARCUBE_LOGDIR_BASE: '/pscratch/sd/d/dunepro/cuddandr/logs/FSD_CosmicRun3'
+      ARCUBE_OUTDIR_BASE: '/pscratch/sd/d/dunepro/cuddandr/output/FSD_CosmicRun3'
+      ARCUBE_IN_NAME: 'FSD_CosmicRun3.flow'
+      ARCUBE_FLOW2SUPERA_CONFIG: 'fsd_sim'
+
+  - name: 'FSD_CosmicRun3.spine'
+    env:
+      ARCUBE_RUNTIME: 'SHIFTER'
+      ARCUBE_CONTAINER: 'deeplearnphysics/larcv2:ub2204-cu124-torch251-larndsim'
+      ARCUBE_LOGDIR_BASE: '/pscratch/sd/d/dunepro/cuddandr/logs/FSD_CosmicRun3'
+      ARCUBE_OUTDIR_BASE: '/pscratch/sd/d/dunepro/cuddandr/output/FSD_CosmicRun3'
+      ARCUBE_IN_NAME: 'FSD_CosmicRun3.flow2supera'
+      ARCUBE_SPINE_NUM_THREADS: '1'
+      ARCUBE_SPINE_OPENBLAS_NUM_THREADS: '1'
+      ARCUBE_SPINE_CONFIG: 'ndlar_single_full_chain_250505.cfg'

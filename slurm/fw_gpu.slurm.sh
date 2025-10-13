@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#SBATCH --account=dune
+#SBATCH --account=m3249
 #SBATCH --qos=regular
 #SBATCH --constraint=gpu
 #SBATCH --time=1:00:00
@@ -12,10 +12,10 @@ rlaunch_args=("$@"); shift $#
 
 basedir=$PWD
 
-logdir=${SCRATCH}/slurm_logs/${name}/${SLURM_JOBID}
+logdir=${SCRATCH}/cuddandr/slurm_logs/${name}/${SLURM_JOBID}
 mkdir -p "$logdir"
 
-launchdir=${SCRATCH}/launchers/${name}/${SLURM_JOBID}
+launchdir=${SCRATCH}/cuddandr/launchers/${name}/${SLURM_JOBID}
 # launchdir=launchers.${name}
 mkdir -p "$launchdir"
 cd "$launchdir" || exit

@@ -1,0 +1,8 @@
+base_envs:
+  - name: 'FSD_CosmicRun3.flow'
+    env:
+      ARCUBE_RUNTIME: 'NONE'
+      ARCUBE_OUTDIR_BASE: '/pscratch/sd/d/dunepro/cuddandr/output/FSD_CosmicRun3'
+      ARCUBE_LOGDIR_BASE: '/pscratch/sd/d/dunepro/cuddandr/logs/FSD_CosmicRun3'
+      ARCUBE_IN_NAME: 'FSD_CosmicRun3.larnd'
+      ARCUBE_COMPRESS: 'lzf'

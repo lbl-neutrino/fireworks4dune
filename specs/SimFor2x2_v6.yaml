@@ -41,7 +41,7 @@ runners:
   - name: 'SimFor2x2_v6_Flow'
     repo: 'SimFor2x2_v6'
     workdir: 'run-ndlar-flow'
-    cmd: './run_ndlar_flow.sh'
+    cmd: './run_ndlar_flow_fsd.sh'
 
   - name: 'SimFor2x2_v6_Edep2Flat'
     repo: 'SimFor2x2_v6'
