@@ -1,5 +1,5 @@
 base_envs:
-  - name: 'MicroProdN4p1_NDComplex_FHC.flow.full.v251016'
+  - name: 'MicroProdN4p1_NDComplex_FHC.flow.full.light.v251016'
     env:
       ND_PRODUCTION_COMPRESS: 'gzip'
       ND_PRODUCTION_IN_NAME: 'MicroProdN4p1_NDComplex_FHC.larnd.full.light'
