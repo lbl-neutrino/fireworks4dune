@@ -1,8 +1,8 @@
 base_envs:
-  - name: 'MicroProdN3p4_NDLAr_2E18_FHC.flow.geomfix.singles.nu.v251016'
+  - name: 'MicroProdN4p1_NDComplex_FHC.flow.full.v251016'
     env:
       ND_PRODUCTION_COMPRESS: 'gzip'
-      ND_PRODUCTION_IN_NAME: 'MicroProdN3p4_NDLAr_2E18_FHC.larnd.geomfix.singles.nu'
+      ND_PRODUCTION_IN_NAME: 'MicroProdN4p1_NDComplex_FHC.larnd.full'
       ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/a/abooth/MicroProdN3p4/logs'
       ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/a/abooth/MicroProdN3p4/output'
       ND_PRODUCTION_RUNTIME: 'NONE'
