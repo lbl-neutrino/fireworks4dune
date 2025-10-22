@@ -1,0 +1,84 @@
+repos:
+  - name: 'SimForFSD_v1'
+    url: 'https://github.com/DUNE/ND_Production.git'
+
+runners:
+  - name: 'SimForFSD_v1_Genie'
+    repo: 'SimForFSD_v1'
+    workdir: 'run-genie'
+    cmd: './run_genie.sh'
+
+  - name: 'SimForFSD_v1_Corsika'
+    repo: 'SimForFSD_v1'
+    workdir: 'run-corsika'
+    cmd: './run_both_steps.sh'
+
+  - name: 'SimForFSD_v1_Edep'
+    repo: 'SimForFSD_v1'
+    workdir: 'run-edep-sim'
+    cmd: './run_edep_sim.sh'
+
+  - name: 'SimForFSD_v1_Hadd'
+    repo: 'SimForFSD_v1'
+    workdir: 'run-hadd'
+    cmd: './run_hadd.sh'
+
+  - name: 'SimForFSD_v1_SpillBuild'
+    repo: 'SimForFSD_v1'
+    workdir: 'run-spill-build'
+    cmd: './run_spill_build.sh'
+
+  - name: 'SimForFSD_v1_Convert2H5'
+    repo: 'SimForFSD_v1'
+    workdir: 'run-convert2h5'
+    cmd: './run_convert2h5.sh'
+
+  - name: 'SimForFSD_v1_LArND'
+    repo: 'SimForFSD_v1'
+    workdir: 'run-larnd-sim'
+    cmd: './run_larnd_sim.sh'
+
+  - name: 'SimForFSD_v1_Flow'
+    repo: 'SimForFSD_v1'
+    workdir: 'run-ndlar-flow'
+    cmd: './run_ndlar_flow_fsd.sh'
+
+  - name: 'SimForFSD_v1_Edep2Flat'
+    repo: 'SimForFSD_v1'
+    workdir: 'run-edep2flat'
+    cmd: './run_edep2flat.sh'
+
+  - name: 'SimForFSD_v1_Minerva'
+    repo: 'SimForFSD_v1'
+    workdir: 'run-minerva'
+    cmd: './run_minerva.sh'
+
+  - name: 'SimForFSD_v1_Flow2Supera'
+    repo: 'SimForFSD_v1'
+    workdir: 'run-mlreco'
+    cmd: './run_flow2supera.sh'
+
+  - name: 'SimForFSD_v1_Spine'
+    repo: 'SimForFSD_v1'
+    workdir: 'run-mlreco'
+    cmd: './run_spine.sh'
+
+  - name: 'SimForFSD_v1_Flow2root'
+    repo: 'SimForFSD_v1'
+    workdir: 'run-pandora'
+    cmd: './run_flow2root.sh'
+
+  - name: 'SimForFSD_v1_Pandora'
+    repo: 'SimForFSD_v1'
+    workdir: 'run-pandora'
+    cmd: './run_pandora.sh'
+
+  - name: 'SimForFSD_v1_CAFmaker'
+    repo: 'SimForFSD_v1'
+    workdir: 'run-cafmaker'
+    cmd: './run_cafmaker.sh'
+
+  - name: 'SimForFSD_v1_Plots'
+    repo: 'SimForFSD_v1'
+    workdir: 'run-validation'
+    cmd: './run_validation.sh'

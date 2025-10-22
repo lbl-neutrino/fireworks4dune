@@ -1,0 +1,11 @@
+base_envs:
+  - name: 'FSD_CosmicRun2.convert2h5'
+    env:
+      ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepro/cuddandr/output/FSD_CosmicRun2'
+      ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepro/cuddandr/logs/FSD_CosmicRun2'
+      ND_PRODUCTION_RUNTIME: 'SHIFTER'
+      ND_PRODUCTION_CONTAINER: 'mjkramer/sim2x2:ndlar011'
+      ND_PRODUCTION_ACTIVE_VOLUME: 'volTPCActive'
+      ND_PRODUCTION_SINGLE_NAME: 'FSD_CosmicRun2.edep'
+      ND_PRODUCTION_KEEP_ALL_DETS: '0'
+      ND_PRODUCTION_COSMIC_SIM: '1'

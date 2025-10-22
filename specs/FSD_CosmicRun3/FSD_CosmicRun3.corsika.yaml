@@ -1,0 +1,9 @@
+base_envs:
+  - name: 'FSD_CosmicRun3.corsika'
+    env:
+      ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepro/cuddandr/output/FSD_CosmicRun3'
+      ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepro/cuddandr/logs/FSD_CosmicRun3'
+      ND_PRODUCTION_RUNTIME: 'SHIFTER'
+      ND_PRODUCTION_CONTAINER: 'mjkramer/sim2x2:ndlar011'
+      ND_PRODUCTION_LOC: 'BERN'
+      ND_PRODUCTION_NSHOW: '5000'

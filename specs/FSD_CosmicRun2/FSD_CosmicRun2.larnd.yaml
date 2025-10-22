@@ -1,0 +1,9 @@
+base_envs:
+  - name: 'FSD_CosmicRun2.larnd'
+    env:
+      ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepro/cuddandr/output/FSD_CosmicRun2'
+      ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepro/cuddandr/logs/FSD_CosmicRun2'
+      ND_PRODUCTION_RUNTIME: 'NONE'
+      ND_PRODUCTION_CONVERT2H5_NAME: 'FSD_CosmicRun2.convert2h5'
+      ND_PRODUCTION_LARNDSIM_CONFIG: 'fsd'
+      ND_PRODUCTION_COMPRESS: 'lzf'

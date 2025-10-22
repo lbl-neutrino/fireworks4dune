@@ -13,9 +13,9 @@ HADD_FACTOR = 10
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('--base-env-prefix', default='FSD_CosmicRun1')
+    ap.add_argument('--base-env-prefix', default='FSD_CosmicRun3')
     ap.add_argument('--name', help='Defaults to --base-env-prefix')
-    ap.add_argument('--repo', default='SimFor2x2_v6')
+    ap.add_argument('--repo', default='SimForFSD_v1')
     ap.add_argument('--size', type=int, default=1024, help='Number of final outputs (post-hadd etc.) to produce')
     ap.add_argument('--start', type=int, default=0, help='Starting index of output files')
     args = ap.parse_args()
@@ -50,14 +50,18 @@ def main():
         fw_convert2h5 = make_fw(i, 'Convert2H5', 'convert2h5', category='cpu_seconds')
         fw_larnd = make_fw(i, 'LArND', 'larnd', category='gpu_minutes')
         fw_flow = make_fw(i, 'Flow', 'flow', category='cpu_minutes')
+        fw_flow2supera = make_fw(i, 'Flow2Supera', 'flow2supera', category='cpu_minutes')
+        fw_spine = make_fw(i, 'Spine', 'spine', category='gpu_minutes')
 
-        fireworks = [fw_corsika, fw_edep, fw_convert2h5,
-                     fw_larnd, fw_flow]
+        fireworks = [fw_corsika, fw_edep, fw_convert2h5, fw_larnd, fw_flow,
+                     fw_flow2supera, fw_spine]
 
         deps = {fw_corsika: [fw_edep],
                 fw_edep: [fw_convert2h5],
                 fw_convert2h5: [fw_larnd],
-                fw_larnd: [fw_flow]}
+                fw_larnd: [fw_flow],
+                fw_flow: [fw_flow2supera],
+                fw_flow2supera: [fw_spine]}
 
         wf = Workflow(fireworks, deps, name=args.name)
 
