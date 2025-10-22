@@ -12,6 +12,7 @@ set +o posix
 #scripts/load_yaml.py specs/SimForNDLAr_v4.yaml specs/MicroProdN3p4_NDLAr/*.convert*.singles.nu.yaml --replace
 #scripts/load_yaml.py specs/SimForNDLAr_v4.yaml specs/MicroProdN3p4_NDLAr/*.larnd.singles.nu.yaml --replace
 #scripts/load_yaml.py specs/SimForNDLAr_v4.yaml specs/MicroProdN3p4_NDLAr/*.flow.singles.nu.yaml --replace
+#scripts/load_yaml.py specs/SimForNDLAr_v4.yaml specs/MicroProdN3p4_NDLAr/MicroProdN3p4_NDLAr_2E18_FHC.flow.geomfix.singles.nu.v251016.yaml --replace
 
 
 start=1
@@ -55,3 +56,7 @@ mkdir -p $logdir
 
 #scripts/fwsub.py --runner SimForNDLAr_v4_Flow --base-env MicroProdN3p4_NDLAr_2E18_FHC.flow.geomfix.singles.nu --size $spill_size --start $start
 #sbatch -o "$logdir"/slurm-%j.txt --array=1-10 -N 1 slurm/fw_cpu.slurm.sh MicroProdN3p4_NDLAr_2E18_FHC.flow.geomfix.singles.nu rapidfire
+
+
+#scripts/fwsub.py --runner SimForNDLAr_v4_Flow --base-env MicroProdN3p4_NDLAr_2E18_FHC.flow.geomfix.singles.nu.v251016 --size $spill_size --start $start
+#sbatch -o "$logdir"/slurm-%j.txt --array=1-10 -N 1 slurm/fw_cpu.slurm.sh MicroProdN3p4_NDLAr_2E18_FHC.flow.geomfix.singles.nu.v251016 rapidfire
