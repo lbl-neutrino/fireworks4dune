@@ -48,7 +48,7 @@ def get_fws() -> pymongo.collection.Collection:
 
 def get_idxs(prodname: str, step: str, state: str) -> list[int]:
     name = f'{prodname}.{step}'
-    return [int(d['spec']['env']['ARCUBE_INDEX'])
+    return [int(d['spec']['env']['ND_PRODUCTION_INDEX'])
             for d in get_fws().find({'name': name, 'state': state})]
 
 

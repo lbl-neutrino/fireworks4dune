@@ -15,6 +15,7 @@ set +o posix
 #scripts/load_yaml.py specs/MicroProdN4p1_NDComplex/MicroProdN4p1_NDComplex_FHC.convert2h5.full.yaml --replace
 #scripts/load_yaml.py specs/MicroProdN4p1_NDComplex/MicroProdN4p1_NDComplex_FHC.larnd.full.yaml --replace
 #scripts/load_yaml.py specs/MicroProdN4p1_NDComplex/MicroProdN4p1_NDComplex_FHC.flow.full.yaml --replace
+#scripts/load_yaml.py specs/MicroProdN4p1_NDComplex/MicroProdN4p1_NDComplex_FHC.flow.full.light.v251016.yaml --replace
 #scripts/load_yaml.py specs/MicroProdN4p1_NDComplex/MicroProdN4p1_NDComplex_FHC.flow2supera.full.yaml --replace
 #scripts/load_yaml.py specs/MicroProdN4p1_NDComplex/MicroProdN4p1_NDComplex_FHC.spine.full.yaml --replace
 #scripts/load_yaml.py specs/MicroProdN4p1_NDComplex/MicroProdN4p1_NDComplex_FHC.tmsreco.full.yaml --replace
@@ -69,6 +70,10 @@ mkdir -p $logdir
 
 #scripts/fwsub.py --runner NDComplex_v1_Flow --base-env MicroProdN4p1_NDComplex_FHC.flow.full --size $spill_size --start $start
 #sbatch -o ${logdir:-.}/slurm-%j.txt --array=1-7 -N 1 slurm/fw_cpu.slurm.sh MicroProdN4p1_NDComplex_FHC.flow.full singleshot
+
+
+#scripts/fwsub.py --runner NDComplex_v1_Flow --base-env MicroProdN4p1_NDComplex_FHC.flow.full.light.v251016 --size $spill_size --start $start
+#sbatch -o ${logdir:-.}/slurm-%j.txt --array=1-7 -N 1 slurm/fw_cpu.slurm.sh MicroProdN4p1_NDComplex_FHC.flow.full.light.v251016 singleshot
 
 
 #scripts/fwsub.py --runner NDComplex_v1_Flow2Supera --base-env MicroProdN4p1_NDComplex_FHC.flow2supera.full --size $spill_size --start $start

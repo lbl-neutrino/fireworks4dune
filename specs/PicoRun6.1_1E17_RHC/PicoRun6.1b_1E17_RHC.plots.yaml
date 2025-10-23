@@ -1,9 +1,9 @@
 base_envs:
   - name: 'PicoRun6.1b_1E17_RHC.plots'
     env:
-      ARCUBE_RUNTIME: 'SHIFTER'
-      ARCUBE_CONTAINER: 'mjkramer/sim2x2:ndlar011'
-      ARCUBE_OUTDIR_BASE: '/pscratch/sd/d/dunepr/output/PicoRun6.1'
-      ARCUBE_LOGDIR_BASE: '/pscratch/sd/d/dunepr/logs/PicoRun6.1'
-      ARCUBE_LARND_NAME: 'PicoRun6.1b_1E17_RHC.larnd'
-      ARCUBE_FLOW_NAME: 'PicoRun6.1b_1E17_RHC.flow'
+      ND_PRODUCTION_RUNTIME: 'SHIFTER'
+      ND_PRODUCTION_CONTAINER: 'mjkramer/sim2x2:ndlar011'
+      ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepr/output/PicoRun6.1'
+      ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepr/logs/PicoRun6.1'
+      ND_PRODUCTION_LARND_NAME: 'PicoRun6.1b_1E17_RHC.larnd'
+      ND_PRODUCTION_FLOW_NAME: 'PicoRun6.1b_1E17_RHC.flow'

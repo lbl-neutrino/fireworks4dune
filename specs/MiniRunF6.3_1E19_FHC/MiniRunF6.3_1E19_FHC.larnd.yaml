@@ -1,8 +1,8 @@
 base_envs:
   - name: 'MiniRunF6.3_1E19_FHC.larnd'
     env:
-      ARCUBE_OUTDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/MiniRunF6.3'
-      ARCUBE_LOGDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/logs/MiniRunF6.3'
-      ARCUBE_RUNTIME: 'NONE'
-      ARCUBE_CONVERT2H5_NAME: 'MiniRunF6.3_1E19_FHC.convert2h5'
-      ARCUBE_LARNDSIM_CONFIG: '2x2_old_response'
+      ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/MiniRunF6.3'
+      ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/logs/MiniRunF6.3'
+      ND_PRODUCTION_RUNTIME: 'NONE'
+      ND_PRODUCTION_CONVERT2H5_NAME: 'MiniRunF6.3_1E19_FHC.convert2h5'
+      ND_PRODUCTION_LARNDSIM_CONFIG: '2x2_old_response'

@@ -20,14 +20,14 @@ def main():
 
     # We won't need two FwMakers once ndlar_reflow and 2x2_sim are merged
     fwm1 = FwMaker(args.name, 'ndlar_reflow', args.name)
-    fwm2 = FwMaker(args.name, '2x2_sim', args.name)
+    fwm2 = FwMaker(args.name, 'ND_Production', args.name)
 
     with open(args.inputs_json) as f:
         envs: list[dict[str, str]] = json.load(f)
 
     for env in envs:
         if args.charge_only:
-            env.pop('ARCUBE_LIGHT_FILES', None)
+            env.pop('ND_PRODUCTION_LIGHT_FILES', None)
 
         fw_flow = fwm1.make(env, 'Flow', 'flow')
         fw_flow2supera = fwm2.make(env, 'Flow2Supera', 'flow2supera')

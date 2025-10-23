@@ -1,9 +1,9 @@
 base_envs:
   - name: 'PicoRun4.2_1E17_RHC_OldGeom.spill'
     env:
-      ARCUBE_RUNTIME: 'SHIFTER'
-      ARCUBE_CONTAINER: 'mjkramer/sim2x2:ndlar011'
-      ARCUBE_NU_NAME: 'PicoRun4.2_1E17_RHC_OldGeom.nu.hadd'
-      ARCUBE_NU_POT: '1E16'
-      ARCUBE_ROCK_NAME: 'PicoRun4.2_1E17_RHC_OldGeom.rock.hadd'
-      ARCUBE_ROCK_POT: '1E16'
+      ND_PRODUCTION_RUNTIME: 'SHIFTER'
+      ND_PRODUCTION_CONTAINER: 'mjkramer/sim2x2:ndlar011'
+      ND_PRODUCTION_NU_NAME: 'PicoRun4.2_1E17_RHC_OldGeom.nu.hadd'
+      ND_PRODUCTION_NU_POT: '1E16'
+      ND_PRODUCTION_ROCK_NAME: 'PicoRun4.2_1E17_RHC_OldGeom.rock.hadd'
+      ND_PRODUCTION_ROCK_POT: '1E16'

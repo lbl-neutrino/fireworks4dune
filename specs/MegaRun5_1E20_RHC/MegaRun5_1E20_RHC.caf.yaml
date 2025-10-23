@@ -1,8 +1,8 @@
 base_envs:
   - name: 'MegaRun5_1E20_RHC.caf'
     env:
-      ARCUBE_OUTDIR_BASE: '/pscratch/sd/m/mkramer/output/MegaRun5'
-      ARCUBE_LOGDIR_BASE: '/pscratch/sd/m/mkramer/logs/MegaRun5'
-      ARCUBE_RUNTIME: 'NONE'
-      ARCUBE_IN_NAME: 'MegaRun5_1E20_RHC.flow'
+      ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/m/mkramer/output/MegaRun5'
+      ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/m/mkramer/logs/MegaRun5'
+      ND_PRODUCTION_RUNTIME: 'NONE'
+      ND_PRODUCTION_IN_NAME: 'MegaRun5_1E20_RHC.flow'
       # TODO fill this in
