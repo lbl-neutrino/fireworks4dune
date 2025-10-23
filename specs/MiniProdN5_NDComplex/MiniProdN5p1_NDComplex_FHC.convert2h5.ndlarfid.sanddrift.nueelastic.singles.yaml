@@ -1,0 +1,10 @@
+base_envs:
+  - name: 'MiniProdN5p1_NDComplex_FHC.convert2h5.ndlarfid.sanddrift.nueelastic.singles'
+    env:
+      ND_PRODUCTION_ACTIVE_VOLUME: 'volTPCActive'
+      ND_PRODUCTION_CONTAINER: 'mjkramer/sim2x2:ndlar011'
+      ND_PRODUCTION_KEEP_ALL_DETS: '0'
+      ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepro/abooth/logs/MiniProdN5'
+      ND_PRODUCTION_SPILL_NAME: 'MiniProdN5p1_NDComplex_FHC.spill.ndlarfid.sanddrift.nueelastic.singles'
+      ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepro/abooth/output/MiniProdN5'
+      ND_PRODUCTION_RUNTIME: 'SHIFTER'

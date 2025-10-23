@@ -1,0 +1,8 @@
+base_envs:
+  - name: 'MiniProdN5p2_NDComplex_RHC.tmsreco.full.sandstt'
+    env:
+      ND_PRODUCTION_CONTAINER: 'fermilab/fnal-wn-sl7:latest'
+      ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepro/abooth/logs/MiniProdN5'
+      ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepro/abooth/output/MiniProdN5'
+      ND_PRODUCTION_SPILL_NAME: 'MiniProdN5p2_NDComplex_RHC.spill.full.sandstt'
+      ND_PRODUCTION_RUNTIME: 'SHIFTER'

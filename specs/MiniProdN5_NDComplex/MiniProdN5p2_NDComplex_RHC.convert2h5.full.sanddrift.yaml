@@ -1,0 +1,10 @@
+base_envs:
+  - name: 'MiniProdN5p2_NDComplex_RHC.convert2h5.full.sanddrift'
+    env:
+      ND_PRODUCTION_ACTIVE_VOLUME: 'volTPCActive'
+      ND_PRODUCTION_CONTAINER: 'mjkramer/sim2x2:ndlar011'
+      ND_PRODUCTION_KEEP_ALL_DETS: '0'
+      ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepro/abooth/logs/MiniProdN5'
+      ND_PRODUCTION_SPILL_NAME: 'MiniProdN5p2_NDComplex_RHC.spill.full.sanddrift'
+      ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepro/abooth/output/MiniProdN5'
+      ND_PRODUCTION_RUNTIME: 'SHIFTER'

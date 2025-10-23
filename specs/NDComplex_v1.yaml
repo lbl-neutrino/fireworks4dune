@@ -24,6 +24,11 @@ runners:
     workdir: 'run-spill-build'
     cmd: './run_spill_build.sh'
 
+  - name: 'NDComplex_v1_SpillBuildSinglesIntoNominal'
+    repo: 'NDComplex_v1'
+    workdir: 'run-spill-build'
+    cmd: './run_spill_build_singles_into_nominal.sh'
+
   - name: 'NDComplex_v1_TMSReco'
     repo: 'NDComplex_v1'
     workdir: 'run-tms-reco'
