@@ -5,6 +5,7 @@ module load python/3.11
 module load mongodb
 
 fw4dune_dir=$(realpath "$(dirname "${BASH_SOURCE[0]}")"/..)
+export FW4DUNE_DIR=$fw4dune_dir
 
 source "$fw4dune_dir"/fw.venv/bin/activate
 
