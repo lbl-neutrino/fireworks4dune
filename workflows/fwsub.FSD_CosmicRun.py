@@ -13,7 +13,7 @@ HADD_FACTOR = 10
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('--base-env-prefix', default='FSD_CosmicRun3')
+    ap.add_argument('--base-env-prefix', default='FSD_CosmicRun4')
     ap.add_argument('--name', help='Defaults to --base-env-prefix')
     ap.add_argument('--repo', default='SimForFSD_v1')
     ap.add_argument('--size', type=int, default=1024, help='Number of final outputs (post-hadd etc.) to produce')

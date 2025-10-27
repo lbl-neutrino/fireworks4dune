@@ -1,0 +1,20 @@
+base_envs:
+  - name: 'FSD_CosmicRun4.flow2supera'
+    env:
+      ND_PRODUCTION_RUNTIME: 'SHIFTER'
+      ND_PRODUCTION_CONTAINER: 'deeplearnphysics/larcv2:ub2204-cu124-torch251-larndsim'
+      ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepro/cuddandr/logs/FSD_CosmicRun4'
+      ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepro/cuddandr/output/FSD_CosmicRun4'
+      ND_PRODUCTION_IN_NAME: 'FSD_CosmicRun4.flow'
+      ND_PRODUCTION_FLOW2SUPERA_CONFIG: 'fsd_sim'
+
+  - name: 'FSD_CosmicRun4.spine'
+    env:
+      ND_PRODUCTION_RUNTIME: 'SHIFTER'
+      ND_PRODUCTION_CONTAINER: 'deeplearnphysics/larcv2:ub2204-cu124-torch251-larndsim'
+      ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepro/cuddandr/logs/FSD_CosmicRun4'
+      ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepro/cuddandr/output/FSD_CosmicRun4'
+      ND_PRODUCTION_IN_NAME: 'FSD_CosmicRun4.flow2supera'
+      ND_PRODUCTION_SPINE_NUM_THREADS: '1'
+      ND_PRODUCTION_SPINE_OPENBLAS_NUM_THREADS: '1'
+      ND_PRODUCTION_SPINE_CONFIG: 'ndlar_single_full_chain_250505.cfg'

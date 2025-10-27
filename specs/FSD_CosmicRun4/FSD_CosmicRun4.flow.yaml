@@ -1,0 +1,8 @@
+base_envs:
+  - name: 'FSD_CosmicRun4.flow'
+    env:
+      ND_PRODUCTION_RUNTIME: 'NONE'
+      ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepro/cuddandr/output/FSD_CosmicRun4'
+      ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepro/cuddandr/logs/FSD_CosmicRun4'
+      ND_PRODUCTION_IN_NAME: 'FSD_CosmicRun4.larnd'
+      ND_PRODUCTION_COMPRESS: 'lzf'
