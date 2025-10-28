@@ -150,7 +150,7 @@ Slurm job to be written, but it works when running rlaunch interactively.
 
 # Self-hosted MongoDB instance
 
-If the MongoDB on SPIN is down/unaccesible or a self-hosted DB is desired,
+If the MongoDB on SPIN is down/inaccessible or a self-hosted DB is desired,
 several scripts are available to accomplish this using the NERSC compute nodes.
 
 ## Running the DB
@@ -160,21 +160,22 @@ This means the MongoDB is only available when the job is running, but due to onl
 shared node, it is extremely cheap to run.
 
 The MongoDB service is run via a container that is setup using `init_mongo_container.sh`. See the script
-for the DB settings, e.g. MongoDB user/pass, service port, etc. Some of these settings are different from
-the MongoDB defaults as to not conflict with other instances.
+for the DB settings, e.g. MongoDB user/pass, service port, etc. The database password needs to be set to
+something! Some of these settings are different from the MongoDB defaults as to not conflict with other instances.
 
 Since the MongoDB is hosted on a compute node, its IP changes each time it starts on a new node. The
 fireworks config `my_launchpad.yaml` needs to be edited with the active IP address.
 
-The IP and port along with the MongoDB username and password need to be set within `my_launchpad.yaml`
-so Fireworks knows the correct connection and authentication information.
+**The IP and port along with the MongoDB username and password need to be set within `my_launchpad.yaml`
+so Fireworks knows the correct connection and authentication information.**
 
 Follow these steps to start the service and connect to the MongoDB
 1. Load the fireworks environment via `source admin/load_fireworks.sh`
-2. Submit the MongoDB job using `sbatch scripts/sbatch_mongo.sh`; by default it runs for 24 hours
-3. Run `get_job_ip_addr.sh <job_id>` to retrieve the IP address of the job node after job is started
-4. Edit `my_launchpad.yaml` with the IP address of the MongoDB compute node (and password)
-5. Fireworks should function like normal (note that the connection may be slow initially)
+2. Edit `init_mongo_container.sh` to set the DB password (and other settings if desired)
+3. Submit the MongoDB job using `sbatch scripts/sbatch_mongo.sh`; by default it runs for 24 hours
+4. Run `get_job_ip_addr.sh <job_id>` to retrieve the IP address of the job node after job is started
+5. Edit `my_launchpad.yaml` with the IP address of the MongoDB compute node and DB password
+6. Fireworks should function like normal (note that the connection may be slow initially)
 
 By default the scripts will store the DB in `$fw4dune_dir/mongo_db`. Set the `$MONGODB_LOCAL_DIR`
 environment variable to define a different DB location.
@@ -183,8 +184,9 @@ environment variable to define a different DB location.
 
 The connection to the MongoDB can be verified using the Mongo Shell (mongosh). Using the IP address and port
 from the container initialization, connect to the MongoDB instance:
-```
-mongosh "mongodb://10.249.0.234:55555" --username root
+```bash
+mongosh "mongodb://<node_ip_addr>:<container_port>" --username root
+# for example mongodb://127.0.0.1:55555
 ```
 Enter the password when prompted and if the connection is active a Mongo shell prompt will appear.
 

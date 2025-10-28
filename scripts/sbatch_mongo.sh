@@ -3,8 +3,6 @@
 #SBATCH -C cpu
 #SBATCH -q shared
 #SBATCH -J fireworks_db
-#SBATCH --mail-user=andrew.cudd@colorado.edu
-#SBATCH --mail-type=ALL
 #SBATCH -A m3249
 #SBATCH -t 24:00:00
 #SBATCH -n 1
