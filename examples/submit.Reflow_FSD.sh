@@ -22,4 +22,4 @@ sbatch -o "$logdir"/slurm-%j.txt -N 4 -t 240 --ntasks-per-node 128 slurm/fw_cpu.
 sbatch -o "$logdir"/slurm-%j.txt -N 4 -t 240 --ntasks-per-node 128 slurm/fw_cpu.slurm.sh Reflow_FSD.pandora rapidfire
 sbatch -o "$logdir"/slurm-%j.txt -N 4 -t 240 --ntasks-per-node 128 slurm/fw_cpu.slurm.sh Reflow_FSD.caf rapidfire
 
-scripts/rescue_from_scratch.simple.py --srcdir /pscratch/sd/d/dunepro/mkramer/output/Reflow_FSD_v7/flow --destdir /global/cfs/cdirs/dune/www/data/FSD/reflows/v7/flow
+scripts/rescue_from_scratch.simple.py --srcdir /pscratch/sd/d/dunepro/mkramer/output/Reflow_FSD_v7/flow --destdir /global/cfs/cdirs/dunepro/people/mkramer/reflow_staging
