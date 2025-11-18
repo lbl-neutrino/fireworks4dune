@@ -1,0 +1,20 @@
+base_envs:
+  - name: 'Reflow_2x2_Run2.flow2supera'
+    env:
+      ND_PRODUCTION_RUNTIME: 'SHIFTER'
+      ND_PRODUCTION_CONTAINER: 'deeplearnphysics/larcv2:ub2204-cu124-torch251-larndsim'
+      ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/logs/Reflow_2x2_Run2_v0/flow2supera'
+      ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_2x2_Run2_v0/flow2supera'
+      ND_PRODUCTION_INDIR_BASE: '/global/cfs/cdirs/dune/www/data/2x2/nearline_run2/packet'
+      ND_PRODUCTION_FLOW_DIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_2x2_Run2_v0/flow'
+
+  - name: 'Reflow_2x2_Run2.spine'
+    env:
+      ND_PRODUCTION_RUNTIME: 'SHIFTER'
+      ND_PRODUCTION_CONTAINER: 'deeplearnphysics/larcv2:ub2204-cu124-torch251-larndsim'
+      ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/logs/Reflow_2x2_Run2_v0/spine'
+      ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_2x2_Run2_v0/spine'
+      ND_PRODUCTION_INDIR_BASE: '/global/cfs/cdirs/dune/www/data/2x2/nearline_run2/packet'
+      ND_PRODUCTION_SUPERA_DIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_2x2_Run2_v0/flow2supera'
+      ND_PRODUCTION_SPINE_NUM_THREADS: '1'
+      ND_PRODUCTION_SPINE_OPENBLAS_NUM_THREADS: '1'
