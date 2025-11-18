@@ -6,9 +6,10 @@ name=Reflow_2x2_Run2_v0
 inputs1=/pscratch/sd/d/dunepro/mkramer/install/Reflow_2x2_Run2_v0/inputs.60116.json # AmBe
 inputs2=/pscratch/sd/d/dunepro/mkramer/install/Reflow_2x2_Run2_v0/inputs.60130.json # cosmics
 
-scripts/load_yaml.py specs/Reflow_v1.yaml specs/Reflow_2x2_Run2/*.yaml
+scripts/load_yaml.py specs/Reflow.yaml specs/Reflow_2x2_Run2/*.yaml
 
-workflows/fwsub.reflow_plus_downstream.py -i $inputs -n Reflow_2x2_Run2
+workflows/fwsub.reflow_plus_downstream.py -i $inputs1 -n Reflow_2x2_Run2
+workflows/fwsub.reflow_plus_downstream.py -i $inputs2 -n Reflow_2x2_Run2
 
 logdir=${FW4DUNE_SCRATCH:-$SCRATCH}/slurm_logs/$name
 

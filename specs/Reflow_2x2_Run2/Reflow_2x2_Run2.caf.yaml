@@ -5,7 +5,7 @@ base_envs:
       ND_PRODUCTION_CONTAINER: 'fermilab/fnal-wn-sl7:latest'
       ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/logs/Reflow_2x2_Run2_v0/caf'
       ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_2x2_Run2_v0/caf'
-      ND_PRODUCTION_INDIR_BASE: '/global/cfs/cdirs/dune/www/data/2x2/nearline_run2/packet'
+      ND_PRODUCTION_INDIR_BASE: '/dvs_ro/cfs/cdirs/dune/www/data/2x2/nearline_run2/packet'
       ND_PRODUCTION_FLOW_DIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_2x2_Run2_v0/flow'
       ND_PRODUCTION_SPINE_DIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_2x2_Run2_v0/spine'
       ND_PRODUCTION_PANDORA_DIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_2x2_Run2_v0/pandora'
