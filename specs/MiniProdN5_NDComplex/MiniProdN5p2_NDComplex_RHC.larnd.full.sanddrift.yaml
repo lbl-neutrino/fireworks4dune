@@ -1,0 +1,9 @@
+base_envs:
+  - name: 'MiniProdN5p2_NDComplex_RHC.larnd.full.sanddrift'
+    env:
+      ND_PRODUCTION_COMPRESS: 'lzf'
+      ND_PRODUCTION_CONVERT2H5_NAME: 'MiniProdN5p2_NDComplex_RHC.convert2h5.full.sanddrift'
+      ND_PRODUCTION_LARNDSIM_CONFIG: 'ndlar_light'
+      ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/e/esabater/nd-production/logs/MiniProdN5'
+      ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/e/esabater/nd-production/output/MiniProdN5'
+      ND_PRODUCTION_RUNTIME: 'NONE'
