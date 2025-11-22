@@ -1,0 +1,84 @@
+# Common environments to be inherited/overridden:
+
+common: &common
+  ND_PRODUCTION_FILE_TAG: '.v0'
+  ND_PRODUCTION_RUNTIME: 'SHIFTER'
+  ND_PRODUCTION_INDIR_BASE: '/dvs_ro/cfs/cdirs/dune/www/data/2x2/LRS_run2'
+
+spine_common: &spine_common
+  ND_PRODUCTION_CONTAINER: 'deeplearnphysics/larcv2:ub2204-cu124-torch251-larndsim'
+
+fnal_common: &fnal_common
+  ND_PRODUCTION_CONTAINER: 'fermilab/fnal-wn-sl7:latest'
+
+
+# Specific environments for each step:
+
+flow: &flow
+  name: 'Reflow_2x2_Run2_LightBased.flow'
+  env:
+    <<: *common
+    ND_PRODUCTION_REFLOW_VARIANT: '2x2_Run2'
+    ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_2x2_Run2_v0.LightBased/flow'
+    ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/logs/Reflow_2x2_Run2_v0.LightBased/flow'
+
+flow2supera: &flow2supera
+  name: 'Reflow_2x2_Run2_LightBased.flow2supera'
+  env:
+    <<: *common
+    <<: *spine_common
+    ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/logs/Reflow_2x2_Run2_v0.LightBased/flow2supera'
+    ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_2x2_Run2_v0.LightBased/flow2supera'
+    ND_PRODUCTION_FLOW_DIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_2x2_Run2_v0.LightBased/flow'
+
+spine: &spine
+  name: 'Reflow_2x2_Run2_LightBased.spine'
+  env:
+    <<: *common
+    <<: *spine_common
+    ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/logs/Reflow_2x2_Run2_v0.LightBased/spine'
+    ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_2x2_Run2_v0.LightBased/spine'
+    ND_PRODUCTION_SUPERA_DIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_2x2_Run2_v0.LightBased/flow2supera'
+    ND_PRODUCTION_SPINE_NUM_THREADS: '1'
+    ND_PRODUCTION_SPINE_OPENBLAS_NUM_THREADS: '1'
+
+flow2root: &flow2root
+  name: 'Reflow_2x2_Run2_LightBased.flow2root'
+  env:
+    <<: *common
+    <<: *fnal_common
+    ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/logs/Reflow_2x2_Run2_v0.LightBased/flow2root'
+    ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_2x2_Run2_v0.LightBased/flow2root'
+    ND_PRODUCTION_FLOW_DIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_2x2_Run2_v0.LightBased/flow'
+
+pandora: &pandora
+  name: 'Reflow_2x2_Run2_LightBased.pandora'
+  env:
+    <<: *common
+    <<: *fnal_common
+    ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/logs/Reflow_2x2_Run2_v0.LightBased/pandora'
+    ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_2x2_Run2_v0.LightBased/pandora'
+    ND_PRODUCTION_FLOW2ROOT_DIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_2x2_Run2_v0.LightBased/flow2root'
+
+caf: &caf
+  name: 'Reflow_2x2_Run2_LightBased.caf'
+  env:
+    <<: *common
+    <<: *fnal_common
+    ND_PRODUCTION_CONTAINER: 'fermilab/fnal-wn-sl7:latest'
+    ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/logs/Reflow_2x2_Run2_v0.LightBased/caf'
+    ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_2x2_Run2_v0.LightBased/caf'
+    ND_PRODUCTION_FLOW_DIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_2x2_Run2_v0.LightBased/flow'
+    ND_PRODUCTION_SPINE_DIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_2x2_Run2_v0.LightBased/spine'
+    ND_PRODUCTION_PANDORA_DIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_2x2_Run2_v0.LightBased/pandora'
+
+
+# List of all the steps (needed by load_yaml.py)
+
+base_envs:
+  - *flow
+  - *flow2supera
+  - *spine
+  - *flow2root
+  - *pandora
+  - *caf
