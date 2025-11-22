@@ -14,6 +14,7 @@ def main():
     ap.add_argument('-i', '--inputs-json', required=True,
                     help='JSON file from ndlar_reflow/gen_input_list.py')
     ap.add_argument('--charge-only', action='store_true')
+    ap.add_argument('--light-only', action='store_true')
     args = ap.parse_args()
 
     lpad = LaunchPad.auto_load()
@@ -26,10 +27,17 @@ def main():
         envs: list[dict[str, str]] = json.load(f)
 
     for env in envs:
-        if args.charge_only:
-            env.pop('ND_PRODUCTION_LIGHT_FILES', None)
+        if 'ND_PRODUCTION_CHARGE_FILE' in env:                     # charge basis
+            if args.charge_only:
+                env.pop('ND_PRODUCTION_LIGHT_FILES', None)
+            fw_flow = fwm1.make(env, 'Flow', 'flow')
+        elif 'ND_PRODUCTION_CHARGE_FILE' in env:                   # light basis
+            if args.light_only:
+                env.pop('ND_PRODUCTION_CHARGE_FILES', None)
+            fw_flow = fwm1.make(env, 'Flow_LightBased', 'flow')
+        else:
+            raise ValueError('invalid json')
 
-        fw_flow = fwm1.make(env, 'Flow', 'flow')
         fw_flow2supera = fwm2.make(env, 'Flow2Supera', 'flow2supera')
         fw_spine = fwm2.make(env, 'SPINE', 'spine')
         fw_flow2root = fwm2.make(env, 'Flow2root', 'flow2root')

@@ -13,6 +13,11 @@ runners:
     workdir: '.'
     cmd: 'scripts/wrap_run_flow.sh'
 
+  - name: 'ndlar_reflow_Flow_LightBased'
+    repo: 'ndlar_reflow'
+    workdir: '.'
+    cmd: 'scripts/wrap_run_flow.light_based.sh'
+
   - name: 'ND_Production_Flow2Supera'
     repo: 'ND_Production'
     workdir: 'run-mlreco'
