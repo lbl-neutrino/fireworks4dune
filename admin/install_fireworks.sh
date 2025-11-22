@@ -16,7 +16,10 @@ source fw.venv/bin/activate
 
 pip install -U pip wheel setuptools
 
-# FireWorks currently uses the deprecated safe_load function
+# Not one, but TWO yaml parsers...
+# For load_yaml.py to support file inclusion:
+pip install 'pyyaml-include<2.0' PyYAML
+# FireWorks currently(?) uses the deprecated safe_load function:
 pip install "ruamel.yaml<0.18.0"
 
 # pip install 'FireWorks[rtransfer,newt,daemon_mode,flask-plotting,workflow-checks,graph-plotting]'

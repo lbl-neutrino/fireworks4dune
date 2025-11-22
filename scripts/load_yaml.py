@@ -3,8 +3,13 @@
 import argparse
 import sys
 
+import yaml
+from yamlinclude import YamlIncludeConstructor
+YamlIncludeConstructor.add_to_loader_class(loader_class=yaml.FullLoader,
+                                           relative=True,
+                                           persist_anchors=True)
+
 from fireworks.core.launchpad import LaunchPad
-import ruamel.yaml as yaml
 
 COLLECTIONS = ['repos', 'runners', 'base_envs']
 
@@ -24,12 +29,16 @@ def main():
             db[collection].drop()
 
     for infile in args.infiles:
-        data = yaml.safe_load(open(infile))
+        with open(infile) as f:
+            data = yaml.load(f, Loader=yaml.FullLoader)
 
         for collection, docs in data.items():
             if collection not in COLLECTIONS:
                 continue
             c = db[collection]      # auto creates
+            # flatten out any nested lists (e.g. from using !include)
+            docs = [doc for d in docs
+                    for doc in (d if isinstance(d, list) else [d])]
             for doc in docs:
                 if c.find_one({'name': doc['name']}):
                     if not args.replace:
