@@ -1,6 +1,7 @@
 base_envs:
   - name: 'Reflow_FSD.flow2supera'
     env:
+      ND_PRODUCTION_FILE_TAG: '_v7'
       ND_PRODUCTION_RUNTIME: 'SHIFTER'
       ND_PRODUCTION_CONTAINER: 'deeplearnphysics/larcv2:ub2204-cu124-torch251-larndsim'
       ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/logs/Reflow_FSD_v7/flow2supera'
@@ -11,6 +12,7 @@ base_envs:
 
   - name: 'Reflow_FSD.spine'
     env:
+      ND_PRODUCTION_FILE_TAG: '_v7'
       ND_PRODUCTION_RUNTIME: 'SHIFTER'
       ND_PRODUCTION_CONTAINER: 'deeplearnphysics/larcv2:ub2204-cu124-torch251-larndsim'
       ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/logs/Reflow_FSD_v7/spine'
