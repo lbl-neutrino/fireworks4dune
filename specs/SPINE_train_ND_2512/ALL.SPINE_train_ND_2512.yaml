@@ -1,0 +1,67 @@
+common: &common
+  ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/SPINE_train_ND_2512'
+  ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/logs/SPINE_train_ND_2512'
+  ND_PRODUCTION_RUNTIME: 'SHIFTER'
+
+edep_container: &edep_container
+  ND_PRODUCTION_RUNTIME: 'SINGULARITY'
+  ND_PRODUCTION_APPTAINER_CACHEDIR: '/tmp/apptainer.mkramer'
+  ND_PRODUCTION_APPTAINER_TMPDIR: '/tmp/apptainer.mkramer'
+  ND_PRODUCTION_CONTAINER: 'sim2x2_ndlar012.sif'
+  ND_PRODUCTION_CONTAINER_DIR: '/pscratch/sd/d/dunepro/mkramer/containers'
+
+# ------------------------------------------------------------------------------
+
+edep: &edep
+  name: 'SPINE_train_ND_2512.edep'
+  env:
+    <<: *common
+    <<: *edep_container
+    ND_PRODUCTION_SIM: 'BOMB'
+    ND_PRODUCTION_NUM_EVENTS: '50'
+    ND_PRODUCTION_EDEP_MAC: 'macros/dune-nd.bomb.mac'
+    ND_PRODUCTION_GEOM_EDEP: 'geometry/nd_hall_with_lar_tms_sand_drift1_v2025.08.11.gdml'
+
+convert2h5: &convert2h5
+  name: 'SPINE_train_ND_2512.convert2h5'
+  env:
+    <<: *common
+    <<: *edep_container
+    ND_PRODUCTION_SINGLE_NAME: 'SPINE_train_ND_2512.edep'
+    ND_PRODUCTION_ACTIVE_VOLUME: 'volTPCActive'
+    ND_PRODUCTION_KEEP_ALL_DETS: '0'
+
+larnd: &larnd
+  name: 'SPINE_train_ND_2512.larnd'
+  env:
+    <<: *common
+    ND_PRODUCTION_RUNTIME: 'NONE'
+    ND_PRODUCTION_CONVERT2H5_NAME: 'SPINE_train_ND_2512.convert2h5'
+    ND_PRODUCTION_COMPRESS: 'lzf'
+    ND_PRODUCTION_LARNDSIM_CONFIG: 'ndlar'
+
+flow: &flow
+  name: 'SPINE_train_ND_2512.flow'
+  env:
+    <<: *common
+    ND_PRODUCTION_RUNTIME: 'NONE'
+    ND_PRODUCTION_IN_NAME: 'SPINE_train_ND_2512.larnd'
+    ND_PRODUCTION_COMPRESS: 'gzip'
+    ND_PRODUCTION_CHARGE_ONLY: '1'
+
+flow2supera: &flow2supera
+  name: 'SPINE_train_ND_2512.flow2supera'
+  env:
+    <<: *common
+    ND_PRODUCTION_RUNTIME: 'SHIFTER'
+    ND_PRODUCTION_IN_NAME: 'SPINE_train_ND_2512.flow'
+    ND_PRODUCTION_CONTAINER: 'deeplearnphysics/larcv2:ub2204-cu124-torch251-larndsim'
+
+# ------------------------------------------------------------------------------
+
+base_envs:
+  - *edep
+  - *convert2h5
+  - *larnd
+  - *flow
+  - *flow2supera
