@@ -1,0 +1,30 @@
+repos:
+  - name: 'SPINETrainForNDLAr_v1'
+    url: 'https://github.com/mjkramer/ND_Production.git'
+    commit: 'feature/spine-train'
+
+runners:
+  - name: 'SPINETrainForNDLAr_v1_Edep'
+    repo: 'SPINETrainForNDLAr_v1'
+    workdir: 'run-edep-sim'
+    cmd: './run_edep_sim.sh'
+
+  - name: 'SPINETrainForNDLAr_v1_Convert2H5'
+    repo: 'SPINETrainForNDLAr_v1'
+    workdir: 'run-convert2h5'
+    cmd: './run_convert2h5.sh'
+
+  - name: 'SPINETrainForNDLAr_v1_LArND'
+    repo: 'SPINETrainForNDLAr_v1'
+    workdir: 'run-larnd-sim'
+    cmd: './run_larnd_sim.sh'
+
+  - name: 'SPINETrainForNDLAr_v1_Flow'
+    repo: 'SPINETrainForNDLAr_v1'
+    workdir: 'run-ndlar-flow'
+    cmd: './run_ndlar_flow_ndlar.sh'
+
+  - name: 'SPINETrainForNDLAr_v1_Flow2Supera'
+    repo: 'SPINETrainForNDLAr_v1'
+    workdir: 'run-mlreco'
+    cmd: './run_flow2supera.sh'
