@@ -56,6 +56,7 @@ flow2supera: &flow2supera
     ND_PRODUCTION_RUNTIME: 'SHIFTER'
     ND_PRODUCTION_IN_NAME: 'SPINE_train_ND_2512.flow'
     ND_PRODUCTION_CONTAINER: 'deeplearnphysics/larcv2:ub2204-cu124-torch251-larndsim'
+    ND_PRODUCTION_FLOW2SUPERA_CONFIG: 'ndlar_mpvmpr'
 
 # ------------------------------------------------------------------------------
 
