@@ -11,7 +11,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--base-env-prefix', default='SPINE_train_ND_2512')
     ap.add_argument('--name', help='Defaults to --base-env-prefix')
-    ap.add_argument('--repo', default='SimForNDLAr_v4')
+    ap.add_argument('--repo', default='SPINETrainForNDLAr_v1')
     ap.add_argument('--size', type=int, default=1000,
                     help='Number of workflows to add')
     ap.add_argument('--start', type=int, default=0,
