@@ -27,7 +27,8 @@ def main():
         data = yaml.safe_load(open(infile))
 
         for collection, docs in data.items():
-            assert collection in COLLECTIONS
+            if collection not in COLLECTIONS:
+                continue
             c = db[collection]      # auto creates
             for doc in docs:
                 if c.find_one({'name': doc['name']}):
