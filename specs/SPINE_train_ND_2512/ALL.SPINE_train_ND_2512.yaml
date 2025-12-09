@@ -30,6 +30,7 @@ convert2h5: &convert2h5
     ND_PRODUCTION_SINGLE_NAME: 'SPINE_train_ND_2512.edep'
     ND_PRODUCTION_ACTIVE_VOLUME: 'volTPCActive'
     ND_PRODUCTION_KEEP_ALL_DETS: '0'
+    ND_PRODUCTION_IS_MPVMPR: '1'
 
 larnd: &larnd
   name: 'SPINE_train_ND_2512.larnd'
