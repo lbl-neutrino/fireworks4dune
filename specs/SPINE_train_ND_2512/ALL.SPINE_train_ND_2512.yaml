@@ -21,6 +21,7 @@ edep: &edep
     ND_PRODUCTION_NUM_EVENTS: '50'
     ND_PRODUCTION_EDEP_MAC: 'macros/dune-nd.bomb.mac'
     ND_PRODUCTION_GEOM_EDEP: 'geometry/nd_hall_with_lar_tms_sand_drift1_v2025.08.11.gdml'
+    ND_PRODUCTION_MPVMPR_CONFIG: 'mpvmpr/mpvmpr_nd.yaml'
 
 convert2h5: &convert2h5
   name: 'SPINE_train_ND_2512.convert2h5'
