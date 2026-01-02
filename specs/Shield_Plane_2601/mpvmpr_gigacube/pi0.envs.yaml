@@ -1,0 +1,119 @@
+
+
+-
+  name: 'Shield_Plane_2601.pi0.edep'
+  env:
+    <<: *common_edep_gigacube
+    ND_PRODUCTION_MPVMPR_CONFIG: 'mpvmpr/Shield_Plane_2601/ndlar_geom/pi0.yaml'
+
+-
+  name: 'Shield_Plane_2601.pi0.convert2h5'
+  env:
+    <<: *common_convert2h5
+    ND_PRODUCTION_SINGLE_NAME: 'Shield_Plane_2601.pi0.edep'
+
+
+
+-
+  name: 'Shield_Plane_2601.pi0.larnd.noFar_noShield'
+  env:
+    <<: *common_larnd_gigacube_noFar_noShield
+    ND_PRODUCTION_CONVERT2H5_NAME: 'Shield_Plane_2601.pi0.convert2h5'
+
+-
+  name: 'Shield_Plane_2601.pi0.flow.noFar_noShield'
+  env:
+    <<: *common_flow_gigacube
+    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.pi0.larnd.noFar_noShield'
+
+-
+  name: 'Shield_Plane_2601.pi0.flow2supera.noFar_noShield'
+  env:
+    <<: *common_flow2supera_gigacube
+    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.pi0.flow.noFar_noShield'
+
+-
+  name: 'Shield_Plane_2601.pi0.spine.noFar_noShield'
+  env:
+    <<: *common_spine_gigacube
+    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.pi0.flow.noFar_noShield'
+
+
+
+-
+  name: 'Shield_Plane_2601.pi0.larnd.noFar_withShield'
+  env:
+    <<: *common_larnd_gigacube_noFar_withShield
+    ND_PRODUCTION_CONVERT2H5_NAME: 'Shield_Plane_2601.pi0.convert2h5'
+
+-
+  name: 'Shield_Plane_2601.pi0.flow.noFar_withShield'
+  env:
+    <<: *common_flow_gigacube
+    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.pi0.larnd.noFar_withShield'
+
+-
+  name: 'Shield_Plane_2601.pi0.flow2supera.noFar_withShield'
+  env:
+    <<: *common_flow2supera_gigacube
+    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.pi0.flow.noFar_withShield'
+
+-
+  name: 'Shield_Plane_2601.pi0.spine.noFar_withShield'
+  env:
+    <<: *common_spine_gigacube
+    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.pi0.flow.noFar_withShield'
+
+
+
+-
+  name: 'Shield_Plane_2601.pi0.larnd.withFar_noShield'
+  env:
+    <<: *common_larnd_gigacube_withFar_noShield
+    ND_PRODUCTION_CONVERT2H5_NAME: 'Shield_Plane_2601.pi0.convert2h5'
+
+-
+  name: 'Shield_Plane_2601.pi0.flow.withFar_noShield'
+  env:
+    <<: *common_flow_gigacube
+    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.pi0.larnd.withFar_noShield'
+
+-
+  name: 'Shield_Plane_2601.pi0.flow2supera.withFar_noShield'
+  env:
+    <<: *common_flow2supera_gigacube
+    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.pi0.flow.withFar_noShield'
+
+-
+  name: 'Shield_Plane_2601.pi0.spine.withFar_noShield'
+  env:
+    <<: *common_spine_gigacube
+    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.pi0.flow.withFar_noShield'
+
+
+
+-
+  name: 'Shield_Plane_2601.pi0.larnd.withFar_withShield'
+  env:
+    <<: *common_larnd_gigacube_withFar_withShield
+    ND_PRODUCTION_CONVERT2H5_NAME: 'Shield_Plane_2601.pi0.convert2h5'
+
+-
+  name: 'Shield_Plane_2601.pi0.flow.withFar_withShield'
+  env:
+    <<: *common_flow_gigacube
+    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.pi0.larnd.withFar_withShield'
+
+-
+  name: 'Shield_Plane_2601.pi0.flow2supera.withFar_withShield'
+  env:
+    <<: *common_flow2supera_gigacube
+    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.pi0.flow.withFar_withShield'
+
+-
+  name: 'Shield_Plane_2601.pi0.spine.withFar_withShield'
+  env:
+    <<: *common_spine_gigacube
+    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.pi0.flow.withFar_withShield'
+
+

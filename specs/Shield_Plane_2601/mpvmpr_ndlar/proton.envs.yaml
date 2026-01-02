@@ -1,0 +1,119 @@
+
+
+-
+  name: 'Shield_Plane_2601.proton.edep'
+  env:
+    <<: *common_edep_ndlar
+    ND_PRODUCTION_MPVMPR_CONFIG: 'mpvmpr/Shield_Plane_2601/ndlar_geom/proton.yaml'
+
+-
+  name: 'Shield_Plane_2601.proton.convert2h5'
+  env:
+    <<: *common_convert2h5
+    ND_PRODUCTION_SINGLE_NAME: 'Shield_Plane_2601.proton.edep'
+
+
+
+-
+  name: 'Shield_Plane_2601.proton.larnd.noFar_noShield'
+  env:
+    <<: *common_larnd_ndlar_noFar_noShield
+    ND_PRODUCTION_CONVERT2H5_NAME: 'Shield_Plane_2601.proton.convert2h5'
+
+-
+  name: 'Shield_Plane_2601.proton.flow.noFar_noShield'
+  env:
+    <<: *common_flow_ndlar
+    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.proton.larnd.noFar_noShield'
+
+-
+  name: 'Shield_Plane_2601.proton.flow2supera.noFar_noShield'
+  env:
+    <<: *common_flow2supera_ndlar
+    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.proton.flow.noFar_noShield'
+
+-
+  name: 'Shield_Plane_2601.proton.spine.noFar_noShield'
+  env:
+    <<: *common_spine_ndlar
+    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.proton.flow.noFar_noShield'
+
+
+
+-
+  name: 'Shield_Plane_2601.proton.larnd.noFar_withShield'
+  env:
+    <<: *common_larnd_ndlar_noFar_withShield
+    ND_PRODUCTION_CONVERT2H5_NAME: 'Shield_Plane_2601.proton.convert2h5'
+
+-
+  name: 'Shield_Plane_2601.proton.flow.noFar_withShield'
+  env:
+    <<: *common_flow_ndlar
+    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.proton.larnd.noFar_withShield'
+
+-
+  name: 'Shield_Plane_2601.proton.flow2supera.noFar_withShield'
+  env:
+    <<: *common_flow2supera_ndlar
+    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.proton.flow.noFar_withShield'
+
+-
+  name: 'Shield_Plane_2601.proton.spine.noFar_withShield'
+  env:
+    <<: *common_spine_ndlar
+    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.proton.flow.noFar_withShield'
+
+
+
+-
+  name: 'Shield_Plane_2601.proton.larnd.withFar_noShield'
+  env:
+    <<: *common_larnd_ndlar_withFar_noShield
+    ND_PRODUCTION_CONVERT2H5_NAME: 'Shield_Plane_2601.proton.convert2h5'
+
+-
+  name: 'Shield_Plane_2601.proton.flow.withFar_noShield'
+  env:
+    <<: *common_flow_ndlar
+    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.proton.larnd.withFar_noShield'
+
+-
+  name: 'Shield_Plane_2601.proton.flow2supera.withFar_noShield'
+  env:
+    <<: *common_flow2supera_ndlar
+    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.proton.flow.withFar_noShield'
+
+-
+  name: 'Shield_Plane_2601.proton.spine.withFar_noShield'
+  env:
+    <<: *common_spine_ndlar
+    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.proton.flow.withFar_noShield'
+
+
+
+-
+  name: 'Shield_Plane_2601.proton.larnd.withFar_withShield'
+  env:
+    <<: *common_larnd_ndlar_withFar_withShield
+    ND_PRODUCTION_CONVERT2H5_NAME: 'Shield_Plane_2601.proton.convert2h5'
+
+-
+  name: 'Shield_Plane_2601.proton.flow.withFar_withShield'
+  env:
+    <<: *common_flow_ndlar
+    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.proton.larnd.withFar_withShield'
+
+-
+  name: 'Shield_Plane_2601.proton.flow2supera.withFar_withShield'
+  env:
+    <<: *common_flow2supera_ndlar
+    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.proton.flow.withFar_withShield'
+
+-
+  name: 'Shield_Plane_2601.proton.spine.withFar_withShield'
+  env:
+    <<: *common_spine_ndlar
+    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.proton.flow.withFar_withShield'
+
+
