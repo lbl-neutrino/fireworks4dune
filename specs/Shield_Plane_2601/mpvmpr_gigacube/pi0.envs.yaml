@@ -4,7 +4,7 @@
   name: 'Shield_Plane_2601.pi0.edep'
   env:
     <<: *common_edep_gigacube
-    ND_PRODUCTION_MPVMPR_CONFIG: 'mpvmpr/Shield_Plane_2601/ndlar_geom/pi0.yaml'
+    ND_PRODUCTION_MPVMPR_CONFIG: 'mpvmpr/Shield_Plane_2601/gigacube_geom/pi0.yaml'
 
 -
   name: 'Shield_Plane_2601.pi0.convert2h5'
