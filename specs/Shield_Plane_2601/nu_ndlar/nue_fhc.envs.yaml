@@ -5,7 +5,7 @@
 -
   name: 'Shield_Plane_2601.nue_fhc.larnd.noFar_noShield'
   env:
-    <<: *common_larnd_ndlar_noFar_noShield
+    <<: *common_larnd_ndlarBeam_noFar_noShield
     ND_PRODUCTION_CONVERT2H5_NAME: 'MiniProdN5p1_NDComplex_FHC.convert2h5.ndlarfid.sanddrift.nueelastic.singles'
 
 -
@@ -31,7 +31,7 @@
 -
   name: 'Shield_Plane_2601.nue_fhc.larnd.noFar_withShield'
   env:
-    <<: *common_larnd_ndlar_noFar_withShield
+    <<: *common_larnd_ndlarBeam_noFar_withShield
     ND_PRODUCTION_CONVERT2H5_NAME: 'MiniProdN5p1_NDComplex_FHC.convert2h5.ndlarfid.sanddrift.nueelastic.singles'
 
 -
@@ -57,7 +57,7 @@
 -
   name: 'Shield_Plane_2601.nue_fhc.larnd.withFar_noShield'
   env:
-    <<: *common_larnd_ndlar_withFar_noShield
+    <<: *common_larnd_ndlarBeam_withFar_noShield
     ND_PRODUCTION_CONVERT2H5_NAME: 'MiniProdN5p1_NDComplex_FHC.convert2h5.ndlarfid.sanddrift.nueelastic.singles'
 
 -
@@ -83,7 +83,7 @@
 -
   name: 'Shield_Plane_2601.nue_fhc.larnd.withFar_withShield'
   env:
-    <<: *common_larnd_ndlar_withFar_withShield
+    <<: *common_larnd_ndlarBeam_withFar_withShield
     ND_PRODUCTION_CONVERT2H5_NAME: 'MiniProdN5p1_NDComplex_FHC.convert2h5.ndlarfid.sanddrift.nueelastic.singles'
 
 -
