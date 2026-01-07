@@ -118,7 +118,7 @@ base_envs:
   - !include mpvmpr_ndlar/proton.envs.yaml
   - !include mpvmpr_ndlar/pion.envs.yaml
   - !include mpvmpr_ndlar/two_protons.envs.yaml
-  - !include mpvmpr_ndlar/protons_plus_muon.envs.yaml
+  - !include mpvmpr_ndlar/proton_plus_muon.envs.yaml
   - !include mpvmpr_gigacube/pi0.envs.yaml
   - !include mpvmpr_gigacube/electron.envs.yaml
   - !include mpvmpr_gigacube/gamma.envs.yaml

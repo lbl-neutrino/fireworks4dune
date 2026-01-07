@@ -1,0 +1,44 @@
+{% set modes = ['noFar_noShield',
+                'noFar_withShield',
+                'withFar_noShield',
+                'withFar_withShield'] %}
+
+-
+  name: 'Shield_Plane_2601.proton_plus_muon.edep'
+  env:
+    <<: *common_edep_ndlar
+    ND_PRODUCTION_MPVMPR_CONFIG: 'mpvmpr/Shield_Plane_2601/ndlar_geom/proton_plus_muon.yaml'
+
+-
+  name: 'Shield_Plane_2601.proton_plus_muon.convert2h5'
+  env:
+    <<: *common_convert2h5
+    ND_PRODUCTION_SINGLE_NAME: 'Shield_Plane_2601.proton_plus_muon.edep'
+
+{% for mode in modes %}
+
+-
+  name: 'Shield_Plane_2601.proton_plus_muon.larnd.{{mode}}'
+  env:
+    <<: *common_larnd_ndlar_{{mode}}
+    ND_PRODUCTION_CONVERT2H5_NAME: 'Shield_Plane_2601.proton_plus_muon.convert2h5'
+
+-
+  name: 'Shield_Plane_2601.proton_plus_muon.flow.{{mode}}'
+  env:
+    <<: *common_flow_ndlar
+    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.proton_plus_muon.larnd.{{mode}}'
+
+-
+  name: 'Shield_Plane_2601.proton_plus_muon.flow2supera.{{mode}}'
+  env:
+    <<: *common_flow2supera_ndlar
+    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.proton_plus_muon.flow.{{mode}}'
+
+-
+  name: 'Shield_Plane_2601.proton_plus_muon.spine.{{mode}}'
+  env:
+    <<: *common_spine_ndlar
+    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.proton_plus_muon.flow.{{mode}}'
+
+{% endfor %}
