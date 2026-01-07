@@ -16,7 +16,7 @@ workflows/fwsub.Shield_Plane_2601.py --start $start --size $size --config muon -
 workflows/fwsub.Shield_Plane_2601.py --start $start --size $size --config proton --run-edep --run-spine
 workflows/fwsub.Shield_Plane_2601.py --start $start --size $size --config pion --run-edep
 workflows/fwsub.Shield_Plane_2601.py --start $start --size $size --config two_protons --run-edep
-workflows/fwsub.Shield_Plane_2601.py --start $start --size $size --config proton_plus_muon --run-edep
+workflows/fwsub.Shield_Plane_2601.py --start $start --size $size --config protons_plus_muon --run-edep
 
 # MPV/MPR in gigacube
 workflows/fwsub.Shield_Plane_2601.py --start $start --size $size --config pi0 --run-edep --run-spine
