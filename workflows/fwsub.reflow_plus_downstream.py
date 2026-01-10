@@ -31,7 +31,7 @@ def main():
             if args.charge_only:
                 env.pop('ND_PRODUCTION_LIGHT_FILES', None)
             fw_flow = fwm1.make(env, 'Flow', 'flow')
-        elif 'ND_PRODUCTION_CHARGE_FILE' in env:                   # light basis
+        elif 'ND_PRODUCTION_LIGHT_FILE' in env:                   # light basis
             if args.light_only:
                 env.pop('ND_PRODUCTION_CHARGE_FILES', None)
             fw_flow = fwm1.make(env, 'Flow_LightBased', 'flow')
