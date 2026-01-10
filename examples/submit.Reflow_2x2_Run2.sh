@@ -16,9 +16,9 @@ logdir=${FW4DUNE_SCRATCH:-$SCRATCH}/slurm_logs/$name
 mkdir -p "$logdir"
 
 # TODO: Update job parameters
-sbatch -o "$logdir"/slurm-%j.txt -N 4 -t 240 --ntasks-per-node 192 slurm/fw_cpu.slurm.sh Reflow_2x2.flow rapidfire
-sbatch -o "$logdir"/slurm-%j.txt -N 4 -t 240 --ntasks-per-node 128 slurm/fw_cpu.slurm.sh Reflow_2x2.flow2supera rapidfire
-sbatch --array=1-2 -o "$logdir"/slurm-%j.txt -N 4 -t 240 --ntasks-per-node 4 slurm/fw_gpu.slurm.sh Reflow_2x2.spine rapidfire
-sbatch --array=1-3 -o "$logdir"/slurm-%j.txt -N 4 -t 240 --ntasks-per-node 20 slurm/fw_cpu.slurm.sh Reflow_2x2.flow2root rapidfire
-sbatch -o "$logdir"/slurm-%j.txt -N 4 -t 240 --ntasks-per-node 128 slurm/fw_cpu.slurm.sh Reflow_2x2.pandora rapidfire
-sbatch -o "$logdir"/slurm-%j.txt -N 4 -t 240 --ntasks-per-node 128 slurm/fw_cpu.slurm.sh Reflow_2x2.caf rapidfire
+sbatch -o "$logdir"/slurm-%j.txt -N 4 -t 240 --ntasks-per-node 192 slurm/fw_cpu.slurm.sh Reflow_2x2_Run2.flow rapidfire
+sbatch -o "$logdir"/slurm-%j.txt -N 4 -t 240 --ntasks-per-node 128 slurm/fw_cpu.slurm.sh Reflow_2x2_Run2.flow2supera rapidfire
+sbatch --array=1-2 -o "$logdir"/slurm-%j.txt -N 4 -t 240 --ntasks-per-node 4 slurm/fw_gpu.slurm.sh Reflow_2x2_Run2.spine rapidfire
+sbatch --array=1-3 -o "$logdir"/slurm-%j.txt -N 4 -t 240 --ntasks-per-node 20 slurm/fw_cpu.slurm.sh Reflow_2x2_Run2.flow2root rapidfire
+sbatch -o "$logdir"/slurm-%j.txt -N 4 -t 240 --ntasks-per-node 128 slurm/fw_cpu.slurm.sh Reflow_2x2_Run2.pandora rapidfire
+sbatch -o "$logdir"/slurm-%j.txt -N 4 -t 240 --ntasks-per-node 128 slurm/fw_cpu.slurm.sh Reflow_2x2_Run2.caf rapidfire
