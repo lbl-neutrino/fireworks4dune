@@ -28,6 +28,10 @@ workflows/fwsub.Shield_Plane_2601.py --start $start --size $size --config beam_f
 workflows/fwsub.Shield_Plane_2601.py --start $start --size $size --config nue_fhc
 
 
+# adding some shield plane configs now
+workflows/fwsub.Shield_Plane_2601.py --start $start --size $size --config two_protons --sim-mode noFar_withShield
+
+
 mkdir -p $SCRATCH/mkramer/output/$name
 mkdir -p $SCRATCH/mkramer/logs/$name
 

@@ -26,6 +26,7 @@ common_edep_ndlar: &common_edep_ndlar
 common_edep_gigacube: &common_edep_gigacube
   <<: *common_edep
   ND_PRODUCTION_GEOM_EDEP: 'geometry/gigacube.gdml'
+  ND_PRODUCTION_NUM_EVENTS: '20'
 
 common_convert2h5: &common_convert2h5
   <<: *edep_container
