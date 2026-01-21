@@ -120,7 +120,7 @@ common_flow2supera_gigacube: &common_flow2supera_gigacube
 
 common_spine: &common_spine
   <<: *spine_container
-  ND_PRODUCTION_SPINE_CONFIG: 'install/spine_prod/infer/nd-lar/full_chain_250806.yaml'
+  ND_PRODUCTION_SPINE_CONFIG: 'install/spine_prod/infer/nd-lar/full_chain_250505.yaml'
 
 common_spine_ndlar: &common_spine_ndlar
   <<: *common_spine
