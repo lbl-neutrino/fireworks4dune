@@ -31,6 +31,7 @@ def main():
                     help='minimum time since last change (minutes)')
     ap.add_argument('--extra-subdir')
     ap.add_argument('--nproc', type=int, default=3)
+    ap.add_argument('--shuffle', action='store_true')
     args = ap.parse_args()
 
     pool = Pool(args.nproc)
@@ -57,7 +58,11 @@ def main():
 
                 transfers.append((src, dest))
 
-            random.shuffle(transfers)
+            if args.shuffle:
+                random.shuffle(transfers)
+            else:
+                transfers.sort()
+
             pool.starmap(transfer, transfers)
 
         except:
