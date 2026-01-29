@@ -22,15 +22,14 @@ def transfer(src: Path, dest: Path):
     src.symlink_to(dest_readonly)
 
 
-
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--srcdir', type=Path, required=True)
     ap.add_argument('--destdir', type=Path, required=True)
     ap.add_argument('--mmin', type=float, default=30,
                     help='minimum time since last change (minutes)')
-    ap.add_argument('--extra-subdir')
     ap.add_argument('--nproc', type=int, default=3)
+    ap.add_argument('--shuffle', action='store_true')
     args = ap.parse_args()
 
     pool = Pool(args.nproc)
@@ -49,15 +48,15 @@ def main():
                 if time.time() - src.stat().st_mtime < args.mmin*60:
                     continue
 
-                if args.extra_subdir:
-                    dest = args.destdir / args.extra_subdir \
-                        / src.relative_to(args.srcdir)
-                else:
-                    dest = args.destdir / src.relative_to(args.srcdir)
+                dest = args.destdir / src.relative_to(args.srcdir)
 
                 transfers.append((src, dest))
 
-            random.shuffle(transfers)
+            if args.shuffle:
+                random.shuffle(transfers)
+            else:
+                transfers.sort()
+
             pool.starmap(transfer, transfers)
 
         except:
