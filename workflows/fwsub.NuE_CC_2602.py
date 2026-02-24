@@ -11,7 +11,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--base-env-prefix', default='NuE_CC_2602')
     ap.add_argument('--name', help='Defaults to --base-env-prefix')
-    ap.add_argument('--repo', default='SimFor2x2_v6')
+    ap.add_argument('--repo', default='SimForNDLAr_v4')
     ap.add_argument('--size', type=int, default=1, help='Number of final outputs (post-hadd etc.) to produce')
     ap.add_argument('--start', type=int, default=0, help='Starting index of output files')
     args = ap.parse_args()
