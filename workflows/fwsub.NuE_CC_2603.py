@@ -27,15 +27,21 @@ def main():
         fw_genie = fwm.make_mc(i, 'Genie', 'genie', category='cpu')
         fw_edep = fwm.make_mc(i, 'Edep', 'edep', category='cpu')
         fw_convert2h5 = fwm.make_mc(i, 'Convert2H5', 'convert2h5', category='cpu')
-        fw_larnd = fwm.make_mc(i, 'LArND', 'larnd', category='gpu_long')
-        fw_flow = fwm.make_mc(i, 'Flow', 'flow', category='cpu_highmem')
 
-        fireworks = [fw_genie, fw_edep, fw_convert2h5, fw_larnd, fw_flow]
+        fireworks = [fw_genie, fw_edep, fw_convert2h5]
 
         arrows = {fw_genie: [fw_edep],
                   fw_edep: [fw_convert2h5],
-                  fw_convert2h5: [fw_larnd],
-                  fw_larnd: [fw_flow]}
+                  fw_convert2h5: []}
+
+        for mode in ['noFar_noShield', 'noFar_withShield',
+                     'withFar_noShield', 'withFar_withShield']:
+            fw_larnd = fwm.make_mc(i, 'LArND', f'larnd_{mode}', category='larnd')
+            fw_flow = fwm.make_mc(i, 'Flow', 'flow_{mode}', category='flow')
+
+            fireworks.extend([fw_larnd, fw_flow])
+            arrows[fw_convert2h5].append(fw_larnd)
+            arrows[fw_larnd] = [fw_flow]
 
         wf = Workflow(fireworks, arrows, name=args.name)
 
