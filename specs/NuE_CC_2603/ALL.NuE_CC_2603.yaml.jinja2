@@ -26,11 +26,11 @@ edep_container: &edep_container
 
 # ------------------------------------------------------------------------------
 
-common_larnd: &common_larnd
+larnd_common: &larnd_common
   <<: *default
   ND_PRODUCTION_COMPRESS: 'lzf'
 
-common_flow: &common_flow
+flow_common: &flow_common
   <<: *default
   ND_PRODUCTION_CHARGE_ONLY: '1'
   ND_PRODUCTION_COMPRESS: 'gzip'
@@ -38,19 +38,19 @@ common_flow: &common_flow
 # ------------------------------------------------------------------------------
 
 larnd_noFar_noShield: &larnd_noFar_noShield
-  <<: *common_larnd
+  <<: *larnd_common
   ND_PRODUCTION_LARNDSIM_CONFIG: 'ndlar_mpvmpr'
 
 larnd_noFar_withShield: &larnd_noFar_withShield
-  <<: *common_larnd
+  <<: *larnd_common
   ND_PRODUCTION_LARNDSIM_CONFIG: 'ndlar_mpvmpr_shield'
 
 larnd_withFar_noShield: &larnd_withFar_noShield
-  <<: *common_larnd
+  <<: *larnd_common
   ND_PRODUCTION_LARNDSIM_CONFIG: 'ndlar_mpvmpr_far'
 
 larnd_withFar_withShield: &larnd_withFar_withShield
-  <<: *common_larnd
+  <<: *larnd_common
   ND_PRODUCTION_LARNDSIM_CONFIG: 'ndlar_mpvmpr_far_shield'
 
 # ------------------------------------------------------------------------------

@@ -9,7 +9,7 @@ from fw4dune_tasks import FwMaker
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('--base-env-prefix', default='NuE_CC_2602')
+    ap.add_argument('--base-env-prefix', default='NuE_CC_2603')
     ap.add_argument('--name', help='Defaults to --base-env-prefix')
     ap.add_argument('--repo', default='NDComplex_v1')
     ap.add_argument('--size', type=int, default=1, help='Number of final outputs (post-hadd etc.) to produce')
