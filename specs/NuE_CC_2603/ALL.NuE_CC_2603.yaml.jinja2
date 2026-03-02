@@ -84,54 +84,21 @@ base_envs:
       ND_PRODUCTION_ACTIVE_VOLUME: 'volTPCActive'
       ND_PRODUCTION_KEEP_ALL_DETS: '0'
 
+{% set modes = ['noFar_noShield',
+                'noFar_withShield',
+                'withFar_noShield',
+                'withFar_withShield'] %}
 
+{% for mode in modes %}
 
-
-
-  - name: 'NuE_CC_2603.larnd.noFar_noShield'
+  - name: 'NuE_CC_2603.larnd.{{mode}}'
     env:
-      <<: *larnd_noFar_noShield
+      <<: *larnd_{{mode}}
       ND_PRODUCTION_IN_NAME: 'NuE_CC_2603.convert2h5'
 
-  - name: 'NuE_CC_2603.flow.noFar_noShield'
+  - name: 'NuE_CC_2603.flow.{{mode}}'
     env:
       <<: *flow_common
-      ND_PRODUCTION_IN_NAME: 'NuE_CC_2603.larnd.noFar_noShield'
+      ND_PRODUCTION_IN_NAME: 'NuE_CC_2603.larnd.{{mode}}'
 
-
-
-  - name: 'NuE_CC_2603.larnd.noFar_withShield'
-    env:
-      <<: *larnd_noFar_withShield
-      ND_PRODUCTION_IN_NAME: 'NuE_CC_2603.convert2h5'
-
-  - name: 'NuE_CC_2603.flow.noFar_withShield'
-    env:
-      <<: *flow_common
-      ND_PRODUCTION_IN_NAME: 'NuE_CC_2603.larnd.noFar_withShield'
-
-
-
-  - name: 'NuE_CC_2603.larnd.withFar_noShield'
-    env:
-      <<: *larnd_withFar_noShield
-      ND_PRODUCTION_IN_NAME: 'NuE_CC_2603.convert2h5'
-
-  - name: 'NuE_CC_2603.flow.withFar_noShield'
-    env:
-      <<: *flow_common
-      ND_PRODUCTION_IN_NAME: 'NuE_CC_2603.larnd.withFar_noShield'
-
-
-
-  - name: 'NuE_CC_2603.larnd.withFar_withShield'
-    env:
-      <<: *larnd_withFar_withShield
-      ND_PRODUCTION_IN_NAME: 'NuE_CC_2603.convert2h5'
-
-  - name: 'NuE_CC_2603.flow.withFar_withShield'
-    env:
-      <<: *flow_common
-      ND_PRODUCTION_IN_NAME: 'NuE_CC_2603.larnd.withFar_withShield'
-
-
+{% endfor %}
