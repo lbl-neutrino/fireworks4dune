@@ -36,8 +36,8 @@ def main():
 
         for mode in ['noFar_noShield', 'noFar_withShield',
                      'withFar_noShield', 'withFar_withShield']:
-            fw_larnd = fwm.make_mc(i, 'LArND', f'larnd_{mode}', category='larnd')
-            fw_flow = fwm.make_mc(i, 'Flow', 'flow_{mode}', category='flow')
+            fw_larnd = fwm.make_mc(i, 'LArND', f'larnd.{mode}', category='larnd')
+            fw_flow = fwm.make_mc(i, 'Flow', f'flow.{mode}', category='flow')
 
             fireworks.extend([fw_larnd, fw_flow])
             arrows[fw_convert2h5].append(fw_larnd)
