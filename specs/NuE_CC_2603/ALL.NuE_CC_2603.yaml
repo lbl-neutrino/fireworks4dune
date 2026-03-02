@@ -1,13 +1,13 @@
 common: &common
-  ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/NuE_CC_2602'
-  ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/logs/NuE_CC_2602'
+  ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/NuE_CC_2603'
+  ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/logs/NuE_CC_2603'
   ND_PRODUCTION_RUNTIME: 'SHIFTER'
 
 base_envs:
-  - name: 'NuE_CC_2602.genie'
+  - name: 'NuE_CC_2603.genie'
     env:
       <<: *common
-      ND_PRODUCTION_EXPOSURE: '1E14'
+      ND_PRODUCTION_EXPOSURE: '2E15'
       ND_PRODUCTION_GENIE_NU_FLAVORS: '12,-12'
       ND_PRODUCTION_CONTAINER: 'mjkramer/sim2x2:genie_edep.3_04_00.20230912'
       ND_PRODUCTION_DET_LOCATION: 'DUNEND'
