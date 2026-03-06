@@ -37,6 +37,14 @@ flow_common: &flow_common
 
 # ------------------------------------------------------------------------------
 
+spine_container: &spine_container
+  <<: *shifter
+  ND_PRODUCTION_CONTAINER: 'deeplearnphysics/larcv2:ub2204-cu124-torch251-larndsim'
+  ND_PRODUCTION_SPINE_NUM_THREADS: '1'
+  ND_PRODUCTION_SPINE_OPENBLAS_NUM_THREADS: '1'
+
+# ------------------------------------------------------------------------------
+
 larnd_noFar_noShield: &larnd_noFar_noShield
   <<: *larnd_common
   ND_PRODUCTION_LARNDSIM_CONFIG: 'ndlar_mpvmpr'
@@ -100,5 +108,17 @@ base_envs:
     env:
       <<: *flow_common
       ND_PRODUCTION_IN_NAME: 'NuE_CC_2603.larnd.{{mode}}'
+
+  - name: 'NuE_CC_2603.flow2supera.{{mode}}'
+    env:
+      <<: *spine_container
+      ND_PRODUCTION_IN_NAME: 'NuE_CC_2603.flow.{{mode}}'
+      ND_PRODUCTION_FLOW2SUPERA_CONFIG: 'ndlar_beam'
+
+  - name: 'NuE_CC_2603.spine.{{mode}}'
+    env:
+      <<: *spine_container
+      ND_PRODUCTION_IN_NAME: 'NuE_CC_2603.flow2supera.{{mode}}'
+      ND_PRODUCTION_SPINE_CONFIG: 'configs/ndlar_parse_truth.cfg'
 
 {% endfor %}
