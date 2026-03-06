@@ -33,7 +33,7 @@ def main():
 
             arrows = {fw_flow2supera: [fw_spine]}
 
-            wf = Workflow(fireworks, arrows, name=f'{args.name}.spine_wf.{mode})
+            wf = Workflow(fireworks, arrows, name=f'{args.name}.spine_wf.{mode}')
 
             lpad.add_wf(wf)
 
