@@ -1,0 +1,57 @@
+
+
+- name: 'Shield_Plane_2601.electron_2x2.edep'
+  env:
+    <<: *common_edep_2x2
+    ND_PRODUCTION_MPVMPR_CONFIG: 'mpvmpr/Shield_Plane_2601/2x2_geom/electron_2x2.yaml'
+
+- name: 'Shield_Plane_2601.electron_2x2.convert2h5'
+  env:
+    <<: *common_convert2h5
+    ND_PRODUCTION_SINGLE_NAME: 'Shield_Plane_2601.electron_2x2.edep'
+
+
+
+- name: 'Shield_Plane_2601.electron_2x2.larnd.noFar_noShield'
+  env:
+    <<: *common_larnd_2x2_noFar_noShield
+    ND_PRODUCTION_CONVERT2H5_NAME: 'Shield_Plane_2601.electron_2x2.convert2h5'
+
+- name: 'Shield_Plane_2601.electron_2x2.flow.noFar_noShield'
+  env:
+    <<: *common_flow_2x2
+    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.electron_2x2.larnd.noFar_noShield'
+
+- name: 'Shield_Plane_2601.electron_2x2.flow2supera.noFar_noShield'
+  env:
+    <<: *common_flow2supera_2x2
+    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.electron_2x2.flow.noFar_noShield'
+
+- name: 'Shield_Plane_2601.electron_2x2.spine.noFar_noShield'
+  env:
+    <<: *common_spine_2x2
+    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.electron_2x2.flow2supera.noFar_noShield'
+
+
+
+- name: 'Shield_Plane_2601.electron_2x2.larnd.withFar_noShield'
+  env:
+    <<: *common_larnd_2x2_withFar_noShield
+    ND_PRODUCTION_CONVERT2H5_NAME: 'Shield_Plane_2601.electron_2x2.convert2h5'
+
+- name: 'Shield_Plane_2601.electron_2x2.flow.withFar_noShield'
+  env:
+    <<: *common_flow_2x2
+    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.electron_2x2.larnd.withFar_noShield'
+
+- name: 'Shield_Plane_2601.electron_2x2.flow2supera.withFar_noShield'
+  env:
+    <<: *common_flow2supera_2x2
+    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.electron_2x2.flow.withFar_noShield'
+
+- name: 'Shield_Plane_2601.electron_2x2.spine.withFar_noShield'
+  env:
+    <<: *common_spine_2x2
+    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.electron_2x2.flow2supera.withFar_noShield'
+
+

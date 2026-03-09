@@ -1,0 +1,36 @@
+{% set modes = ['noFar_noShield',
+                'withFar_noShield']%}
+
+- name: 'Shield_Plane_2601.electron_2x2.edep'
+  env:
+    <<: *common_edep_2x2
+    ND_PRODUCTION_MPVMPR_CONFIG: 'mpvmpr/Shield_Plane_2601/2x2_geom/electron_2x2.yaml'
+
+- name: 'Shield_Plane_2601.electron_2x2.convert2h5'
+  env:
+    <<: *common_convert2h5
+    ND_PRODUCTION_SINGLE_NAME: 'Shield_Plane_2601.electron_2x2.edep'
+
+{% for mode in modes %}
+
+- name: 'Shield_Plane_2601.electron_2x2.larnd.{{mode}}'
+  env:
+    <<: *common_larnd_2x2_{{mode}}
+    ND_PRODUCTION_CONVERT2H5_NAME: 'Shield_Plane_2601.electron_2x2.convert2h5'
+
+- name: 'Shield_Plane_2601.electron_2x2.flow.{{mode}}'
+  env:
+    <<: *common_flow_2x2
+    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.electron_2x2.larnd.{{mode}}'
+
+- name: 'Shield_Plane_2601.electron_2x2.flow2supera.{{mode}}'
+  env:
+    <<: *common_flow2supera_2x2
+    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.electron_2x2.flow.{{mode}}'
+
+- name: 'Shield_Plane_2601.electron_2x2.spine.{{mode}}'
+  env:
+    <<: *common_spine_2x2
+    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.electron_2x2.flow2supera.{{mode}}'
+
+{% endfor %}

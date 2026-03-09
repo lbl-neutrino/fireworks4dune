@@ -31,6 +31,29 @@ workflows/fwsub.Shield_Plane_2601.py --start $start --size $size --config nue_fh
 # adding some shield plane configs now
 workflows/fwsub.Shield_Plane_2601.py --start $start --size $size --config two_protons --sim-mode noFar_withShield
 
+start=0
+size=1
+workflows/fwsub.Shield_Plane_2601.py --start $start --size $size --config proton_plus_muon --sim-mode noFar_withShield
+workflows/fwsub.Shield_Plane_2601.py --start $start --size $size --config beam_fhc --sim-mode noFar_withShield
+workflows/fwsub.Shield_Plane_2601.py --start $start --size $size --config nue_fhc --sim-mode noFar_withShield
+
+# finishing up mu+p noFar
+workflows/fwsub.Shield_Plane_2601.py --start 1 --size 99 --config proton_plus_muon --run-edep
+workflows/fwsub.Shield_Plane_2601.py --start 1 --size 99 --config proton_plus_muon --sim-mode noFar_withShield
+
+# now let's add some FFE for p+p
+workflows/fwsub.Shield_Plane_2601.py --start 0 --size 1 --config two_protons --sim-mode withFar_noShield
+workflows/fwsub.Shield_Plane_2601.py --start 0 --size 1 --config two_protons --sim-mode withFar_withShield
+
+# more nue_fhc
+workflows/fwsub.Shield_Plane_2601.py --start 1 --size 499 --config nue_fhc --sim-mode noFar_noShield
+workflows/fwsub.Shield_Plane_2601.py --start 1 --size 499 --config nue_fhc --sim-mode noFar_withShield
+workflows/fwsub.Shield_Plane_2601.py --start 0 --size 500 --config nue_fhc --sim-mode withFar_noShield
+workflows/fwsub.Shield_Plane_2601.py --start 0 --size 500 --config nue_fhc --sim-mode withFar_withShield
+
+# 2x2 mpvmpr
+workflows/fwsub.Shield_Plane_2601.py --start 0 --size 1 --config electron_2x2 --sim-mode noFar_noShield --run-spine --run-edep
+workflows/fwsub.Shield_Plane_2601.py --start 0 --size 1 --config electron_2x2 --sim-mode withFar_noShield --run-spine
 
 mkdir -p $SCRATCH/mkramer/output/$name
 mkdir -p $SCRATCH/mkramer/logs/$name
