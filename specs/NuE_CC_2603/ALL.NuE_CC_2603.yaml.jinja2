@@ -61,6 +61,14 @@ larnd_withFar_withShield: &larnd_withFar_withShield
   <<: *larnd_common
   ND_PRODUCTION_LARNDSIM_CONFIG: 'ndlar_mpvmpr_far_shield'
 
+larnd_withFarSeg_noShield: &larnd_withFarSeg_noShield
+  <<: *larnd_common
+  ND_PRODUCTION_LARNDSIM_CONFIG: 'ndlar_mpvmpr_farSeg'
+
+larnd_withFarSeg_withShield: &larnd_withFarSeg_withShield
+  <<: *larnd_common
+  ND_PRODUCTION_LARNDSIM_CONFIG: 'ndlar_mpvmpr_farSeg_shield'
+
 # ------------------------------------------------------------------------------
 
 base_envs:
@@ -95,7 +103,9 @@ base_envs:
 {% set modes = ['noFar_noShield',
                 'noFar_withShield',
                 'withFar_noShield',
-                'withFar_withShield'] %}
+                'withFar_withShield',
+                'withFarSeg_noShield',
+                'withFarSeg_withShield'] %}
 
 {% for mode in modes %}
 
