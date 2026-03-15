@@ -61,6 +61,14 @@ common_larnd_ndlar_withFar_withShield: &common_larnd_ndlar_withFar_withShield
   <<: *common_larnd
   ND_PRODUCTION_LARNDSIM_CONFIG: 'ndlar_mpvmpr_far_shield'
 
+common_larnd_ndlar_withFarSeg_noShield: &common_larnd_ndlar_withFarSeg_noShield
+  <<: *common_larnd
+  ND_PRODUCTION_LARNDSIM_CONFIG: 'ndlar_mpvmpr_farSeg'
+
+common_larnd_ndlar_withFarSeg_withShield: &common_larnd_ndlar_withFarSeg_withShield
+  <<: *common_larnd
+  ND_PRODUCTION_LARNDSIM_CONFIG: 'ndlar_mpvmpr_farSeg_shield'
+
 common_larnd_gigacube_noFar_noShield: &common_larnd_gigacube_noFar_noShield
   <<: *common_larnd
   ND_PRODUCTION_LARNDSIM_CONFIG: 'gigacube_mpvmpr'
