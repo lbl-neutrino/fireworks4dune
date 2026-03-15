@@ -105,3 +105,55 @@
     ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.nue_fhc.flow2supera.withFar_withShield'
 
 
+
+-
+  name: 'Shield_Plane_2601.nue_fhc.larnd.withFarSeg_noShield'
+  env:
+    <<: *common_larnd_ndlarBeam_withFarSeg_noShield
+    ND_PRODUCTION_CONVERT2H5_NAME: 'MiniProdN5p1_NDComplex_FHC.convert2h5.ndlarfid.sanddrift.nueelastic.singles'
+
+-
+  name: 'Shield_Plane_2601.nue_fhc.flow.withFarSeg_noShield'
+  env:
+    <<: *common_flow_ndlar
+    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.nue_fhc.larnd.withFarSeg_noShield'
+
+-
+  name: 'Shield_Plane_2601.nue_fhc.flow2supera.withFarSeg_noShield'
+  env:
+    <<: *common_flow2supera_ndlar
+    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.nue_fhc.flow.withFarSeg_noShield'
+
+-
+  name: 'Shield_Plane_2601.nue_fhc.spine.withFarSeg_noShield'
+  env:
+    <<: *common_spine_ndlar
+    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.nue_fhc.flow2supera.withFarSeg_noShield'
+
+
+
+-
+  name: 'Shield_Plane_2601.nue_fhc.larnd.withFarSeg_withShield'
+  env:
+    <<: *common_larnd_ndlarBeam_withFarSeg_withShield
+    ND_PRODUCTION_CONVERT2H5_NAME: 'MiniProdN5p1_NDComplex_FHC.convert2h5.ndlarfid.sanddrift.nueelastic.singles'
+
+-
+  name: 'Shield_Plane_2601.nue_fhc.flow.withFarSeg_withShield'
+  env:
+    <<: *common_flow_ndlar
+    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.nue_fhc.larnd.withFarSeg_withShield'
+
+-
+  name: 'Shield_Plane_2601.nue_fhc.flow2supera.withFarSeg_withShield'
+  env:
+    <<: *common_flow2supera_ndlar
+    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.nue_fhc.flow.withFarSeg_withShield'
+
+-
+  name: 'Shield_Plane_2601.nue_fhc.spine.withFarSeg_withShield'
+  env:
+    <<: *common_spine_ndlar
+    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.nue_fhc.flow2supera.withFarSeg_withShield'
+
+
