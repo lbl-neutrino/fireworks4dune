@@ -11,39 +11,50 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--base-env-prefix', default='NuE_CC_2603')
     ap.add_argument('--name', help='Defaults to --base-env-prefix')
-    ap.add_argument('--repo', default='NDComplex_v1')
-    ap.add_argument('--size', type=int, default=1, help='Number of final outputs (post-hadd etc.) to produce')
-    ap.add_argument('--start', type=int, default=0, help='Starting index of output files')
+    ap.add_argument('--size', type=int, default=1,
+                    help='Number of final outputs (post-hadd etc.) to produce')
+    ap.add_argument('--start', type=int, default=0,
+                    help='Starting index of output files')
+    ap.add_argument('--sim-mode', type=str, default='noFar_noShield')
+    ap.add_argument('--run-genie', action='store_true')
     args = ap.parse_args()
 
-    if args.name is None:
-        args.name = args.base_env_prefix
-
+    name = args.name if args.name else args.base_env_prefix
+    sim_mode = args.sim_mode
     lpad = LaunchPad.auto_load()
-
-    fwm = FwMaker(args.base_env_prefix, args.repo, args.name)
+    fwm = FwMaker(args.base_env_prefix, repo='NDComplex_v1', name=name)
 
     for i in range(args.start, args.start + args.size):
-        fw_genie = fwm.make_mc(i, 'Genie', 'genie', category='cpu')
-        fw_edep = fwm.make_mc(i, 'Edep', 'edep', category='cpu')
-        fw_convert2h5 = fwm.make_mc(i, 'Convert2H5', 'convert2h5', category='cpu')
+        fw_genie = fwm.make_mc(
+            i, 'Genie', 'genie', category='cpu')
+        fw_edep = fwm.make_mc(
+            i, 'Edep', 'edep', category='cpu')
+        fw_convert2h5 = fwm.make_mc(
+            i, 'Convert2H5', 'convert2h5', category='cpu')
+        fw_larnd = fwm.make_mc(
+            i, 'LArND', f'larnd.{sim_mode}', category='larnd')
+        fw_flow = fwm.make_mc(
+            i, 'Flow', f'flow.{sim_mode}', category='flow')
+        fw_flow2supera = fwm.make_mc(
+            i, 'Flow2Supera', f'flow2supera.{sim_mode}', category='f2s')
+        fw_spine = fwm.make_mc(
+            i, 'MLreco_Spine_SpineProd', f'spine.{sim_mode}', category='spine')
 
-        fireworks = [fw_genie, fw_edep, fw_convert2h5]
+        fireworks = []
+        arrows = {}
 
-        arrows = {fw_genie: [fw_edep],
-                  fw_edep: [fw_convert2h5],
-                  fw_convert2h5: []}
+        if args.run_genie:
+            fireworks.extend([fw_genie, fw_edep, fw_convert2h5])
+            arrows.update({fw_genie: [fw_edep],
+                           fw_edep: [fw_convert2h5],
+                           fw_convert2h5: [fw_larnd]})
 
-        for mode in ['noFar_noShield', 'noFar_withShield',
-                     'withFar_noShield', 'withFar_withShield']:
-            fw_larnd = fwm.make_mc(i, 'LArND', f'larnd.{mode}', category='larnd')
-            fw_flow = fwm.make_mc(i, 'Flow', f'flow.{mode}', category='flow')
+        fireworks.extend([fw_larnd, fw_flow, fw_flow2supera, fw_spine])
+        arrows.update({fw_larnd: [fw_flow],
+                       fw_flow: [fw_flow2supera],
+                       fw_flow2supera: [fw_spine]})
 
-            fireworks.extend([fw_larnd, fw_flow])
-            arrows[fw_convert2h5].append(fw_larnd)
-            arrows[fw_larnd] = [fw_flow]
-
-        wf = Workflow(fireworks, arrows, name=args.name)
+        wf = Workflow(fireworks, arrows, name=name)
 
         lpad.add_wf(wf)
 
