@@ -128,6 +128,7 @@ common_flow_ndlar: &common_flow_ndlar
   ND_PRODUCTION_RUNTIME: 'NONE'
   ND_PRODUCTION_COMPRESS: 'gzip'
   ND_PRODUCTION_CHARGE_ONLY: '1'
+  ND_PRODUCTION_YAML_DIR: 'ndlar_flow'
 
 common_flow_gigacube: &common_flow_gigacube
   <<: *common_flow_ndlar
