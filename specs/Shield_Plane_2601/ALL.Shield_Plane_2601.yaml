@@ -161,7 +161,7 @@ common_flow2supera_2x2: &common_flow2supera_2x2
 
 common_spine: &common_spine
   <<: *spine_container
-  ND_PRODUCTION_SPINE_CONFIG: 'install/spine_prod/infer/nd-lar/full_chain_250505.yaml'
+  ND_PRODUCTION_SPINE_CONFIG: 'configs/ndlar_parse_truth.cfg'
 
 common_spine_ndlar: &common_spine_ndlar
   <<: *common_spine
