@@ -65,6 +65,10 @@ common_larnd_ndlar_withFarSeg_noShield: &common_larnd_ndlar_withFarSeg_noShield
   <<: *common_larnd
   ND_PRODUCTION_LARNDSIM_CONFIG: 'ndlar_mpvmpr_farSeg'
 
+common_larnd_ndlar_withFarSegPRC_noShield: &common_larnd_ndlar_withFarSegPRC_noShield
+  <<: *common_larnd
+  ND_PRODUCTION_LARNDSIM_CONFIG: 'ndlar_mpvmpr_farSegPRC'
+
 common_larnd_ndlar_withFarSeg_withShield: &common_larnd_ndlar_withFarSeg_withShield
   <<: *common_larnd
   ND_PRODUCTION_LARNDSIM_CONFIG: 'ndlar_mpvmpr_farSeg_shield'
@@ -104,6 +108,10 @@ common_larnd_ndlarBeam_withFar_withShield: &common_larnd_ndlarBeam_withFar_withS
 common_larnd_ndlarBeam_withFarSeg_noShield: &common_larnd_ndlarBeam_withFarSeg_noShield
   <<: *common_larnd
   ND_PRODUCTION_LARNDSIM_CONFIG: 'ndlar_farSeg'
+
+common_larnd_ndlarBeam_withFarSegPRC_noShield: &common_larnd_ndlarBeam_withFarSegPRC_noShield
+  <<: *common_larnd
+  ND_PRODUCTION_LARNDSIM_CONFIG: 'ndlar_farSegPRC'
 
 common_larnd_ndlarBeam_withFarSeg_withShield: &common_larnd_ndlarBeam_withFarSeg_withShield
   <<: *common_larnd
