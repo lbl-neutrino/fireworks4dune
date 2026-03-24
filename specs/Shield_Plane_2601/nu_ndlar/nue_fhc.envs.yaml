@@ -81,53 +81,53 @@
 
 
 -
-  name: 'Shield_Plane_2601.nue_fhc.larnd.withFarSeg_noShield'
+  name: 'Shield_Plane_2601.nue_fhc.larnd.withFarSeg2_noShield'
   env:
     <<: *common_larnd_ndlarBeam_withFarSeg_noShield
     ND_PRODUCTION_CONVERT2H5_NAME: 'MiniProdN5p1_NDComplex_FHC.convert2h5.ndlarfid.sanddrift.nueelastic.singles'
 
 -
-  name: 'Shield_Plane_2601.nue_fhc.flow.withFarSeg_noShield'
+  name: 'Shield_Plane_2601.nue_fhc.flow.withFarSeg2_noShield'
   env:
     <<: *common_flow_ndlar
-    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.nue_fhc.larnd.withFarSeg_noShield'
+    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.nue_fhc.larnd.withFarSeg2_noShield'
 
 -
-  name: 'Shield_Plane_2601.nue_fhc.flow2supera.withFarSeg_noShield'
+  name: 'Shield_Plane_2601.nue_fhc.flow2supera.withFarSeg2_noShield'
   env:
     <<: *common_flow2supera_ndlar
-    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.nue_fhc.flow.withFarSeg_noShield'
+    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.nue_fhc.flow.withFarSeg2_noShield'
 
 -
-  name: 'Shield_Plane_2601.nue_fhc.spine.withFarSeg_noShield'
+  name: 'Shield_Plane_2601.nue_fhc.spine.withFarSeg2_noShield'
   env:
     <<: *common_spine_ndlar
-    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.nue_fhc.flow2supera.withFarSeg_noShield'
+    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.nue_fhc.flow2supera.withFarSeg2_noShield'
 
 
 
 -
-  name: 'Shield_Plane_2601.nue_fhc.larnd.withFarSegPRC_noShield'
+  name: 'Shield_Plane_2601.nue_fhc.larnd.withFarSegPRC2_noShield'
   env:
     <<: *common_larnd_ndlarBeam_withFarSegPRC_noShield
     ND_PRODUCTION_CONVERT2H5_NAME: 'MiniProdN5p1_NDComplex_FHC.convert2h5.ndlarfid.sanddrift.nueelastic.singles'
 
 -
-  name: 'Shield_Plane_2601.nue_fhc.flow.withFarSegPRC_noShield'
+  name: 'Shield_Plane_2601.nue_fhc.flow.withFarSegPRC2_noShield'
   env:
     <<: *common_flow_ndlar
-    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.nue_fhc.larnd.withFarSegPRC_noShield'
+    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.nue_fhc.larnd.withFarSegPRC2_noShield'
 
 -
-  name: 'Shield_Plane_2601.nue_fhc.flow2supera.withFarSegPRC_noShield'
+  name: 'Shield_Plane_2601.nue_fhc.flow2supera.withFarSegPRC2_noShield'
   env:
     <<: *common_flow2supera_ndlar
-    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.nue_fhc.flow.withFarSegPRC_noShield'
+    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.nue_fhc.flow.withFarSegPRC2_noShield'
 
 -
-  name: 'Shield_Plane_2601.nue_fhc.spine.withFarSegPRC_noShield'
+  name: 'Shield_Plane_2601.nue_fhc.spine.withFarSegPRC2_noShield'
   env:
     <<: *common_spine_ndlar
-    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.nue_fhc.flow2supera.withFarSegPRC_noShield'
+    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.nue_fhc.flow2supera.withFarSegPRC2_noShield'
 
 

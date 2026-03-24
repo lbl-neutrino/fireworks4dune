@@ -180,50 +180,50 @@ base_envs:
 
 
 
-  - name: 'NuE_CC_2603.larnd.withFarSeg_noShield'
+  - name: 'NuE_CC_2603.larnd.withFarSeg2_noShield'
     env:
       <<: *larnd_withFarSeg_noShield
       ND_PRODUCTION_CONVERT2H5_NAME: 'NuE_CC_2603.convert2h5'
 
-  - name: 'NuE_CC_2603.flow.withFarSeg_noShield'
+  - name: 'NuE_CC_2603.flow.withFarSeg2_noShield'
     env:
       <<: *flow_common
-      ND_PRODUCTION_IN_NAME: 'NuE_CC_2603.larnd.withFarSeg_noShield'
+      ND_PRODUCTION_IN_NAME: 'NuE_CC_2603.larnd.withFarSeg2_noShield'
 
-  - name: 'NuE_CC_2603.flow2supera.withFarSeg_noShield'
+  - name: 'NuE_CC_2603.flow2supera.withFarSeg2_noShield'
     env:
       <<: *spine_container
-      ND_PRODUCTION_IN_NAME: 'NuE_CC_2603.flow.withFarSeg_noShield'
+      ND_PRODUCTION_IN_NAME: 'NuE_CC_2603.flow.withFarSeg2_noShield'
       ND_PRODUCTION_FLOW2SUPERA_CONFIG: 'ndlar_beam'
 
-  - name: 'NuE_CC_2603.spine.withFarSeg_noShield'
+  - name: 'NuE_CC_2603.spine.withFarSeg2_noShield'
     env:
       <<: *spine_container
-      ND_PRODUCTION_IN_NAME: 'NuE_CC_2603.flow2supera.withFarSeg_noShield'
+      ND_PRODUCTION_IN_NAME: 'NuE_CC_2603.flow2supera.withFarSeg2_noShield'
       ND_PRODUCTION_SPINE_CONFIG: 'configs/ndlar_parse_truth.cfg'
 
 
 
-  - name: 'NuE_CC_2603.larnd.withFarSegPRC_noShield'
+  - name: 'NuE_CC_2603.larnd.withFarSegPRC2_noShield'
     env:
       <<: *larnd_withFarSegPRC_noShield
       ND_PRODUCTION_CONVERT2H5_NAME: 'NuE_CC_2603.convert2h5'
 
-  - name: 'NuE_CC_2603.flow.withFarSegPRC_noShield'
+  - name: 'NuE_CC_2603.flow.withFarSegPRC2_noShield'
     env:
       <<: *flow_common
-      ND_PRODUCTION_IN_NAME: 'NuE_CC_2603.larnd.withFarSegPRC_noShield'
+      ND_PRODUCTION_IN_NAME: 'NuE_CC_2603.larnd.withFarSegPRC2_noShield'
 
-  - name: 'NuE_CC_2603.flow2supera.withFarSegPRC_noShield'
+  - name: 'NuE_CC_2603.flow2supera.withFarSegPRC2_noShield'
     env:
       <<: *spine_container
-      ND_PRODUCTION_IN_NAME: 'NuE_CC_2603.flow.withFarSegPRC_noShield'
+      ND_PRODUCTION_IN_NAME: 'NuE_CC_2603.flow.withFarSegPRC2_noShield'
       ND_PRODUCTION_FLOW2SUPERA_CONFIG: 'ndlar_beam'
 
-  - name: 'NuE_CC_2603.spine.withFarSegPRC_noShield'
+  - name: 'NuE_CC_2603.spine.withFarSegPRC2_noShield'
     env:
       <<: *spine_container
-      ND_PRODUCTION_IN_NAME: 'NuE_CC_2603.flow2supera.withFarSegPRC_noShield'
+      ND_PRODUCTION_IN_NAME: 'NuE_CC_2603.flow2supera.withFarSegPRC2_noShield'
       ND_PRODUCTION_SPINE_CONFIG: 'configs/ndlar_parse_truth.cfg'
 
 
