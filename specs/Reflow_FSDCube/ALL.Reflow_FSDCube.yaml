@@ -1,0 +1,29 @@
+default: &default
+  ND_PRODUCTION_INDIR_BASE: '/dvs_ro/cfs/cdirs/dune/www/data/LBL/v3/FSDCube'
+  ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_FSDCube_v1'
+  ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/logs/Reflow_FSDCube_v1'
+  ND_PRODUCTION_RUNTIME: 'NONE'
+
+shifter: &shifter
+  <<: *default
+  ND_PRODUCTION_RUNTIME: 'SHIFTER'
+
+apptainer: &apptainer
+  <<: *default
+  ND_PRODUCTION_RUNTIME: 'SINGULARITY'
+  ND_PRODUCTION_APPTAINER_CACHEDIR: '/tmp/apptainer.mkramer'
+  ND_PRODUCTION_APPTAINER_TMPDIR: '/tmp/apptainer.mkramer'
+  ND_PRODUCTION_CONTAINER_DIR: '/pscratch/sd/d/dunepro/mkramer/containers'
+
+base_envs:
+  - name: 'Reflow_FSDCube_v1.flow'
+    env:
+      <<: *default
+      ND_PRODUCTION_RUN_BINARY2PACKET: '1'
+      ND_PRODUCTION_COMPRESS: 'gzip'
+      ND_PRODUCTION_CHARGE_EVTBUILD_WORKFLOWS:
+        - 'yamls/fsdcube_flow/workflows/charge/charge_event_building_data.yaml'
+      ND_PRODUCTION_CHARGE_RECO_WORKFLOWS:
+        - 'yamls/fsdcube_flow/workflows/charge/charge_event_reconstruction_data.yaml'
+        - 'yamls/fsdcube_flow/workflows/combined/combined_reconstruction_data.yaml'
+        - 'yamls/fsdcube_flow/workflows/charge/prompt_calibration_data.yaml'
