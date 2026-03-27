@@ -31,6 +31,9 @@ class FwMaker:
         if category is None:
             category = base_env
 
+        if 'ND_PRODUCTION_OUT_NAME' not in env:
+            env['ND_PRODUCTION_OUT_NAME'] = base_env
+
         spec = {
             'runner': f'{self.repo}_{runner_postfix}',
             'base_env': base_env,
