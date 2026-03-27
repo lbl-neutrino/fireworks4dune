@@ -6,12 +6,12 @@ repos:
 runners:
   - name: 'ND_Production_Flow_Charge_Centric'
     repo: 'ND_Production'
-    workdir: '.'
+    workdir: 'run-ndlar-flow'
     cmd: './run_ndlar_flow.data.charge_centric.sh'
 
   - name: 'ND_Production_Flow_Light_Centric'
     repo: 'ND_Production'
-    workdir: '.'
+    workdir: 'run-ndlar-flow'
     cmd: './run_ndlar_flow.data.light_centric.sh'
 
   - name: 'ND_Production_Flow2Supera'
