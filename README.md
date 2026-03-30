@@ -4,7 +4,7 @@
 admin/install_fireworks.sh
 ```
 
-Then edit `fw_config/my_launchpad.yaml` to specify the password for MongoDB.
+Then edit `fw_config/my_launchpad.yaml` to specify the password for MongoDB. The `name` field in that file is the name of the DB (which will be created if it doesn't exist). Generally it's a good idea to use a fersh DB for each production. In that case, after specifying the new `name` in the yaml, you will need to run `lpad reset` to initialize the DB.
 
 If you are going to be using the fireworks web GUI, the default port number (5000) can be changed by specifying a new port number with `WEBSERVER_PORT` in `fw_config/FW_config.yaml`
 
