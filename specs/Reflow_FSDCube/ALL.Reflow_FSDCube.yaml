@@ -1,7 +1,7 @@
 default: &default
   ND_PRODUCTION_INDIR_BASE: '/dvs_ro/cfs/cdirs/dune/www/data/LBL/v3/FSDCube'
-  ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_FSDCube_v1'
-  ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/logs/Reflow_FSDCube_v1'
+  ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_FSDCube_v2'
+  ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/logs/Reflow_FSDCube_v2'
   ND_PRODUCTION_RUNTIME: 'NONE'
 
 shifter: &shifter
@@ -16,7 +16,7 @@ apptainer: &apptainer
   ND_PRODUCTION_CONTAINER_DIR: '/pscratch/sd/d/dunepro/mkramer/containers'
 
 base_envs:
-  - name: 'Reflow_FSDCube_v1.flow'
+  - name: 'Reflow_FSDCube_v2.flow'
     env:
       <<: *default
       ND_PRODUCTION_RUN_BINARY2PACKET: '1'
