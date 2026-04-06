@@ -20,6 +20,7 @@ base_envs:
     env:
       <<: *default
       ND_PRODUCTION_RUN_BINARY2PACKET: '1'
+      ND_PRODUCTION_BINARY2PACKET_ARGS: '--block_size 4096'
       ND_PRODUCTION_COMPRESS: 'gzip'
       ND_PRODUCTION_CHARGE_EVTBUILD_WORKFLOWS:
         - 'yamls/fsdcube_flow/workflows/charge/charge_event_building_data.yaml'
