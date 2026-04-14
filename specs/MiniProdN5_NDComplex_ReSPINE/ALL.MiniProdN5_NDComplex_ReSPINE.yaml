@@ -1,0 +1,19 @@
+common: &common
+  ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepr/output/MiniProdN5_NDComplex_ReSPINE'
+  ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepr/logs/MiniProdN5_NDComplex_ReSPINE'
+  ND_PRODUCTION_RUNTIME: 'SHIFTER'
+
+spine_container: &spine_container
+  <<: *common
+  ND_PRODUCTION_RUNTIME: 'SHIFTER'
+  ND_PRODUCTION_CONTAINER: 'deeplearnphysics/larcv2:ub2204-cu124-torch251-larndsim'
+  ND_PRODUCTION_SPINE_NUM_THREADS: '1'
+  ND_PRODUCTION_SPINE_OPENBLAS_NUM_THREADS: '1'
+
+base_envs:
+  - name: 'MiniProdN5p1_NDComplex_FHC.spine2.full.sanddrift'
+    env:
+      <<: *spine_container
+      ND_PRODUCTION_IN_NAME: 'MiniProdN5p1_NDComplex_FHC.flow2supera.full.sanddrift'
+      ND_PRODUCTION_SPINE_CONFIG: 'install/spine-prod/config/infer/nd-lar/full_chain_260409.yaml'
+  
