@@ -25,17 +25,12 @@ def main():
         envs: list[dict[str, str]] = json.load(f)
 
     for env in envs:
-        if 'ND_PRODUCTION_CHARGE_FILE' in env:                    # charge basis
-            if args.charge_only:
-                env.pop('ND_PRODUCTION_LIGHT_FILES', None)
-            fw_flow = fwm.make(env, 'Flow_Charge_Centric', 'flow')
-        elif 'ND_PRODUCTION_LIGHT_FILE' in env:                   # light basis
-            if args.light_only:
-                env.pop('ND_PRODUCTION_CHARGE_FILES', None)
-            fw_flow = fwm.make(env, 'Flow_Light_Centric', 'flow')
-        else:
-            raise ValueError('invalid json')
+        if args.charge_only:
+            env.pop('ND_PRODUCTION_LIGHT_FILES', None)
+        if args.light_only:
+            env.pop('ND_PRODUCTION_CHARGE_FILES', None)
 
+        fw_flow = fwm.make(env, 'Flow', 'flow')
         fw_flow2supera = fwm.make(env, 'Flow2Supera', 'flow2supera')
         fw_spine = fwm.make(env, 'SPINE', 'spine')
         fw_flow2root = fwm.make(env, 'Flow2root', 'flow2root')
