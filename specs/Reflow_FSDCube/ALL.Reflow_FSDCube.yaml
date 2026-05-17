@@ -1,4 +1,5 @@
 default: &default
+  ND_PRODUCTION_FILE_BASIS: 'charge'
   ND_PRODUCTION_INDIR_BASE: '/dvs_ro/cfs/cdirs/dune/www/data/LBL/v3/FSDCube'
   ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/Reflow_FSDCube_v3'
   ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/logs/Reflow_FSDCube_v3'
@@ -25,7 +26,6 @@ base_envs:
   - name: 'Reflow_FSDCube_v3.flow'
     env:
       <<: *default
-      ND_PRODUCTION_FILE_BASIS: 'charge'
       ND_PRODUCTION_RUN_BINARY2PACKET: '1'
       ND_PRODUCTION_BINARY2PACKET_ARGS: '--block_size 4096'
       ND_PRODUCTION_COMPRESS: 'gzip'
@@ -39,11 +39,26 @@ base_envs:
   - name: 'Reflow_FSDCube_v3.flow2supera'
     env:
       <<: *spine_container
-      ND_PRODUCTION_IN_NAME: 'Reflow_FSDCUBE_v3.flow'
+      ND_PRODUCTION_IN_NAME: 'Reflow_FSDCube_v3.flow'
       ND_PRODUCTION_FLOW2SUPERA_CONFIG: 'fsd_data'
 
   - name: 'Reflow_FSDCube_v3.spine'
     env:
       <<: *spine_container
-      ND_PRODUCTION_IN_NAME: 'Reflow_FSDCUBE_v3.flow2supera'
+      ND_PRODUCTION_IN_NAME: 'Reflow_FSDCube_v3.flow2supera'
+      ND_PRODUCTION_SPINE_CONFIG: 'install/spine-prod/config/infer/nd-lar/full_chain_260409.yaml'
+
+
+# TMP FOR TESTING:
+
+  - name: 'FSDCubeSim_v1.flow2supera'
+    env:
+      <<: *spine_container
+      ND_PRODUCTION_IN_NAME: 'FSDCubeSim_v1.flow'
+      ND_PRODUCTION_FLOW2SUPERA_CONFIG: 'fsd_sim'
+
+  - name: 'FSDCubeSim_v1.spine'
+    env:
+      <<: *spine_container
+      ND_PRODUCTION_IN_NAME: 'FSDCubeSim_v1.flow2supera'
       ND_PRODUCTION_SPINE_CONFIG: 'install/spine-prod/config/infer/nd-lar/full_chain_260409.yaml'
