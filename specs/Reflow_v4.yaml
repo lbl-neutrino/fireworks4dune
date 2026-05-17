@@ -17,7 +17,7 @@ runners:
   - name: 'ND_Production_SPINE'
     repo: 'ND_Production'
     workdir: 'run-mlreco'
-    cmd: './run_spine.sh'
+    cmd: './run_spine.spine-prod.sh'
 
   - name: 'ND_Production_Flow2root'
     repo: 'ND_Production'
