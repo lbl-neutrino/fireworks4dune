@@ -1,0 +1,8 @@
+base_envs:
+  - name: 'FSDCubeSim_v1.flow'
+    env:
+      ND_PRODUCTION_RUNTIME: 'NONE'
+      ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepro/cuddandr/output/FSDCubeSim_v1'
+      ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepro/cuddandr/logs/FSDCubeSim_v1'
+      ND_PRODUCTION_IN_NAME: 'FSDCubeSim_v1.larnd'
+      ND_PRODUCTION_COMPRESS: 'lzf'
