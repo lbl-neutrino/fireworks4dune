@@ -1,0 +1,9 @@
+base_envs:
+  - name: '2x2_CosmicRun1.corsika'
+    env:
+      ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/danxing/cosmic_prod/output/2x2_CosmicRun1'
+      ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/danxing/cosmic_prod/logs/2x2_CosmicRun1'
+      ND_PRODUCTION_RUNTIME: 'SHIFTER'
+      ND_PRODUCTION_CONTAINER: 'mjkramer/sim2x2:ndlar011'
+      ND_PRODUCTION_LOC: 'MINOS'
+      ND_PRODUCTION_NSHOW: '100'

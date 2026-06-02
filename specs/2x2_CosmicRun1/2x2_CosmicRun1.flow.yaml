@@ -1,0 +1,8 @@
+base_envs:
+  - name: '2x2_CosmicRun1.flow'
+    env:
+      ND_PRODUCTION_RUNTIME: 'NONE'
+      ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/danxing/cosmic_prod/output/2x2_CosmicRun1'
+      ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/danxing/cosmic_prod/logs/2x2_CosmicRun1'
+      ND_PRODUCTION_IN_NAME: '2x2_CosmicRun1.larnd'
+      ND_PRODUCTION_COMPRESS: 'lzf'
