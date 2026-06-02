@@ -8,4 +8,4 @@ base_envs:
       ND_PRODUCTION_CONTAINER: 'mjkramer/sim2x2:ndlar011'
       ND_PRODUCTION_CORSIKA_NAME: '2x2_CosmicRun1.corsika'
       ND_PRODUCTION_EDEP_MAC: 'macros/cosmics.mac'
-      ND_PRODUCTION_GEOM_EDEP: 'geometry/Merged2x2MINERvA_v4/Merged2x2MINERvA_v4_withRockshifted_90m.gdml'
+      ND_PRODUCTION_GEOM_EDEP: 'geometry/Merged2x2MINERvA_v4/Merged2x2MINERvA_v4_withRockshifted.gdml'
