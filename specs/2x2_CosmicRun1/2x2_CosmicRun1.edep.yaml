@@ -1,0 +1,11 @@
+base_envs:
+  - name: '2x2_CosmicRun1.edep'
+    env:
+      ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/danxing/cosmic_prod/output/2x2_CosmicRun1'
+      ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/danxing/cosmic_prod/logs/2x2_CosmicRun1'
+      ND_PRODUCTION_SIM: 'CORSIKA'
+      ND_PRODUCTION_RUNTIME: 'SHIFTER'
+      ND_PRODUCTION_CONTAINER: 'mjkramer/sim2x2:ndlar011'
+      ND_PRODUCTION_CORSIKA_NAME: '2x2_CosmicRun1.corsika'
+      ND_PRODUCTION_EDEP_MAC: 'macros/cosmics.mac'
+      ND_PRODUCTION_GEOM_EDEP: 'geometry/Merged2x2MINERvA_v4/Merged2x2MINERvA_v4_withRockshifted.gdml'
