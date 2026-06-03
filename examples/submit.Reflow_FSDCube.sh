@@ -13,4 +13,4 @@ workflows/fwsub.reflow_centralized.py --name "$name" --inputs-json "$inputs"
 
 # TMP for testing
 
-workflows/fwsub.FSDCubeSim_spine.sh
+workflows/fwsub.FSDCubeSim_spine.py
