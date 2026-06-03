@@ -50,6 +50,10 @@ def main():
 
                 dest = args.destdir / src.relative_to(args.srcdir)
 
+                if dest.exists():
+                    print(f'SKIP {src} {dest}')
+                    continue
+
                 transfers.append((src, dest))
 
             if args.shuffle:
