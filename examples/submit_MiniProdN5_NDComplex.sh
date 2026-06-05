@@ -104,11 +104,22 @@ set +o posix
 ######################
 
 
+######################
+## MiniProdN5p3
+
+#scripts/load_yaml.py specs/MiniProdN5_NDComplex/MiniProdN5p3_NDComplex_FHC.genie.ndlarfid.sanddrift.yaml --replace
+#scripts/load_yaml.py specs/MiniProdN5_NDComplex/MiniProdN5p3_NDComplex_FHC.genie.rockantindlarfid.sanddrift.yaml --replace
+
+######################
+
+
 start_sanddrift=1
 #start_sandstt=64001
 start_sandstt=6401
-single_size=64000
-spill_size=6400
+#single_size=64000
+#spill_size=6400
+single_p3_size=25000
+spill_p3_size=2500
 #start_sanddrift=1
 ##start_sandstt=16001
 #start_sandstt=1601
@@ -116,7 +127,7 @@ spill_size=6400
 #spill_size=1600
 
 
-logdir=/pscratch/sd/d/dunepro/abooth/logs_sbatch/MiniProdN5
+logdir=/pscratch/sd/d/dunepro/ymeng/logs_sbatch/MiniProdN5
 mkdir -p $logdir
 
 
@@ -400,4 +411,13 @@ mkdir -p $logdir
 #sbatch -o ${logdir:-.}/slurm-%j.txt --array=1-6 -N 1 slurm/fw_cpu.slurm.sh MiniProdN5p2_NDComplex_RHC.convert2h5.full.sanddrift.nueelastic.overlay rapidfire
 
 ######################
+
+######################
+## MiniProdN5p3
+
+#scripts/fwsub.py --runner NDComplex_v1_Genie --base-env MiniProdN5p3_NDComplex_FHC.genie.ndlarfid.sanddrift --size $single_p3_size --start $start_sanddrift
+#sbatch -o ${logdir:-.}/slurm-%j.txt --array=1-2 -N 1 slurm/fw_cpu.slurm.sh MiniProdN5p1_NDComplex_FHC.genie.ndlarfid.sanddrift rapidfire
+
+#scripts/fwsub.py --runner NDComplex_v1_Genie --base-env MiniProdN5p3_NDComplex_FHC.genie.rockantindlarfid.sanddrift --size $single_p3_size --start $start_sanddrift
+#sbatch -o ${logdir:-.}/slurm-%j.txt --array=1-1 -N 33 slurm/fw_cpu.slurm.sh MiniProdN5p1_NDComplex_FHC.genie.rockantindlarfid.sanddrift rapidfire
 
