@@ -1,0 +1,137 @@
+default: &default
+  ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/NuE_CC_2603'
+  ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/logs/NuE_CC_2603'
+  ND_PRODUCTION_RUNTIME: 'NONE'
+
+shifter: &shifter
+  <<: *default
+  ND_PRODUCTION_RUNTIME: 'SHIFTER'
+
+apptainer: &apptainer
+  <<: *default
+  ND_PRODUCTION_RUNTIME: 'SINGULARITY'
+  ND_PRODUCTION_APPTAINER_CACHEDIR: '/tmp/apptainer.mkramer'
+  ND_PRODUCTION_APPTAINER_TMPDIR: '/tmp/apptainer.mkramer'
+  ND_PRODUCTION_CONTAINER_DIR: '/pscratch/sd/d/dunepro/mkramer/containers'
+
+# ------------------------------------------------------------------------------
+
+genie_container: &genie_container
+  <<: *shifter
+  ND_PRODUCTION_CONTAINER: 'mjkramer/sim2x2:genie_edep.3_04_00.20230912'
+
+edep_container: &edep_container
+  <<: *apptainer
+  ND_PRODUCTION_CONTAINER: 'sim2x2_ndlar012.sif'
+
+# ------------------------------------------------------------------------------
+
+larnd_common: &larnd_common
+  <<: *default
+  ND_PRODUCTION_COMPRESS: 'lzf'
+
+flow_common: &flow_common
+  <<: *default
+  ND_PRODUCTION_CHARGE_ONLY: '1'
+  ND_PRODUCTION_COMPRESS: 'gzip'
+
+# ------------------------------------------------------------------------------
+
+spine_container: &spine_container
+  <<: *shifter
+  ND_PRODUCTION_CONTAINER: 'deeplearnphysics/larcv2:ub2204-cu124-torch251-larndsim'
+  ND_PRODUCTION_SPINE_NUM_THREADS: '1'
+  ND_PRODUCTION_SPINE_OPENBLAS_NUM_THREADS: '1'
+
+# ------------------------------------------------------------------------------
+
+larnd_noFar_noShield: &larnd_noFar_noShield
+  <<: *larnd_common
+  ND_PRODUCTION_LARNDSIM_CONFIG: 'ndlar_mpvmpr'
+
+larnd_noFar_withShield: &larnd_noFar_withShield
+  <<: *larnd_common
+  ND_PRODUCTION_LARNDSIM_CONFIG: 'ndlar_mpvmpr_shield'
+
+larnd_withFar_noShield: &larnd_withFar_noShield
+  <<: *larnd_common
+  ND_PRODUCTION_LARNDSIM_CONFIG: 'ndlar_mpvmpr_far'
+
+larnd_withFar_withShield: &larnd_withFar_withShield
+  <<: *larnd_common
+  ND_PRODUCTION_LARNDSIM_CONFIG: 'ndlar_mpvmpr_far_shield'
+
+larnd_withFarSeg_noShield: &larnd_withFarSeg_noShield
+  <<: *larnd_common
+  ND_PRODUCTION_LARNDSIM_CONFIG: 'ndlar_mpvmpr_farSeg'
+
+larnd_withFarSegPRC_noShield: &larnd_withFarSegPRC_noShield
+  <<: *larnd_common
+  ND_PRODUCTION_LARNDSIM_CONFIG: 'ndlar_mpvmpr_farSegPRC'
+
+larnd_withFarSeg_withShield: &larnd_withFarSeg_withShield
+  <<: *larnd_common
+  ND_PRODUCTION_LARNDSIM_CONFIG: 'ndlar_mpvmpr_farSeg_shield'
+
+# ------------------------------------------------------------------------------
+
+base_envs:
+  - name: 'NuE_CC_2603.genie'
+    env:
+      <<: *genie_container
+      ND_PRODUCTION_EXPOSURE: '2E15'
+      ND_PRODUCTION_GENIE_NU_FLAVORS: '12,-12'
+      ND_PRODUCTION_DET_LOCATION: 'DUNEND'
+      ND_PRODUCTION_DK2NU_DIR: '/dvs_ro/cfs/cdirs/dune/users/abooth/fluxfiles/DUNE_PRISM/OnAxis/neutrino/dk2nu'
+      ND_PRODUCTION_GEOM: 'geometry/nd_hall_with_lar_tms_sand_drift1_v2025.08.11.gdml'
+      ND_PRODUCTION_MAX_PATH_FILE: 'maxpath/nd_hall_with_lar_tms_sand_drift1_v2025.08.11.volArgonCubeDetector75.AR23_20i_00_000.maxpath.xml'
+      ND_PRODUCTION_TOP_VOLUME: 'volArgonCubeDetector75'
+      ND_PRODUCTION_TUNE: 'AR23_20i_00_000'
+      ND_PRODUCTION_XSEC_FILE: '/dvs_ro/cfs/cdirs/dune/users/2x2EventGeneration/inputs/NuMI/genie_xsec-3.04.00-noarch-AR2320i00000-k250-e1000/v3_04_00/NULL/AR2320i00000-k250-e1000/data/gxspl-NUsmall.xml'
+      ND_PRODUCTION_ZMIN: '-3'
+
+  - name: 'NuE_CC_2603.edep'
+    env:
+      <<: *edep_container
+      ND_PRODUCTION_GENIE_NAME: 'NuE_CC_2603.genie'
+      ND_PRODUCTION_EDEP_MAC: 'macros/dune-nd.mac'
+      ND_PRODUCTION_GEOM_EDEP: 'geometry/nd_hall_with_lar_tms_sand_drift1_v2025.08.11.gdml'
+
+  - name: 'NuE_CC_2603.convert2h5'
+    env:
+      <<: *edep_container
+      ND_PRODUCTION_SINGLE_NAME: 'NuE_CC_2603.edep'
+      ND_PRODUCTION_ACTIVE_VOLUME: 'volTPCActive'
+      ND_PRODUCTION_KEEP_ALL_DETS: '0'
+
+{% set modes = ['noFar_noShield',
+                'noFar_withShield',
+                'withFar_noShield',
+                'withFarSeg_noShield',
+                'withFarSegPRC_noShield'] %}
+
+{% for mode in modes %}
+
+  - name: 'NuE_CC_2603.larnd.{{mode}}'
+    env:
+      <<: *larnd_{{mode}}
+      ND_PRODUCTION_CONVERT2H5_NAME: 'NuE_CC_2603.convert2h5'
+
+  - name: 'NuE_CC_2603.flow.{{mode}}'
+    env:
+      <<: *flow_common
+      ND_PRODUCTION_IN_NAME: 'NuE_CC_2603.larnd.{{mode}}'
+
+  - name: 'NuE_CC_2603.flow2supera.{{mode}}'
+    env:
+      <<: *spine_container
+      ND_PRODUCTION_IN_NAME: 'NuE_CC_2603.flow.{{mode}}'
+      ND_PRODUCTION_FLOW2SUPERA_CONFIG: 'ndlar_beam'
+
+  - name: 'NuE_CC_2603.spine.{{mode}}'
+    env:
+      <<: *spine_container
+      ND_PRODUCTION_IN_NAME: 'NuE_CC_2603.flow2supera.{{mode}}'
+      ND_PRODUCTION_SPINE_CONFIG: 'configs/ndlar_parse_truth.cfg'
+
+{% endfor %}

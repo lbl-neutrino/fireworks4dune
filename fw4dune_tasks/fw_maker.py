@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import random
 from typing import Optional
 
 from fireworks import Firework
@@ -30,11 +31,15 @@ class FwMaker:
         if category is None:
             category = base_env
 
+        if 'ND_PRODUCTION_OUT_NAME' not in env:
+            env['ND_PRODUCTION_OUT_NAME'] = base_env
+
         spec = {
             'runner': f'{self.repo}_{runner_postfix}',
             'base_env': base_env,
             'env': env,
-            '_category': category
+            '_category': category,
+            'random': random.randint(0, int(1e9))
         }
 
         return Firework(RepoRunner(),

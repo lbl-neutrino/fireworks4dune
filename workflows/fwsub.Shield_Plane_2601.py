@@ -19,6 +19,7 @@ def main():
     ap.add_argument('--sim-mode', type=str, default='noFar_noShield')
     ap.add_argument('--run-edep', action='store_true')
     ap.add_argument('--run-spine', action='store_true')
+    ap.add_argument('--just-spine', action='store_true')
     args = ap.parse_args()
 
     name = f'{args.prefix}.{args.config}'
@@ -48,13 +49,15 @@ def main():
             arrows.update({fw_edep: [fw_convert2h5],
                            fw_convert2h5: [fw_larnd]})
 
-        fireworks.extend([fw_larnd, fw_flow])
-        arrows.update({fw_larnd: [fw_flow]})
+        if not args.just_spine:
+            fireworks.extend([fw_larnd, fw_flow])
+            arrows.update({fw_larnd: [fw_flow]})
 
-        if args.run_spine:
+        if args.run_spine or args.just_spine:
             fireworks.extend([fw_flow2supera, fw_spine])
-            arrows.update({fw_flow: [fw_flow2supera],
-                           fw_flow2supera: [fw_spine]})
+            if not args.just_spine:
+                arrows.update({fw_flow: [fw_flow2supera]})
+            arrows.update({fw_flow2supera: [fw_spine]})
 
         wf = Workflow(fireworks, arrows, name=name)
 

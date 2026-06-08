@@ -7,7 +7,7 @@
   name: 'Shield_Plane_2601.electron.edep'
   env:
     <<: *common_edep_gigacube
-    ND_PRODUCTION_MPVMPR_CONFIG: 'mpvmpr/Shield_Plane_2601/ndlar_geom/electron.yaml'
+    ND_PRODUCTION_MPVMPR_CONFIG: 'mpvmpr/Shield_Plane_2601/gigacube_geom/electron.yaml'
 
 -
   name: 'Shield_Plane_2601.electron.convert2h5'
@@ -39,6 +39,6 @@
   name: 'Shield_Plane_2601.electron.spine.{{mode}}'
   env:
     <<: *common_spine_gigacube
-    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.electron.flow.{{mode}}'
+    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.electron.flow2supera.{{mode}}'
 
 {% endfor %}

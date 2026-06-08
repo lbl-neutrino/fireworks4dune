@@ -36,7 +36,7 @@
   name: 'Shield_Plane_2601.muon.spine.noFar_noShield'
   env:
     <<: *common_spine_ndlar
-    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.muon.flow.noFar_noShield'
+    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.muon.flow2supera.noFar_noShield'
 
 
 
@@ -62,7 +62,7 @@
   name: 'Shield_Plane_2601.muon.spine.noFar_withShield'
   env:
     <<: *common_spine_ndlar
-    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.muon.flow.noFar_withShield'
+    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.muon.flow2supera.noFar_withShield'
 
 
 
@@ -88,7 +88,7 @@
   name: 'Shield_Plane_2601.muon.spine.withFar_noShield'
   env:
     <<: *common_spine_ndlar
-    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.muon.flow.withFar_noShield'
+    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.muon.flow2supera.withFar_noShield'
 
 
 
@@ -114,6 +114,6 @@
   name: 'Shield_Plane_2601.muon.spine.withFar_withShield'
   env:
     <<: *common_spine_ndlar
-    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.muon.flow.withFar_withShield'
+    ND_PRODUCTION_IN_NAME: 'Shield_Plane_2601.muon.flow2supera.withFar_withShield'
 
 

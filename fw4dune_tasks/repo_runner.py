@@ -26,11 +26,15 @@ class RepoRunner(FiretaskBase):
         lpad = LaunchPad.auto_load()
         db = lpad.connection[lpad.name]
 
-        env = os.environ
+        env = dict(os.environ)
 
         if 'base_env' in fw_spec:
             base_env = db['base_envs'].find_one({'name': fw_spec['base_env']})
             assert type(base_env) is dict
+            # transform lists into space-delimited strings
+            for k, v in base_env['env'].items():
+                if isinstance(v, list):
+                    base_env['env'][k] = ' '.join(v)
             env |= base_env['env']
 
         if 'env' in fw_spec:

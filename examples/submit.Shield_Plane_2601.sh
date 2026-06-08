@@ -28,6 +28,67 @@ workflows/fwsub.Shield_Plane_2601.py --start $start --size $size --config beam_f
 workflows/fwsub.Shield_Plane_2601.py --start $start --size $size --config nue_fhc
 
 
+# adding some shield plane configs now
+workflows/fwsub.Shield_Plane_2601.py --start $start --size $size --config two_protons --sim-mode noFar_withShield
+
+start=0
+size=1
+workflows/fwsub.Shield_Plane_2601.py --start $start --size $size --config proton_plus_muon --sim-mode noFar_withShield
+workflows/fwsub.Shield_Plane_2601.py --start $start --size $size --config beam_fhc --sim-mode noFar_withShield
+workflows/fwsub.Shield_Plane_2601.py --start $start --size $size --config nue_fhc --sim-mode noFar_withShield
+
+# finishing up mu+p noFar
+workflows/fwsub.Shield_Plane_2601.py --start 1 --size 99 --config proton_plus_muon --run-edep
+workflows/fwsub.Shield_Plane_2601.py --start 1 --size 99 --config proton_plus_muon --sim-mode noFar_withShield
+
+# now let's add some FFE for p+p
+workflows/fwsub.Shield_Plane_2601.py --start 0 --size 1 --config two_protons --sim-mode withFar_noShield
+workflows/fwsub.Shield_Plane_2601.py --start 0 --size 1 --config two_protons --sim-mode withFar_withShield
+
+# more nue_fhc
+workflows/fwsub.Shield_Plane_2601.py --start 1 --size 499 --config nue_fhc --sim-mode noFar_noShield
+workflows/fwsub.Shield_Plane_2601.py --start 1 --size 499 --config nue_fhc --sim-mode noFar_withShield
+workflows/fwsub.Shield_Plane_2601.py --start 0 --size 500 --config nue_fhc --sim-mode withFar_noShield
+workflows/fwsub.Shield_Plane_2601.py --start 0 --size 500 --config nue_fhc --sim-mode withFar_withShield
+
+# 2x2 mpvmpr
+workflows/fwsub.Shield_Plane_2601.py --start 1 --size 1 --config electron_2x2 --sim-mode noFar_noShield --run-spine --run-edep
+workflows/fwsub.Shield_Plane_2601.py --start 1 --size 1 --config electron_2x2 --sim-mode withFar_noShield --run-spine
+
+# more shit
+workflows/fwsub.Shield_Plane_2601.py --size 100  --config two_protons  --run-spine --sim-mode withFarSeg_noShield
+workflows/fwsub.Shield_Plane_2601.py --size 500  --config nue_fhc      --run-spine --sim-mode withFarSeg_noShield
+workflows/fwsub.Shield_Plane_2601.py --size 1    --config electron_2x2 --run-spine --sim-mode withFarSeg_noShield
+workflows/fwsub.NuE_CC_2603.py       --size 1000                                   --sim-mode withFarSeg_noShield
+
+workflows/fwsub.Shield_Plane_2601.py --start 2 --size 98 --config electron_2x2 --run-spine --sim-mode noFar_noShield --run-edep
+## AFTER c2h5 is complete:
+workflows/fwsub.Shield_Plane_2601.py --start 1 --size 99 --config electron_2x2 --run-spine --sim-mode withFarSeg_noShield
+
+workflows/fwsub.Shield_Plane_2601.py  --run-edep --size 100  --config two_protons_golden --run-spine --sim-mode noFar_noShield
+workflows/fwsub.Shield_Plane_2601.py             --size 100  --config two_protons_golden --run-spine --sim-mode noFar_withShield
+workflows/fwsub.Shield_Plane_2601.py             --size 100  --config two_protons_golden --run-spine --sim-mode withFarSeg_noShield
+
+workflows/fwsub.Shield_Plane_2601.py --just-spine           --size 100  --config two_protons --sim-mode noFar_noShield
+workflows/fwsub.Shield_Plane_2601.py --just-spine           --size 100  --config two_protons --sim-mode noFar_withShield
+workflows/fwsub.Shield_Plane_2601.py --just-spine --start 1 --size 499  --config nue_fhc     --sim-mode noFar_noShield
+workflows/fwsub.Shield_Plane_2601.py --just-spine --start 1 --size 499  --config nue_fhc     --sim-mode noFar_withShield
+
+
+workflows/fwsub.Shield_Plane_2601.py             --size 100  --config two_protons_golden --run-spine --sim-mode withFarSegPRC_noShield
+workflows/fwsub.Shield_Plane_2601.py --start 1   --size 499  --config nue_fhc            --run-spine --sim-mode withFarSegPRC_noShield
+workflows/fwsub.NuE_CC_2603.py                   --size 1000                                         --sim-mode withFarSegPRC_noShield
+
+# oops...
+
+workflows/fwsub.Shield_Plane_2601.py             --size 100  --config two_protons_golden --run-spine --sim-mode withFarSeg2_noShield
+workflows/fwsub.Shield_Plane_2601.py --start 1   --size 499  --config nue_fhc            --run-spine --sim-mode withFarSeg2_noShield
+workflows/fwsub.NuE_CC_2603.py                   --size 1000                                         --sim-mode withFarSeg2_noShield
+
+workflows/fwsub.Shield_Plane_2601.py             --size 100  --config two_protons_golden --run-spine --sim-mode withFarSegPRC2_noShield
+workflows/fwsub.Shield_Plane_2601.py --start 1   --size 499  --config nue_fhc            --run-spine --sim-mode withFarSegPRC2_noShield
+workflows/fwsub.NuE_CC_2603.py                   --size 1000                                         --sim-mode withFarSegPRC2_noShield
+
 mkdir -p $SCRATCH/mkramer/output/$name
 mkdir -p $SCRATCH/mkramer/logs/$name
 

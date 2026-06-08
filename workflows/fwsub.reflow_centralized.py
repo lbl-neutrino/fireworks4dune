@@ -10,7 +10,7 @@ from fw4dune_tasks import FwMaker
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('-n', '--name', default='Reflow_2x2')
+    ap.add_argument('-n', '--name', required=True, help='e.g. Reflow_2x2_v12')
     ap.add_argument('-i', '--inputs-json', required=True,
                     help='JSON file from ndlar_reflow/gen_input_list.py')
     ap.add_argument('--charge-only', action='store_true')
@@ -19,30 +19,23 @@ def main():
 
     lpad = LaunchPad.auto_load()
 
-    # We won't need two FwMakers once ndlar_reflow and 2x2_sim are merged
-    fwm1 = FwMaker(args.name, 'ndlar_reflow', args.name)
-    fwm2 = FwMaker(args.name, 'ND_Production', args.name)
+    fwm = FwMaker(args.name, 'ND_Production', args.name)
 
     with open(args.inputs_json) as f:
         envs: list[dict[str, str]] = json.load(f)
 
     for env in envs:
-        if 'ND_PRODUCTION_CHARGE_FILE' in env:                     # charge basis
-            if args.charge_only:
-                env.pop('ND_PRODUCTION_LIGHT_FILES', None)
-            fw_flow = fwm1.make(env, 'Flow', 'flow')
-        elif 'ND_PRODUCTION_LIGHT_FILE' in env:                   # light basis
-            if args.light_only:
-                env.pop('ND_PRODUCTION_CHARGE_FILES', None)
-            fw_flow = fwm1.make(env, 'Flow_LightBased', 'flow')
-        else:
-            raise ValueError('invalid json')
+        if args.charge_only:
+            env.pop('ND_PRODUCTION_LIGHT_FILES', None)
+        if args.light_only:
+            env.pop('ND_PRODUCTION_CHARGE_FILES', None)
 
-        fw_flow2supera = fwm2.make(env, 'Flow2Supera', 'flow2supera')
-        fw_spine = fwm2.make(env, 'SPINE', 'spine')
-        fw_flow2root = fwm2.make(env, 'Flow2root', 'flow2root')
-        fw_pandora = fwm2.make(env, 'Pandora', 'pandora')
-        fw_cafmaker = fwm2.make(env, 'CAFmaker', 'caf')
+        fw_flow = fwm.make(env, 'Flow', 'flow')
+        fw_flow2supera = fwm.make(env, 'Flow2Supera', 'flow2supera')
+        fw_spine = fwm.make(env, 'SPINE', 'spine')
+        fw_flow2root = fwm.make(env, 'Flow2root', 'flow2root')
+        fw_pandora = fwm.make(env, 'Pandora', 'pandora')
+        fw_cafmaker = fwm.make(env, 'CAFmaker', 'caf')
 
         fireworks = [fw_flow,
                      fw_flow2supera, fw_spine,

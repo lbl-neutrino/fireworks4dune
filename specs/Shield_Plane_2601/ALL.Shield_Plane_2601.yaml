@@ -23,9 +23,14 @@ common_edep_ndlar: &common_edep_ndlar
   <<: *common_edep
   ND_PRODUCTION_GEOM_EDEP: 'geometry/nd_hall_with_lar_tms_sand_drift1_v2025.08.11.gdml'
 
+common_edep_2x2: &common_edep_2x2
+  <<: *common_edep
+  ND_PRODUCTION_GEOM_EDEP: 'geometry/Merged2x2MINERvA_v4/Merged2x2MINERvA_v4_withRock.gdml'
+
 common_edep_gigacube: &common_edep_gigacube
   <<: *common_edep
   ND_PRODUCTION_GEOM_EDEP: 'geometry/gigacube.gdml'
+  ND_PRODUCTION_NUM_EVENTS: '20'
 
 common_convert2h5: &common_convert2h5
   <<: *edep_container
@@ -56,6 +61,18 @@ common_larnd_ndlar_withFar_withShield: &common_larnd_ndlar_withFar_withShield
   <<: *common_larnd
   ND_PRODUCTION_LARNDSIM_CONFIG: 'ndlar_mpvmpr_far_shield'
 
+common_larnd_ndlar_withFarSeg_noShield: &common_larnd_ndlar_withFarSeg_noShield
+  <<: *common_larnd
+  ND_PRODUCTION_LARNDSIM_CONFIG: 'ndlar_mpvmpr_farSeg'
+
+common_larnd_ndlar_withFarSegPRC_noShield: &common_larnd_ndlar_withFarSegPRC_noShield
+  <<: *common_larnd
+  ND_PRODUCTION_LARNDSIM_CONFIG: 'ndlar_mpvmpr_farSegPRC'
+
+common_larnd_ndlar_withFarSeg_withShield: &common_larnd_ndlar_withFarSeg_withShield
+  <<: *common_larnd
+  ND_PRODUCTION_LARNDSIM_CONFIG: 'ndlar_mpvmpr_farSeg_shield'
+
 common_larnd_gigacube_noFar_noShield: &common_larnd_gigacube_noFar_noShield
   <<: *common_larnd
   ND_PRODUCTION_LARNDSIM_CONFIG: 'gigacube_mpvmpr'
@@ -72,6 +89,46 @@ common_larnd_gigacube_withFar_withShield: &common_larnd_gigacube_withFar_withShi
   <<: *common_larnd
   ND_PRODUCTION_LARNDSIM_CONFIG: 'gigacube_mpvmpr_far_shield'
 
+common_larnd_ndlarBeam_noFar_noShield: &common_larnd_ndlarBeam_noFar_noShield
+  <<: *common_larnd
+  ND_PRODUCTION_LARNDSIM_CONFIG: 'ndlar'
+
+common_larnd_ndlarBeam_noFar_withShield: &common_larnd_ndlarBeam_noFar_withShield
+  <<: *common_larnd
+  ND_PRODUCTION_LARNDSIM_CONFIG: 'ndlar_shield'
+
+common_larnd_ndlarBeam_withFar_noShield: &common_larnd_ndlarBeam_withFar_noShield
+  <<: *common_larnd
+  ND_PRODUCTION_LARNDSIM_CONFIG: 'ndlar_far'
+
+common_larnd_ndlarBeam_withFar_withShield: &common_larnd_ndlarBeam_withFar_withShield
+  <<: *common_larnd
+  ND_PRODUCTION_LARNDSIM_CONFIG: 'ndlar_far_shield'
+
+common_larnd_ndlarBeam_withFarSeg_noShield: &common_larnd_ndlarBeam_withFarSeg_noShield
+  <<: *common_larnd
+  ND_PRODUCTION_LARNDSIM_CONFIG: 'ndlar_farSeg'
+
+common_larnd_ndlarBeam_withFarSegPRC_noShield: &common_larnd_ndlarBeam_withFarSegPRC_noShield
+  <<: *common_larnd
+  ND_PRODUCTION_LARNDSIM_CONFIG: 'ndlar_farSegPRC'
+
+common_larnd_ndlarBeam_withFarSeg_withShield: &common_larnd_ndlarBeam_withFarSeg_withShield
+  <<: *common_larnd
+  ND_PRODUCTION_LARNDSIM_CONFIG: 'ndlar_farSeg_shield'
+
+common_larnd_2x2_noFar_noShield: &common_larnd_2x2_noFar_noShield
+  <<: *common_larnd
+  ND_PRODUCTION_LARNDSIM_CONFIG: '2x2_mpvmpr'
+
+common_larnd_2x2_withFar_noShield: &common_larnd_2x2_withFar_noShield
+  <<: *common_larnd
+  ND_PRODUCTION_LARNDSIM_CONFIG: '2x2_mpvmpr_far'
+
+common_larnd_2x2_withFarSeg_noShield: &common_larnd_2x2_withFarSeg_noShield
+  <<: *common_larnd
+  ND_PRODUCTION_LARNDSIM_CONFIG: '2x2_mpvmpr_farSeg'
+
 # ------------------------------------------------------------------------------
 
 common_flow_ndlar: &common_flow_ndlar
@@ -79,10 +136,15 @@ common_flow_ndlar: &common_flow_ndlar
   ND_PRODUCTION_RUNTIME: 'NONE'
   ND_PRODUCTION_COMPRESS: 'gzip'
   ND_PRODUCTION_CHARGE_ONLY: '1'
+  ND_PRODUCTION_YAML_DIR: 'ndlar_flow'
 
 common_flow_gigacube: &common_flow_gigacube
   <<: *common_flow_ndlar
   ND_PRODUCTION_YAML_DIR: 'gigacube_flow'
+
+common_flow_2x2: &common_flow_2x2
+  <<: *common_flow_ndlar
+  ND_PRODUCTION_YAML_DIR: 'proto_nd_flow'
 
 # ------------------------------------------------------------------------------
 
@@ -101,15 +163,23 @@ common_flow2supera_gigacube: &common_flow2supera_gigacube
   <<: *spine_container
   ND_PRODUCTION_FLOW2SUPERA_CONFIG: 'gigacube_mpvmpr'
 
+common_flow2supera_2x2: &common_flow2supera_2x2
+  <<: *spine_container
+  ND_PRODUCTION_FLOW2SUPERA_CONFIG: '2x2_mpvmpr'
+
 common_spine: &common_spine
   <<: *spine_container
-  ND_PRODUCTION_SPINE_CONFIG: 'ndlar_single_full_chain_data_250629.cfg'
+  ND_PRODUCTION_SPINE_CONFIG: 'configs/ndlar_parse_truth.cfg'
 
 common_spine_ndlar: &common_spine_ndlar
   <<: *common_spine
 
 common_spine_gigacube: &common_spine_gigacube
   <<: *common_spine
+
+common_spine_2x2: &common_spine_2x2
+  <<: *common_spine
+  ND_PRODUCTION_SPINE_CONFIG: 'FIXME'
 
 # ------------------------------------------------------------------------------
 
@@ -118,9 +188,11 @@ base_envs:
   - !include mpvmpr_ndlar/proton.envs.yaml
   - !include mpvmpr_ndlar/pion.envs.yaml
   - !include mpvmpr_ndlar/two_protons.envs.yaml
-  - !include mpvmpr_ndlar/protons_plus_muon.envs.yaml
+  - !include mpvmpr_ndlar/two_protons_golden.envs.yaml
+  - !include mpvmpr_ndlar/proton_plus_muon.envs.yaml
   - !include mpvmpr_gigacube/pi0.envs.yaml
   - !include mpvmpr_gigacube/electron.envs.yaml
   - !include mpvmpr_gigacube/gamma.envs.yaml
   - !include nu_ndlar/beam_fhc.envs.yaml
   - !include nu_ndlar/nue_fhc.envs.yaml
+  - !include mpvmpr_2x2/electron_2x2.envs.yaml
