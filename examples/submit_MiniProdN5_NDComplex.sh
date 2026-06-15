@@ -115,6 +115,14 @@ set +o posix
 #scripts/load_yaml.py specs/MiniProdN5_NDComplex/MiniProdN5p3_NDComplex_FHC.hadd.rockantindlarfid.sanddrift.yaml --replace
 #scripts/load_yaml.py specs/MiniProdN5_NDComplex/MiniProdN5p3_NDComplex_FHC.spill.full.sanddrift.yaml --replace
 #scripts/load_yaml.py specs/MiniProdN5_NDComplex/MiniProdN5p3_NDComplex_FHC.convert2h5.full.sanddrift.yaml --replace
+#scripts/load_yaml.py specs/MiniProdN5_NDComplex/MiniProdN5p3_NDComplex_FHC.larnd.full.sanddrift.yaml --replace
+#scripts/load_yaml.py specs/MiniProdN5_NDComplex/MiniProdN5p3_NDComplex_FHC.flow.full.sanddrift.yaml --replace
+#scripts/load_yaml.py specs/MiniProdN5_NDComplex/MiniProdN5p3_NDComplex_FHC.flow2supera.full.sanddrift.yaml --replace
+#scripts/load_yaml.py specs/MiniProdN5_NDComplex/MiniProdN5p3_NDComplex_FHC.flow2root.full.sanddrift.yaml --replace
+#scripts/load_yaml.py specs/MiniProdN5_NDComplex/MiniProdN5p3_NDComplex_FHC.spine.full.sanddrift.yaml --replace
+#scripts/load_yaml.py specs/MiniProdN5_NDComplex/MiniProdN5p3_NDComplex_FHC.pandora.full.sanddrift.yaml --replace
+#scripts/load_yaml.py specs/MiniProdN5_NDComplex/MiniProdN5p3_NDComplex_FHC.tmsreco.full.sanddrift.yaml --replace
+#scripts/load_yaml.py specs/MiniProdN5_NDComplex/MiniProdN5p3_NDComplex_FHC.caf.full.sanddrift.yaml --replace
 
 ######################
 
@@ -444,3 +452,28 @@ mkdir -p $logdir
 
 #scripts/fwsub.py --runner NDComplex_v1_Convert2H5 --base-env MiniProdN5p3_NDComplex_FHC.convert2h5.full.sanddrift --size $spill_p3_size --start $start_sanddrift
 #sbatch -o ${logdir:-.}/slurm-%j.txt --array=1-10 -N 1 slurm/fw_cpu.slurm.sh MiniProdN5p3_NDComplex_FHC.convert2h5.full.sanddrift rapidfire
+
+#scripts/fwsub.py --runner NDComplex_v1_TMSReco --base-env MiniProdN5p3_NDComplex_RHC.tmsreco.full.sanddrift --size $spill_p3_size --start $start_sanddrift
+#sbatch -o ${logdir:-.}/slurm-%j.txt --array=1-1 -N 1 slurm/fw_cpu.slurm.sh MiniProdN5p3_NDComplex_RHC.tmsreco.full.sanddrift rapidfire
+
+#scripts/fwsub.py --runner NDComplex_v1_LArND --base-env MiniProdN5p3_NDComplex_FHC.larnd.full.sanddrift --size $spill_p3_size --start $start_sanddrift
+#sbatch -o ${logdir:-.}/slurm-%j.txt --array=1-1 -N 64 slurm/fw_gpu.slurm.sh MiniProdN5p3_NDComplex_FHC.larnd.full.sanddrift rapidfire
+
+#scripts/fwsub.py --runner NDComplex_v1_Flow --base-env MiniProdN5p3_NDComplex_FHC.flow.full.sanddrift --size $spill_p3_size --start $start_sanddrift
+#sbatch -o ${logdir:-.}/slurm-%j.txt --array=1-1 -N 32 slurm/fw_cpu.slurm.sh MiniProdN5p3_NDComplex_FHC.flow.full.sanddrift rapidfire
+
+#scripts/fwsub.py --runner NDComplex_v1_Flow2Supera --base-env MiniProdN5p3_NDComplex_FHC.flow2supera.full.sanddrift --size $spill_p3_size --start $start_sanddrift
+#sbatch -o ${logdir:-.}/slurm-%j.txt --array=1-1 -N 16 slurm/fw_cpu.slurm.sh MiniProdN5p3_NDComplex_FHC.flow2supera.full.sanddrift rapidfire
+
+#scripts/fwsub.py --runner NDComplex_v1_Flow2Root --base-env MiniProdN5p3_NDComplex_FHC.flow2root.full.sanddrift --size $spill_p3_size --start $start_sanddrift
+#sbatch -o ${logdir:-.}/slurm-%j.txt --array=1-1 -N 16 slurm/fw_cpu.slurm.sh MiniProdN5p3_NDComplex_FHC.flow2root.full.sanddrift rapidfire
+
+#scripts/fwsub.py --runner NDComplex_v1_MLreco_Spine --base-env MiniProdN5p3_NDComplex_FHC.spine.full.sanddrift --size $spill_p3_size --start $start_sanddrift
+#sbatch -o ${logdir:-.}/slurm-%j.txt --array=1-1 -N 1 slurm/fw_gpu.slurm.sh MiniProdN5p3_NDComplex_FHC.spine.full.sanddrift rapidfire
+
+#scripts/fwsub.py --runner NDComplex_v1_Pandora --base-env MiniProdN5p3_NDComplex_FHC.pandora.full.sanddrift --size $spill_p3_size --start $start_sanddrift
+#sbatch -o ${logdir:-.}/slurm-%j.txt --array=1-1 -N 1 slurm/fw_gpu.slurm.sh MiniProdN5p3_NDComplex_FHC.pandora.full.sanddrift rapidfire
+
+#scripts/fwsub.py --runner NDComplex_v1_CAFMaker --base-env MiniProdN5p3_NDComplex_FHC.caf.full.sanddrift --size $spill_p3_size --start $start_sanddrift
+#sbatch -o ${logdir:-.}/slurm-%j.txt --array=1-1 -N 1 slurm/fw_cpu.slurm.sh MiniProdN5p3_NDComplex_FHC.caf.full.sanddrift rapidfire
+
