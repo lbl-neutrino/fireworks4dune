@@ -1,9 +1,9 @@
-{% set PROD = 'CentiRun7_1E20_RHC' %}
-{% set PERSON = 'mkramer' %}
+
+
 
 default: &default
-  ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepro/{{PERSON}}/output/{{PROD}}'
-  ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepro/{{PERSON}}/logs/{{PROD}}'
+  ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/output/CentiRun7_1E20_RHC'
+  ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepro/mkramer/logs/CentiRun7_1E20_RHC'
   ND_PRODUCTION_RUNTIME: 'NONE'
 
 shifter: &shifter
@@ -13,8 +13,8 @@ shifter: &shifter
 apptainer: &apptainer
   <<: *default
   ND_PRODUCTION_RUNTIME: 'SINGULARITY'
-  ND_PRODUCTION_APPTAINER_CACHEDIR: '/tmp/apptainer.{{PERSON}}'
-  ND_PRODUCTION_APPTAINER_TMPDIR: '/tmp/apptainer.{{PERSON}}'
+  ND_PRODUCTION_APPTAINER_CACHEDIR: '/tmp/apptainer.mkramer'
+  ND_PRODUCTION_APPTAINER_TMPDIR: '/tmp/apptainer.mkramer'
   ND_PRODUCTION_CONTAINER_DIR: '/pscratch/sd/d/dunepro/mkramer/containers'
 
 # ------------------------------------------------------------------------------ 
@@ -59,106 +59,106 @@ hadd_common: &hadd_common
 
 base_envs:
 
-  - name: '{{PROD}}.genie.nu'
+  - name: 'CentiRun7_1E20_RHC.genie.nu'
     env:
       <<: *genie_common
       ND_PRODUCTION_DET_LOCATION: 'MiniRun5-Nu'
       ND_PRODUCTION_GEOM: 'geometry/Merged2x2MINERvA_v4/Merged2x2MINERvA_v4_noRock.gdml'
 
-  - name: '{{PROD}}.genie.rock'
+  - name: 'CentiRun7_1E20_RHC.genie.rock'
     env:
       <<: *genie_common
       ND_PRODUCTION_DET_LOCATION: 'MiniRun5-Rock'
       ND_PRODUCTION_GEOM: 'geometry/Merged2x2MINERvA_v4/Merged2x2MINERvA_v4_justRock.gdml'
       ND_PRODUCTION_RUN_OFFSET: '1000000000'
 
-  - name: '{{PROD}}.edep.nu'
+  - name: 'CentiRun7_1E20_RHC.edep.nu'
     env:
       <<: *edep_common
-      ND_PRODUCTION_GENIE_NAME: '{{PROD}}.genie.nu'
+      ND_PRODUCTION_GENIE_NAME: 'CentiRun7_1E20_RHC.genie.nu'
 
-  - name: '{{PROD}}.edep.rock'
+  - name: 'CentiRun7_1E20_RHC.edep.rock'
     env:
       <<: *edep_common
-      ND_PRODUCTION_GENIE_NAME: '{{PROD}}.genie.rock'
+      ND_PRODUCTION_GENIE_NAME: 'CentiRun7_1E20_RHC.genie.rock'
       ND_PRODUCTION_RUN_OFFSET: '1000000000'
 
-  - name: '{{PROD}}.edep.nu.hadd'
+  - name: 'CentiRun7_1E20_RHC.edep.nu.hadd'
     env:
       <<: *hadd_common
-      ND_PRODUCTION_IN_NAME: '{{PROD}}.edep.nu'
+      ND_PRODUCTION_IN_NAME: 'CentiRun7_1E20_RHC.edep.nu'
 
-  - name: '{{PROD}}.edep.rock.hadd'
+  - name: 'CentiRun7_1E20_RHC.edep.rock.hadd'
     env:
       <<: *hadd_common
-      ND_PRODUCTION_IN_NAME: '{{PROD}}.edep.rock'
+      ND_PRODUCTION_IN_NAME: 'CentiRun7_1E20_RHC.edep.rock'
 
-  - name: '{{PROD}}.spill'
+  - name: 'CentiRun7_1E20_RHC.spill'
     env:
       <<: *edep_container
-      ND_PRODUCTION_SAMPLE_A_NAME: '{{PROD}}.edep.nu.hadd'
+      ND_PRODUCTION_SAMPLE_A_NAME: 'CentiRun7_1E20_RHC.edep.nu.hadd'
       ND_PRODUCTION_SAMPLE_A_POT: '1E16'
-      ND_PRODUCTION_SAMPLE_B_NAME: '{{PROD}}.edep.rock.hadd'
+      ND_PRODUCTION_SAMPLE_B_NAME: 'CentiRun7_1E20_RHC.edep.rock.hadd'
       ND_PRODUCTION_SAMPLE_B_POT: '1E16'
       ND_PRODUCTION_REUSE_SAMPLE_B: '1'
       ND_PRODUCTION_SPILL_POT: '5E13'
       ND_PRODUCTION_SPILL_PERIOD: '1.2'
 
-  - name: '{{PROD}}.edep2flat'
+  - name: 'CentiRun7_1E20_RHC.edep2flat'
     env:
       <<: *sl7_container
-      ND_PRODUCTION_IN_NAME: '{{PROD}}.spill'
+      ND_PRODUCTION_IN_NAME: 'CentiRun7_1E20_RHC.spill'
 
-  - name: '{{PROD}}.minerva'
+  - name: 'CentiRun7_1E20_RHC.minerva'
     env:
       <<: *sl7_container
-      ND_PRODUCTION_IN_NAME: '{{PROD}}.edep2flat'
+      ND_PRODUCTION_IN_NAME: 'CentiRun7_1E20_RHC.edep2flat'
 
-  - name: '{{PROD}}.convert2h5'
+  - name: 'CentiRun7_1E20_RHC.convert2h5'
     env:
       <<: *edep_container
-      ND_PRODUCTION_SPILL_NAME: '{{PROD}}.spill'
+      ND_PRODUCTION_SPILL_NAME: 'CentiRun7_1E20_RHC.spill'
       ND_PRODUCTION_ACTIVE_VOLUME: 'volTPCActive'
 
-  - name: '{{PROD}}.larnd'
+  - name: 'CentiRun7_1E20_RHC.larnd'
     env:
       <<: *default
-      ND_PRODUCTION_CONVERT2H5_NAME: '{{PROD}}.convert2h5'
+      ND_PRODUCTION_CONVERT2H5_NAME: 'CentiRun7_1E20_RHC.convert2h5'
       ND_PRODUCTION_LARNDSIM_CONFIG: '2x2'
       ND_PRODUCTION_COMPRESS: 'lzf'
 
-  - name: '{{PROD}}.flow'
+  - name: 'CentiRun7_1E20_RHC.flow'
     env:
       <<: *default
-      ND_PRODUCTION_IN_NAME: '{{PROD}}.larnd'
+      ND_PRODUCTION_IN_NAME: 'CentiRun7_1E20_RHC.larnd'
       ND_PRODUCTION_COMPRESS: 'gzip'
 
-  - name: '{{PROD}}.flow2supera'
+  - name: 'CentiRun7_1E20_RHC.flow2supera'
     env:
       <<: *spine_container
-      ND_PRODUCTION_IN_NAME: '{{PROD}}.flow'
+      ND_PRODUCTION_IN_NAME: 'CentiRun7_1E20_RHC.flow'
 
-  - name: '{{PROD}}.spine'
+  - name: 'CentiRun7_1E20_RHC.spine'
     env:
       <<: *spine_container
-      ND_PRODUCTION_IN_NAME: '{{PROD}}.flow2supera'
+      ND_PRODUCTION_IN_NAME: 'CentiRun7_1E20_RHC.flow2supera'
 
-  - name: '{{PROD}}.flow2root'
+  - name: 'CentiRun7_1E20_RHC.flow2root'
     env:
       <<: *sl7_container
-      ND_PRODUCTION_IN_NAME: '{{PROD}}.flow'
+      ND_PRODUCTION_IN_NAME: 'CentiRun7_1E20_RHC.flow'
 
-  - name: '{{PROD}}.pandora'
+  - name: 'CentiRun7_1E20_RHC.pandora'
     env:
       <<: *sl7_container
-      ND_PRODUCTION_IN_NAME: '{{PROD}}.flow2root'
+      ND_PRODUCTION_IN_NAME: 'CentiRun7_1E20_RHC.flow2root'
 
-  - name: '{{PROD}}.caf'
+  - name: 'CentiRun7_1E20_RHC.caf'
     env:
       <<: *sl7_container
-      ND_PRODUCTION_GHEP_NU_NAME: '{{PROD}}.genie.nu'
-      ND_PRODUCTION_GHEP_ROCK_NAME: '{{PROD}}.genie.rock'
-      ND_PRODUCTION_MINERVA_NAME: '{{PROD}}.minerva'
-      ND_PRODUCTION_SPINE_NAME: '{{PROD}}.spine'
-      ND_PRODUCTION_SPILL_NAME: '{{PROD}}.spill'
-      ND_PRODUCTION_PANDORA_NAME: '{{PROD}}.pandora'
+      ND_PRODUCTION_GHEP_NU_NAME: 'CentiRun7_1E20_RHC.genie.nu'
+      ND_PRODUCTION_GHEP_ROCK_NAME: 'CentiRun7_1E20_RHC.genie.rock'
+      ND_PRODUCTION_MINERVA_NAME: 'CentiRun7_1E20_RHC.minerva'
+      ND_PRODUCTION_SPINE_NAME: 'CentiRun7_1E20_RHC.spine'
+      ND_PRODUCTION_SPILL_NAME: 'CentiRun7_1E20_RHC.spill'
+      ND_PRODUCTION_PANDORA_NAME: 'CentiRun7_1E20_RHC.pandora'
