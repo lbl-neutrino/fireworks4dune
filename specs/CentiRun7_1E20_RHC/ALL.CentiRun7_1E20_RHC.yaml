@@ -103,6 +103,7 @@ base_envs:
       ND_PRODUCTION_REUSE_SAMPLE_B: '1'
       ND_PRODUCTION_SPILL_POT: '5E13'
       ND_PRODUCTION_SPILL_PERIOD: '1.2'
+      ND_PRODUCTION_HADD_FACTOR: '10'
 
   - name: 'CentiRun7_1E20_RHC.edep2flat'
     env:
