@@ -97,14 +97,15 @@ base_envs:
   - name: 'CentiRun7_1E20_RHC.spill'
     env:
       <<: *edep_container
-      ND_PRODUCTION_SAMPLE_A_NAME: 'CentiRun7_1E20_RHC.edep.nu.hadd'
+      ND_PRODUCTION_SAMPLE_A_NAME: 'CentiRun7_1E20_RHC.edep.nu'
       ND_PRODUCTION_SAMPLE_A_POT: '1E16'
-      ND_PRODUCTION_SAMPLE_B_NAME: 'CentiRun7_1E20_RHC.edep.rock.hadd'
+      ND_PRODUCTION_SAMPLE_B_NAME: 'CentiRun7_1E20_RHC.edep.rock'
       ND_PRODUCTION_SAMPLE_B_POT: '1E16'
       ND_PRODUCTION_REUSE_SAMPLE_B: '1'
       ND_PRODUCTION_SPILL_POT: '5E13'
       ND_PRODUCTION_SPILL_PERIOD: '1.2'
       ND_PRODUCTION_HADD_FACTOR: '10'
+      ND_PRODUCTION_USE_GHEP_POT: '1'
 
   - name: 'CentiRun7_1E20_RHC.edep2flat'
     env:
