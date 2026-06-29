@@ -39,7 +39,7 @@ def make_downstream_workflow(i: int, fwm: FwMaker):
     fw_larnd = fwm.make_mc(i, 'LArND', 'larnd', category='gpu_long')
     fw_flow = fwm.make_mc(i, 'Flow', 'flow', category='cpu_highmem')
     fw_flow2supera = fwm.make_mc(i, 'Flow2Supera', 'flow2supera', category='cpu')
-    fw_spine = fwm.make_mc(i, 'Spine', 'spine', category='gpu')
+    fw_spine = fwm.make_mc(i, 'Spine_SpineProd', 'spine', category='gpu')
     fw_flow2root = fwm.make_mc(i, 'Flow2root', 'flow2root', category='cpu_highmem')
     fw_pandora = fwm.make_mc(i, 'Pandora', 'pandora', category='cpu')
     fw_cafmaker = fwm.make_mc(i, 'CAFmaker','caf', category='cpu')

@@ -138,11 +138,13 @@ base_envs:
     env:
       <<: *spine_container
       ND_PRODUCTION_IN_NAME: 'CentiRun7_1E20_RHC.flow'
+      ND_PRODUCTION_FLOW2SUPERA_CONFIG: '2x2'
 
   - name: 'CentiRun7_1E20_RHC.spine'
     env:
       <<: *spine_container
       ND_PRODUCTION_IN_NAME: 'CentiRun7_1E20_RHC.flow2supera'
+      ND_PRODUCTION_SPINE_CONFIG: 'install/spine-prod/config/infer/2x2/full_chain_240819.yaml'
 
   - name: 'CentiRun7_1E20_RHC.flow2root'
     env:
