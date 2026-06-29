@@ -2,7 +2,7 @@ base_envs:
   - name: 'MiniProdN5p3_NDComplex_FHC.spine.full.sanddrift'
     env:
       ND_PRODUCTION_CONTAINER: 'deeplearnphysics/larcv2:ub2204-cu124-torch251-larndsim'
-      ND_PRODUCTION_SPINE_CONFIG: 'spine_prod/config/infer/nd-lar/full_chain_260310.yaml'
+      ND_PRODUCTION_SPINE_CONFIG: 'infer/nd-lar/full_chain_260310.yaml'
       ND_PRODUCTION_IN_NAME: 'MiniProdN5p3_NDComplex_FHC.flow2supera.full.sanddrift'
       ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepro/ymeng/logs/MiniProdN5'
       ND_PRODUCTION_NUM_THREADS: '24'
