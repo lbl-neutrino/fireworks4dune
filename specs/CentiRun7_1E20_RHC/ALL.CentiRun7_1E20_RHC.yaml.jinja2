@@ -138,11 +138,13 @@ base_envs:
     env:
       <<: *spine_container
       ND_PRODUCTION_IN_NAME: '{{PROD}}.flow'
+      ND_PRODUCTION_FLOW2SUPERA_CONFIG: '2x2'
 
   - name: '{{PROD}}.spine'
     env:
       <<: *spine_container
       ND_PRODUCTION_IN_NAME: '{{PROD}}.flow2supera'
+      ND_PRODUCTION_SPINE_CONFIG: 'install/spine-prod/config/infer/2x2/full_chain_240819.yaml'
 
   - name: '{{PROD}}.flow2root'
     env:
