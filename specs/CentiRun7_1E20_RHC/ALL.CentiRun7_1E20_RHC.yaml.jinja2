@@ -23,9 +23,13 @@ sl7_container: &sl7_container
   <<: *shifter
   ND_PRODUCTION_CONTAINER: 'fermilab/fnal-wn-sl7:latest'
 
+# al9_container: &al9_container
+#   <<: *shifter
+#   ND_PRODUCTION_CONTAINER: 'fermilab/fnal-wn-el9:9.7'
+
 al9_container: &al9_container
-  <<: *shifter
-  ND_PRODUCTION_CONTAINER: 'fermilab/fnal-wn-el9:9.7'
+  <<: *apptainer
+  ND_PRODUCTION_CONTAINER: 'fnal-wn-el9_9.7.sif'
 
 edep_container: &edep_container
   <<: *apptainer
