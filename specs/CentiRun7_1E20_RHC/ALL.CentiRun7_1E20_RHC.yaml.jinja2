@@ -30,6 +30,7 @@ sl7_container: &sl7_container
 al9_container: &al9_container
   <<: *apptainer
   ND_PRODUCTION_CONTAINER: 'fnal-wn-el9_9.7.sif'
+  ND_PRODUCTION_SPACK_USER_CACHE_PATH: '/pscratch/sd/d/dunepro/mkramer/spack_cache'
 
 edep_container: &edep_container
   <<: *apptainer
