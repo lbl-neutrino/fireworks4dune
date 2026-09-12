@@ -32,9 +32,9 @@ al9_container: &al9_container
   ND_PRODUCTION_CONTAINER: 'fnal-wn-el9_9.7.sif'
   ND_PRODUCTION_SPACK_USER_CACHE_PATH: '/pscratch/sd/d/dunepro/mkramer/spack_cache'
 
-al9p8_shifter_container: &al9p8_shifter_container
+al9_shifter_container: &al9_shifter_container
   <<: *shifter
-  ND_PRODUCTION_CONTAINER: 'fermilab/fnal-wn-el9:9.8'
+  ND_PRODUCTION_CONTAINER: 'fermilab/fnal-wn-el9:latest'
 
 edep_container: &edep_container
   <<: *apptainer
@@ -157,12 +157,12 @@ base_envs:
 
   - name: 'CentiRun7_1E20_RHC.flow2root'
     env:
-      <<: *al9p8_shifter_container
+      <<: *al9_shifter_container
       ND_PRODUCTION_IN_NAME: 'CentiRun7_1E20_RHC.flow'
 
   - name: 'CentiRun7_1E20_RHC.pandora'
     env:
-      <<: *al9p8_shifter_container
+      <<: *al9_shifter_container
       ND_PRODUCTION_IN_NAME: 'CentiRun7_1E20_RHC.flow2root'
       ND_PRODUCTION_PANDORA_LAR_RECO_ND_XML: 'settings/PandoraSettings_LArRecoND_ThreeD_w_rockmuTagging.xml'
       ND_PRODUCTION_PANDORA_LAR_RECO_ND_RUN_OPTION: 'CRRemHitsSliceNu'
