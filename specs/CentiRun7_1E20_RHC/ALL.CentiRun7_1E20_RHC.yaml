@@ -168,7 +168,7 @@ base_envs:
       ND_PRODUCTION_PANDORA_LAR_RECO_ND_XML: 'settings/PandoraSettings_LArRecoND_ThreeD_w_rockmuTagging.xml'
       ND_PRODUCTION_PANDORA_LAR_RECO_ND_RUN_OPTION: 'CRRemHitsSliceNu'
       ND_PRODUCTION_PANDORA_INPUT_FORMAT: 'SPMC'
-      ND_PRODUCTION_PANDORA_GEOM: 'Merged2x2MINERvA_v4_withRock_cm.root'
+      ND_PRODUCTION_PANDORA_GEOM: 'Merged2x2MINERvA_v4_withRock.root'
       ND_PRODUCTION_PANDORA_VOLUME: 'volTPCActive' # tentative option name
       ND_PRODUCTION_PANDORA_LAR_RECO_ND_VIEW_OPTION: 'Both'
 
