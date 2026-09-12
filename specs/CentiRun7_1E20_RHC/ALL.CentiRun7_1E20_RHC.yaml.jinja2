@@ -159,6 +159,7 @@ base_envs:
     env:
       <<: *al9_shifter_container
       ND_PRODUCTION_IN_NAME: '{{PROD}}.flow'
+      ND_PRODUCTION_USE_FINAL_HITS: '1' # calib_final_hits
 
   - name: '{{PROD}}.pandora'
     env:
