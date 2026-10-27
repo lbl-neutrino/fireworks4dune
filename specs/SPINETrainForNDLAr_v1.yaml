@@ -1,6 +1,6 @@
 repos:
   - name: 'SPINETrainForNDLAr_v1'
-    url: 'https://github.com/mjkramer/ND_Production.git'
+    url: 'https://github.com/DUNE/ND_Production.git'
     commit: 'feature/spine-train'
 
 runners:
@@ -28,8 +28,3 @@ runners:
     repo: 'SPINETrainForNDLAr_v1'
     workdir: 'run-mlreco'
     cmd: './run_flow2supera.sh'
-
-  - name: 'SPINETrainForNDLAr_v1_SPINE'
-    repo: 'SPINETrainForNDLAr_v1'
-    workdir: 'run-mlreco'
-    cmd: './run_spine.sh'

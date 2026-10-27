@@ -2,7 +2,7 @@
 
 source admin/load_fireworks.sh
 
-name=SPINE_train_ND_2512
+name=SPINE_train_ND_2610
 
 scripts/load_yaml.py specs/SPINETrainForNDLAr_v1.yaml specs/$name/*.yaml
 workflows/fwsub.SPINE_train_ND.py --size 1
