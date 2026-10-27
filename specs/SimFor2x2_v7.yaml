@@ -63,6 +63,11 @@ runners:
     workdir: 'run-mlreco'
     cmd: './run_spine.sh'
 
+  - name: 'SimFor2x2_v7_Spine_SpineProd'
+    repo: 'SimFor2x2_v7'
+    workdir: 'run-mlreco'
+    cmd: './run_spine.spine-prod.sh'
+
   - name: 'SimFor2x2_v7_Flow2root'
     repo: 'SimFor2x2_v7'
     workdir: 'run-pandora'
