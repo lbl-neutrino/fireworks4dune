@@ -55,11 +55,13 @@ def main():
                     for doc in (d if isinstance(d, list) else [d])]
 
             for doc in docs:
-                # Transform ND_PRODUCTION_CONTAINER if present in base_envs
-                # from its name to its image ID hash and store original name
                 if collection == 'base_envs' and 'env' in doc:
                     env = doc['env']
-                    if 'ND_PRODUCTION_CONTAINER' in env:
+                    is_shifter = ('ND_PRODUCTION_RUNTIME' not in env
+                                  or env['ND_PRODUCTION_RUNTIME'] == 'SHIFTER')
+                    # Transform ND_PRODUCTION_CONTAINER if present in base_envs
+                    # from its name to its image ID hash and store original name
+                    if is_shifter and 'ND_PRODUCTION_CONTAINER' in env:
                         container_name = env['ND_PRODUCTION_CONTAINER']
                         env['ND_PRODUCTION_CONTAINER_NAME'] = container_name
                         env['ND_PRODUCTION_CONTAINER'] = f"id:{get_container_id(container_name)}"
