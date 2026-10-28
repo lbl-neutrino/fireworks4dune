@@ -46,6 +46,7 @@ larnd: &larnd
     ND_PRODUCTION_CONVERT2H5_NAME: 'SPINE_train_ND_2610.convert2h5'
     ND_PRODUCTION_COMPRESS: 'lzf'
     ND_PRODUCTION_LARNDSIM_CONFIG: 'ndlar_mpvmpr_ffe'
+    ND_PRODUCTION_DISABLE_CUPY_MEMPOOL: '1'
 
 flow: &flow
   name: 'SPINE_train_ND_2610.flow'
