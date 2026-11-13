@@ -2,7 +2,7 @@
 
 set -o errexit
 
-module load python/3.11
+module load python/3.14-26.11.0
 module load mongodb
 
 cd "$(dirname "${BASH_SOURCE[0]}")"/..

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # source me from root of fireworks4dune
 
-module load python/3.11
+module load python/3.14-26.11.0
 module load mongodb
 
 fw4dune_dir=$(realpath "$(dirname "${BASH_SOURCE[0]}")"/..)
