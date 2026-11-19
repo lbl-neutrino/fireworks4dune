@@ -9,16 +9,16 @@ set +o posix
 ######################
 ## MiniProdN6p1
 
-#scripts/load_yaml.py specs/MiniProdN5_NDComplex/MiniProdN6p1_NDComplex_FHC.genie.fid.sanddrift.yaml --replace
-#scripts/load_yaml.py specs/MiniProdN5_NDComplex/MiniProdN6p1_NDComplex_FHC.genie.fid.sandstt.yaml --replace
+#scripts/load_yaml.py specs/MiniProdN6_NDComplex/MiniProdN6p1_NDComplex_FHC.genie.fid.sanddrift.yaml --replace
+#scripts/load_yaml.py specs/MiniProdN6_NDComplex/MiniProdN6p1_NDComplex_FHC.genie.fid.sandstt.yaml --replace
 
 ######################
 
 ######################
 ## MiniProdN6p2
 
-#scripts/load_yaml.py specs/MiniProdN5_NDComplex/MiniProdN6p2_NDComplex_RHC.genie.fid.sanddrift.yaml --replace
-#scripts/load_yaml.py specs/MiniProdN5_NDComplex/MiniProdN6p2_NDComplex_RHC.genie.fid.sandstt.yaml --replace
+#scripts/load_yaml.py specs/MiniProdN6_NDComplex/MiniProdN6p2_NDComplex_RHC.genie.fid.sanddrift.yaml --replace
+#scripts/load_yaml.py specs/MiniProdN6_NDComplex/MiniProdN6p2_NDComplex_RHC.genie.fid.sandstt.yaml --replace
 
 ######################
 
