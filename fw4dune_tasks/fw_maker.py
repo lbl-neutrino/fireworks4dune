@@ -9,15 +9,17 @@ from . import RepoRunner
 
 
 class FwMaker:
-    def __init__(self, base_env_prefix: str, repo: str, name: str):
+    def __init__(self, base_env_prefix: str, repo: str, name: str,
+                 tag=''):
         self.base_env_prefix = base_env_prefix
         self.repo = repo
         self.name = name
+        self.tag = tag
 
     def make_mc(self, index: int, runner_postfix: str, step_postfix: str,
                 category: Optional[str] = None) -> Firework:
         env = {
-            'ND_PRODUCTION_OUT_NAME': f'{self.name}.{step_postfix}',
+            'ND_PRODUCTION_OUT_NAME': f'{self.name}.{step_postfix}{self.tag}',
             'ND_PRODUCTION_INDEX': str(index)
         }
 
@@ -27,7 +29,7 @@ class FwMaker:
              step_postfix: str, category: Optional[str] = None) -> Firework:
         assert isinstance(env, dict)
 
-        base_env = f'{self.base_env_prefix}.{step_postfix}'
+        base_env = f'{self.base_env_prefix}.{step_postfix}{self.tag}'
         if category is None:
             category = base_env
 
@@ -43,5 +45,5 @@ class FwMaker:
         }
 
         return Firework(RepoRunner(),
-                        name=f'{self.name}.{step_postfix}',
+                        name=f'{self.name}.{step_postfix}{self.tag}',
                         spec=spec)
