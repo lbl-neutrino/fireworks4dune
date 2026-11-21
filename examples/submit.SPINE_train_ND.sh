@@ -24,3 +24,6 @@ sbatch -A m3249 -o "$logdir"/slurm-%j.txt --array=1-1 -N 1 -t 60 slurm/fw_gpu.sl
 
 # Run flow and flow2supera
 sbatch -A m3249 -o "$logdir"/slurm-%j.txt --array=1-1 -N 1 -t 60 slurm/fw_cpu.slurm.sh cpu_long rapidfire
+
+
+workflows/fwsub.SPINE_train_ND.py --re-larnd-sim --tag _v2 --size 10000

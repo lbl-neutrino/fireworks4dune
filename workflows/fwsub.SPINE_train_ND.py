@@ -16,6 +16,8 @@ def main():
                     help='Number of workflows to add')
     ap.add_argument('--start', type=int, default=0,
                     help='Starting index of workflows')
+    ap.add_argument('--tag', type=str, default='')
+    ap.add_argument('--re-larnd-sim', action='store_true')
     args = ap.parse_args()
 
     if args.name is None:
@@ -23,21 +25,27 @@ def main():
 
     lpad = LaunchPad.auto_load()
 
-    fwm = FwMaker(args.base_env_prefix, args.repo, args.name)
+    fwm = FwMaker(args.base_env_prefix, args.repo, args.name,
+                  tag=args.tag)
 
     for i in range(args.start, args.start + args.size):
-        fw_edep = fwm.make_mc(i, 'Edep', 'edep', category='cpu')
-        fw_convert2h5 = fwm.make_mc(i, 'Convert2H5', 'convert2h5',
-                                    category='cpu')
+        if not args.re_larnd_sim:
+            fw_edep = fwm.make_mc(i, 'Edep', 'edep', category='cpu')
+            fw_convert2h5 = fwm.make_mc(i, 'Convert2H5', 'convert2h5',
+                                        category='cpu')
         fw_larnd = fwm.make_mc(i, 'LArND', 'larnd', category='gpu_long')
         fw_flow = fwm.make_mc(i, 'Flow', 'flow', category='cpu_long')
         fw_flow2supera = fwm.make_mc(i, 'Flow2Supera', 'flow2supera',
                                      category='cpu_long')
 
-        fireworks = [fw_edep, fw_convert2h5, fw_larnd, fw_flow, fw_flow2supera]
+        start_fws, start_arrows = [], {}
+        if not args.re_larnd_sim:
+            start_fws = [fw_edep, fw_convert2h5]
+            start_arrows = {fw_edep: [fw_convert2h5], fw_convert2h5: [fw_larnd]}
 
-        arrows = {fw_edep: [fw_convert2h5],
-                  fw_convert2h5: [fw_larnd],
+        fireworks = [*start_fws, fw_larnd, fw_flow, fw_flow2supera]
+
+        arrows = {**start_arrows,
                   fw_larnd: [fw_flow],
                   fw_flow: [fw_flow2supera]}
 

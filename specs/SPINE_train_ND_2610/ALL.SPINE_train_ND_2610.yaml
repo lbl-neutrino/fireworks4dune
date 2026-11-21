@@ -62,6 +62,29 @@ flow2supera: &flow2supera
     ND_PRODUCTION_IN_NAME: 'SPINE_train_ND_2610.flow'
     ND_PRODUCTION_FLOW2SUPERA_CONFIG: 'ndlar_mpvmpr'
 
+larnd_v2: &larnd_v2
+  name: 'SPINE_train_ND_2610.larnd_v2'
+  env:
+    <<: *default
+    ND_PRODUCTION_CONVERT2H5_NAME: 'SPINE_train_ND_2610.convert2h5'
+    ND_PRODUCTION_COMPRESS: 'lzf'
+    ND_PRODUCTION_LARNDSIM_CONFIG: 'ndlar_nov2026'
+    ND_PRODUCTION_DISABLE_CUPY_MEMPOOL: '1'
+
+flow_v2: &flow_v2
+  name: 'SPINE_train_ND_2610.flow_v2'
+  env:
+    <<: *default
+    ND_PRODUCTION_IN_NAME: 'SPINE_train_ND_2610.larnd_v2'
+    ND_PRODUCTION_COMPRESS: 'gzip'
+
+flow2supera_v2: &flow2supera_v2
+  name: 'SPINE_train_ND_2610.flow2supera_v2'
+  env:
+    <<: *spine_container
+    ND_PRODUCTION_IN_NAME: 'SPINE_train_ND_2610.flow_v2'
+    ND_PRODUCTION_FLOW2SUPERA_CONFIG: 'ndlar_mpvmpr'
+
 # ------------------------------------------------------------------------------
 
 base_envs:
@@ -70,3 +93,6 @@ base_envs:
   - *larnd
   - *flow
   - *flow2supera
+  - *larnd_v2
+  - *flow_v2
+  - *flow2supera_v2
