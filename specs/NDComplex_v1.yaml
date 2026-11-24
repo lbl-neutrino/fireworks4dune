@@ -67,7 +67,7 @@ runners:
   - name: 'NDComplex_v1_MLreco_Spine'
     repo: 'NDComplex_v1'
     workdir: 'run-mlreco'
-    cmd: './run_spine.sh'
+    cmd: './run_spine.spine-prod.sh'
 
   - name: 'NDComplex_v1_MLreco_Spine_SpineProd'
     repo: 'NDComplex_v1'

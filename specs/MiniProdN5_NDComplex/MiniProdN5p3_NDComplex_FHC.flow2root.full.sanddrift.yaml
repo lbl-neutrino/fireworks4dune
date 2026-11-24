@@ -1,0 +1,9 @@
+base_envs:
+  - name: 'MiniProdN5p3_NDComplex_FHC.flow2root.full.sanddrift'
+    env:
+        ND_PRODUCTION_CONTAINER: 'fermilab/fnal-wn-sl7:latest'
+        ND_PRODUCTION_RUNTIME: 'SHIFTER'
+        ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepro/ymeng/output/MiniProdN5'
+        ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepro/ymeng/logs/MiniProdN5'
+        ND_PRODUCTION_IN_NAME: 'MiniProdN5p3_NDComplex_FHC.flow.full.sanddrift'
+        ND_PRODUCTION_USE_FINAL_HITS: '2'
