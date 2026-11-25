@@ -1,0 +1,10 @@
+base_envs:
+  - name: 'MiniProdN6p1_NDComplex_FHC.hadd.fid.sanddrift'
+    env:
+      ND_PRODUCTION_CONTAINER: 'mjkramer/sim2x2:ndlar012'
+      ND_PRODUCTION_IN_NAME: 'MiniProdN6p1_NDComplex_FHC.edep.fid.sanddrift'
+      ND_PRODUCTION_HADD_FACTOR: '10'
+      ND_PRODUCTION_RUNTIME: 'SHIFTER'
+      ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepro/jclarkin/logs/MiniProdN6'
+      ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepro/jclarkin/output/MiniProdN6'
+      ND_PRODUCTION_USE_GHEP_POT: '1'

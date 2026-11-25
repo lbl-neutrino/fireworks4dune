@@ -1,0 +1,11 @@
+base_envs:
+  - name: 'MiniProdN6p2_NDComplex_RHC.edep.rockantifid.sanddrift'
+    env:
+      ND_PRODUCTION_CONTAINER: 'mjkramer/sim2x2:ndlar012'
+      ND_PRODUCTION_EDEP_MAC: 'macros/dune-nd.mac'
+      ND_PRODUCTION_GENIE_NAME: 'MiniProdN6p2_NDComplex_RHC.genie.rockantifid.sanddrift'
+      ND_PRODUCTION_GEOM_EDEP: 'geometry/nd_hall_with_lar_tms_sand_drift1_v2026.03.06.gdml'
+      ND_PRODUCTION_LOGDIR_BASE: '/pscratch/sd/d/dunepro/jclarkin/logs/MiniProdN6'
+      ND_PRODUCTION_OUTDIR_BASE: '/pscratch/sd/d/dunepro/jclarkin/output/MiniProdN6'
+      ND_PRODUCTION_RUN_OFFSET: '1000000000'
+      ND_PRODUCTION_RUNTIME: 'SHIFTER'
